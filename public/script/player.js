@@ -1,11 +1,11 @@
 
-import { theme } from "../theme.js";
+import { theme } from "./theme.js";
 import { display } from "./display.js";
-import { defaultConfigs } from "../defaultConfigs.js";
+import { defaultConfigs } from "./defaultConfigs.js";
 import { musicManager } from "./musicManager.js";
 import { playlistManager } from "./playlistManager.js";
 import { search } from "./search.js";
-import { localStorageObject } from "../localStorageObject.js";
+import { localStorageObject } from "./localStorageObject.js";
 import { events } from "./events.js";
 import { mediaManager } from "./mediaManager.js";
 

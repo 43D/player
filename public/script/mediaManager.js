@@ -1,5 +1,5 @@
 
-import { localStorageObject } from "../localStorageObject.js";
+import { localStorageObject } from "./localStorageObject.js";
 import { musicManager } from "./musicManager.js";
 import { events } from "./events.js";
 

@@ -1,4 +1,4 @@
-import { localStorageObject } from "../localStorageObject.js";
+import { localStorageObject } from "./localStorageObject.js";
 import { events } from "./events.js";
 
 let eventsClass;

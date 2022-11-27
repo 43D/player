@@ -4,9 +4,10 @@ const cacheName = "1.0";
 
 function cache() {
     const resources = [
-        "/",
-        "index.html",
-        "",
+        "/player/",
+        "/player/index.html",
+        "/player/public/css/css.css",
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css",
     ];
 
     self.addEventListener('install', (event) => {

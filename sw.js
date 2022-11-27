@@ -1,4 +1,4 @@
-const cacheName = "1.0";
+const cacheName = "1.1";
 
 function cache() {
     const resources = [

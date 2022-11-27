@@ -1,0 +1,44 @@
+{
+    "short_name": "AMQ Player Music",
+    "name": "AMQ Player Music",
+    "icons": [
+      {
+        "src": "/player/public/img/icons-vector.svg",
+        "type": "image/svg+xml",
+        "sizes": "683x683"
+      },
+      {
+        "src": "/player/public/img/icons-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/player/public/img/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/player/?source=pwa",
+    "start_url": "/player/?source=pwa",
+    "background_color": "#6a707b",
+    "display": "standalone",
+    "scope": "/player/",
+    "theme_color": "#6a707b",
+    "shortcuts": [
+      {
+        "name": "Import Music",
+        "short_name": "Import Music",
+        "description": "Import musics for AMQ",
+        "url": "/player/#fast=json",
+        "icons": [{ "src": "/player/public/img/box-arrow-down.png", "sizes": "192x192" }]
+      }
+    ],
+    "description": "AMQ Player Music",
+    "screenshots": [
+      {
+        "src": "/player/public/img/cover.jpg",
+        "type": "image/png",
+        "sizes": "1306x678"
+      }
+    ]
+  }

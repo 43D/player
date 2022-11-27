@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import AMQ</title>
+
+    <meta name="application-name" content="AMQ 43D">
+    <meta name="author" content="Allan Felipe">
+    <meta name="description" content="Gerencie seu JSON do AMQ aqui, de um play na suas músicas ou ranqueia elas!">
+    <meta name="keywords" content="Allan Felipe, AMQ, Player, Music, JSON 43d, Repositório, gitpage, github, hub, projeto">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://43d.github.io/player/">
+    <meta property="og:title" content="AMQ 43D">
+    <meta property="og:description" content="Gerencie seu JSON do AMQ aqui, de um play na suas músicas ou ranqueia elas!.">
+    <meta property="og:image" content="https://43d.github.io/player/public/img/cover.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://43d.github.io/player/">
+    <meta property="twitter:title" content="AMQ 43D">
+    <meta property="twitter:description" content="Gerencie seu JSON do AMQ aqui, de um play na suas músicas ou ranqueia elas!">
+    <meta property="twitter:image" content="https://43d.github.io/player/public/img/cover.jpg">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/player/public/css/css.css">
+</head>
+
+<body class="body">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/animes">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/player/import">Import Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/player/player">Player Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/player/ranking">Ranking Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/player/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="dark_light">🌗</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row" id="divOptions" style="min-height: 65vh;">
+            <div class="col-12 vh-81 col-sm-6 col-lg-6 border">
+                <div class="text-center div-height d-flex justify-content-center flex-column">
+                    <h4>Importar um JSON</h4>
+                    <p>Importe um JSON AMQ para ultilizar no Player Music (salvo somente neste navegador)</p>
+                </div>
+                <div class="text-center">
+                    <button id="btnImport" class="btn btn-success">Importar JSON AMQ</button>
+                </div>
+            </div>
+            <div class="col-12 vh-81 col-sm-6 col-lg-6 border">
+                <div class="text-center div-height d-flex justify-content-center flex-column">
+                    <h4>Ouvir rapidamente</h4>
+                    <p>Ouça as músicas de JSON AMQ sem precisar salvar</p>
+                </div>
+                <div class="text-center">
+                    <a href="/player/player#fast=json" class="btn btn-success">Ouvir rapidamente um JSON</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row d-none" id="divImport" style="min-height: 65vh;">
+            <form action="javascript:void(0);" class="mt-5">
+                <div class="mb-3">
+                    <label for="urlJson" class="form-label">Via link</label>
+                    <input type="text" value="http://amq.localhost/snk.json" class="form-control" placeholder="https://.json" aria-label="https://.json"
+                        aria-describedby="basic-addon1" id="urlJson">
+                </div>
+                OR
+                <div class="mb-3">
+                    <label class="form-label" for="fileJson">Custom JSON</label>
+                    <input type="file" class="form-control" id="fileJson">
+                </div>
+
+                <div class="text-center">
+                    <button id="btnConfirmForm" type="button"
+                        class=" btn btn-outline-success btn-lg my-5">Confirmar</button>
+                    <button id="btnClean" type="button" class=" btn btn-outline-danger btn-lg my-5">Limpar</button>
+                </div>
+            </form>
+        </div>
+        <div class="row d-none" id="divList">
+            <form action="javascript:void(0);" class="my-5">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Selecione</th>
+                                <th scope="col">Música</th>
+                                <th scope="col">Anime</th>
+                                <th scope="col">Audio</th>
+                                <th scope="col">MyAnimeList</th>
+                            </tr>
+                        </thead>
+    
+                        <tbody id="tbody">
+    
+    
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <input type="checkbox" name="newPlaylist" id="newPlaylist">
+                    <label class="form-check-label" for="newPlaylist">
+                        Nova PlayList??
+                    </label>
+                    <br>
+                    <input type="text" class="form-control" name="newPlaylistName" id="newPlaylistName" disabled>
+                    <br>
+                    <button class="btn btn-outline-success" id="btnSalvar">Salvar</button>
+                    <button class="btn btn-outline-danger">Não salvar</button>
+                </div>
+            </form>
+        </div>
+        <div class="row d-none" id="divFinal">
+            <div class="text-center div-height d-flex justify-content-center flex-column" style="min-height: 65vh;">
+                <h4>Tudo OK</h4>
+                <p>Acesse player de música.</p>
+                <a class="btn btn-success" href="/player">Player Music</a>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center bg-light mt-5">
+        nada nosso, footer
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="/player/public/script/import/app.js"></script>
+</body>
+
+</html>

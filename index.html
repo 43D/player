@@ -1,14 +1,384 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player</title>
-</head>
-<body>
-    
 
-    <script src="/player/public/js/app.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title id="title-head">Player Music</title>
+
+		<meta name="application-name" content="AMQ 43D">
+		<meta name="author" content="Allan Felipe">
+		<meta name="description" content="Player Music - Gerencie seu JSON do AMQ aqui, de um play na suas músicas ou ranqueia elas!">
+		<meta
+		name="keywords" content="Allan Felipe, AMQ, Player, Music, JSON 43d, Repositório, gitpage, github, hub, projeto">
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://43d.github.io/player/">
+		<meta property="og:title" content="AMQ 43D">
+		<meta property="og:description" content="Player Music - Gerencie seu JSON do AMQ aqui, de um play na suas músicas ou ranqueia elas!.">
+		<meta
+		property="og:image" content="https://43d.github.io/player/public/img/cover.jpg">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary">
+		<meta property="twitter:url" content="https://43d.github.io/player/">
+		<meta property="twitter:title" content="AMQ 43D">
+		<meta property="twitter:description" content="Player Music - Gerencie seu JSON do AMQ aqui, de um play na suas músicas ou ranqueia elas!">
+		<meta property="twitter:image" content="https://43d.github.io/player/public/img/cover.jpg">
+
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="/player/public/css/css.css">
+
+	</head>
+
+	<body class="body">
+		<div class="fixed-top">
+			<nav class="navbar navbar-expand-lg bg-light">
+				<div class="container-fluid">
+					<button class="navbar-toggler-custom btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#musicbarNav" aria-controls="musicbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<i class="bi bi-play"></i>
+						Player menu
+					</button>
+					<div class="collapse navbar-collapse" id="musicbarNav">
+						<div class="d-flex  flex-column-mobile">
+							<ul class="navbar-nav">
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Músicas
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="#fast=music-name" id="music-name">Por nome</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#fast=music-anime" id="music-anime">Por anime</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#fast=music-season" id="music-season">Por
+																																																												                                            Season</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										PlayLists
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="#fast=playlist" id="playlist">Suas PlayLists</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#fast=new-playlist" id="new-playlist">Criar uma
+																																																												                                            PlayList</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="#fast=json" id="btn-json-fast">JSON</a>
+								</li>
+							</ul>
+							<form class="d-flex" method="get" role="search" action="javascript:void(0);">
+								<input id="search-value" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+								<button class="btn btn-outline-success" type="submit" id="btn-search">Search</button>
+							</form>
+						</div>
+					</div>
+					<div>
+						<button class="btn btn-outline-secondary" id="reload">
+							<i class="bi bi-arrow-repeat"></i>
+						</button>
+						<button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#configsModal" id="configs">
+							<i class="bi bi-gear"></i>
+						</button>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div id="display-video" class="container-fluid displays d-none" style="height: calc(100vh - 130px);">
+			<div class="row bg-dark h-100 video-center" style="margin-top: 52px;">
+				<div class="col-12 h-100 p-0 bg-dark">
+					<div class="h-100" id="collapseVideo">
+						<div class="h-100 d-flex justify-content-center flex-column">
+							<video id="video" class="h-100"></video>
+
+						</div>
+					</div>
+					<div class="col d-none">
+						<audio id="audio"></audio>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="display-list" class="container-fluid displays d-none">
+			<div class="row h-100" style="margin-top: 70px; margin-bottom: 180px; ">
+				<div class="col-12 h-100 p-0" id="list-collapse">
+					<h3 class="text-center">Lista de reprodução</h3>
+					<div>
+						<ul class="list-group p-3" id="list-play-ul"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="display-main" class="container-fluid displays" style="min-height: 65vh;">
+			<div class="row" style="margin-top: 70px; margin-bottom: 180px;">
+				<div class="col tela" id="display-music-name"></div>
+				<div class="col-12 tela d-none" id="display-music-anime"></div>
+				<div class="col-12 tela d-none" id="display-music-season"></div>
+				<div class="col-12 tela d-none" id="display-playlist"></div>
+				<div class="col-12 tela d-none" id="display-new-playlist">
+					<div id="new-playlist-child" class="d-none d-flex justify-content-center flex-column" style="height: 50vh;">
+						<form action="javascript:void(0);" class="mt-5 mx-5 px-5">
+							<label class="form-check-label" for="newPlaylist">
+								Nome da Playlist
+							</label>
+							<input type="text" class="form-control" name="newPlaylistName" id="newPlaylistName">
+							<br>
+							<div class="text-center">
+								<button class="btn btn-outline-success" id="btnSaveNewPlaylist">Salvar</button>
+							</div>
+						</form>
+					</div>
+					<div id="finish-playlist-child" class="d-none text-center d-flex justify-content-center flex-column" style="height: 50vh;">
+						<h4>Tudo Ok. Clique em
+							<i class="bi bi-three-dots"></i>
+							para adicionar alguma música na playlist!!
+						</h4>
+					</div>
+				</div>
+				<div class="col-12 tela d-none" id="display-edit-playlist">
+					<div>
+						<form action="javascript:void(0);" class="mt-5 mx-5 px-5">
+							<label class="form-check-label" for="editPlaylist">
+								Nome da Playlist:
+							</label>
+							<input type="text" class="form-control" name="editPlaylistName" id="editPlaylistName">
+							<br>
+							<div>lista</div>
+							<div class="text-center">
+								<button class="btn btn-outline-success" id="btnSaveEditPlaylist">Salvar</button>
+							</div>
+						</form>
+					</div>
+
+				</div>
+				<div class="col-12 tela d-none" id="display-json-fast">
+					<form action="javascript:void(0);" class="mt-5 mx-5">
+						<div class="row">
+							<div class="form-check col-12 col-md-6">
+								<input class="form-check-input radioImport" type="radio" name="flexRadioOptionImport" id="flexRadioOptionImport1" value="link" checked>
+								<label class="form-check-label" for="flexRadioOptionImport1">
+									Importar via link (https://.json)
+								</label>
+							</div>
+							<div class="form-check col-12 col-md-6">
+								<input class="form-check-input radioImport" type="radio" name="flexRadioOptionImport" id="flexRadioOptionImport2" value="file">
+								<label class="form-check-label" for="flexRadioOptionImport2">
+									Importar via arquivo (file.json)
+								</label>
+							</div>
+							<div class="col-12 mb-3 my-5 importOptionDisplay" id="import-link">
+								<input type="text" class="form-control" placeholder="https://.json" aria-label="https://.json" aria-describedby="basic-addon1" id="urlJson">
+							</div>
+							<div class="col-12 mb-3 my-5 d-none importOptionDisplay" id="import-file">
+								<input type="file" class="form-control" id="fileJson">
+							</div>
+							<div class="col-12 text-center my-5">
+								<button type="button" class="btn btn-outline-secondary btn-lg">
+									<i class="bi bi-play"></i>
+									Ouvir</button>
+								<button type="button" class="btn btn-outline-success btn-lg">
+									Salvar</button>
+								<button type="button" class="btn btn-outline-danger btn-lg">
+									<i class="bi bi-pencil"></i>
+									Editar</button>
+							</div>
+							<div class="col-12">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchPlayList">
+									<label class="form-check-label" for="flexSwitchPlayList">Nome da Playlist</label>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-12 tela d-none" id="display-search"></div>
+			</div>
+		</div>
+		<div class="fixed-bottom bg-light border-top">
+			<div class="container-fluid">
+				<div class="row py-3">
+					<form action="javascript:void(0);" class="col-12 col-md-6  my-1 col-lg-5 col-xl-4">
+						<div class="d-flex justify-content-center">
+							<div class="d-flex justify-content-center menu-flex-warp">
+								<button id="btn-video-collapse" type="button" class="btn btn-outline-secondary border rounded-circle">
+									<i class="bi bi-film"></i>
+								</button>
+								<button type="button" id="btn-random" class="mx-1 btn btn-outline-secondary border rounded-circle">
+									<i class="bi bi-shuffle"></i>
+								</button>
+								<button type="button" id="btn-preview" class="mx-1 btn btn-outline-secondary border rounded-circle">
+									<i class="bi bi-arrow-left"></i>
+								</button>
+							</div>
+							<div class="d-flex justify-content-center">
+
+								<button type="button" id="btn-play" class="btn mx-1 btn-outline-secondary border rounded-pill">
+									<i class="bi bi-play"></i>
+									<i class="bi bi-pause"></i>
+								</button>
+
+							</div>
+							<div class="d-flex justify-content-center menu-flex-warp-reverse">
+								<button type="button" id="btn-next" class="btn mx-1  btn-outline-secondary border rounded-circle">
+									<i class="bi bi-arrow-right"></i>
+								</button>
+								<button type="button" id="btn-loop" class="btn mx-1 btn-outline-secondary border rounded-circle">
+									<i class="bi bi-arrow-clockwise"></i>
+								</button>
+								<button type="button" class="btn btn-outline-secondary dropdown-toggle border rounded-pill" data-bs-toggle="dropdown" aria-expanded="false" id="btn-volume">
+									<i class="bi bi-volume-up"></i>
+								</button>
+								<div class="dropdown-menu">
+									<div class="d-flex align-items-center">
+										<button id="volume-mute" type="button" class="mx-2 btn btn-outline-secondary border rounded-circle">
+											<span id="play">
+												<i class="bi bi-volume-mute"></i>
+											</span>
+										</button>
+										<input type="range" min="0" max="100" value="100" class="ui-slider mx-2" id="volume">
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="col-12 col-sm my-1">
+						<div class="ui-seekbar px-3 d-flex h-100 justify-content-center flex-column">
+							<input type="range" id="timeline-now" class="ui-slider w-100" min="0" max="120000" value="0">
+							<div class="h-100 mb-0 row">
+								<div class="col-3 col-sm-2">
+									<span id="time">00:00</span>
+								</div>
+								<div class="col text-center">
+									<span id="name-bar">........?</span>
+								</div>
+								<div class="col-3 col-sm-2 text-end">
+									<span id="duration">00:00</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3 col-xl-2">
+						<button id="btn-list-collapse" class="btn btn-outline-secondary w-100">Lista de reprodução</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="modais">
+			<div class="modal fade" id="configsModal" tabindex="-1" aria-labelledby="configurações" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="configurações">Configurações</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div>
+								<button id="btn-clear-data" class="btn btn-outline-secondary">Limpar dados</button>
+							</div>
+							<hr>
+							<div>
+								<button class="btn btn-outline-secondary">Importar dados</button>
+								<button class="btn btn-outline-secondary">Exportar dados</button>
+							</div>
+							<hr>
+							<div>
+								<button class="btn btn-outline-secondary">Google Drive?</button>
+							</div>
+							<hr>
+							<div>
+								<form action="javascript:void(0);">
+									<label for="select-quality" class="form-label">Qualidade do streaming</label>
+									<select id="select-quality" class="form-select" aria-label="Qualidade da media">
+										<option value="0" selected>Somente Audio (mais leve)</option>
+										<option value="480">Video 480p</option>
+										<option value="720">Video 720p</option>
+									</select>
+								</form>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade" id="addPlaylistModal" tabindex="-1" aria-labelledby="Adicionar na playlist" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5">Adicionar na playlist</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form action="javascript:void(0);">
+								<input type="hidden" id="id-playlist-add" name="id-playlist-add" value="-1">
+								<label for="select-playlist-add" class="form-label">Playlist:
+								</label>
+								<select class="form-select" id="select-playlist-add" aria-label="select playlist" disabled></select>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+							<button type="button" class="btn btn-outline-secondary" id="btn-playlist-add" data-bs-dismiss="modal">Adicionar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="editPlaylistModal" tabindex="-1" aria-labelledby="Editar playlist" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5">Adicionar na playlist</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form action="javascript:void(0);">
+								<input type="hidden" name="id-playlist-edit" value="-1" id="id-playlist-edit">
+								<label for="name-playlist-edit" class="form-label">Nome:
+								</label>
+								<input type="text" class="form-control" name="name-playlist-edit" id="name-playlist-edit">
+
+								<p class="p-0 m-1">Segure e arraste para ordernar</p>
+								<div class="mt-2 me-4" id="checks">
+									<div class="form-check mt-2">
+										<input class="form-check-input checkboxPlaylistEdit" type="checkbox" value="0" id="checkbox-playlist-edit-0">
+										<label class="form-check-label" for="checkbox-playlist-edit-0">
+											Default checkbox
+										</label>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+							<button type="button" class="btn btn-outline-secondary" id="btn-playlist-edit" data-bs-dismiss="modal">Editar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/player/public/script/webService.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script src="/player/public/script/jquery-ui.min.js"></script>
+		<script src="/player/public/script/jquery.ui.touch-punch.js"></script>
+		<script type="module" src="/player/public/script/player/app.js"></script>
+	</body>
 </html>

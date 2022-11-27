@@ -10,7 +10,19 @@
       {
         "src": "/player/public/img/icons-192.png",
         "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/player/public/img/icons-192.png",
+        "type": "image/png",
         "sizes": "192x192"
+      },
+      {
+        "src": "/player/public/img/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
       },
       {
         "src": "/player/public/img/icons-512.png",
@@ -20,10 +32,10 @@
     ],
     "id": "/player/?source=pwa",
     "start_url": "/player/?source=pwa",
-    "background_color": "#6a707b",
+    "background_color": "#4a4c4f",
     "display": "standalone",
     "scope": "/player/",
-    "theme_color": "#6a707b",
+    "theme_color": "#4a4c4f",
     "shortcuts": [
       {
         "name": "Import Music",

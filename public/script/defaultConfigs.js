@@ -15,6 +15,8 @@ export function defaultConfigs() {
             createLanguage();
         if (isNull(localStorageClass.getMusics()))
             createMusic();
+        if (isNull(localStorageClass.getPwa()))
+            createPwa();
 
 
     }
@@ -59,6 +61,14 @@ export function defaultConfigs() {
 
     function isNull(obj) {
         return (obj == null) ? true : false;
+    }
+
+    function createPwa() {
+        const pwa = {
+            "alert": true
+        }
+
+        localStorageClass.setPwa(pwa);
     }
 
     return {

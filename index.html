@@ -293,6 +293,10 @@
 						</div>
 						<div class="modal-body">
 							<div>
+								<button type="button" class="btn btn-outline-success pwa-install">Instalar</button>								
+							</div>
+							<hr>
+							<div>
 								<button id="btn-clear-data" class="btn btn-outline-secondary">Limpar dados</button>
 							</div>
 							<hr>
@@ -301,10 +305,7 @@
 								<button class="btn btn-outline-secondary">Exportar dados</button>
 							</div>
 							<hr>
-							<div>
-								<button class="btn btn-outline-secondary">Google Drive?</button>
-							</div>
-							<hr>
+							
 							<div>
 								<form action="javascript:void(0);">
 									<label for="select-quality" class="form-label">Qualidade do streaming</label>
@@ -373,6 +374,22 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
 							<button type="button" class="btn btn-outline-secondary" id="btn-playlist-edit" data-bs-dismiss="modal">Editar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade" id="pwa-alert" tabindex="-1" aria-labelledby="Instalar app" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-body">
+							<p>Faça a instalação dessa aplicação PWA no seu dispositivo!!</p>
+							<p>Rode AMQ Player Music como se fosse um app!!</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-outline-danger pwa-never" data-bs-dismiss="modal">Nunca instalar</button>
+							<button type="button" class="btn btn-outline-secondary pwa-promise" data-bs-dismiss="modal">Mais tarde</button>
+							<button type="button" class="btn btn-outline-success pwa-install">Instalar</button>
 						</div>
 					</div>
 				</div>

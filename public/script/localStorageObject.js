@@ -4,6 +4,7 @@ export function localStorageObject() {
     const musicsName = "musicsName";
     const musicsAnime = "musicsAnime";
     const musicsSeason = "musicsSeason";
+    const pwa = "pwa";
     const playlists = "playlists";
     const currentPlayList = "currentPlayList";
     const theme = "theme";
@@ -95,6 +96,16 @@ export function localStorageObject() {
         config['streaming'] = qld;
         setConfig(config);
     }
+
+    function setPwa(json) {
+        return setLocalStorage(pwa, json);
+    }
+
+    function getPwa() {
+        return getLocalStorage(pwa);
+    }
+
+
     return {
         getMusics,
         getPlayLists,
@@ -115,7 +126,9 @@ export function localStorageObject() {
         setMusicsName,
         setMusicsSeason,
         clear,
-        setStreaming
+        setStreaming,
+        getPwa,
+        setPwa
     }
 
 }

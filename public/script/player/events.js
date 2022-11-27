@@ -34,6 +34,7 @@ export function events() {
         selectQuality();
         btnMedia();
         radioImport();
+        pwa();
     }
 
     function btnMedia() {
@@ -70,6 +71,11 @@ export function events() {
 
     function btnsSeacrh() {
         btnsMusics();
+    }
+
+    function pwa() {
+        btnNever();
+        btnInstall();
     }
 
     function muteActionMod() {
@@ -393,10 +399,23 @@ export function events() {
     function radioImport() {
         $(".radioImport").click(function () {
             $(".importOptionDisplay").addClass("d-none");
-            $("#import-"+$(this).val()).removeClass("d-none");
+            $("#import-" + $(this).val()).removeClass("d-none");
         });
 
     }
+
+    function btnNever() {
+        $(".pwa-never").click(function () {
+            playerClass.disableAlertPwa();
+        });
+    }
+
+    function btnInstall() {
+        $(".pwa-install").click(function () {
+            playerClass.installPwa();
+        });
+    }
+
     return {
         init,
         start,

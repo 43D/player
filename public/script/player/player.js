@@ -19,6 +19,7 @@ let defaultConfigsClass;
 let themeClass;
 let displayClass;
 
+let deferredPrompt;
 export function player() {
     function init() {
         localStorageObjectClass = localStorageObject();
@@ -34,12 +35,14 @@ export function player() {
         defaultConfigsClass.init();
         searchClass.init();
         eventsClass.init({ "mediaManager": mediaManagerClass, "display": displayClass, "player": this, "playlistManager": playlistManagerClass, "musicManager": musicManagerClass });
-        displayClass.init({ "player": this, "events":eventsClass });
+        displayClass.init({ "player": this, "events": eventsClass });
         musicManagerClass.init({ "events": eventsClass });
         playlistManagerClass.init({ "events": eventsClass });
         mediaManagerClass.init({ "musicManager": musicManagerClass, "events": eventsClass });
-        
+
         getParam();
+
+        checkPwa();
     }
 
     function newPlayList(name) {
@@ -65,13 +68,53 @@ export function player() {
         localStorageObjectClass.clear();
     }
 
+    function checkPwa() {
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+
+            deferredPrompt = e;
+
+            pwaAlert();
+        });
+    }
+
+    function pwaAlert() {
+        const pwa = localStorageObjectClass.getPwa();
+
+        if (pwa.alert)
+            $("#pwa-alert").modal("show");
+    }
+
+    function disableAlertPwa() {
+        let pwa = localStorageObjectClass.getPwa();
+        pwa.alert = false;
+        localStorageObjectClass.setPwa(pwa);
+    }
+
+    function installPwa() {
+        let pwa = localStorageObjectClass.getPwa();
+
+        deferredPrompt.prompt();
+
+        deferredPrompt.userChoice
+            .then((res) => {
+                console.log(res);
+                if (res.outcome === "accepted") {
+                    pwa.alert = false;
+                    localStorageObjectClass.setPwa(pwa);
+                    $("#pwa-alert").modal("hide");
+                }
+            });
+    }
+
     return {
         init,
         newPlayList,
         reload,
         searchAction,
-        clearData
-
+        clearData,
+        disableAlertPwa,
+        installPwa
     }
 
 }

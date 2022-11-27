@@ -45,25 +45,17 @@ body.dark-mode {
         height: 70%;
     }
 
-    .flex-column-mobile {
-        flex-direction: column !important;
-    }
-
     .video-center {
         margin-top: 52px;
         padding-bottom: 52px;
     }
 }
 
-@media screen and (min-width: 990px) {
-
-    /* 6 */
-    .navbar-toggler-custom {
-        display: none;
+@media screen and (max-width: 768px) {
+    .flex-column-mobile {
+        flex-direction: column !important;
     }
 }
-
-
 
 @media screen and (max-width: 575px) {
 

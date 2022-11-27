@@ -96,7 +96,7 @@ export function musicManager() {
     }
 
     function addWarning(id) {
-        const h4 = $("<h4>").addClass("text-center mt-4").html("Não a nada aqui, acesse Import");
+        const h4 = $("<h4>").addClass("text-center mt-4").html("Não a nada aqui, acesse 'Importar Json'");
         $("#" + id).append(h4);
     }
 

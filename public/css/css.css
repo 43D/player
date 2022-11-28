@@ -50,7 +50,6 @@
     background-color: #f9f9f9;
 }
 
-
 .bg-clear-light-link,
 .bg-clear-light-link:hover,
 .bg-clear-light-link:focus {
@@ -80,7 +79,6 @@
 .list-group-item-success>div>div>button:hover {
     color: #000;
 }
-
 
 @media screen and (max-width: 990px) {
 
@@ -120,7 +118,6 @@
         height: 60%;
     }
 }
-
 
 @media screen and (max-width: 410px) {
     .menu-flex-warp {

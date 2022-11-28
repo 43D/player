@@ -40,6 +40,8 @@ export function mediaManager() {
             $("#title-head").html(music.name + " - " + music.artist);
             $("#name-bar").html(music.name + " - " + music.artist);
 
+            setNotificationMusic(music);
+
             switch (config["streaming"]) {
                 case "720":
                     if (music.urls.catbox["720"])
@@ -60,6 +62,28 @@ export function mediaManager() {
         }
     }
 
+    function setNotificationMusic(music) {
+        if ("mediaSession" in navigator) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: music.name,
+                artist: music.artist,
+                album: music.anime.romaji
+            });
+
+            const actionHandlers = [
+                ['previoustrack', () => { previewPlay(); }],
+                ['nexttrack', () => { endPlay();}],
+            ];
+
+            for (const [action, handler] of actionHandlers) {
+                try {
+                    navigator.mediaSession.setActionHandler(action, handler);
+                } catch (error) {
+                    console.log(`The media session action "${action}" is not supported yet.`);
+                }
+            }
+        }
+    }
 
     function skipped(id) {
         let config = localStorageObjectClass.getConfig();

@@ -3,7 +3,9 @@ import { player } from "./player.js";
 import { musicManager } from "./musicManager.js";
 import { playlistManager } from "./playlistManager.js";
 import { mediaManager } from "./mediaManager.js";
+import { theme } from "./theme.js";
 
+let themeClass;
 let mediaManagerClass
 let musicManagerClass;
 let playlistManagerClass;
@@ -17,6 +19,7 @@ export function events() {
         displayClass = (config.display) ? config.display : display();
         playerClass = (config.player) ? config.player : player();
         musicManagerClass = (config.musicManager) ? config.musicManager : musicManager();
+        themeClass = (config.theme) ? config.theme : theme();
         playlistManagerClass = (config.playlistManager) ? config.playlistManager : playlistManager();
         mediaManagerClass = (config.mediaManager) ? config.mediaManager : mediaManager();
     }
@@ -32,6 +35,7 @@ export function events() {
         search();
         clear();
         selectQuality();
+        radioTheme();
         btnMedia();
         radioImport();
         pwa();
@@ -273,6 +277,13 @@ export function events() {
         });
     }
 
+    function radioTheme() {
+        $(".radioTheme").change(function () {
+            themeClass.setTheme($(this).val());
+            themeClass.toggleDarkLight();
+        });
+    }
+
     function changeVolume() {
         $("#volume").click(function () {
             mediaManagerClass.setVolume(($("#volume").val() / 100));
@@ -329,7 +340,6 @@ export function events() {
         };
         $("#timeline-now")[0].ontouchend = function () {
             changeTime();
-            console.log("thouch end: " + $("#timeline-now").val());
             mouseUp = true;
         };
     }

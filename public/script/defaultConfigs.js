@@ -9,16 +9,23 @@ export function defaultConfigs() {
     }
 
     function start() {
-        if (isNull(localStorageClass.getConfig()))
-            createConfig();
-        if (isNull(localStorageClass.getLanguage()))
-            createLanguage();
-        if (isNull(localStorageClass.getMusics()))
-            createMusic();
-        if (isNull(localStorageClass.getPwa()))
-            createPwa();
+        const data = getDataConfig();
 
+        data.forEach(function (value) {
+            if (isNull(value[0]()))
+                value[1]();
+        });
+    }
 
+    function getDataConfig() {
+        const data = [];
+        data.push([localStorageClass.getConfig, createConfig]);
+        data.push([localStorageClass.getLanguage, createLanguage]);
+        data.push([localStorageClass.getMusics, createMusic]);
+        data.push([localStorageClass.getPwa, createPwa]);
+        data.push([localStorageClass.getTheme, createTheme]);
+
+        return data;
     }
 
     function createConfig() {
@@ -32,8 +39,8 @@ export function defaultConfigs() {
             "loop": false,
             "mute": false
         }
-        localStorageClass.setConfig(config);
 
+        localStorageClass.setConfig(config);
     }
 
     function createLanguage() {
@@ -44,6 +51,7 @@ export function defaultConfigs() {
             ],
             "currentLanguage": "pt"
         };
+
         localStorageClass.setLanguage(lg);
 
     }
@@ -51,6 +59,7 @@ export function defaultConfigs() {
     function createMusic() {
         const empty = {};
         const emptyArray = [];
+
         localStorageClass.setMusics(empty);
         localStorageClass.setPlayLists(empty);
         localStorageClass.setCurrentPlayList(emptyArray);
@@ -64,11 +73,15 @@ export function defaultConfigs() {
     }
 
     function createPwa() {
-        const pwa = {
-            "alert": true
-        }
+        const pwa = { "alert": true }
 
         localStorageClass.setPwa(pwa);
+    }
+
+    function createTheme() {
+        const theme = { "theme": "default" };
+
+        localStorageClass.setTheme(theme);
     }
 
     return {

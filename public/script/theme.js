@@ -2,34 +2,92 @@ import { localStorageObject } from "./localStorageObject.js";
 
 let localStorageClass;
 
-export function theme(config = {}) {
-    localStorageClass = (config.localStorageObject) ? config.localStorageObject : localStorageObject();
-    $("#dark_light").click(function () { toggleDarkLight() });
-    $(".tema").removeClass("dark-mode").removeClass("light-mode").addClass(getTheme().theme);
-    $("body").removeClass("dark-mode").removeClass("light-mode").addClass(getTheme().theme);
+export function theme() {
 
+    function init(config = {}) {
+        localStorageClass = (config.localStorageObject) ? config.localStorageObject : localStorageObject();
+        start();
+    }
+
+    function start() {
+        radioConfig();
+        toggleDarkLight();
+    }
+
+    function radioConfig(){
+        const theme = getTheme().theme;
+
+        switch (theme) {
+            case "default":
+                $(".radioTheme").filter('[value=default]').prop('checked', true);
+                break;
+            case "dark":
+                $(".radioTheme").filter('[value=dark]').prop('checked', true);
+                break;
+            case "light":
+                $(".radioTheme").filter('[value=light]').prop('checked', true);
+                break;
+            default:
+                $(".radioTheme").filter('[value=default]').prop('checked', true);
+                break;
+        }
+    }
+
+    function toggleDarkLight() {
+        const theme = getTheme().theme;
+
+        switch (theme) {
+            case "default":
+                setDeviceTheme();
+                break;
+            case "dark":
+                addClass(theme);
+                break;
+            case "light":
+                addClass(theme);
+                break;
+            default:
+                setDeviceTheme();
+                setTheme("default");
+                break;
+        }
+    }
 
     function getTheme() {
         let theme = localStorageClass.getTheme();
-        if (theme == undefined || theme == null) {
-            theme = { "theme": "light-mode" };
-            localStorageClass.setTheme(theme);
-        }
         return theme;
     }
 
     function setTheme(data) {
-        localStorageClass.setTheme(data);
+        const theme = {"theme": data};
+        localStorageClass.setTheme(theme);
     }
 
-    function toggleDarkLight() {
-        var tema = $("body");
-        var currentClass = tema[0].classList[1];
-        var newClass = (currentClass == "dark-mode") ? "light-mode" : "dark-mode";
-        tema.removeClass(currentClass).addClass(newClass);
-        setTheme({ "theme": newClass });
+    function removeClass() {
+        $(".themeClear").removeClass("bg-clear-dark").removeClass("bg-clear-light");
+        $(".themeDeep").removeClass("bg-deep-dark").removeClass("bg-deep-light");
+    }
+
+    function addClass(theme) {
+        removeClass();
+        $(".themeClear").addClass("bg-clear-" + theme);
+        $(".themeDeep").addClass("bg-deep-" + theme);
+    }
+
+    function setDeviceTheme() {
+        if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+                addClass("dark");
+            else
+                addClass("light");
+        } else {
+            addClass("light");
+        }
     }
 
     return {
+        init,
+        setTheme,
+        toggleDarkLight
     }
 }

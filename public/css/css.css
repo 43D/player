@@ -34,6 +34,26 @@ body.dark-mode {
     margin-top: 52px;
 }
 
+.bg-deep-dark {
+    color: #E8ECED;
+    fill: #E8ECED;
+    background-color: #18191B;
+}
+
+.bg-clear-dark {
+    color: #E8ECED;
+    fill: #E8ECED;
+    background-color: #33363c;
+}
+
+
+.bg-deep-light {
+    background-color: #ffffff;
+}
+
+.bg-clear-light {
+    background-color: #f8f9fa;
+}
 @media screen and (max-width: 990px) {
 
     /* 6 */

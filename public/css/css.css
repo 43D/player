@@ -70,6 +70,18 @@
     fill: #E8ECED;
 }
 
+.list-group-item-success {
+    color: #0f5132 !important;
+    background-color: #d1e7dd !important;
+}
+
+.list-group-item-success>div>div>button,
+.list-group-item-success>div>div>button:focus,
+.list-group-item-success>div>div>button:hover {
+    color: #000;
+}
+
+
 @media screen and (max-width: 990px) {
 
     /* 6 */

@@ -166,10 +166,10 @@ export function mediaManager() {
 
     function makeLi(id, music) {
         if (music) {
-            let li = $("<li>").addClass("list-group-item");
+            let li = $("<li>").addClass("list-group-item themeClear");
             let row = $("<div>").addClass("row");
             let div1 = $("<div>").addClass("col-2 col-sm-1 border-end d-flex align-items-center");
-            let btnPlay = $("<button>").addClass("btn w-100 skippedPlay").attr("id", "list-play-music-" + id);
+            let btnPlay = $("<button>").addClass("btn themeClearLink w-100 skippedPlay").attr("id", "list-play-music-" + id);
             btnPlay.append(makeIcon("bi bi-play"));
             div1.append(btnPlay);
 

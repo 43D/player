@@ -99,7 +99,7 @@ export function playlistManager() {
 
         let mainDiv = $("<div>");
         let ul = $("<ul>").addClass("list-group");
-        let li = $("<li>").addClass("list-group-item");
+        let li = $("<li>").addClass("list-group-item themeClear");
         let row = makeMenu(id, playlist.name, finalList.length);
         let table = makeTable(id, finalList);
         li.append(row);
@@ -113,7 +113,7 @@ export function playlistManager() {
         let divRow = $("<div>").addClass("row");
 
         let div1 = $("<div>").addClass("col-2 col-sm-1 border-end  d-flex align-items-center");
-        let btn = $('<button>').addClass("btn w-100 playlistNow").attr("id", "playlist-id-" + id);
+        let btn = $('<button>').addClass("btn themeClearLink w-100 playlistNow").attr("id", "playlist-id-" + id);
         btn.append(makeIcon("bi bi-play"));
         div1.append(btn);
         divRow.append(div1);
@@ -129,7 +129,7 @@ export function playlistManager() {
         divRow.append(div3);
 
         let div4 = $("<div>").addClass("col-2 col-sm-1 border-start d-flex align-items-center justify-content-end");
-        let btnMenu = $('<button>').addClass("btn w-100").attr("data-bs-toggle", "dropdown").attr("aria-expanded", "false");
+        let btnMenu = $('<button>').addClass("themeClearLink w-100").attr("data-bs-toggle", "dropdown").attr("aria-expanded", "false");
         btnMenu.append(makeIcon("bi bi-three-dots"));
         div4.append(btnMenu);
         div4.append(makeOptionMusicList(id));
@@ -140,7 +140,7 @@ export function playlistManager() {
     }
 
     function makeOptionMusicList(id) {
-        let ul = $("<ul>").addClass("dropdown-menu").attr("style", "z-index: 1035;");
+        let ul = $("<ul>").addClass("dropdown-menu themeClear").attr("style", "z-index: 1035;");
 
         ul.append(makeLiDropdown("", "bi bi-collection", "Exibir músicas").attr("data-bs-toggle", "collapse").attr("data-bs-target", "#collapse-playlist-" + id));
         ul.append(makeLiDropdown("downPlaylist", "bi bi-box-arrow-down", "JSON", "playlist-down-" + id));
@@ -152,7 +152,7 @@ export function playlistManager() {
 
     function makeLiDropdown(classe, icon, title, id = "") {
         let li = $("<li>");
-        let a = $("<a>").addClass("dropdown-item " + classe).attr("href", "#").attr("id", id);
+        let a = $("<a>").addClass("dropdown-item  themeClearLink themeClearMenu " + classe).attr("href", "#").attr("id", id);
         a.append(makeIcon(icon));
         a.html(a.html() + " " + title);
 

@@ -14,7 +14,7 @@ export function theme() {
         toggleDarkLight();
     }
 
-    function radioConfig(){
+    function radioConfig() {
         const theme = getTheme().theme;
 
         switch (theme) {
@@ -59,7 +59,7 @@ export function theme() {
     }
 
     function setTheme(data) {
-        const theme = {"theme": data};
+        const theme = { "theme": data };
         localStorageClass.setTheme(theme);
     }
 
@@ -72,6 +72,8 @@ export function theme() {
         removeClass();
         $(".themeClear").addClass("bg-clear-" + theme);
         $(".themeDeep").addClass("bg-deep-" + theme);
+        $(".themeClearLink").addClass("bg-clear-" + theme + "-link");
+        $(".themeClearMenu").addClass("bg-clear-" + theme + "-menu");
     }
 
     function setDeviceTheme() {

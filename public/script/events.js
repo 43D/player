@@ -167,6 +167,7 @@ export function events() {
         $("#reload").click(function () {
             $("#musicbarNav").removeClass("show");
             playerClass.reload();
+            themeClass.toggleDarkLight();
         });
     }
 

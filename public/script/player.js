@@ -40,7 +40,7 @@ export function player() {
         musicManagerClass.init({ "events": eventsClass });
         playlistManagerClass.init({ "events": eventsClass });
         mediaManagerClass.init({ "musicManager": musicManagerClass, "events": eventsClass });
-
+        themeClass.toggleDarkLight();
         getParam();
 
         checkPwa();

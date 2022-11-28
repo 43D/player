@@ -51,9 +51,23 @@ body.dark-mode {
     background-color: #ffffff;
 }
 
-.bg-clear-light {
-    background-color: #f8f9fa;
+.bg-clear-light-link {
+    color: #000;
+    fill: #000;
 }
+
+.bg-clear-dark-menu:hover,
+.bg-clear-dark-menu:focus {
+    background-color: #5c5e62;
+}
+
+.bg-clear-dark-link,
+.bg-clear-dark-link:hover,
+.bg-clear-dark-link:focus {
+    color: #E8ECED;
+    fill: #E8ECED;
+}
+
 @media screen and (max-width: 990px) {
 
     /* 6 */

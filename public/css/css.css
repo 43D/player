@@ -24,12 +24,6 @@
     height: 80%;
 }
 
-body.dark-mode {
-    background-color: black;
-    color: white;
-    border-color: blue;
-}
-
 .video-center {
     margin-top: 52px;
 }
@@ -46,12 +40,20 @@ body.dark-mode {
     background-color: #33363c;
 }
 
-
 .bg-deep-light {
     background-color: #ffffff;
 }
 
-.bg-clear-light-link {
+.bg-clear-light {
+    color: #000;
+    fill: #000;
+    background-color: #f9f9f9;
+}
+
+
+.bg-clear-light-link,
+.bg-clear-light-link:hover,
+.bg-clear-light-link:focus {
     color: #000;
     fill: #000;
 }

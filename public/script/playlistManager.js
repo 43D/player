@@ -129,7 +129,7 @@ export function playlistManager() {
         divRow.append(div3);
 
         let div4 = $("<div>").addClass("col-2 col-sm-1 border-start d-flex align-items-center justify-content-end");
-        let btnMenu = $('<button>').addClass("themeClearLink w-100").attr("data-bs-toggle", "dropdown").attr("aria-expanded", "false");
+        let btnMenu = $('<button>').addClass("btn themeClearLink w-100").attr("data-bs-toggle", "dropdown").attr("aria-expanded", "false");
         btnMenu.append(makeIcon("bi bi-three-dots"));
         div4.append(btnMenu);
         div4.append(makeOptionMusicList(id));

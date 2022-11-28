@@ -66,6 +66,8 @@ export function theme() {
     function removeClass() {
         $(".themeClear").removeClass("bg-clear-dark").removeClass("bg-clear-light");
         $(".themeDeep").removeClass("bg-deep-dark").removeClass("bg-deep-light");
+        $(".themeClearLink").removeClass("bg-clear-dark-link").removeClass("bg-clear-light-link");
+        $(".themeClearMenu").removeClass("bg-clear-dark-menu").removeClass("bg-clear-light-menu");
     }
 
     function addClass(theme) {
@@ -74,6 +76,11 @@ export function theme() {
         $(".themeDeep").addClass("bg-deep-" + theme);
         $(".themeClearLink").addClass("bg-clear-" + theme + "-link");
         $(".themeClearMenu").addClass("bg-clear-" + theme + "-menu");
+        if(theme === "dark"){
+            $(".btn-outline-secondary").addClass("btn-outline-light").removeClass("btn-outline-secondary");
+        }else{
+            $(".btn-outline-light").addClass("btn-outline-secondary").removeClass("btn-outline-light");
+        }
     }
 
     function setDeviceTheme() {

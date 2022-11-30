@@ -24,7 +24,14 @@ export function events() {
         mediaManagerClass = (config.mediaManager) ? config.mediaManager : mediaManager();
     }
 
+    function teste() {
+        const tema = window.matchMedia("(prefers-color-scheme: dark)");
+        tema.addEventListener("change", e => themeClass.toggleDarkLight());
+
+    }
+
     function start() {
+        teste();
         createButtonAction();
         muteActionMod();
         btnAddPlaylistById();

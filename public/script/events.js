@@ -24,14 +24,8 @@ export function events() {
         mediaManagerClass = (config.mediaManager) ? config.mediaManager : mediaManager();
     }
 
-    function teste() {
-        const tema = window.matchMedia("(prefers-color-scheme: dark)");
-        tema.addEventListener("change", e => themeClass.toggleDarkLight());
-
-    }
-
     function start() {
-        teste();
+        themeSystem();
         createButtonAction();
         muteActionMod();
         btnAddPlaylistById();
@@ -433,6 +427,12 @@ export function events() {
         $(".pwa-install").click(function () {
             playerClass.installPwa();
         });
+    }
+
+    function themeSystem() {
+        const tema = window.matchMedia("(prefers-color-scheme: dark)");
+        tema.addEventListener("change", e => themeClass.toggleDarkLight());
+
     }
 
     return {

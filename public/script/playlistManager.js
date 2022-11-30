@@ -88,12 +88,6 @@ export function playlistManager() {
         return $('<i>').addClass(icon);
     }
 
-    function compareMusic(a, b) {
-        a = a.toUpperCase();
-        b = b.toUpperCase();
-        return (a < b) ? -1 : (a > b) ? 1 : 0;
-    }
-
     function makeList(id, playlist, finalList) {
         const display = $("#display-playlist");
 
@@ -162,7 +156,7 @@ export function playlistManager() {
 
     function makeTable(id, finalList) {
         let div = $("<div>").addClass("collapse").attr("id", "collapse-playlist-" + id);
-        let table = $("<table>").addClass("table table-striped table-hover");
+        let table = $("<table>").addClass("table");
         let tbody = $("<tbody>");
 
         let i = 1;
@@ -177,7 +171,7 @@ export function playlistManager() {
     }
 
     function makeRow(i, id) {
-        let tr = $("<tr>");
+        let tr = $("<tr>").addClass("themeClearLink themeClearMenu");
         let th = $("<th>").html("#" + i);
         let td1 = $("<td>").html(musics[id].name);
         let td2 = $("<td>").html(musics[id].artist);

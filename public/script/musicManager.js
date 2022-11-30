@@ -157,7 +157,7 @@ export function musicManager() {
         const music = musics[idMusic];
 
         let div = $("<div>").addClass("collapse").attr("id", id);
-        let table = $("<table>").addClass("table table-striped table-hover");
+        let table = $("<table>").addClass("table");
         let tbody = $("<tbody>");
 
         let tr1 = makeTr();
@@ -206,7 +206,7 @@ export function musicManager() {
     }
 
     function makeTr() {
-        return $("<tr>");
+        return $("<tr>").addClass("themeClearLink themeClearMenu");
     }
     function makeTh(value) {
         return $("<th>").html(value);

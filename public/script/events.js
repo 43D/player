@@ -176,6 +176,7 @@ export function events() {
             $("#musicbarNav").removeClass("show");
             displayClass.displayShowById("display-search");
             playerClass.searchAction();
+            themeClass.toggleDarkLight();
         });
     }
 

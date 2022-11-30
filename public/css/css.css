@@ -53,8 +53,8 @@
 .bg-clear-light-link,
 .bg-clear-light-link:hover,
 .bg-clear-light-link:focus {
-    color: #000;
-    fill: #000;
+    color: #000!important;
+    fill: #000!important;
 }
 
 .bg-clear-dark-menu:hover,
@@ -62,11 +62,16 @@
     background-color: #5c5e62;
 }
 
+.bg-clear-light-menu:hover,
+.bg-clear-light-menu:focus {
+    background-color: #e6e6e6;
+}
+
 .bg-clear-dark-link,
 .bg-clear-dark-link:hover,
 .bg-clear-dark-link:focus {
-    color: #E8ECED;
-    fill: #E8ECED;
+    color: #E8ECED!important;
+    fill: #E8ECED!important;
 }
 
 .list-group-item-success {

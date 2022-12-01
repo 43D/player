@@ -8,7 +8,12 @@ import { search } from "./search.js";
 import { localStorageObject } from "./localStorageObject.js";
 import { events } from "./events.js";
 import { mediaManager } from "./mediaManager.js";
+import { database } from "./database.js";
+import { importMusic } from "./importMusic.js";
 
+
+let importMusicClass;
+let databaseClass;
 let mediaManagerClass;
 let eventsClass;
 let localStorageObjectClass;
@@ -25,24 +30,29 @@ export function player() {
         localStorageObjectClass = localStorageObject();
         defaultConfigsClass = defaultConfigs();
         themeClass = theme();
+        databaseClass = database();
         mediaManagerClass = mediaManager();
-        displayClass = display();
+        importMusicClass = importMusic();
+
         musicManagerClass = musicManager();
-        playlistManagerClass = playlistManager();
+        //playlistManagerClass = playlistManager();
+        //searchClass = search();
+        displayClass = display();
         eventsClass = events();
-        searchClass = search();
 
         defaultConfigsClass.init();
         themeClass.init({ "localStorageObject": localStorageObjectClass });
-        searchClass.init();
-        eventsClass.init({ "theme": themeClass,"mediaManager": mediaManagerClass, "display": displayClass, "player": this, "playlistManager": playlistManagerClass, "musicManager": musicManagerClass });
+        eventsClass.init({ "importMusic": importMusicClass, "theme": themeClass, "mediaManager": mediaManagerClass, "display": displayClass, "player": this, "playlistManager": playlistManagerClass, "musicManager": musicManagerClass });
         displayClass.init({ "player": this, "events": eventsClass });
-        musicManagerClass.init({ "events": eventsClass });
-        playlistManagerClass.init({ "events": eventsClass });
+        databaseClass.init({ "player": this, "musicManager": musicManagerClass });
         mediaManagerClass.init({ "musicManager": musicManagerClass, "events": eventsClass });
+        importMusicClass.init({ "database": databaseClass });
+
+        musicManagerClass.init({ "events": eventsClass, "database": databaseClass });
+        //playlistManagerClass.init({ "events": eventsClass });
+        //searchClass.init();
         themeClass.toggleDarkLight();
         getParam();
-
         checkPwa();
     }
 

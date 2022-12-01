@@ -4,7 +4,9 @@ import { musicManager } from "./musicManager.js";
 import { playlistManager } from "./playlistManager.js";
 import { mediaManager } from "./mediaManager.js";
 import { theme } from "./theme.js";
+import { importMusic } from "./importMusic.js";
 
+let importMusicClass;
 let themeClass;
 let mediaManagerClass
 let musicManagerClass;
@@ -22,6 +24,7 @@ export function events() {
         themeClass = (config.theme) ? config.theme : theme();
         playlistManagerClass = (config.playlistManager) ? config.playlistManager : playlistManager();
         mediaManagerClass = (config.mediaManager) ? config.mediaManager : mediaManager();
+        importMusicClass = (config.importMusic) ? config.importMusic : importMusic();
     }
 
     function start() {
@@ -38,8 +41,19 @@ export function events() {
         selectQuality();
         radioTheme();
         btnMedia();
-        radioImport();
         pwa();
+        importMusic();
+    }
+
+    function importMusic() {
+        importTabLink();
+        importTabFile();
+        importSwitchName();
+        btnImportEdit();
+        btnImportSave();
+        btnImportCancell();
+        btnImportFastSave();
+        btnImportFastPlay();
     }
 
     function btnMedia() {
@@ -409,12 +423,87 @@ export function events() {
         });
     }
 
-    function radioImport() {
-        $(".radioImport").click(function () {
-            $(".importOptionDisplay").addClass("d-none");
-            $("#import-" + $(this).val()).removeClass("d-none");
+    function importTabLink() {
+        $("#import-tab-link").click(function () {
+            $("#import-file").addClass("d-none");
+            $("#import-link").removeClass("d-none");
+            $(".import-tab").removeClass("active");
+            $("#import-tab-link").addClass("active");
         });
+    }
 
+    function importTabFile() {
+        $("#import-tab-file").click(function () {
+            $("#import-link").addClass("d-none");
+            $("#import-file").removeClass("d-none");
+            $(".import-tab").removeClass("active");
+            $("#import-tab-file").addClass("active");
+        });
+    }
+
+    function importSwitchName() {
+        $("#import-switch-name").click(function (e) {
+            if ($("#import-switch-name").prop('checked')) {
+                $("#import-playlist-name").prop("disabled", false);
+            } else {
+                $("#import-playlist-name").prop("disabled", true);
+            }
+        });
+    }
+
+    function btnImportEdit() {
+        $("#import-btn-edit").click(async function (e) {
+            if (await importMusicClass.getNewMusic())
+                displayClass.displayShowById("display-import-list");
+
+        });
+    }
+
+    function btnImportSave() {
+        $("#import-btn-save").click(function (e) {
+            $($(".import-audio").get(-1)).bind("loadeddata", function (e) {
+                displayClass.displayShowById("display-import-success");
+                importMusicClass.save();
+                displayClass.displayShowById("display-import-success");
+            });
+        });
+    }
+
+    function btnImportCancell() {
+        $("#import-btn-cancell").click(function (e) {
+            $("#import-switch-name").prop("checked", true).click();
+            importMusicClass.clear();
+            displayClass.displayShowById("display-music-anime");
+        });
+    }
+
+    function btnImportFastSave() {
+        $("#import-btn-fast-save").click(async function (e) {
+            if (await importMusicClass.getNewMusic()) {
+                $("#import-switch-name").prop("checked", false).click();
+                $($(".import-audio").get(-1)).bind("loadeddata", function (e) {
+                    displayClass.displayShowById("display-import-success");
+                    importMusicClass.save();
+                    displayClass.displayShowById("display-import-success");
+                });
+
+            }
+        });
+    }
+
+    function btnImportFastPlay() {
+        $("#import-btn-fast-play").click(async function (e) {
+            if (await importMusicClass.getNewMusic()) {
+                $("#import-switch-name").prop("checked", false).click();
+                $($(".import-audio").get(-1)).bind("loadeddata", function (e) {
+                    displayClass.displayShowById("display-import-success");
+                    importMusicClass.save();
+
+                    // play playlist
+                    displayClass.displayShowById("display-import-success");
+                });
+            }
+        });
     }
 
     function btnNever() {

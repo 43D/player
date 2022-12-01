@@ -35,9 +35,9 @@
 }
 
 .bg-clear-dark {
-    color: #E8ECED;
-    fill: #E8ECED;
-    background-color: #33363c;
+    color: #E8ECED!important;
+    fill: #E8ECED!important;
+    background-color: #33363c!important;
 }
 
 .bg-deep-light {
@@ -45,9 +45,9 @@
 }
 
 .bg-clear-light {
-    color: #000;
-    fill: #000;
-    background-color: #f9f9f9;
+    color: #000!important;
+    fill: #000!important;
+    background-color: #f9f9f9!important;
 }
 
 .bg-clear-light-link,

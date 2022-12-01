@@ -62,7 +62,7 @@
 										</li>
 										<li>
 											<a class="dropdown-item themeClearLink themeClearMenu" href="#fast=music-season" id="music-season">Por
-																																																																																				                                            Season</a>
+																																																																																																																																																																								                                            Season</a>
 										</li>
 									</ul>
 								</li>
@@ -77,7 +77,7 @@
 										</li>
 										<li>
 											<a class="dropdown-item themeClearLink themeClearMenu" href="#fast=new-playlist" id="new-playlist">Criar uma
-																																																																																				                                            PlayList</a>
+																																																																																																																																																																								                                            PlayList</a>
 										</li>
 									</ul>
 								</li>
@@ -174,42 +174,69 @@
 				<div class="col-12 tela d-none" id="display-json-fast">
 					<form action="javascript:void(0);" class="mt-5 mx-5">
 						<div class="row">
-							<div class="form-check col-12 col-md-6">
-								<input class="form-check-input radioImport" type="radio" name="flexRadioOptionImport" id="flexRadioOptionImport1" value="link" checked>
-								<label class="form-check-label" for="flexRadioOptionImport1">
-									Importar via link (https://.json)
-								</label>
-							</div>
-							<div class="form-check col-12 col-md-6">
-								<input class="form-check-input radioImport" type="radio" name="flexRadioOptionImport" id="flexRadioOptionImport2" value="file">
-								<label class="form-check-label" for="flexRadioOptionImport2">
-									Importar via arquivo (file.json)
-								</label>
-							</div>
+							<ul class="nav nav-tabs justify-content-center">
+								<li class="nav-item themeClear mx-2 rounded-top">
+									<button id="import-tab-link" class="nav-link import-tab themeClear rounded-top active">Via link</button>
+								</li>
+								<li class="nav-item themeClear mx-2	rounded-top">
+									<button id="import-tab-file" class="nav-link import-tab themeClear rounded-top">Via arquivo</button>
+								</li>
+							</ul>
 							<div class="col-12 mb-3 my-5 importOptionDisplay" id="import-link">
-								<input type="text" class="form-control" placeholder="https://.json" aria-label="https://.json" aria-describedby="basic-addon1" id="urlJson">
+								<input type="text" class="form-control" value="http://amq.localhost/snk.json" placeholder="https://.json" aria-label="https://.json" aria-describedby="basic-addon1" id="urlJson">
 							</div>
 							<div class="col-12 mb-3 my-5 d-none importOptionDisplay" id="import-file">
-								<input type="file" class="form-control" id="fileJson">
+								<input type="file" accept=".json" class="form-control" id="fileJson">
 							</div>
 							<div class="col-12 text-center my-5">
-								<button type="button" class="btn btn-outline-secondary btn-lg">
+								<button type="button" id="import-btn-fast-play" class="btn btn-outline-secondary btn-lg">
 									<i class="bi bi-play"></i>
 									Ouvir</button>
-								<button type="button" class="btn btn-outline-success btn-lg">
+								<button type="button" id="import-btn-fast-save" class="btn btn-outline-success btn-lg">
 									Salvar</button>
-								<button type="button" class="btn btn-outline-danger btn-lg">
+								<button type="button" id="import-btn-edit" class="btn btn-outline-danger btn-lg">
 									<i class="bi bi-pencil"></i>
 									Editar</button>
 							</div>
-							<div class="col-12">
-								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchPlayList">
-									<label class="form-check-label" for="flexSwitchPlayList">Nome da Playlist</label>
-								</div>
-							</div>
+
 						</div>
 					</form>
+				</div>
+				<div class="col-12 tela d-none" id="display-import-list">
+					<form action="javascript:void(0);" class="mt-5 mx-5 row">
+						<div class="form-check form-switch d-flex justify-content-center">
+							<input class="form-check-input me-3" type="checkbox" role="switch" id="import-switch-name">
+							<label class="form-check-label" for="flexSwitchPlayList">Salvar em Playlist?</label>
+						</div>
+						<div>
+							<input class="form-control" name="import-playlist-name" type="text" id="import-playlist-name" disabled>
+						</div>
+						<div class="table-responsive col-12 my-5">
+							<table class="table table-hover table-striped">
+								<thead>
+									<tr>
+										<th scope="col"><i class="bi bi-check-square"></i></th>
+										<th scope="col">Audio</th>
+										<th scope="col">Música</th>
+										<th scope="col">Anime</th>
+										<th scope="col" class="d-none">Audio</th>
+										<th scope="col">MAL</th>
+									</tr>
+								</thead>
+								<tbody id="import-tbody"></tbody>
+							</table>
+						</div>
+						<div class="d-flex justify-content-center">
+							<button class="btn btn-outline-success mx-1" id="import-btn-save">Salvar</button>
+							<button class="btn btn-outline-danger mx-1" id="import-btn-cancell">Cancelar</button>
+						</div>
+					</form>
+
+				</div>
+				<div class="col-12 tela d-none" id="display-import-success">
+					<h4 class="text-center mt-4">Sucesso!!!</h4>
+					<p class="text-center">Acesse algumas das abas de música e começe a ouvir</p>
+					<p class="text-center"> <span id="import-count-music">0</span> de <span id="import-count-total"></span> músicas</p>
 				</div>
 				<div class="col-12 tela d-none" id="display-search"></div>
 			</div>

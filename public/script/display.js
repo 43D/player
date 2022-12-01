@@ -1,12 +1,9 @@
 import { events } from "./events.js";
-import { player } from "./player.js";
 
 let eventsClass;
-let playerClass;
 
 export function display() {
     function init(config = {}) {
-        playerClass = (config.player) ? config.player : player();
         eventsClass = (config.events) ? config.events : events();
         eventsClass.start();
     }

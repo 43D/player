@@ -1,44 +1,27 @@
-import { eventos } from "./events.js";
-import { display } from "./display.js";
-import { theme } from "../theme.js";
 import { jsonManipulator } from "../jsonManipulator.js";
 import { fileReader } from "../fileReader.js";
-import { localStorageObject } from "../localStorageObject.js";
-import { defaultConfigs } from "../defaultConfigs.js";
 import { saveJson } from "./saveJson.js";
 
 let saveJsonClass;
-let defaultConfigsClass;
 let fileReaderClass;
 let jsonManClass;
-let eventsClass;
-let displayClass;
-let themeClass;
-let localStorageObjectClass;
 export function importJson() {
 
     let data;
     let musicChoose;
 
     function init() {
-        defaultConfigsClass = defaultConfigs();
-        defaultConfigsClass.init();
-        themeClass = theme();
-        displayClass = display();
-        eventsClass = eventos();
-        eventsClass.init({ displayClass, 'importJson': this });
-        eventsClass.start();
         jsonManClass = jsonManipulator();
+        
         fileReaderClass = fileReader();
-        localStorageObjectClass = localStorageObject();
+        
         saveJsonClass = saveJson();
+        
         saveJsonClass.init();
 
     }
 
-    function confirmar() {
-        displayClass.exibirList();
-    }
+    
     function getJson() {
         return getJsonAMQ();
     }
@@ -63,7 +46,6 @@ export function importJson() {
 
     return {
         init,
-        confirmar,
         getJson,
         setList,
         makeTable,

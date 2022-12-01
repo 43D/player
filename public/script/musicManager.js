@@ -1,8 +1,8 @@
-import { localStorageObject } from "./localStorageObject.js";
+import { database } from "./database.js";
 import { events } from "./events.js";
 
 let eventsClass;
-let localStorageClass;
+let databaseClass;
 
 export function musicManager() {
     let musics = {};
@@ -11,43 +11,48 @@ export function musicManager() {
     let musicsBySeason = {};
 
     function init(config = {}) {
-        localStorageClass = (config.localStorageObject) ? config.localStorageObject : localStorageObject();
+        databaseClass = (config.database) ? config.database : database();
         eventsClass = (config.events) ? config.events : events();
-        musics = localStorageClass.getMusics();
-        musicsByAnime = localStorageClass.getMusicsAnime();
-        musicsByName = localStorageClass.getMusicsName();
-        musicsBySeason = localStorageClass.getMusicsSeason();
-        start();
+
+        // musics = localStorageClass.getMusics();
+        // musicsByAnime = localStorageClass.getMusicsAnime();
+        // musicsByName = localStorageClass.getMusicsName();
+        // musicsBySeason = localStorageClass.getMusicsSeason();
+        //start();
     }
 
     function reload() {
         $("#display-music-name").empty();
         $("#display-music-anime").empty();
         $("#display-music-season").empty();
-        musics = localStorageClass.getMusics();
-        musicsByAnime = localStorageClass.getMusicsAnime();
-        musicsByName = localStorageClass.getMusicsName();
-        musicsBySeason = localStorageClass.getMusicsSeason();
+
+        musics = [];
+        musicsByAnime = {};
+        musicsByName = {};
+        musicsBySeason = {};
+
+        databaseClass.musicDisplay();
+
         start();
     }
 
     function start() {
-        makeItensMusic("display-music-name", musicsByName, "name");
-        makeItensMusic("display-music-anime", musicsByAnime, "anime");
-        makeItensMusic("display-music-season", musicsBySeason, "season");
         eventsClass.btnsMusics();
+        // makeItensMusic("display-music-name", musicsByName, "name");
+        // makeItensMusic("display-music-anime", musicsByAnime, "anime");
+        // makeItensMusic("display-music-season", musicsBySeason, "season");
     }
 
     function makeItensMusic(id, musicsId, typeList) {
         let list = [];
         const keys = Object.keys(musicsId);
 
-        if (keys.length == 0)
+        if (musicsId.length == 0)
             addWarning(id);
         else
             keys.sort().forEach(function (k) {
                 let listMusics = [];
-                musicsId[k].forEach(function (j) {
+                musicsId[k].musics.forEach(function (j) {
                     listMusics[listMusics.length] = getNameItem(j);
                 });
                 listMusics.sort(function (a, b) {
@@ -57,11 +62,11 @@ export function musicManager() {
                     list[list.length] = makeItem(Object.keys(j)[0], typeList);
                 });
 
-                if (musics[musicsId[k][0]])
+                if (musics[musicsId[k].musics[0]])
                     if (typeList == "anime")
-                        makeList(id, list, musics[musicsId[k][0]].anime.romaji, musics[musicsId[k][0]].anime.english);
+                        makeList(id, list, musics[musicsId[k].musics[0]].anime.romaji, musics[musicsId[k].musics[0]].anime.english);
                     else if (typeList == "season")
-                        makeList(id, list, musics[musicsId[k][0]].season);
+                        makeList(id, list, musics[musicsId[k].musics[0]].season);
                     else
                         makeList(id, list, k);
 
@@ -278,16 +283,58 @@ export function musicManager() {
     }
 
     function save() {
-        localStorageClass.setMusicsAnime(musicsByAnime);
-        localStorageClass.setMusicsName(musicsByName);
-        localStorageClass.setMusicsSeason(musicsBySeason);
-        localStorageClass.setMusics(musics);
+        // localStorageClass.setMusicsAnime(musicsByAnime);
+        // localStorageClass.setMusicsName(musicsByName);
+        // localStorageClass.setMusicsSeason(musicsBySeason);
+        // localStorageClass.setMusics(musics);
+    }
+
+    function setMusics(obj = []) {
+        musics = obj;
+    }
+
+    function incrementMusic(obj = {}) {
+        musics[obj.id] = obj;
+    }
+
+    function incrementMusicName(obj = {}) {
+        musicsByName[obj.name] = obj;
+    }
+
+    function showMusicName() {
+        makeItensMusic("display-music-name", musicsByName, "name");
+    }
+
+    function incrementMusicAnime(obj = {}) {
+        musicsByAnime[obj.name] = obj;
+    }
+
+    function showMusicAnime() {
+        makeItensMusic("display-music-anime", musicsByAnime, "anime");
+    }
+
+
+    function incrementMusicSeason(obj = {}) {
+        musicsBySeason[obj.name] = obj;
+    }
+
+    function showMusicSeason() {
+        makeItensMusic("display-music-season", musicsBySeason, "season");
     }
 
     return {
         init,
         reload,
+        start,
         removeById,
-        getMusicById
+        getMusicById,
+        setMusics,
+        incrementMusic,
+        incrementMusicName,
+        showMusicName,
+        incrementMusicAnime,
+        showMusicAnime,
+        incrementMusicSeason,
+        showMusicSeason
     }
 }

@@ -479,12 +479,11 @@ export function events() {
 
     function btnImportFastSave() {
         $("#import-btn-fast-save").click(async function (e) {
+            displayClass.displayShowById("display-import-success");
             if (await importMusicClass.getNewMusic()) {
                 $("#import-switch-name").prop("checked", false).click();
                 $($(".import-audio").get(-1)).bind("loadeddata", function (e) {
-                    displayClass.displayShowById("display-import-success");
                     importMusicClass.save();
-                    displayClass.displayShowById("display-import-success");
                 });
 
             }
@@ -493,14 +492,14 @@ export function events() {
 
     function btnImportFastPlay() {
         $("#import-btn-fast-play").click(async function (e) {
+            displayClass.displayShowById("display-import-success");
             if (await importMusicClass.getNewMusic()) {
                 $("#import-switch-name").prop("checked", false).click();
                 $($(".import-audio").get(-1)).bind("loadeddata", function (e) {
-                    displayClass.displayShowById("display-import-success");
                     importMusicClass.save();
 
                     // play playlist
-                    displayClass.displayShowById("display-import-success");
+                    
                 });
             }
         });

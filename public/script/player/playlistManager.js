@@ -1,8 +1,8 @@
-import { database } from "../database/database.old.js";
+import { indexedDatabase } from "../database/indexedDatabase.js";
 import { events } from "../events/events.js";
 
 let eventsClass;
-let databaseClass;
+let indexedDatabaseClass;
 
 export function playlistManager() {
 
@@ -10,7 +10,7 @@ export function playlistManager() {
     let playlist = {};
 
     function init(config = {}) {
-        databaseClass = (config.database) ? config.database : database();
+        indexedDatabaseClass = (config.indexedDatabase) ? config.indexedDatabase : indexedDatabase();
         eventsClass = (config.events) ? config.events : events();
     }
 

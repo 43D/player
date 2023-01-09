@@ -48,7 +48,7 @@ export function importMusic() {
     }
 
     function checkData() {
-        if (data[0].urls.catbox[0]){
+        if (data[0].urls.catbox[0]) {
             $("#import-count-music").html(0);
             $("#import-count-total").html(data.length);
             return true;
@@ -147,17 +147,7 @@ export function importMusic() {
 
     function save() {
         choose();
-        musicChoose.forEach(function (val, key) {
-            let duration = $("#import-audio-" + val)[0].duration;
-            if (!duration)
-                duration = -1;
-            if (key === musicChoose.length - 1)
-                databaseClass.saveMusic(data[val], duration, $("#import-switch-name").prop("checked"), true, $("#import-playlist-name").val());
-            else
-                databaseClass.saveMusic(data[val], duration, $("#import-switch-name").prop("checked"), false, $("#import-playlist-name").val());
-        });
-
-        clear();
+        setTimeout(saveData().save(data, musicChoose, clear, indexedDatabaseClass), 0);
     }
 
     function clear() {
@@ -173,4 +163,37 @@ export function importMusic() {
         save,
         clear
     }
+}
+
+function saveData() {
+
+    function save(data, musicChoose, clear, indexedDatabase) {
+        musicChoose.forEach(function (val, key) {
+            let duration = getDuration(val);
+            data[val]["duration"] = duration;
+            data[val]["playlist"] = {
+                "new": $("#import-switch-name").prop("checked"),
+                "name": $("#import-playlist-name").val()
+            };
+            data[val]["last"] = false;
+            if (key === musicChoose.length - 1)
+                data[val]["last"] = true;
+            console.log(data[val]);
+
+            indexedDatabase.saveMusic(data[val]);
+        });
+
+        console.log("clear");
+        clear();
+    }
+
+    function getDuration(val) {
+        let duration = $("#import-audio-" + val)[0].duration;
+        if (!duration) {
+            duration = -1;
+        }
+        return duration;
+    }
+
+    return { save }
 }

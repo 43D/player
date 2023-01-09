@@ -102,8 +102,13 @@ export function indexedDatabase() {
         musicByS.createIndex('name', 'name', { unique: true });
     }
 
+    function saveMusic(data){
+        
+    }
+
     return {
-        init
+        init,
+        saveMusic
     }
 }
 

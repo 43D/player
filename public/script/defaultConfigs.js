@@ -1,4 +1,4 @@
-import { localStorageObject } from "./localStorageObject.js";
+import { localStorageObject } from "./database/localStorageObject.js";
 
 let localStorageClass;
 

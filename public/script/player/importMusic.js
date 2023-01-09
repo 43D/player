@@ -1,6 +1,6 @@
-import { database } from "./database.js";
-import { jsonManipulator } from "./jsonManipulator.js";
-import { fileReader } from "./fileReader.js";
+import { database } from "../database/database.old.js";
+import { jsonManipulator } from "../Manipulator/jsonManipulator.js";
+import { fileReader } from "../Manipulator/fileReader.js";
 
 let fileReaderClass;
 let jsonManClass;

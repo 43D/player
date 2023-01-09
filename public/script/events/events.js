@@ -1,10 +1,10 @@
 import { display } from "./display.js";
-import { player } from "./player.js";
-import { musicManager } from "./musicManager.js";
-import { playlistManager } from "./playlistManager.js";
-import { mediaManager } from "./mediaManager.js";
-import { theme } from "./theme.js";
-import { importMusic } from "./importMusic.js";
+import { player } from "../player/player.js";
+import { musicManager } from "../player/musicManager.js";
+import { playlistManager } from "../player/playlistManager.js";
+import { mediaManager } from "../player/mediaManager.js";
+import { theme } from "../theme.js";
+import { importMusic } from "../player/importMusic.js";
 
 let importMusicClass;
 let themeClass;

@@ -1,8 +1,8 @@
-import { database } from "./database.js";
-import { events } from "./events.js";
+import { indexedDatabase } from "../database/indexedDatabase.js";
+import { events } from "../events/events.js";
 
 let eventsClass;
-let databaseClass;
+let indexedDatabaseClass;
 
 export function musicManager() {
     let musics = {};
@@ -11,14 +11,8 @@ export function musicManager() {
     let musicsBySeason = {};
 
     function init(config = {}) {
-        databaseClass = (config.database) ? config.database : database();
+        indexedDatabaseClass = (config.indexedDatabase) ? config.indexedDatabase : indexedDatabase();
         eventsClass = (config.events) ? config.events : events();
-
-        // musics = localStorageClass.getMusics();
-        // musicsByAnime = localStorageClass.getMusicsAnime();
-        // musicsByName = localStorageClass.getMusicsName();
-        // musicsBySeason = localStorageClass.getMusicsSeason();
-        //start();
     }
 
     function reload() {
@@ -32,26 +26,22 @@ export function musicManager() {
         musicsBySeason = {};
 
         databaseClass.musicDisplay();
-
-        start();
     }
 
     function start() {
         eventsClass.btnsMusics();
-        // makeItensMusic("display-music-name", musicsByName, "name");
-        // makeItensMusic("display-music-anime", musicsByAnime, "anime");
-        // makeItensMusic("display-music-season", musicsBySeason, "season");
     }
 
     function makeItensMusic(id, musicsId, typeList) {
         let list = [];
         const keys = Object.keys(musicsId);
 
-        if (musicsId.length == 0)
+        if (keys.length == 0)
             addWarning(id);
         else
             keys.sort().forEach(function (k) {
                 let listMusics = [];
+
                 musicsId[k].musics.forEach(function (j) {
                     listMusics[listMusics.length] = getNameItem(j);
                 });
@@ -302,6 +292,7 @@ export function musicManager() {
     }
 
     function showMusicName() {
+        $("#display-music-name").empty();
         makeItensMusic("display-music-name", musicsByName, "name");
     }
 
@@ -310,6 +301,7 @@ export function musicManager() {
     }
 
     function showMusicAnime() {
+        $("#display-music-anime").empty();
         makeItensMusic("display-music-anime", musicsByAnime, "anime");
     }
 
@@ -319,6 +311,7 @@ export function musicManager() {
     }
 
     function showMusicSeason() {
+        $("#display-music-season").empty();
         makeItensMusic("display-music-season", musicsBySeason, "season");
     }
 

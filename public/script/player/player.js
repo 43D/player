@@ -1,14 +1,14 @@
 
-import { theme } from "./theme.js";
-import { display } from "./display.js";
-import { defaultConfigs } from "./defaultConfigs.js";
+import { theme } from "../theme.js";
+import { display } from "../events/display.js";
+import { defaultConfigs } from "../defaultConfigs.js";
 import { musicManager } from "./musicManager.js";
 import { playlistManager } from "./playlistManager.js";
 import { search } from "./search.js";
-import { localStorageObject } from "./localStorageObject.js";
-import { events } from "./events.js";
+import { localStorageObject } from "../database/localStorageObject.js";
+import { events } from "../events/events.js";
 import { mediaManager } from "./mediaManager.js";
-import { database } from "./database.js";
+import { database } from "../database/database.old.js";
 import { importMusic } from "./importMusic.js";
 
 
@@ -35,7 +35,7 @@ export function player() {
         importMusicClass = importMusic();
 
         musicManagerClass = musicManager();
-        //playlistManagerClass = playlistManager();
+        playlistManagerClass = playlistManager();
         //searchClass = search();
         displayClass = display();
         eventsClass = events();
@@ -49,7 +49,7 @@ export function player() {
         importMusicClass.init({ "database": databaseClass });
 
         musicManagerClass.init({ "events": eventsClass, "database": databaseClass });
-        //playlistManagerClass.init({ "events": eventsClass });
+        playlistManagerClass.init({ "events": eventsClass, "database": databaseClass  });
         //searchClass.init();
         themeClass.toggleDarkLight();
         getParam();
@@ -68,7 +68,6 @@ export function player() {
     function reload() {
         musicManagerClass.reload();
         playlistManagerClass.reload();
-        //eventsClass.reload();
     }
 
     function searchAction() {
@@ -118,6 +117,10 @@ export function player() {
             });
     }
 
+    function displayDb(){
+        displayClass.displayShowById("display-error-db");
+    }
+
     return {
         init,
         newPlayList,
@@ -125,7 +128,8 @@ export function player() {
         searchAction,
         clearData,
         disableAlertPwa,
-        installPwa
+        installPwa,
+        displayDb
     }
 
 }

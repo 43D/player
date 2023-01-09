@@ -1,7 +1,7 @@
 
-import { localStorageObject } from "./localStorageObject.js";
+import { localStorageObject } from "../database/localStorageObject.js";
 import { musicManager } from "./musicManager.js";
-import { events } from "./events.js";
+import { events } from "../events/events.js";
 
 let eventsClass;
 let musicManagerClass;

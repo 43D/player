@@ -1,8 +1,8 @@
-import { localStorageObject } from "./localStorageObject.js";
-import { events } from "./events.js";
+import { database } from "../database/database.old.js";
+import { events } from "../events/events.js";
 
 let eventsClass;
-let localStorageClass;
+let databaseClass;
 
 export function playlistManager() {
 
@@ -10,11 +10,8 @@ export function playlistManager() {
     let playlist = {};
 
     function init(config = {}) {
-        localStorageClass = (config.localStorageObject) ? config.localStorageObject : localStorageObject();
+        databaseClass = (config.database) ? config.database : database();
         eventsClass = (config.events) ? config.events : events();
-        musics = localStorageClass.getMusics();
-        playlist = localStorageClass.getPlayLists();
-        start();
     }
 
     function newPlayList(name) {
@@ -39,14 +36,17 @@ export function playlistManager() {
 
     function reload() {
         $("#display-playlist").empty();
-        musics = localStorageClass.getMusics();
-        playlist = localStorageClass.getPlayLists();
-        start();
+        musics = {};
+        playlist = {};   
+        databaseClass.playlistDisplay(); 
     }
 
-    function start() {
-        const keys = Object.keys(playlist);
+    function start(){
+        eventsClass.btnsPlaylists();
+    }
 
+    function makeItensPlaylist() {
+        const keys = Object.keys(playlist);
         if (keys.length == 0)
             addWarning("display-playlist");
         else {
@@ -54,7 +54,7 @@ export function playlistManager() {
             keys.sort().forEach(function (k) {
                 let listMusics = [];
                 let finalList = [];
-                playlist[k][0].musics.forEach(function (j) {
+                playlist[k].musics.forEach(function (j) {
                     const name = getNameItem(j);
                     if (name)
                         listMusics[listMusics.length] = name;
@@ -62,10 +62,10 @@ export function playlistManager() {
                 Object.keys(listMusics).forEach(function (j) {
                     finalList[finalList.length] = Object.keys(listMusics[j])[0];
                 });
-                makeList(k, playlist[k][0], finalList);
-                makeOptionAddPlaylist(k, playlist[k][0].name);
+                makeList(k, playlist[k], finalList);
+                makeOptionAddPlaylist(k, playlist[k].name);
             });
-            eventsClass.btnsPlaylists();
+            
         }
 
     }
@@ -275,15 +275,33 @@ export function playlistManager() {
         return playlist[id][0].musics;
     }
 
+    function incrementPlaylist(obj = {}){
+        playlist[obj.name] = obj;
+    }
+
+    function incrementMusic(obj = {}) {
+        musics[obj.id] = obj;
+    }
+
+    function showPlaylist(){
+        $("#display-playlist").empty();
+        makeItensPlaylist();
+    }
+
     return {
         init,
         newPlayList,
+        start,
+        makeItensPlaylist,
         reload,
         addPlaylistById,
         clonePlaylist,
         removeById,
         editById,
         editPlaylistForm,
-        getAllById
+        getAllById, 
+        incrementPlaylist,
+        incrementMusic,
+        showPlaylist
     }
 }

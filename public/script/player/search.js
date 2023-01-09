@@ -1,5 +1,5 @@
-import { localStorageObject } from "./localStorageObject.js";
-import { events } from "./events.js";
+import { localStorageObject } from "../database/localStorageObject.js";
+import { events } from "../events/events.js";
 
 let eventsClass;
 let localStorageClass;

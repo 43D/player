@@ -1,4 +1,4 @@
-import { player } from "./player.js";
+import { player } from "./player/player.js";
 
 $(function () {
     const playerClass = player();

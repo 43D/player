@@ -22,7 +22,7 @@ export function indexedDatabase() {
         playerClass = (config.player) ? config.player : player();
         indexedDatabaseCRUDClass = (config.indexedDatabaseCRUD) ? config.indexedDatabaseCRUD : indexedDatabaseCRUD();
         indexedDatabaseEventsClass = (config.indexedDatabaseEvents) ? config.indexedDatabaseEvents : indexedDatabaseEvents();
-        
+
         if (window.indexedDB) {
             startDB();
         } else {
@@ -31,13 +31,13 @@ export function indexedDatabase() {
     }
 
     function startDB() {
-        const request = window.indexedDB.open(dbName, 2);
+        const request = window.indexedDB.open(dbName, 3);
 
         request.onsuccess = (event) => {
             db = request.result;
             indexedDatabaseEventsClass.init();
-            indexedDatabaseCRUDClass.init({"db" : request.result});
-    
+            indexedDatabaseCRUDClass.init({ "db": request.result });
+
             // musicDisplay();
             // playlistDisplay();
         }
@@ -61,7 +61,8 @@ export function indexedDatabase() {
         objectMusicsStore.createIndex('firstLetter', 'firstLetter', { unique: false });
         objectMusicsStore.createIndex('artist', 'artist', { unique: false });
         objectMusicsStore.createIndex('name', 'name', { unique: false });
-        objectMusicsStore.createIndex('hash', ['name', 'malid'], { unique: true });
+        objectMusicsStore.createIndex('urlId', 'urlId', { unique: false });
+        objectMusicsStore.createIndex('hash', ['urlId', 'malid'], { unique: true });
 
 
         let objectPlayListStore = db.createObjectStore(playlistsStore,
@@ -102,8 +103,37 @@ export function indexedDatabase() {
         musicByS.createIndex('name', 'name', { unique: true });
     }
 
-    function saveMusic(data){
-        
+    function saveMusic(obj) {
+        const music = {
+            "anime": {
+                "romaji": obj.anime.romaji,
+                "english": obj.anime.english
+            },
+            "artist": obj.artist,
+            "broadcast": obj.animeType,
+            "duration": obj.duration,
+            "firstLetter": obj.name[0].toUpperCase(),
+            "malid": obj.siteIds.malId,
+            "links": {
+                "malid": obj.siteIds.malId,
+                "anilist": obj.siteIds.aniListId,
+                "kitsuid": obj.siteIds.kitsuId
+            },
+            "name": obj.name,
+            "playlists": {},
+            "season": obj.vintage,
+            "type": obj.type,
+            "url": {
+                "0": obj.urls.catbox["0"],
+                "480": obj.urls.catbox["480"],
+                "720": obj.urls.catbox["720"]
+            },
+            "urlId": obj.urlId,
+            "year": obj.vintage.split(" ")[1]
+        }
+        console.log(music);
+
+        // ifMusicExits, update playlist
     }
 
     return {

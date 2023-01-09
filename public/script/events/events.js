@@ -453,19 +453,16 @@ export function events() {
 
     function btnImportEdit() {
         $("#import-btn-edit").click(async function (e) {
+
             if (await importMusicClass.getNewMusic())
                 displayClass.displayShowById("display-import-list");
-
         });
     }
 
     function btnImportSave() {
         $("#import-btn-save").click(function (e) {
-            $($(".import-audio").get(-1)).bind("loadeddata", function (e) {
-                displayClass.displayShowById("display-import-success");
+            displayClass.displayShowById("display-import-success");
                 importMusicClass.save();
-                displayClass.displayShowById("display-import-success");
-            });
         });
     }
 
@@ -499,7 +496,7 @@ export function events() {
                     importMusicClass.save();
 
                     // play playlist
-                    
+
                 });
             }
         });

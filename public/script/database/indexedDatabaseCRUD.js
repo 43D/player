@@ -14,7 +14,7 @@ export function indexedDatabaseCRUD() {
     }
 
     function startDB() {
-        const request = window.indexedDB.open("superPlayerMusic", 2);
+        const request = window.indexedDB.open("superPlayerMusic", 3);
 
         request.onsuccess = (event) => {
             database = request.result;

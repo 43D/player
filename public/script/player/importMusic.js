@@ -176,14 +176,13 @@ function saveData() {
                 "name": $("#import-playlist-name").val()
             };
             data[val]["last"] = false;
+            data[val]["urlId"] = data[val].urls.catbox["0"].split("files.catbox.moe/")[1].split(".mp3")[0];
             if (key === musicChoose.length - 1)
                 data[val]["last"] = true;
-            console.log(data[val]);
 
             indexedDatabase.saveMusic(data[val]);
         });
 
-        console.log("clear");
         clear();
     }
 

@@ -8,12 +8,12 @@ import { search } from "./search.js";
 import { localStorageObject } from "../database/localStorageObject.js";
 import { events } from "../events/events.js";
 import { mediaManager } from "./mediaManager.js";
-import { database } from "../database/database.old.js";
+import { indexedDatabase } from "../database/indexedDatabase.js";
 import { importMusic } from "./importMusic.js";
 
 
 let importMusicClass;
-let databaseClass;
+let indexedDatabaseClass;
 let mediaManagerClass;
 let eventsClass;
 let localStorageObjectClass;
@@ -30,7 +30,7 @@ export function player() {
         localStorageObjectClass = localStorageObject();
         defaultConfigsClass = defaultConfigs();
         themeClass = theme();
-        databaseClass = database();
+        indexedDatabaseClass = indexedDatabase();
         mediaManagerClass = mediaManager();
         importMusicClass = importMusic();
 
@@ -44,12 +44,12 @@ export function player() {
         themeClass.init({ "localStorageObject": localStorageObjectClass });
         eventsClass.init({ "importMusic": importMusicClass, "theme": themeClass, "mediaManager": mediaManagerClass, "display": displayClass, "player": this, "playlistManager": playlistManagerClass, "musicManager": musicManagerClass });
         displayClass.init({ "player": this, "events": eventsClass });
-        databaseClass.init({ "player": this, "musicManager": musicManagerClass });
+        indexedDatabaseClass.init({ "player": this, "musicManager": musicManagerClass });
         mediaManagerClass.init({ "musicManager": musicManagerClass, "events": eventsClass });
-        importMusicClass.init({ "database": databaseClass });
+        importMusicClass.init({ "indexedDatabase": indexedDatabaseClass });
 
-        musicManagerClass.init({ "events": eventsClass, "database": databaseClass });
-        playlistManagerClass.init({ "events": eventsClass, "database": databaseClass  });
+        musicManagerClass.init({ "events": eventsClass, "indexedDatabase": indexedDatabaseClass });
+        playlistManagerClass.init({ "events": eventsClass, "indexedDatabase": indexedDatabaseClass });
         //searchClass.init();
         themeClass.toggleDarkLight();
         getParam();

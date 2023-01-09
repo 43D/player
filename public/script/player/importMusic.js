@@ -1,16 +1,16 @@
-import { database } from "../database/database.old.js";
+import { indexedDatabase } from "../database/indexedDatabase.js";
 import { jsonManipulator } from "../Manipulator/jsonManipulator.js";
 import { fileReader } from "../Manipulator/fileReader.js";
 
 let fileReaderClass;
 let jsonManClass;
-let databaseClass;
+let indexedDatabaseClass;
 export function importMusic() {
     let data;
     let musicChoose;
 
     function init(config = {}) {
-        databaseClass = (config.database) ? config.database : database();
+        indexedDatabaseClass = (config.indexedDatabase) ? config.indexedDatabase : indexedDatabase();
         jsonManClass = (config.jsonManipulator) ? config.jsonManipulator : jsonManipulator();
         fileReaderClass = (config.fileReader) ? config.fileReader : fileReader();
     }

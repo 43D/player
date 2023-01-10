@@ -168,22 +168,53 @@ export function importMusic() {
 function saveData() {
 
     function save(data, musicChoose, clear, indexedDatabase) {
+        let dados = [];
+        let playlist = {
+            "name": $("#import-playlist-name").val(),
+            "musics": []
+        };
         musicChoose.forEach(function (val, key) {
             let duration = getDuration(val);
             data[val]["duration"] = duration;
-            data[val]["playlist"] = {
-                "new": $("#import-switch-name").prop("checked"),
-                "name": $("#import-playlist-name").val()
-            };
             data[val]["last"] = false;
             data[val]["urlId"] = data[val].urls.catbox["0"].split("files.catbox.moe/")[1].split(".mp3")[0];
             if (key === musicChoose.length - 1)
                 data[val]["last"] = true;
-
-            indexedDatabase.saveMusic(data[val]);
+            dados[dados.length] = formatDate(data[val]);
         });
-
+        indexedDatabase.saveMusic(dados, playlist, $("#import-switch-name").prop("checked"));
         clear();
+    }
+
+    function formatDate(obj){
+        const data = {
+            "anime": {
+                "romaji": obj.anime.romaji,
+                "english": obj.anime.english
+            },
+            "artist": obj.artist,
+            "broadcast": obj.animeType,
+            "duration": obj.duration,
+            "firstLetter": obj.name[0].toUpperCase(),
+            "malid": obj.siteIds.malId,
+            "links": {
+                "malid": obj.siteIds.malId,
+                "anilist": obj.siteIds.aniListId,
+                "kitsuid": obj.siteIds.kitsuId
+            },
+            "name": obj.name,
+            "playlists": [],
+            "season": obj.vintage,
+            "type": obj.type,
+            "url": {
+                "0": obj.urls.catbox["0"],
+                "480": obj.urls.catbox["480"],
+                "720": obj.urls.catbox["720"]
+            },
+            "urlId": obj.urlId,
+            "year": obj.vintage.split(" ")[1]
+        }
+        return data;
     }
 
     function getDuration(val) {

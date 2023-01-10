@@ -10,12 +10,16 @@ const playlistsStore = "playlists";
 const timelineStore = "timeline";
 
 const dbName = "superPlayerMusic";
+const dbVersion = 4;
 let db;
 
 let indexedDatabaseCRUDClass;
 let playerClass;
 let indexedDatabaseEventsClass;
 
+
+let newPlaylist = false;
+let playlistNumber = [];
 export function indexedDatabase() {
 
     function init(config = {}) {
@@ -23,15 +27,21 @@ export function indexedDatabase() {
         indexedDatabaseCRUDClass = (config.indexedDatabaseCRUD) ? config.indexedDatabaseCRUD : indexedDatabaseCRUD();
         indexedDatabaseEventsClass = (config.indexedDatabaseEvents) ? config.indexedDatabaseEvents : indexedDatabaseEvents();
 
+
+
         if (window.indexedDB) {
             startDB();
+            indexedDatabaseCRUDClass.init({ "db": db });
+            indexedDatabaseEventsClass.init({ "indexedDatabaseCRUD": indexedDatabaseCRUDClass, "indexedDatabase": this });
         } else {
             playerClass.displayDb();
         }
+
+
     }
 
     function startDB() {
-        const request = window.indexedDB.open(dbName, 3);
+        const request = window.indexedDB.open(dbName, dbVersion);
 
         request.onsuccess = (event) => {
             db = request.result;
@@ -72,6 +82,7 @@ export function indexedDatabase() {
             });
         // name, musics []
         objectPlayListStore.createIndex('name', 'name', { unique: false });
+        objectPlayListStore.createIndex('id', 'id', { unique: true });
 
         // music[]
         db.createObjectStore(timelineStore,
@@ -103,42 +114,46 @@ export function indexedDatabase() {
         musicByS.createIndex('name', 'name', { unique: true });
     }
 
-    function saveMusic(obj) {
-        const music = {
-            "anime": {
-                "romaji": obj.anime.romaji,
-                "english": obj.anime.english
-            },
-            "artist": obj.artist,
-            "broadcast": obj.animeType,
-            "duration": obj.duration,
-            "firstLetter": obj.name[0].toUpperCase(),
-            "malid": obj.siteIds.malId,
-            "links": {
-                "malid": obj.siteIds.malId,
-                "anilist": obj.siteIds.aniListId,
-                "kitsuid": obj.siteIds.kitsuId
-            },
-            "name": obj.name,
-            "playlists": {},
-            "season": obj.vintage,
-            "type": obj.type,
-            "url": {
-                "0": obj.urls.catbox["0"],
-                "480": obj.urls.catbox["480"],
-                "720": obj.urls.catbox["720"]
-            },
-            "urlId": obj.urlId,
-            "year": obj.vintage.split(" ")[1]
+    function saveMusic(data, playlist, boolean) {
+        newPlaylist = boolean;
+        playlistNumber = [];
+        if (newPlaylist) {
+            indexedDatabaseCRUDClass.create(playlist, playlistsStore, indexedDatabaseEventsClass.getPlayListStore(), data);
+        } else {
+            saveAll(data)
         }
-        console.log(music);
-
-        // ifMusicExits, update playlist
     }
 
+    function saveAll(data) {
+        for (let i = 0; i < data.length; i++) {
+            if (data.length - 1 == i) {
+                indexedDatabaseCRUDClass.read(data[i], musicsStore, indexedDatabaseEventsClass.getMusicStore(), "hash", [data[i].urlId, data[i].malid], true);
+            } else {
+                indexedDatabaseCRUDClass.read(data[i], musicsStore, indexedDatabaseEventsClass.getMusicStore(), "hash", [data[i].urlId, data[i].malid], false);
+            }
+        };
+        data.forEach(element => {
+        });
+    }
+
+    function getNewPlaylist() {
+        return newPlaylist;
+    }
+
+    function addPlaylist(num) {
+        playlistNumber[playlistNumber.length] = num;
+    }
+
+    function getPlaylist() {
+        return playlistNumber;
+    }
     return {
         init,
-        saveMusic
+        saveMusic,
+        saveAll,
+        getNewPlaylist,
+        addPlaylist,
+        getPlaylist
     }
 }
 

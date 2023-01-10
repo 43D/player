@@ -14,7 +14,7 @@ export function indexedDatabaseCRUD() {
     }
 
     function startDB() {
-        const request = window.indexedDB.open("superPlayerMusic", 3);
+        const request = window.indexedDB.open("superPlayerMusic", 4);
 
         request.onsuccess = (event) => {
             database = request.result;
@@ -25,17 +25,18 @@ export function indexedDatabaseCRUD() {
         }
     }
 
-    function create(json, store, events) {
+    function create(json, store, events, extra = {}) {
         let transaction = database.transaction([store], 'readwrite');
         let objectStore = transaction.objectStore(store);
         let request = objectStore.put(json);
         request.onsuccess = (e) => {
-            events.create(json, e.target.result);
+            const id = e.target.result;
+            events().create(id, json, extra);
         };
     }
 
-    function read(store, events) {
-        let transaction = db.transaction(store);
+    function readAll(store, events) {
+        let transaction = database.transaction(store);
         let objectStore = transaction.objectStore(store);
         objectStore.openCursor().onsuccess = (event) => {
             let cursor = event.target.result;
@@ -46,13 +47,28 @@ export function indexedDatabaseCRUD() {
         };
 
         transaction.oncomplete = () => {
-            events.readComplete();
+            events().readAllComplete();
+        };
+    }
+
+    function read(json, store, events, indexKey = "id", key = "0", extra = false) {
+        let transaction = database.transaction(store);
+        let objectStore = transaction.objectStore(store);
+
+        let index = objectStore.index(indexKey);
+        let request = index.get(key);
+
+        request.onsuccess = function (e) {
+            const data = request.result;
+
+            events().readComplete(data, json, store, extra);
         };
     }
 
     return {
         init,
         create,
-        read
+        read,
+        readAll
     }
 }

@@ -28,7 +28,6 @@ export function indexedDatabaseEvents() {
 
 function musicStore() {
     function create(id, json, last) {
-        console.log("music");
         if (indexedDatabaseClass.getNewPlaylist()) {
             indexedDatabaseClass.addPlaylist(id);
             if (last) {
@@ -41,7 +40,6 @@ function musicStore() {
         if (!data) {
             indexedDatabaseCRUDClass.create(json, store, musicStore);
         } else {
-            console.log("music");
             if (indexedDatabaseClass.getNewPlaylist()) {
                 data.playlists[data.playlists.length] = json.playlists[json.playlists.length - 1];
                 indexedDatabaseCRUDClass.create(data, store, mok);
@@ -70,7 +68,6 @@ function playListStore() {
     function readComplete(data, dados, store, extra) {
         let arr = [...dados, ...[...new Set(data.musics)]];
         data.musics = [...new Set(arr)];
-        console.log(data);
         indexedDatabaseCRUDClass.create(data, "playlists", mok);
     }
     function readAllComplete() { }

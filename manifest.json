@@ -1,6 +1,6 @@
 {
-    "short_name": "AMQ Player Music",
-    "name": "AMQ Player Music",
+    "short_name": "Anime Song Player",
+    "name": "Anime Song Player",
     "icons": [
       {
         "src": "/player/public/img/icons-vector.svg",
@@ -36,16 +36,7 @@
     "display": "standalone",
     "scope": "/player/",
     "theme_color": "#4a4c4f",
-    "shortcuts": [
-      {
-        "name": "Import Music",
-        "short_name": "Import Music",
-        "description": "Import musics for AMQ",
-        "url": "/player/#fast=json",
-        "icons": [{ "src": "/player/public/img/box-arrow-down.png", "sizes": "192x192" }]
-      }
-    ],
-    "description": "AMQ Player Music",
+    "description": "Anime Song Player",
     "screenshots": [
       {
         "src": "/player/public/img/cover.jpg",

@@ -1,4 +1,4 @@
-# player
-Music Player
+# Anime Song Player
+Anime Song Player
 
 PWA Test

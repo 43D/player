@@ -3,29 +3,29 @@
     "name": "Anime Song Player",
     "icons": [
       {
-        "src": "/player/public/img/icons-vector.svg",
+        "src": "/img/icons-vector.svg",
         "type": "image/svg+xml",
         "sizes": "683x683"
       },
       {
-        "src": "/player/public/img/icons-192.png",
+        "src": "/img/icons-192.png",
         "type": "image/png",
         "sizes": "192x192",
         "purpose": "any maskable"
       },
       {
-        "src": "/player/public/img/icons-192.png",
+        "src": "/img/icons-192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/player/public/img/icons-512.png",
+        "src": "/img/icons-512.png",
         "type": "image/png",
         "sizes": "512x512",
         "purpose": "any maskable"
       },
       {
-        "src": "/player/public/img/icons-512.png",
+        "src": "/img/icons-512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
@@ -39,7 +39,7 @@
     "description": "Anime Song Player",
     "screenshots": [
       {
-        "src": "/player/public/img/cover.jpg",
+        "src": "/img/cover.jpg",
         "type": "image/png",
         "sizes": "1306x678"
       }

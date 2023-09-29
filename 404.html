@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>Página ainda em desenvolvimento.</title>
+    <meta name="title" content="Página ainda em desenvolvimento.">
+    <meta name="description" content="Página 404, acesse pra ver uma foto aleatória.">
+    <meta name="application-name" content="43D 404">
+    <meta name="author" content="Allan Felipe">
+    <meta name="keywords" content="Allan Felipe, 43d, 404, gitpage, github, erro">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://43d.github.io/404">
+    <meta property="og:title" content="Página ainda em desenvolvimento.">
+    <meta property="og:description" content="Página 404, acesse pra ver uma foto aleatória.">
+    
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://43d.github.io/404">
+    <meta property="twitter:title" content="Página ainda em desenvolvimento.">
+    <meta property="twitter:description" content="Página 404, acesse pra ver uma foto aleatória.">
+    <meta property="og:image" content="">
+    <meta property="twitter:image" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/404/favicon.png" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            height: 100vh;
+            width: 100%;
+            width: 100vw;
+        }
+
+        .texto {
+            margin-top: 40vh;
+        }
+
+        #img-background {
+            background: #000;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -99;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .img-foreground {
+                height: 300%;
+                top: -100%;
+            }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            .img-foreground {
+                width: 300%;
+                left: -100%;
+            }
+        }
+
+        @media all and (max-width: 600px) {
+            .vid-info {
+                width: 50%;
+                padding: .5rem;
+            }
+
+            .vid-info h1 {
+                margin-bottom: .2rem;
+            }
+        }
+
+        @media all and (max-width: 500px) {
+            .vid-info .acronym {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar navbar-dark bg-dark fixed-top py-0">
+        <a id="name" class="navbar-brand mr-0 mr-md-2 h5" href="/player/">Volte aqui</a>
+        <a id="mais" class="navbar-brand ml-0 ml-md-2 h5 float-left" target="_blank" href="#">Source da imagem aqui</a>
+    </header>
+    <div id="img-background">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js "
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=" anonymous "></script>
+    <script src="/404/app.js"></script>
+    
+</body>
+
+</html>

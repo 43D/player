@@ -13,12 +13,16 @@ nav {
 
 #display-main{
   position: relative;
-  background-color: red;
+  /* background-color: red; */
 }
 
 #display-video{
   position: relative;
   margin-bottom: 0px;
+}
+
+.z-index-1035{
+  z-index: 1035;
 }
 
 @media screen and (max-width: 533px) {
@@ -42,7 +46,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 395px) and (max-width: 533px) {
+@media screen and (min-width: 395px) and (max-width: 559px) {
   #display-main{
       top: 110px;
       margin-bottom: 275px;
@@ -56,7 +60,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 534px) and (max-width: 767px) {
+@media screen and (min-width: 560px) and (max-width: 767px) {
   #display-main{
       top: 64px;
       margin-bottom: 275px;

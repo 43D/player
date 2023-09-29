@@ -1,47 +1,47 @@
 {
-    "short_name": "Anime Song Player",
-    "name": "Anime Song Player",
-    "icons": [
-      {
-        "src": "/img/icons-vector.svg",
-        "type": "image/svg+xml",
-        "sizes": "683x683"
-      },
-      {
-        "src": "/img/icons-192.png",
-        "type": "image/png",
-        "sizes": "192x192",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "/img/icons-192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "/img/icons-512.png",
-        "type": "image/png",
-        "sizes": "512x512",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "/img/icons-512.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ],
-    "id": "/player/?source=pwa",
-    "start_url": "/player/?source=pwa",
-    "background_color": "#4a4c4f",
-    "display": "standalone",
-    "scope": "/player/",
-    "theme_color": "#4a4c4f",
-    "description": "Anime Song Player",
-    "screenshots": [
-      {
-        "src": "/img/cover.jpg",
-        "type": "image/png",
-        "sizes": "1306x678"
-      }
-    ]
-  }
+  "short_name": "Anime Song Player",
+  "name": "Anime Song Player",
+  "icons": [
+    {
+      "src": "/player/img/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "683x683"
+    },
+    {
+      "src": "/player/img/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/player/img/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/player/img/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/player/img/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "id": "/player/?source=pwa",
+  "start_url": "/player/?source=pwa",
+  "background_color": "#4a4c4f",
+  "display": "standalone",
+  "scope": "/player/",
+  "theme_color": "#4a4c4f",
+  "description": "Anime Song Player",
+  "screenshots": [
+    {
+      "src": "/img/cover.jpg",
+      "type": "image/png",
+      "sizes": "1306x678"
+    }
+  ]
+}

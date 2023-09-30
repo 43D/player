@@ -16,9 +16,23 @@ function Search({ searchString }: SearchProps) {
     const fetchs = fetchDatas(searchString);
     useEffect(() => { fetchs.fetchSongAll(createAllAction) }, [searchString]);
 
+    const switchBtn = (id: string) => {
+        const elements = document.querySelectorAll('.search-filter');
+        elements.forEach(element => {
+            if (element.classList.contains('btn-success'))
+                element.classList.remove('btn-success');
+            if (!element.classList.contains('btn-secondary'))
+                element.classList.add('btn-secondary');
+        });
+        const el = document.getElementById(id) as HTMLButtonElement;
+        el.classList.remove('btn-secondary');
+        el.classList.add('btn-success');
+    };
+
     const createAll = () => {
-        fetchs.fetchSongAll(createAllAction)
-    }
+        fetchs.fetchSongAll(createAllAction);
+        switchBtn("search-filter-all");
+    };
 
     const createAllAction = (songs: JsonSong[]) => {
         const components: JSX.Element[] = [];
@@ -27,11 +41,12 @@ function Search({ searchString }: SearchProps) {
         else
             components.push(<SearchAll key={0} songList={songs} />);
         setComponentArray(components);
-    }
+    };
 
     const createAnime = () => {
         fetchs.fetchSongAll(createAnimeAction);
-    }
+        switchBtn("search-filter-anime");
+    };
 
     const createAnimeAction = (songs: JsonSong[]) => {
         const components: JSX.Element[] = [];
@@ -55,11 +70,12 @@ function Search({ searchString }: SearchProps) {
             }
         }
         setComponentArray(components)
-    }
+    };
 
     const createSong = () => {
         fetchs.fetchSongAll(createSongAction);
-    }
+        switchBtn("search-filter-song");
+    };
 
     const createSongAction = (songs: JsonSong[]) => {
         const components: JSX.Element[] = [];
@@ -83,11 +99,12 @@ function Search({ searchString }: SearchProps) {
 
         }
         setComponentArray(components);
-    }
+    };
 
     const createArtist = () => {
         fetchs.fetchSongAll(createArtistAction);
-    }
+        switchBtn("search-filter-artist");
+    };
 
     const createArtistAction = (songs: JsonSong[]) => {
         const components: JSX.Element[] = [];
@@ -109,15 +126,15 @@ function Search({ searchString }: SearchProps) {
             });
         }
         setComponentArray(components);
-    }
+    };
 
     return (
         <div className='row'>
             <div className="col mt-3" id="search-anime">
-                <button id="search-filter-all" onClick={createAll} className="btn btn-success m-1">All</button>
-                <button id="search-filter-song" onClick={createSong} className="btn btn-secondary m-1">Song Name</button>
-                <button id="search-filter-anime" onClick={createAnime} className="btn btn-secondary m-1">Anime Name</button>
-                <button id="search-filter-artist" onClick={createArtist} className="btn btn-secondary m-1">Artist Name</button>
+                <button id="search-filter-all" onClick={createAll} className="search-filter btn btn-success m-1">All</button>
+                <button id="search-filter-song" onClick={createSong} className="search-filter   btn btn-secondary m-1">Song Name</button>
+                <button id="search-filter-anime" onClick={createAnime} className="search-filter btn btn-secondary m-1">Anime Name</button>
+                <button id="search-filter-artist" onClick={createArtist} className="search-filter btn btn-secondary m-1">Artist Name</button>
                 {componentArray}
             </div>
         </div>

@@ -39,7 +39,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <script type="module" crossorigin src="/player/assets/index-00d08372.js"></script>
+  <script type="module" crossorigin src="/player/assets/index-8c15eaae.js"></script>
   <link rel="stylesheet" href="/player/assets/index-6f0b1a96.css">
 </head>
 
@@ -127,8 +127,75 @@
         <p>IndexedDB not support</p>
       </div>
     </div>
-    <div class="row" id="main2">
-      
+    <div class="container-fluid displays d-none">
+      <div class="row" id="main2">
+        <div class="row">
+          <div class="col" id="search-anime">
+            <button id="search-filter-all" class="btn btn-success my-2">All</button>
+            <button id="search-filter-song" class="btn btn-secondary my-2">Song Name</button>
+            <button id="search-filter-anime" class="btn btn-secondary my-2">Anime Name</button>
+            <button id="search-filter-artist" class="btn btn-secondary my-2">Artist Name</button>
+            <button id="search-filter-composer" class="btn btn-secondary my-2">Composer Name</button>
+            <h2 class="my-4">Animes</h2>
+            <div>
+              <h4 class="my-2">My Neighbors the Yamadas</h4>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-2 col-sm-2 col-lg-1 border-end d-flex align-items-center"><button
+                        class="btn w-100 play-now song-id-476"><i class="bi bi-play"></i></button></div>
+                    <div class="col-8 col-sm d-flex justify-content-start align-items-center" data-bs-toggle="collapse"
+                      data-bs-target="#music-name-476">Hitoribocchi wa Yameta (QUIT BEING ALONE)</div>
+                    <div class="col-2 col-sm-1 d-flex align-items-center justify-content-end border-start"><button
+                        class="btn w-100" data-bs-toggle="dropdown" aria-expanded="false"><i
+                          class="bi bi-three-dots"></i></button>
+                      <ul class="dropdown-menu z-index-1035">
+                        <li><a class="dropdown-item add-queue song-id-476" href="#"><i class="bi bi-collection"></i> Add
+                            to Play queue</a></li>
+                        <li data-bs-toggle="modal" data-bs-target="#addPlaylistModal"><a
+                            class="dropdown-item add-playlist song-id-476" href="#"><i class="bi bi-journal-plus"></i>
+                            Add
+                            to a PlayList</a></li>
+                        <li data-bs-toggle="collapse" data-bs-target="#music-name-476"><a class="dropdown-item" href="#"
+                            id=""><i class="bi bi-collection"></i> Song information</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="collapse" id="music-name-476">
+                    <table class="table table-striped table-hover">
+                      <tbody>
+                        <tr>
+                          <th>Song name</th>
+                          <td>Hitoribocchi wa Yameta (QUIT BEING ALONE)</td>
+                          <th>Season</th>
+                          <td>Summer 1999</td>
+                        </tr>
+                        <tr>
+                          <th>Anime</th>
+                          <td>My Neighbors the Yamadas</td>
+                          <td colspan="2">Houhokekyo Tonari no Yamada-kun</td>
+                        </tr>
+                        <tr>
+                          <th>Artist</th>
+                          <td colspan="3">Akiko Yano</td>
+                        </tr>
+                        <tr>
+                          <th>composers</th>
+                          <td colspan="3">[object Object]</td>
+                        </tr>
+                        <tr>
+                          <th>Type</th>
+                          <td>Ending 1</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

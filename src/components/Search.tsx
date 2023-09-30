@@ -14,7 +14,10 @@ function Search({ searchString }: SearchProps) {
     const [componentArray, setComponentArray] = useState<JSX.Element[]>([]);
 
     const fetchs = fetchDatas(searchString);
-    useEffect(() => { fetchs.fetchSongAll(createAllAction) }, [searchString]);
+    useEffect(() => {
+        fetchs.fetchSongAll(createAllAction);
+        switchBtn("search-filter-all");
+    }, [searchString]);
 
     const switchBtn = (id: string) => {
         const elements = document.querySelectorAll('.search-filter');

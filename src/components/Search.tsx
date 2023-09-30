@@ -1,102 +1,123 @@
 import { useEffect, useState } from 'react';
+import JsonSong from '../type/Songs';
+import SearchAnime from './SearchAnime';
+import SearchAll from './SearchAll';
+import SearchSong from './SearchSong';
+import SearchArtist from './SearchArtist';
+import MessageCom from './MessageCom';
 
 interface SearchProps {
     searchString: string;
 }
 
-type Composer = {
-    id: number;
-    names: string[];
-}
-type JsonSong = {
-    annId: number;
-    annSongId: number;
-    animeENName: string;
-    animeJPName: string;
-    animeVintage: string;
-    animeType: string;
-    songType: string;
-    songName: string;
-    songArtist: string;
-    HQ: string;
-    MQ: string;
-    audio: string;
-    composers: Composer[]
-
-}
-
-type SongsType = {
-    [key: string]: JsonSong[];
-};
-
 function Search({ searchString }: SearchProps) {
     const [componentArray, setComponentArray] = useState<JSX.Element[]>([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
+    const fetchs = fetchDatas(searchString);
+    useEffect(() => { fetchs.fetchSongAll(createAllAction) }, [searchString]);
 
-            const requestBody = {
-                song_name_search_filter: {
-                    search: searchString,
-                    partial_match: true,
-                },
-                and_logic: false,
-                ignore_duplicate: false,
-                opening_filter: true,
-                ending_filter: true,
-                insert_filter: true,
-            };
+    const createAll = () => {
+        fetchs.fetchSongAll(createAllAction)
+    }
 
-            const requestOptions: RequestInit = {
-                method: 'POST',
-                headers: myHeaders,
-                body: JSON.stringify(requestBody),
-                redirect: 'follow',
-            };
+    const createAllAction = (songs: JsonSong[]) => {
+        const components: JSX.Element[] = [];
+        if (songs.length === 0)
+            components.push(<MessageCom msg="Nada foi encontrado nada..." />)
+        else
+            components.push(<SearchAll key={0} songList={songs} />);
+        setComponentArray(components);
+    }
 
-            try {
-                const response = await fetch("https://anisongdb.com/api/search_request", requestOptions);
-                if (!response.ok) {
-                    throw new Error('Erro na solicitação');
+    const createAnime = () => {
+        fetchs.fetchSongAll(createAnimeAction);
+    }
+
+    const createAnimeAction = (songs: JsonSong[]) => {
+        const components: JSX.Element[] = [];
+        if (songs.length === 0)
+            components.push(<MessageCom msg="Nada foi encontrado anime..." />)
+        else {
+            const groupSong = songs.reduce((acc: { [x: string]: any[]; }, obj: JsonSong) => {
+                const key = obj.annId;
+                if (!acc[key]) {
+                    acc[key] = [];
                 }
+                acc[key].push(obj);
+                return acc;
+            }, {});
 
-                const resultText = await response.text();
-                const groupedJson = JSON.parse(resultText).reduce((acc: { [x: string]: any[]; }, obj: { annId: any; }) => {
-                    const key = obj.annId;
-                    if (!acc[key]) {
-                        acc[key] = [];
-                    }
-                    acc[key].push(obj);
-                    return acc;
-                }, {});
+            const entries = Object.entries(groupSong);
+            entries.sort(([, a], [, b]) => a[0].animeENName.localeCompare(b[0].animeENName));
 
-                createAnime(groupedJson);
-            } catch (error) {
-                console.error('Erro:', error);
-            }
-        };
-
-        fetchData();
-    }, [searchString]);
-
-    function createAnime(songs: SongsType) {
-        const components = [];
-        for (const key in songs) {
-            if (songs.hasOwnProperty(key)) {
-                const value = songs[key];
-                components.push(<Anime key={key} songList={value} />);
+            for (const [key, value] of entries) {
+                components.push(<SearchAnime key={key} songList={value} />);
             }
         }
         setComponentArray(components)
     }
 
+    const createSong = () => {
+        fetchs.fetchSongAll(createSongAction);
+    }
+
+    const createSongAction = (songs: JsonSong[]) => {
+        const components: JSX.Element[] = [];
+        if (songs.length === 0)
+            components.push(<MessageCom msg="Nada foi encontrado música..." />)
+        else {
+            const groupSong: { [letter: string]: JsonSong[] } = {};
+            songs.forEach((item) => {
+                const initialLetter = item.songName.charAt(0).toUpperCase();
+
+                if (!groupSong[initialLetter]) {
+                    groupSong[initialLetter] = [];
+                }
+                groupSong[initialLetter].push(item);
+            });
+
+            const sortedKeys = Object.keys(groupSong).sort();
+            sortedKeys.forEach((key) => {
+                components.push(<SearchSong key={key} songList={groupSong[key]} />);
+            });
+
+        }
+        setComponentArray(components);
+    }
+
+    const createArtist = () => {
+        fetchs.fetchSongAll(createArtistAction);
+    }
+
+    const createArtistAction = (songs: JsonSong[]) => {
+        const components: JSX.Element[] = [];
+        if (songs.length === 0)
+            components.push(<MessageCom msg="Nada foi encontrado artistas..." />)
+        else {
+            const groupSong: { [artist: string]: JsonSong[] } = {};
+            songs.forEach((item) => {
+                const artists = item.songArtist;
+                if (!groupSong[artists])
+                    groupSong[artists] = [];
+
+                groupSong[artists].push(item);
+            });
+
+            const sortedKeys = Object.keys(groupSong).sort();
+            sortedKeys.forEach((key) => {
+                components.push(<SearchArtist key={key} songList={groupSong[key]} />);
+            });
+        }
+        setComponentArray(components);
+    }
 
     return (
         <div className='row'>
-            <div className="col" id="search-anime">
-                <h2 className="my-4">Animes</h2>
+            <div className="col mt-3" id="search-anime">
+                <button id="search-filter-all" onClick={createAll} className="btn btn-success m-1">All</button>
+                <button id="search-filter-song" onClick={createSong} className="btn btn-secondary m-1">Song Name</button>
+                <button id="search-filter-anime" onClick={createAnime} className="btn btn-secondary m-1">Anime Name</button>
+                <button id="search-filter-artist" onClick={createArtist} className="btn btn-secondary m-1">Artist Name</button>
                 {componentArray}
             </div>
         </div>
@@ -104,109 +125,64 @@ function Search({ searchString }: SearchProps) {
 }
 
 
-interface AnimeProps {
-    songList: JsonSong[];
-}
+type ActionAllFunc = (songs: JsonSong[]) => void;
 
-function Anime({ songList }: AnimeProps) {
+function fetchDatas(searchString: string) {
+    async function fetchSongAll(action: ActionAllFunc) {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-    const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
+        const requestBody = {
+            anime_search_filter: {
+                search: searchString,
+                partial_match: true
+            },
+            song_name_search_filter: {
+                search: searchString,
+                partial_match: true
+            },
+            artist_search_filter: {
+                search: searchString,
+                partial_match: true,
+                group_granularity: 0,
+                max_other_artist: 99
+            },
+            composer_search_filter: {
+                search: searchString,
+                partial_match: true,
+                arrangement: true
+            },
+            and_logic: false,
+            ignore_duplicate: false,
+            opening_filter: true,
+            ending_filter: true,
+            insert_filter: true,
+        };
 
-    useEffect(() => {
-        const components = [];
+        const requestOptions: RequestInit = {
+            method: 'POST',
+            headers: myHeaders,
+            body: JSON.stringify(requestBody),
+            redirect: 'follow',
+        };
 
-        for (const key in songList) {
-            if (songList.hasOwnProperty(key)) {
-                const value = songList[key];
-                components.push(<Card key={key} song={value} />);
-            }
+        try {
+            const response = await fetch("https://anisongdb.com/api/search_request", requestOptions);
+            if (!response.ok)
+                throw new Error('Erro na solicitação');
+
+
+            const resultText = await response.text();
+
+            action(JSON.parse(resultText));
+        } catch (error) {
+            console.error('Erro:', error);
         }
+    };
 
-        setComponentCard(components);
-    }, [songList]);
-
-    return (
-        <div>
-            <h4 className="my-2">{songList[0].animeENName}</h4>
-            <ul className="list-group">
-                {componentCard}
-            </ul>
-        </div>
-    );
-}
-
-interface CardProps {
-    song: JsonSong;
-}
-
-function Card({ song }: CardProps) {
-    return (
-        <li className="list-group-item">
-            <div className="row">
-                <div className="col-2 col-sm-2 col-lg-1 border-end d-flex align-items-center">
-                    <button
-                        className={`btn w-100 play-now song-id-${song.annSongId}`}>
-                        <i className="bi bi-play"></i>
-                    </button>
-                </div>
-                <div className="col-8 col-sm d-flex justify-content-start align-items-center" data-bs-toggle="collapse"
-                    data-bs-target={`#music-name-${song.annSongId}`}>
-                    {song.songName}
-                </div>
-                <div className="col-2 col-sm-1 d-flex align-items-center justify-content-end border-start">
-                    <button className="btn w-100" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i className="bi bi-three-dots"></i>
-                    </button>
-                    <ul className="dropdown-menu z-index-1035">
-                        <li>
-                            <a className={`dropdown-item add-queue song-id-${song.annSongId}`} href="#">
-                                <i className="bi bi-collection"></i> Add to Play queue
-                            </a>
-                        </li>
-                        <li data-bs-toggle="modal" data-bs-target="#addPlaylistModal">
-                            <a className={`dropdown-item add-playlist song-id-${song.annSongId}`} href="#">
-                                <i className="bi bi-journal-plus"></i> Add to a PlayList
-                            </a>
-                        </li>
-                        <li data-bs-toggle="collapse" data-bs-target={`#music-name-${song.annSongId}`}>
-                            <a className="dropdown-item" href="#" id="">
-                                <i className="bi bi-collection"></i> Song information
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="collapse" id={`music-name-${song.annSongId}`}>
-                <table className="table table-striped table-hover">
-                    <tbody>
-                        <tr>
-                            <th>Song name</th>
-                            <td>{song.songName}</td>
-                            <th>Season</th>
-                            <td>{song.animeVintage}</td>
-                        </tr>
-                        <tr>
-                            <th>Anime</th>
-                            <td>{song.animeENName}</td>
-                            <td colSpan={2}>{song.animeJPName}</td>
-                        </tr>
-                        <tr>
-                            <th>Artist</th>
-                            <td colSpan={3}>{song.songArtist}</td>
-                        </tr>
-                        <tr>
-                            <th>composers</th>
-                            <td colSpan={3}>{song.composers.toString()}</td>
-                        </tr>
-                        <tr>
-                            <th>Type</th>
-                            <td>{song.songType}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </li>
-    );
+    return {
+        fetchSongAll
+    }
 }
 
 export default Search;

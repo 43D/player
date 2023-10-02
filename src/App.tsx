@@ -33,7 +33,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App pt-2 pb-4">
       {component}
     </div>
   );

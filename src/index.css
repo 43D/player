@@ -46,7 +46,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 395px) and (max-width: 442px) {
+@media screen and (min-width: 395px) and (max-width: 490px) {
   #display-main{
       top: 110px;
       margin-bottom: 275px;
@@ -60,7 +60,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 443px) and (max-width: 767px) {
+@media screen and (min-width: 491px) and (max-width: 767px) {
   #display-main{
       top: 64px;
       margin-bottom: 275px;

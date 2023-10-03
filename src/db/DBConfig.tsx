@@ -1,6 +1,6 @@
 export const DBConfig = {
     name: "SuperSongs",
-    version: 3,
+    version: 4,
     objectStoresMeta: [
         {
             store: "songs",
@@ -29,7 +29,6 @@ export const DBConfig = {
                 { name: "audio", keypath: "audio", options: { unique: false } },
             ],
         },
-
         {
             store: "playlists",
             storeConfig: { keyPath: "id", autoIncrement: true },
@@ -38,12 +37,18 @@ export const DBConfig = {
                 { name: "songsCollections", keypath: "songsCollections", options: { unique: false } },
             ],
         },
-
         {
             store: "queue",
             storeConfig: { keyPath: "id", autoIncrement: true },
             storeSchema: [
                 { name: "songsCollections", keypath: "songsCollections", options: { unique: false } },
+            ],
+        },
+        {
+            store: "count",
+            storeConfig: { keyPath: "annSongId", autoIncrement: true },
+            storeSchema: [
+                { name: "count", keypath: "count", options: { unique: false } },
             ],
         },
     ],

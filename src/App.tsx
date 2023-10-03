@@ -25,14 +25,9 @@ function App() {
   }
 
   const btnHome = () => {
-    const btn = document.getElementById('btn-home') as HTMLButtonElement;
     const btnImg = document.getElementById('img-home') as HTMLButtonElement;
-
-    btn.addEventListener('click', () => setComponent(<Home />));
     btnImg.addEventListener('click', () => setComponent(<Home />));
   }
-
-
 
   return (
     <div className="App pt-2 pb-4">

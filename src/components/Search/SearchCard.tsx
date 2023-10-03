@@ -1,4 +1,4 @@
-import JsonSong from '../type/Songs';
+import JsonSong from '../../type/Songs';
 
 interface CardProps {
     song: JsonSong;

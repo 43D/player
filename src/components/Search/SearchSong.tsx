@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import JsonSong from '../type/Songs';
+import JsonSong from '../../type/Songs';
 import SearchCard from './SearchCard';
 
 interface AnimeProps {
     songList: JsonSong[];
 }
 
-function SearchArtist({ songList }: AnimeProps){
+function SearchSong({ songList }: AnimeProps){
     const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
@@ -24,7 +24,7 @@ function SearchArtist({ songList }: AnimeProps){
 
     return (
         <div>
-            <h4 className="my-2">{songList[0].songArtist}</h4>
+            <h4 className="my-2">{songList[0].songName.charAt(0).toUpperCase()}</h4>
             <ul className="list-group">
                 {componentCard}
             </ul>
@@ -32,4 +32,4 @@ function SearchArtist({ songList }: AnimeProps){
     );
 }
 
-export default SearchArtist
+export default SearchSong

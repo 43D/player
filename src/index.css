@@ -25,7 +25,7 @@ nav {
   z-index: 1035;
 }
 
-@media screen and (max-width: 533px) {
+@media screen and (max-width: 433px) {
   #top-menu{
       background-color: #2e2e36;
       height: 110px;
@@ -46,7 +46,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 395px) and (max-width: 559px) {
+@media screen and (min-width: 395px) and (max-width: 442px) {
   #display-main{
       top: 110px;
       margin-bottom: 275px;
@@ -60,7 +60,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 560px) and (max-width: 767px) {
+@media screen and (min-width: 443px) and (max-width: 767px) {
   #display-main{
       top: 64px;
       margin-bottom: 275px;

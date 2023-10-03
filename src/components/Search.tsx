@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import JsonSong from '../type/Songs';
-import SearchAnime from './SearchAnime';
-import SearchAll from './SearchAll';
-import SearchSong from './SearchSong';
-import SearchArtist from './SearchArtist';
+import SearchAnime from './Search/SearchAnime';
+import SearchAll from './Search/SearchAll';
+import SearchSong from './Search/SearchSong';
+import SearchArtist from './Search/SearchArtist';
 import MessageCom from './MessageCom';
 import { useIndexedDB } from 'react-indexed-db-hook';
 
@@ -89,8 +89,10 @@ function Search({ searchString }: SearchProps) {
                 element.classList.add('btn-secondary');
         });
         const el = document.getElementById(id) as HTMLButtonElement;
-        el.classList.remove('btn-secondary');
-        el.classList.add('btn-success');
+        if (el) {
+            el.classList.remove('btn-secondary');
+            el.classList.add('btn-success');
+        }
     };
 
     const createAllAction = () => createAll();

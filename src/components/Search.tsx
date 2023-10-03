@@ -5,6 +5,7 @@ import SearchAll from './SearchAll';
 import SearchSong from './SearchSong';
 import SearchArtist from './SearchArtist';
 import MessageCom from './MessageCom';
+import { useIndexedDB } from 'react-indexed-db-hook';
 
 interface SearchProps {
     searchString: string;
@@ -12,9 +13,11 @@ interface SearchProps {
 
 function Search({ searchString }: SearchProps) {
     const [componentArray, setComponentArray] = useState<JSX.Element[]>([]);
+    const { add } = useIndexedDB("songs");
     const [songs, setSongs] = useState<JsonSong[]>([]);
 
     useEffect(() => {
+        setComponentArray([<MessageCom key={"1"} msg="Pesquisando músicas, aguarde...." />])
         fetchAllSong();
     }, [searchString]);
 
@@ -71,6 +74,7 @@ function Search({ searchString }: SearchProps) {
             const result = JSON.parse(resultText);
             setSongs(result);
             createAll(result);
+            saveDatabase(result);
         } catch (error) {
             console.error('Erro:', error);
         }
@@ -89,15 +93,17 @@ function Search({ searchString }: SearchProps) {
         el.classList.add('btn-success');
     };
 
-    const createAllAction = () => {
-        createAll();
-    };
+    const createAllAction = () => createAll();
 
     const createAll = (song?: JsonSong[]) => {
         switchBtn("search-filter-all");
         const components: JSX.Element[] = [];
-        if (song)
-            components.push(<SearchAll key={"2"} songList={song} />);
+        if (song) {
+            if (song.length > 0)
+                components.push(<SearchAll key={"3"} songList={song} />);
+            else
+                components.push(<MessageCom key={"2"} msg="Nada foi encontrado nada..." />)
+        }
         else if (songs.length === 0)
             components.push(<MessageCom key={"1"} msg="Nada foi encontrado nada..." />)
         else
@@ -175,6 +181,36 @@ function Search({ searchString }: SearchProps) {
             });
         }
         setComponentArray(components);
+    };
+
+    const saveDatabase = (songList: JsonSong[]) => {
+        songList.forEach((v) => {
+            const data = {
+                annSongId: v.annSongId,
+                annId: v.annId,
+                animeENName: v.animeENName,
+                animeJPName: v.animeJPName,
+                animeVintage: v.animeVintage,
+                animeType: v.animeType,
+                songType: v.songType,
+                songName: v.songName,
+                songArtist: v.songArtist,
+                HQ: v.HQ,
+                MQ: v.MQ,
+                audio: v.audio,
+                composers: v.composers
+            };
+
+            add(data).then(
+                (event) => {
+                    event = event;
+                },
+                (error) => {
+                    error = error;
+                },
+            );
+        });
+
     };
 
     return (

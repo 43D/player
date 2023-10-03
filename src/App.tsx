@@ -5,6 +5,7 @@ import Search from "./components/Search";
 function App() {
 
   const [component, setComponent] = useState<JSX.Element>(<Home />);
+ 
 
   useEffect(() => eventsBtn(), []);
 
@@ -30,6 +31,7 @@ function App() {
     btn.addEventListener('click', () => setComponent(<Home />));
     btnImg.addEventListener('click', () => setComponent(<Home />));
   }
+
 
 
   return (

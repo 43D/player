@@ -1,10 +1,12 @@
+import PagesType from '../../type/PagesType';
 import JsonSong from '../../type/Songs';
 
 interface CardProps {
     song: JsonSong;
+    pageProps: PagesType;
 }
 
-function SearchCard({ song }: CardProps) {
+function SearchCard({ song, pageProps }: CardProps) {
     let composers = "";
     song.composers.forEach((v) => composers += v.names.toString() + " ")
 
@@ -55,12 +57,18 @@ function SearchCard({ song }: CardProps) {
                         </tr>
                         <tr>
                             <th>Anime</th>
-                            <td>{song.animeENName}</td>
-                            <td colSpan={2}>{song.animeJPName}</td>
+                            <td>
+                                <a href="#" onClick={() => pageProps.pages().getAnime(song.annId)}>{song.animeENName}</a>
+                            </td>
+                            <td colSpan={2}>
+                                <a href="#" onClick={() => pageProps.pages().getAnime(song.annId)}>{song.animeJPName}</a>
+                            </td>
                         </tr>
                         <tr>
                             <th>Artist</th>
-                            <td colSpan={3}>{song.songArtist}</td>
+                            <td colSpan={3}>
+                                <a href="#" onClick={() => pageProps.pages().getArtist(song.annId)}>{song.songArtist}</a>
+                            </td>
                         </tr>
                         <tr>
                             <th>composers</th>

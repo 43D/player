@@ -5,7 +5,7 @@ import Search from "./components/Search";
 function App() {
 
   const [component, setComponent] = useState<JSX.Element>(<Home />);
- 
+
 
   useEffect(() => eventsBtn(), []);
 
@@ -14,13 +14,26 @@ function App() {
     btnHome();
   }
 
+  const pages = () => {
+    const getArtist = (id: number) => {
+      console.log(id);
+    };
+    const getAnime = (id: number) => {
+      console.log(id);
+    };
+    return {
+      getArtist,
+      getAnime
+    }
+  }
+
   const btnSearch = () => {
     const btn = document.getElementById('btn-search') as HTMLButtonElement;
 
     btn.addEventListener('click', () => {
       const inputSearch = document.getElementById('search-value') as HTMLInputElement;
       const text = inputSearch["value"];
-      setComponent(<Search searchString={`${text}`} />);
+      setComponent(<Search searchString={`${text}`} pageProps={{pages}}/>); //pages
     });
   }
 
@@ -28,6 +41,8 @@ function App() {
     const btnImg = document.getElementById('img-home') as HTMLButtonElement;
     btnImg.addEventListener('click', () => setComponent(<Home />));
   }
+
+
 
   return (
     <div className="App pt-2 pb-4">

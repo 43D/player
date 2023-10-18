@@ -7,8 +7,9 @@ interface CardProps {
 }
 
 function SearchCard({ song, pageProps }: CardProps) {
-    let composers = "";
-    song.composers.forEach((v) => composers += v.names.toString() + " ")
+    const composers = song.composers;
+    const artists = song.artists;
+    const arrangers = song.arrangers;
 
     return (
         <li className="list-group-item">
@@ -67,12 +68,30 @@ function SearchCard({ song, pageProps }: CardProps) {
                         <tr>
                             <th>Artist</th>
                             <td colSpan={3}>
-                                <a href="#" onClick={() => pageProps.pages().getArtist(song.annId)}>{song.songArtist}</a>
+                                {artists.map((item) => (
+                                    <span key={item.id}>
+                                        <a href="#" onClick={() => pageProps.pages().getArtist(item.id)}>{item.names.toString()}</a>     </span>
+                                ))}
                             </td>
                         </tr>
                         <tr>
                             <th>composers</th>
-                            <td colSpan={3}>{composers}</td>
+                            <td colSpan={3}>
+                                {composers.map((item) => (
+                                    <span key={item.id}>
+                                        <a href="#" onClick={() => pageProps.pages().getArtist(item.id)}>{item.names.toString()}</a>  </span>
+
+                                ))}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>arrangers</th>
+                            <td colSpan={3}>
+                                {arrangers.map((item) => (
+                                    <span key={item.id}>
+                                        <a href="#" onClick={() => pageProps.pages().getArtist(item.id)}>{item.names.toString()}</a>  </span>
+                                ))}
+                            </td>
                         </tr>
                         <tr>
                             <th>Type</th>

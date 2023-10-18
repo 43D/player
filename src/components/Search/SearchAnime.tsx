@@ -26,7 +26,7 @@ function SearchAnime({ songList, pageProps }: AnimeProps){
 
     return (
         <div>
-            <h4 className="my-2">{songList[0].animeENName}</h4>
+            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() => pageProps.pages().getArtist(songList[0].annId)}>{songList[0].animeJPName}</h4>
             <ul className="list-group">
                 {componentCard}
             </ul>

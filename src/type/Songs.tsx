@@ -2,6 +2,17 @@ type Composer = {
     id: number;
     names: string[];
 }
+
+type Artist = {
+    id: number;
+    names: string[];
+}
+
+type Arranger = {
+    id: number;
+    names: string[];
+}
+
 type JsonSong = {
     annId: number;
     annSongId: number;
@@ -9,14 +20,15 @@ type JsonSong = {
     animeJPName: string;
     animeVintage: string;
     animeType: string;
+    artists: Artist[];
     songType: string;
     songName: string;
     songArtist: string;
     HQ: string;
     MQ: string;
     audio: string;
-    composers: Composer[]
-
+    composers: Composer[];
+    arrangers: Arranger[];
 }
 
 export default JsonSong

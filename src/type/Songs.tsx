@@ -6,6 +6,7 @@ type Composer = {
 type Artist = {
     id: number;
     names: string[];
+    members: Composer[];
 }
 
 type Arranger = {

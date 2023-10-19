@@ -27,25 +27,26 @@ function Artist({ id, pageProps }: idType) {
         searchAllSong();
     }, [id]);
 
-    async function searchAllSong(){
+    async function searchAllSong() {
         const resultArtist = await feacthAniSong().fetchArtistById(id);
         const resultComposer = await feacthAniSong().fetchComposerById(id);
         const result = unionArray(resultArtist, resultComposer);
 
-        setName(result[0].artists[0].names.toString());
+        searchName(result);
+
         const compAll = <ArtistAll key={"21"} songList={result} pageProps={pageProps} />
         setComponentAll([compAll]);
-        
+
         const compArt = <ArtistAll key={"22"} songList={resultArtist} pageProps={pageProps} />
         setComponentArtist([compArt]);
 
         const compCom = <ArtistAll key={"23"} songList={resultComposer} pageProps={pageProps} />
         setComponentComposer([compCom]);
-        
+
         createAnime(result);
 
         setComponent([compAll]);
-        
+
         database(add, update).saveSongList(result);
     }
 
@@ -56,6 +57,17 @@ function Artist({ id, pageProps }: idType) {
         );
 
         return resultUnique;
+    }
+
+    const searchName = (songs: JsonSong[]) => {
+        if (songs[0].artists[0].id === id)
+            setName(songs[0].artists[0].names.toString());
+        else if (songs[0].artists[0].members) {
+            songs[0].artists[0].members.forEach((v) => {
+                if (v.id === id)
+                    setName(v.names.toString());
+            });
+        }
     }
 
     const switchBtn = (id: string) => {
@@ -90,8 +102,8 @@ function Artist({ id, pageProps }: idType) {
 
         for (const [key, value] of entries)
             components.push(<ArtistAnime key={key} songList={value} pageProps={pageProps} />);
-            
-        
+
+
         setComponentAnime(components)
     };
 
@@ -128,8 +140,8 @@ function Artist({ id, pageProps }: idType) {
             <div className="col mt-3" id="search-anime">
                 <button id="artist-filter-song" onClick={createAllAction} className="artist-filter btn btn-success m-1">All Songs</button>
                 <button id="artist-filter-anime" onClick={createCAnimeAction} className="artist-filter btn btn-secondary m-1">by Anime</button>
-                <button id="artist-filter-artist" onClick={createArtistAction}  className="artist-filter btn btn-secondary m-1">is Artist</button>
-                <button id="artist-filter-composer" onClick={createComposerAction}  className="artist-filter btn btn-secondary m-1">is Composer/Arranger</button>
+                <button id="artist-filter-artist" onClick={createArtistAction} className="artist-filter btn btn-secondary m-1">is Artist</button>
+                <button id="artist-filter-composer" onClick={createComposerAction} className="artist-filter btn btn-secondary m-1">is Composer/Arranger</button>
             </div>
             <div className="col-12 mt-3">
                 {component}

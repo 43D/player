@@ -8,7 +8,7 @@ interface AnimeProps {
     pageProps: PagesType;
 }
 
-function AnimeAll({ songList, pageProps }: AnimeProps){
+function ArtistAll({ songList, pageProps }: AnimeProps){
     const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
@@ -33,4 +33,4 @@ function AnimeAll({ songList, pageProps }: AnimeProps){
     );
 }
 
-export default AnimeAll
+export default ArtistAll

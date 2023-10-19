@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import JsonSong from '../../type/Songs';
-import AnimeCard from '../AnimeCard';
+import AnimeSongCard from '../AnimeSongCard';
 import PagesType from '../../type/PagesType';
 
 interface AnimeProps {
@@ -22,11 +22,11 @@ function AnimeType({ songList, pageProps }: AnimeProps) {
             if (songList.hasOwnProperty(key)) {
                 const value = songList[key];
                 if (value.songType.toLowerCase().includes("opening"))
-                    componentsOpening.push(<AnimeCard key={key} song={value} pageProps={pageProps} />);
+                    componentsOpening.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
                 else if (value.songType.toLowerCase().includes("ending"))
-                    componentsEnding.push(<AnimeCard key={key} song={value} pageProps={pageProps} />);
+                    componentsEnding.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
                 else
-                    componentsInsert.push(<AnimeCard key={key} song={value} pageProps={pageProps} />);
+                    componentsInsert.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
             }
         }
 

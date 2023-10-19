@@ -6,7 +6,7 @@ interface CardProps {
     pageProps: PagesType;
 }
 
-function AnimeCard({ song, pageProps }: CardProps) {
+function AnimeSongCard({ song, pageProps }: CardProps) {
     const composers = song.composers;
     const artists = song.artists;
     const arrangers = song.arrangers;
@@ -104,4 +104,4 @@ function AnimeCard({ song, pageProps }: CardProps) {
     );
 }
 
-export default AnimeCard
+export default AnimeSongCard

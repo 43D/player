@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import JsonSong from '../../type/Songs';
-import AnimeCard from '../AnimeCard';
+import AnimeSongCard from '../AnimeSongCard';
 import PagesType from '../../type/PagesType';
 
 interface AnimeProps {
@@ -17,7 +17,7 @@ function SearchAll({ songList, pageProps }: AnimeProps){
         for (const key in songList) {
             if (songList.hasOwnProperty(key)) {
                 const value = songList[key];
-                components.push(<AnimeCard key={key} song={value} pageProps={pageProps} />);
+                components.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
             }
         }
 

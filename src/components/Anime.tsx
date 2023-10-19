@@ -30,11 +30,15 @@ function Anime({ id, pageProps }: idType) {
         const result = await feacthAniSong().fetchSongById(id);
         setName(result[0].animeENName);
         setNameJP(result[0].animeJPName + " - " + result[0].animeVintage + " (" + result[0].animeType + ")");
+        
         const compSong = <AnimeAll key={"13"} songList={result} pageProps={pageProps} />
         setComponentSong([compSong]);
+        
         const compType = <AnimeType key={"14"} songList={result} pageProps={pageProps} />
         setComponentType([compType]);
+        
         setComponent([compSong]);
+        
         database(add, update).saveSongList(result);
     };
 
@@ -65,7 +69,7 @@ function Anime({ id, pageProps }: idType) {
 
     return (
         <div className="row">
-            <div className="col-12 d-flex">
+            <div className="col-12 d-flex align-items-center">
                 <button id="artist-return" className="btn artist-return m-1" onClick={() => pageProps.pages().getLastPage()}>
                     <i className="bi bi-arrow-left"></i>
                 </button>

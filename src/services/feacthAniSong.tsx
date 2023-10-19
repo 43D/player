@@ -132,7 +132,7 @@ export const feacthAniSong = () => {
 
     function fetchComposerById(parse: number) {
         const requestOptions = composerByIdBody(parse);
-        return fetchApi("https://anisongdb.com/api/artist_ids_request", requestOptions);
+        return fetchApi("https://anisongdb.com/api/composer_ids_request", requestOptions);
     };
 
     async function fetchArtistComposerById(parse: number) {
@@ -159,6 +159,8 @@ export const feacthAniSong = () => {
 
     return {
         fetchArtistComposerById,
+        fetchComposerById,
+        fetchArtistById,
         fetchSongById,
         fetchAllSong
     }

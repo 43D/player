@@ -1,12 +1,12 @@
-import PagesType from '../../type/PagesType';
-import JsonSong from '../../type/Songs';
+import PagesType from '../type/PagesType';
+import JsonSong from '../type/Songs';
 
 interface CardProps {
     song: JsonSong;
     pageProps: PagesType;
 }
 
-function SearchCard({ song, pageProps }: CardProps) {
+function AnimeCard({ song, pageProps }: CardProps) {
     const composers = song.composers;
     const artists = song.artists;
     const arrangers = song.arrangers;
@@ -104,4 +104,4 @@ function SearchCard({ song, pageProps }: CardProps) {
     );
 }
 
-export default SearchCard
+export default AnimeCard

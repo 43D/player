@@ -8,7 +8,7 @@ interface AnimeProps {
     pageProps: PagesType;
 }
 
-function SearchAnime({ songList, pageProps }: AnimeProps){
+function AnimeAll({ songList, pageProps }: AnimeProps){
     const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
@@ -26,11 +26,11 @@ function SearchAnime({ songList, pageProps }: AnimeProps){
 
     return (
         <div>
-            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() => pageProps.pages().getAnime(songList[0].annId)}>{songList[0].animeJPName}</h4>
             <ul className="list-group">
                 {componentCard}
             </ul>
         </div>
     );
 }
-export default SearchAnime
+
+export default AnimeAll

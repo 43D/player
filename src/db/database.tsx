@@ -1,6 +1,9 @@
 import JsonSong from "../type/Songs";
 
-export const database = (add: any) => {
+type addType = <T = any>(value: T, key?: any) => Promise<number>;
+type updateType = <T = any>(value: T, key?: any) => Promise<any>;
+
+export const database = (add: addType, update: updateType) => {
     const saveSongList = (songList: JsonSong[]) => {
         songList.forEach((v) => {
             const data = {
@@ -12,11 +15,13 @@ export const database = (add: any) => {
                 animeType: v.animeType,
                 songType: v.songType,
                 songName: v.songName,
+                composers: v.composers,
+                arrangers: v.arrangers,
+                artists: v.artists,
                 songArtist: v.songArtist,
                 HQ: v.HQ,
                 MQ: v.MQ,
-                audio: v.audio,
-                composers: v.composers
+                audio: v.audio
             };
 
             add(data).then(
@@ -24,7 +29,9 @@ export const database = (add: any) => {
                     event = event;
                 },
                 (error: any) => {
-                    error = error;
+                    // put não exite, o que é triste
+                    if (error.target.error.name)
+                        update(data);
                 },
             );
         });

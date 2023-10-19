@@ -8,7 +8,7 @@ import SearchArtist from './Search/SearchArtist';
 import MessageCom from './MessageCom';
 import { feacthAniSong } from '../services/feacthAniSong';
 import { database } from '../db/database';
-import { useIndexedDB } from 'react-indexed-db-hook';
+import { useIndexedDB } from "react-indexed-db-hook";
 
 interface SearchProps {
     searchString: string;
@@ -16,7 +16,7 @@ interface SearchProps {
 }
 
 function Search({ searchString, pageProps }: SearchProps) {
-    const { add } = useIndexedDB("songs");
+    const { add, update } = useIndexedDB("songs");
     const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
     const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
     const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
@@ -34,7 +34,7 @@ function Search({ searchString, pageProps }: SearchProps) {
         createAnime(result);
         createSong(result);
         createArtist(result);
-        database(add).saveSongList(result);
+        database(add, update).saveSongList(result);
     }
 
     const switchBtn = (id: string) => {

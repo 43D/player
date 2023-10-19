@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Home from "./components/Home";
 import Search from "./components/Search";
+import Artist from "./components/Artist";
+import Anime from "./components/Anime";
 
 function App() {
-
   const [component, setComponent] = useState<JSX.Element>(<Home />);
+  const [lastComponent, setLastComponent] = useState<JSX.Element>(<Home />);
 
 
   useEffect(() => eventsBtn(), []);
@@ -16,14 +18,23 @@ function App() {
 
   const pages = () => {
     const getArtist = (id: number) => {
-      console.log(id);
+      const art = <Artist id={id} pageProps={{ pages }}/>
+      setLastComponent(component);
+      setComponent(art);
     };
     const getAnime = (id: number) => {
-      console.log(id);
+      const anime = <Anime id={id} pageProps={{ pages }}/>
+      setLastComponent(component);
+      setComponent(anime);
     };
+
+    const getLastPage = () => {
+      setComponent(lastComponent);
+    }
     return {
       getArtist,
-      getAnime
+      getAnime,
+      getLastPage
     }
   }
 
@@ -33,13 +44,19 @@ function App() {
     btn.addEventListener('click', () => {
       const inputSearch = document.getElementById('search-value') as HTMLInputElement;
       const text = inputSearch["value"];
-      setComponent(<Search searchString={`${text}`} pageProps={{pages}}/>); //pages
+      const componentSearch = <Search searchString={`${text}`} pageProps={{ pages }} />;
+      setLastComponent(componentSearch);
+      setComponent(componentSearch); //pages
     });
   }
 
   const btnHome = () => {
     const btnImg = document.getElementById('img-home') as HTMLButtonElement;
-    btnImg.addEventListener('click', () => setComponent(<Home />));
+    btnImg.addEventListener('click', () => {
+      const componentHome = <Home />
+      setLastComponent(componentHome);
+      setComponent(componentHome);
+    });
   }
 
 

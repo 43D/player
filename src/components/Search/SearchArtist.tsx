@@ -8,7 +8,7 @@ interface AnimeProps {
     pageProps: PagesType;
 }
 
-function SearchArtist({ songList, pageProps }: AnimeProps){
+function SearchArtist({ songList, pageProps }: AnimeProps) {
     const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ function SearchArtist({ songList, pageProps }: AnimeProps){
 
     return (
         <div>
-            <h4 className="my-2">{songList[0].songArtist}</h4>
+            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() => pageProps.pages().getArtist(songList[0].artists[0].id)}> {songList[0].artists[0].names.toString()}</h4>
             <ul className="list-group">
                 {componentCard}
             </ul>

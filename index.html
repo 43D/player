@@ -39,7 +39,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <script type="module" crossorigin src="/player/assets/index-028f066e.js"></script>
+  <script type="module" crossorigin src="/player/assets/index-887871dd.js"></script>
   <link rel="stylesheet" href="/player/assets/index-cec6027b.css">
 </head>
 
@@ -197,26 +197,27 @@
           </div>
           <hr>
           <div>
-            <p>Limpe todos os dados de aplicação</p>
-            <button id="btn-clear-data" class="btn btn-outline-danger">Limpar dados</button>
-          </div>
-          <hr>
-          <div>
-            <p>Importe ou exporte suas músicas!!</p>
-            <p>Importação substitui todos os dados salvos, tenha cuidado</p>
-            <button class="btn btn-outline-secondary">Importar dados</button>
-            <button class="btn btn-outline-secondary">Exportar dados</button>
-          </div>
-          <hr>
-          <div>
             <form action="javascript:void(0);">
-              <label for="select-quality" class="form-label">Qualidade do streaming</label>
+              <label for="select-quality" class="form-label">Streaming quality</label>
               <select id="select-quality" class="form-select" aria-label="Qualidade da media">
-                <option value="0" selected>Somente Audio (mais leve)</option>
+                <option value="0" selected>Only audio</option>
                 <option value="480">Video 480p</option>
                 <option value="720">Video 720p</option>
               </select>
             </form>
+          </div>
+          <hr>
+          <div>
+            <div>
+              <p>Clean all Data</p>
+              <button id="btn-clear-data" class="btn btn-outline-danger">Clean Data</button>
+            </div>
+            <hr>
+            <div>
+              <p>This application uses the <strong>AniSong Database</strong> as a base to function. Read more on their website if you
+                want to support them by <a href="https://anisongdb.com/" target="_blank"
+                  rel="noopener noreferrer">accessing here.</a></p>
+            </div>
           </div>
         </div>
         <div class="modal-footer">

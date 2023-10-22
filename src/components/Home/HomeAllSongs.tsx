@@ -1,6 +1,6 @@
 import MessageCom from "../MessageCom";
 import { useEffect, useState } from "react";
-import AnimeSongCard from "../AnimeSongCard";
+import AnimeSongCard from "../Card/AnimeSongCard";
 import PagesType from "../../type/PagesType";
 import JsonSong from "../../type/Songs";
 import DBType from "../../type/DBType";

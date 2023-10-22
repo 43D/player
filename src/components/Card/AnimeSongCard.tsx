@@ -1,5 +1,5 @@
-import PagesType from '../type/PagesType';
-import JsonSong from '../type/Songs';
+import PagesType from '../../type/PagesType';
+import JsonSong from '../../type/Songs';
 
 interface CardProps {
     song: JsonSong;

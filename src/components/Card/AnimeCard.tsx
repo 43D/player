@@ -1,5 +1,5 @@
-import PagesType from "../type/PagesType";
-import AnimeCardType from "../type/AnimeCardType";
+import PagesType from "../../type/PagesType";
+import AnimeCardType from "../../type/AnimeCardType";
 
 interface CardProps {
     anime: AnimeCardType;
@@ -13,7 +13,7 @@ function AnimeCard({ anime, pageProps }: CardProps) {
             <div className="card-body">
                 <h5 className="card-title">{anime.name}</h5>
                 <div className="w-100 d-flex justify-content-center">
-                    <a href="#" onClick={() => pageProps.pages().getAnime(anime.annId)} className="btn btn-outline-success mt-2">Open Profile</a>
+                    <a href="#" onClick={() => pageProps.pages().getAnime(anime.annId)} className="btn btn-outline-success mt-2">Open Anime</a>
                 </div>
             </div>
         </div>

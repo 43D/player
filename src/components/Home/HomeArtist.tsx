@@ -3,7 +3,7 @@ import DBType from "../../type/DBType";
 import PagesType from "../../type/PagesType";
 import MessageCom from "../MessageCom";
 import Navigation from "../utils/Navigation";
-import ProfileCard from "../ProfileCard";
+import ProfileCard from "../Card/ProfileCard";
 import PeopleCardType from "../../type/PeopleCardType";
 
 interface pageProps {

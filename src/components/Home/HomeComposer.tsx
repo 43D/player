@@ -4,7 +4,7 @@ import PagesType from "../../type/PagesType";
 import MessageCom from "../MessageCom";
 import Navigation from "../utils/Navigation";
 import PeopleCardType from "../../type/PeopleCardType";
-import ProfileCard from "../ProfileCard";
+import ProfileCard from "../Card/ProfileCard";
 
 interface pageProps {
     pageProps: PagesType;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import JsonSong from '../../type/Songs';
-import AnimeSongCard from '../AnimeSongCard';
+import AnimeSongCard from '../Card/AnimeSongCard';
 import PagesType from '../../type/PagesType';
 
 interface AnimeProps {

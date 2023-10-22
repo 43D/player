@@ -1,5 +1,5 @@
-import PagesType from "../type/PagesType";
-import PeopleCardType from "../type/PeopleCardType";
+import PagesType from "../../type/PagesType";
+import PeopleCardType from "../../type/PeopleCardType";
 
 interface CardProps {
     people: PeopleCardType;

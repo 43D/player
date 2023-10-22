@@ -4,7 +4,7 @@ import DBType from "../../type/DBType";
 import PagesType from "../../type/PagesType";
 import Navigation from "../utils/Navigation";
 import MessageCom from "../MessageCom";
-import AnimeCard from "../AnimeCard";
+import AnimeCard from "../Card/AnimeCard";
 
 interface pageProps {
     pageProps: PagesType;

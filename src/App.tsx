@@ -23,6 +23,7 @@ function App() {
   const eventsBtn = () => {
     btnSearch();
     btnHome();
+    btnClear();
   }
 
   const pages = () => {
@@ -59,6 +60,28 @@ function App() {
       setLastComponent(componentSearch);
       setComponent(componentSearch); //pages
     });
+  }
+
+  const btnClear = () => {
+    const btn = document.getElementById('btn-clear-data') as HTMLButtonElement;
+    console.log("setup");
+    btn.addEventListener('click', () => {
+      console.log("click");
+      const dbName = 'SuperPlayer';
+      const request = indexedDB.deleteDatabase(dbName);
+
+      request.onsuccess = () => {
+        console.log(`Banco de dados ${dbName} foi excluído com sucesso.`);
+      };
+
+      request.onerror = (event) => {
+        console.error(`Erro ao excluir o banco de dados ${dbName}: ${event}`);
+      };
+
+      location.reload();
+    });
+
+
   }
 
   const btnHome = () => {

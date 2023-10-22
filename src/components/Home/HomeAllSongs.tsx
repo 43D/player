@@ -22,7 +22,7 @@ function HomeAllSongs({ pageProps, dbProp }: pageProps) {
     }, []);
 
     async function getAllSong() {
-        const count = (await dbProp.getPageCount()).count / 100 + 1;
+        const count = (await dbProp.getPageCount(0)).count / 100 + 1;
         const pages = parseInt(count + "", 10);
         setComponentPages([<Navigation key={97} count={pages} page={1} switchPage={switchPage} />]);
         const comp = [] as JSX.Element[];
@@ -40,7 +40,7 @@ function HomeAllSongs({ pageProps, dbProp }: pageProps) {
     }
 
     const switchPage = async (pageSelect: number) => {
-        const count = (await dbProp.getPageCount()).count / 100 + 1;
+        const count = (await dbProp.getPageCount(0)).count / 100 + 1;
         const pages = parseInt(count + "", 10);
         const comp = <Navigation key={pageSelect} count={pages} page={pageSelect} switchPage={switchPage} />
         reloadComponent(pageSelect);

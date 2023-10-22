@@ -1,6 +1,6 @@
 export const DBConfig = {
     name: "SuperPlayer",
-    version: 6,
+    version: 8,
     objectStoresMeta: [
         {
             store: "songs",
@@ -13,9 +13,9 @@ export const DBConfig = {
                 { name: "animeVintage", keypath: "animeVintage", options: { unique: false } },
                 { name: "animeType", keypath: "animeType", options: { unique: false } },
                 { name: "arrangers", keypath: "arrangers", options: { unique: false, multiEntry: true } },
-                { name: "artists", keypath: "artists", options: { unique: false,  multiEntry: true } },
+                { name: "artists", keypath: "artists", options: { unique: false, multiEntry: true } },
                 { name: "audio", keypath: "audio", options: { unique: false } },
-                { name: "composers", keypath: "composers", options: { unique: false,  multiEntry: true } },
+                { name: "composers", keypath: "composers", options: { unique: false, multiEntry: true } },
                 { name: "HQ", keypath: "HQ", options: { unique: false } },
                 { name: "MQ", keypath: "MQ", options: { unique: false } },
                 { name: "songType", keypath: "songType", options: { unique: false } },
@@ -55,34 +55,34 @@ export const DBConfig = {
             ],
         },
         {
-            store: "count",
+            store: "listened",
             storeConfig: { keyPath: "annSongId", autoIncrement: false },
             storeSchema: [
-                { name: "count", keypath: "count", options: { unique: false } },
+                { name: "listened", keypath: "listened", options: { unique: false } },
             ],
         },
         {
             store: "artists",
-            storeConfig: { keyPath: "id", autoIncrement: false },
+            storeConfig: { keyPath: "id", autoIncrement: true },
             storeSchema: [
+                { name: "idPeople", keypath: "idPeople", options: { unique: true } },
                 { name: "name", keypath: "name", options: { unique: false } },
-                { name: "musics", keypath: "musics", options: { unique: false } },
             ],
         },
         {
             store: "composers",
-            storeConfig: { keyPath: "id", autoIncrement: false },
+            storeConfig: { keyPath: "id", autoIncrement: true },
             storeSchema: [
+                { name: "idPeople", keypath: "idPeople", options: { unique: true } },
                 { name: "name", keypath: "name", options: { unique: false } },
-                { name: "musics", keypath: "musics", options: { unique: false } },
             ],
         },
         {
-            store: "arrangers",
-            storeConfig: { keyPath: "id", autoIncrement: false },
+            store: "animes",
+            storeConfig: { keyPath: "id", autoIncrement: true },
             storeSchema: [
+                { name: "annId", keypath: "annId", options: { unique: true } },
                 { name: "name", keypath: "name", options: { unique: false } },
-                { name: "musics", keypath: "musics", options: { unique: false } },
             ],
         },
     ],

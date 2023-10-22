@@ -39,8 +39,6 @@ function App() {
     };
 
     const getLastPage = () => {
-      console.log(lastComponent);
-      console.log(component);
       setComponent(lastComponent);
     }
     return {
@@ -64,9 +62,8 @@ function App() {
 
   const btnClear = () => {
     const btn = document.getElementById('btn-clear-data') as HTMLButtonElement;
-    console.log("setup");
+
     btn.addEventListener('click', () => {
-      console.log("click");
       const dbName = 'SuperPlayer';
       const request = indexedDB.deleteDatabase(dbName);
 

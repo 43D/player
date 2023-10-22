@@ -66,7 +66,7 @@ function HomeArtist({ pageProps, dbProp }: pageProps) {
 
 
     return (
-        <div className="row mx-2 justify-content-center">
+        <div className="row justify-content-center">
             {componentPages}
             <div className="row p-0">
                 {component}

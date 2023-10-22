@@ -100,7 +100,7 @@ function Home({ pageProps, dbProp }: pageProps) {
                 <button id="main-filter-artist" onClick={createArtistAction} className="btn btn-secondary home-filter m-1">Artists</button>
                 <button id="main-filter-composer" onClick={createComposerAction} className="btn btn-secondary home-filter m-1">Composers/Arrangers</button>
                 <button id="main-filter-anime" onClick={createAnimeAction} className="btn btn-secondary home-filter m-1">Animes</button>
-                <div className="row">
+                <div className="row justify-content-center">
                     {componentArray}
                 </div>
             </div>

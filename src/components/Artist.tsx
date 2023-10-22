@@ -31,7 +31,6 @@ function Artist({ id, pageProps, dbProp }: idType) {
             const resultArtist = await feacthAniSong().fetchArtistById(id);
             const resultComposer = await feacthAniSong().fetchComposerById(id);
             const result = unionArray(resultArtist, resultComposer);
-
             searchName(result);
 
             const compAll = <ArtistAll key={"21"} songList={result} pageProps={pageProps} />
@@ -63,14 +62,27 @@ function Artist({ id, pageProps, dbProp }: idType) {
     }
 
     const searchName = (songs: JsonSong[]) => {
-        if (songs[0].artists[0].id === id)
-            setName(songs[0].artists[0].names.toString());
-        else if (songs[0].artists[0].members) {
-            songs[0].artists[0].members.forEach((v) => {
-                if (v.id === id)
-                    setName(v.names.toString());
-            });
-        }
+        if (songs[0].artists.length > 0)
+            searchNamePeople(songs[0].artists);
+
+        if (songs[0].composers.length > 0)
+            searchNamePeople(songs[0].composers);
+
+        if (songs[0].arrangers.length > 0)
+            searchNamePeople(songs[0].arrangers);
+    }
+
+    const searchNamePeople = (loop: any) => {
+        loop.forEach((people: any) => {
+            if (people.id === id)
+                setName(people.names.toString());
+            else if (people.members) {
+                people.members.forEach((v: any) => {
+                    if (v.id === id)
+                        setName(v.names.toString());
+                });
+            }
+        });
     }
 
     const switchBtn = (id: string) => {
@@ -132,9 +144,6 @@ function Artist({ id, pageProps, dbProp }: idType) {
     return (
         <div className="row">
             <div className="col-12 d-flex align-items-center">
-                <button id="artist-return" className="btn artist-return m-1" onClick={() => pageProps.pages().getLastPage()}>
-                    <i className="bi bi-arrow-left"></i>
-                </button>
                 <h2>{name}</h2>
             </div>
             <div className="col-12">

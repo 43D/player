@@ -75,9 +75,6 @@ function Anime({ id, pageProps, dbProp }: idType) {
     return (
         <div className="row">
             <div className="col-12 d-flex align-items-center">
-                <button id="artist-return" className="btn artist-return m-1" onClick={() => pageProps.pages().getLastPage()}>
-                    <i className="bi bi-arrow-left"></i>
-                </button>
                 <h2>{name}</h2>
             </div>
             <div className="col-12">

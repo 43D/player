@@ -8,15 +8,12 @@ import { useIndexedDB } from "react-indexed-db-hook";
 
 function App() {
   const [component, setComponent] = useState<JSX.Element>();
-  const [lastComponent, setLastComponent] = useState<JSX.Element>();
-  // const { add, update, getAll, getByID, openCursor } = useIndexedDB("songs");
   const dbSong = useIndexedDB;
   const db = database(dbSong);
 
   useEffect(() => {
     eventsBtn();
     const componentHome = <Home pageProps={{ pages }} dbProp={db} />
-    setLastComponent(componentHome);
     setComponent(componentHome);
   }, []);
 
@@ -29,22 +26,16 @@ function App() {
   const pages = () => {
     const getArtist = (id: number) => {
       const art = <Artist id={id} pageProps={{ pages }} dbProp={db} />
-      setLastComponent(component);
       setComponent(art);
     };
     const getAnime = (id: number) => {
       const anime = <Anime id={id} pageProps={{ pages }} dbProp={db} />
-      setLastComponent(component);
       setComponent(anime);
     };
 
-    const getLastPage = () => {
-      setComponent(lastComponent);
-    }
     return {
       getArtist,
-      getAnime,
-      getLastPage
+      getAnime
     }
   }
 
@@ -55,7 +46,6 @@ function App() {
       const inputSearch = document.getElementById('search-value') as HTMLInputElement;
       const text = inputSearch["value"];
       const componentSearch = <Search searchString={`${text}`} pageProps={{ pages }} dbProp={db} />;
-      setLastComponent(componentSearch);
       setComponent(componentSearch); //pages
     });
   }
@@ -85,7 +75,6 @@ function App() {
     const btnImg = document.getElementById('img-home') as HTMLButtonElement;
     btnImg.addEventListener('click', () => {
       const componentHome = <Home pageProps={{ pages }} dbProp={db} />
-      setLastComponent(componentHome);
       setComponent(componentHome);
     });
   }

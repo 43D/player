@@ -1,6 +1,7 @@
 type Composer = {
     id: number;
     names: string[];
+    members: Composer[];
 }
 
 type Artist = {
@@ -12,6 +13,7 @@ type Artist = {
 type Arranger = {
     id: number;
     names: string[];
+    members: Composer[];
 }
 
 type JsonSong = {

@@ -15,7 +15,7 @@ type dbType = (objectStore: string) => {
 type pageDataType = { id: number, count: number };
 
 export const database = (db: dbType) => {
-    const { add, update, getAll, getByID, openCursor, getByIndex } = db("songs");
+    const { add, update, getAll, openCursor, getByIndex } = db("songs");
     const addPages = db("pages").add;
     const getByIdPages = db("pages").getByID;
     const updatePages = db("pages").update;

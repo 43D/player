@@ -25,6 +25,14 @@ nav {
   z-index: 1035;
 }
 
+.page-link{
+  color: #dee2e6;
+}
+
+.active>.page-link, .page-link.active {
+  background-color: #198754;
+  border-color: #198754;
+}
 @media screen and (max-width: 433px) {
   #top-menu{
       background-color: #2e2e36;

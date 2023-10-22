@@ -4,7 +4,8 @@ import AnimeSongCard from "../AnimeSongCard";
 import PagesType from "../../type/PagesType";
 import JsonSong from "../../type/Songs";
 import DBType from "../../type/DBType";
-import Navigation from "../utils/navigation";
+import Navigation from "../utils/Navigation";
+
 interface pageProps {
     pageProps: PagesType;
     dbProp: DBType;

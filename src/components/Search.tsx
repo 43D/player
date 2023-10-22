@@ -7,16 +7,15 @@ import SearchSong from './Search/SearchSong';
 import SearchArtist from './Search/SearchArtist';
 import MessageCom from './MessageCom';
 import { feacthAniSong } from '../services/feacthAniSong';
-import { database } from '../db/database';
-import { useIndexedDB } from "react-indexed-db-hook";
+import DBType from '../type/DBType';
 
 interface SearchProps {
     searchString: string;
     pageProps: PagesType;
+    dbProp: DBType;
 }
 
-function Search({ searchString, pageProps }: SearchProps) {
-    const { add, update } = useIndexedDB("songs");
+function Search({ searchString, pageProps, dbProp }: SearchProps) {
     const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
     const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
     const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
@@ -29,12 +28,16 @@ function Search({ searchString, pageProps }: SearchProps) {
     }, [searchString]);
 
     async function searchAllSong() {
-        const result = await feacthAniSong().fetchAllSong(searchString);
-        createAll(result);
-        createAnime(result);
-        createSong(result);
-        createArtist(result);
-        database(add, update).saveSongList(result);
+        try {
+            const result = await feacthAniSong().fetchAllSong(searchString);
+            createAll(result);
+            createAnime(result);
+            createSong(result);
+            createArtist(result);
+            dbProp.saveSongList(result);
+        } catch (error) {
+            setComponent([<MessageCom key={"432"} msg="Api off-line" />])
+        }
     }
 
     const switchBtn = (id: string) => {

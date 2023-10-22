@@ -3,18 +3,17 @@ import PagesType from "../type/PagesType";
 import MessageCom from "./MessageCom";
 import { feacthAniSong } from "../services/feacthAniSong";
 import JsonSong from "../type/Songs";
-import { database } from "../db/database";
-import { useIndexedDB } from "react-indexed-db-hook";
 import ArtistAll from "./Artist/ArtistAll";
 import ArtistAnime from "./Artist/ArtistAnime";
+import DBType from "../type/DBType";
 
 type idType = {
     id: number;
     pageProps: PagesType;
+    dbProp: DBType;
 }
 
-function Artist({ id, pageProps }: idType) {
-    const { add, update } = useIndexedDB("songs");
+function Artist({ id, pageProps, dbProp }: idType) {
     const [name, setName] = useState<String>("");
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
@@ -28,26 +27,30 @@ function Artist({ id, pageProps }: idType) {
     }, [id]);
 
     async function searchAllSong() {
-        const resultArtist = await feacthAniSong().fetchArtistById(id);
-        const resultComposer = await feacthAniSong().fetchComposerById(id);
-        const result = unionArray(resultArtist, resultComposer);
+        try {
+            const resultArtist = await feacthAniSong().fetchArtistById(id);
+            const resultComposer = await feacthAniSong().fetchComposerById(id);
+            const result = unionArray(resultArtist, resultComposer);
 
-        searchName(result);
+            searchName(result);
 
-        const compAll = <ArtistAll key={"21"} songList={result} pageProps={pageProps} />
-        setComponentAll([compAll]);
+            const compAll = <ArtistAll key={"21"} songList={result} pageProps={pageProps} />
+            setComponentAll([compAll]);
 
-        const compArt = <ArtistAll key={"22"} songList={resultArtist} pageProps={pageProps} />
-        setComponentArtist([compArt]);
+            const compArt = <ArtistAll key={"22"} songList={resultArtist} pageProps={pageProps} />
+            setComponentArtist([compArt]);
 
-        const compCom = <ArtistAll key={"23"} songList={resultComposer} pageProps={pageProps} />
-        setComponentComposer([compCom]);
+            const compCom = <ArtistAll key={"23"} songList={resultComposer} pageProps={pageProps} />
+            setComponentComposer([compCom]);
 
-        createAnime(result);
+            createAnime(result);
 
-        setComponent([compAll]);
+            setComponent([compAll]);
 
-        database(add, update).saveSongList(result);
+            dbProp.saveSongList(result);
+        } catch (error) {
+            setComponent([<MessageCom key={"431"} msg="Api off-line" />])
+        }
     }
 
     const unionArray = (arr1: JsonSong[], arr2: JsonSong[]) => {

@@ -7,8 +7,15 @@ import HomeArtist from "./Home/HomeArtist";
 import HomeComposer from "./Home/HomeComposer";
 import HomeAnime from "./Home/HomeAnime";
 import HomePlaylist from "./Home/HomePlaylist";
+import PagesType from "../type/PagesType";
+import DBType from "../type/DBType";
 
-function Home() {
+interface pageProps {
+    pageProps: PagesType;
+    dbProp: DBType;
+}
+
+function Home({ pageProps, dbProp }: pageProps) {
     const [componentArray, setComponentArray] = useState<JSX.Element[]>([]);
     const [componentHome, setcomponentHome] = useState<JSX.Element[]>([]);
     const [componentPlaylist, setcomponentPlaylist] = useState<JSX.Element[]>([]);
@@ -26,7 +33,7 @@ function Home() {
 
         setcomponentPlaylist([<HomePlaylist key={"h2"} />]);
         setcomponentMostWanted([<HomeMostWanted key={"h3"} />]);
-        setcomponentAllSongs([<HomeAllSongs key={"h4"} />]);
+        setcomponentAllSongs([<HomeAllSongs key={"h4"} pageProps={pageProps} dbProp={dbProp} />]);
         setcomponentArtist([<HomeArtist key={"h5"} />]);
         setcomponentComposer([<HomeComposer key={"h6"} />]);
         setcomponentAnime([<HomeAnime key={"h7"} />]);
@@ -88,10 +95,10 @@ function Home() {
             <div className="col">
                 <button id="main-filter-home" onClick={createHomeAction} className="btn btn-success home-filter m-1">Home</button>
                 <button id="main-filter-playlist" onClick={createPlaylistction} className="btn btn-secondary home-filter m-1">Playlist</button>
-                <button id="main-filter-most" onClick={createMostAction} className="btn btn-secondary home-filter m-1">Mais escutadas</button>
-                <button id="main-filter-all" onClick={createAllAction} className="btn btn-secondary home-filter m-1">Todas músicas</button>
-                <button id="main-filter-artist" onClick={createArtistAction} className="btn btn-secondary home-filter m-1">Artistas</button>
-                <button id="main-filter-composer" onClick={createComposerAction} className="btn btn-secondary home-filter m-1">Compositores</button>
+                <button id="main-filter-most" onClick={createMostAction} className="btn btn-secondary home-filter m-1">Most listened</button>
+                <button id="main-filter-all" onClick={createAllAction} className="btn btn-secondary home-filter m-1">My songs</button>
+                <button id="main-filter-artist" onClick={createArtistAction} className="btn btn-secondary home-filter m-1">Artists</button>
+                <button id="main-filter-composer" onClick={createComposerAction} className="btn btn-secondary home-filter m-1">Composers</button>
                 <button id="main-filter-anime" onClick={createAnimeAction} className="btn btn-secondary home-filter m-1">Animes</button>
                 <div className="row">
                     {componentArray}

@@ -1,19 +1,18 @@
-import { useIndexedDB } from "react-indexed-db-hook";
 import PagesType from "../type/PagesType";
 import { useEffect, useState } from "react";
 import MessageCom from "./MessageCom";
 import { feacthAniSong } from "../services/feacthAniSong";
 import AnimeAll from "./Anime/AnimeAll";
 import AnimeType from "./Anime/AnimeType";
-import { database } from "../db/database";
+import DBType from "../type/DBType";
 
 type idType = {
     id: number;
     pageProps: PagesType;
+    dbProp: DBType;
 }
 
-function Anime({ id, pageProps }: idType) {
-    const { add, update } = useIndexedDB("songs");
+function Anime({ id, pageProps, dbProp }: idType) {
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [name, setName] = useState<String>("");
     const [nameJP, setNameJP] = useState<String>("");
@@ -27,19 +26,25 @@ function Anime({ id, pageProps }: idType) {
     }, [id]);
 
     async function searchAllSong() {
-        const result = await feacthAniSong().fetchSongById(id);
-        setName(result[0].animeENName);
-        setNameJP(result[0].animeJPName + " - " + result[0].animeVintage + " (" + result[0].animeType + ")");
+        try {
+            const result = await feacthAniSong().fetchSongById(id);
+            setName(result[0].animeENName);
+            setNameJP(result[0].animeJPName + " - " + result[0].animeVintage + " (" + result[0].animeType + ")");
+            
+            const compSong = <AnimeAll key={"13"} songList={result} pageProps={pageProps} />
+            setComponentSong([compSong]);
+            
+            const compType = <AnimeType key={"14"} songList={result} pageProps={pageProps} />
+            setComponentType([compType]);
+            
+            setComponent([compSong]);
+            
+            dbProp.saveSongList(result);
+        } catch (error) {
+            setComponent([<MessageCom key={"433"} msg="Api off-line" />])
+        }
         
-        const compSong = <AnimeAll key={"13"} songList={result} pageProps={pageProps} />
-        setComponentSong([compSong]);
         
-        const compType = <AnimeType key={"14"} songList={result} pageProps={pageProps} />
-        setComponentType([compType]);
-        
-        setComponent([compSong]);
-        
-        database(add, update).saveSongList(result);
     };
 
     const switchBtn = (id: string) => {

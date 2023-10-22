@@ -1,11 +1,12 @@
 export const DBConfig = {
     name: "SuperPlayer",
-    version: 2,
+    version: 6,
     objectStoresMeta: [
         {
             store: "songs",
-            storeConfig: { keyPath: "annSongId", autoIncrement: false },
+            storeConfig: { keyPath: "id", autoIncrement: true },
             storeSchema: [
+                { name: "annSongId", keypath: "annSongId", options: { unique: true } },
                 { name: "annId", keypath: "annId", options: { unique: false } },
                 { name: "animeENName", keypath: "animeENName", options: { unique: false } },
                 { name: "animeJPName", keypath: "animeJPName", options: { unique: false } },
@@ -20,6 +21,13 @@ export const DBConfig = {
                 { name: "songType", keypath: "songType", options: { unique: false } },
                 { name: "songName", keypath: "songName", options: { unique: false } },
                 { name: "songArtist", keypath: "songArtist", options: { unique: false } },
+            ],
+        },
+        {
+            store: "pages",
+            storeConfig: { keyPath: "id", autoIncrement: false },
+            storeSchema: [
+                { name: "count", keypath: "count", options: { unique: false } }
             ],
         },
         {

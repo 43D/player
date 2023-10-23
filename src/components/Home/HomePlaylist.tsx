@@ -39,7 +39,6 @@ function HomePlaylist({ pageProps, dbProp }: pageProps) {
     return (
         <div className="row justify-content-center mt-3">
             <div className="row">
-
                 <div className="card card-playlist col-12 col-md-6 col-lg-4 col-xl-3">
                     <div className="card-body">
                         <h5 className="card-title text-center">Create a Playlist</h5>

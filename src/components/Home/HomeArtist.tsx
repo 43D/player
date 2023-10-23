@@ -22,29 +22,39 @@ function HomeArtist({ pageProps, dbProp }: pageProps) {
     }, []);
 
     async function getAllArtist() {
-        const count = (await dbProp.getPageCount(2)).count / 100 + 1;
-        const pages = parseInt(count + "", 10);
-        setComponentPages([<Navigation key={97} count={pages} page={1} switchPage={switchPage} />]);
-        const comp = [] as JSX.Element[];
+        const count = (await dbProp.getPageCount(2)).count;
+        const countMath = (count / 100 + 1);
+        const pages = parseInt(countMath + "", 10);
+        if (count === 0)
+            setComponent([<MessageCom key={999} msg="Search for some anime music ani on top, this page only displays information that you have already searched for." />])
+        else {
+            setComponentPages([<Navigation key={97} count={pages} page={1} switchPage={switchPage} />]);
+            const comp = [] as JSX.Element[];
 
-        cursor((evt: any) => {
-            var cursor = evt.target.result;
-            if (cursor) {
-                let result = cursor.value as PeopleCardType;
-                comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} pageProps={pageProps} />);
-                cursor.continue();
-            } else {
-                setComponent(comp);
-            }
-        }, IDBKeyRange.bound(0, 100));
+            cursor((evt: any) => {
+                var cursor = evt.target.result;
+                if (cursor) {
+                    let result = cursor.value as PeopleCardType;
+                    comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} pageProps={pageProps} />);
+                    cursor.continue();
+                } else {
+                    setComponent(comp);
+                }
+            }, IDBKeyRange.bound(0, 100));
+        }
     }
 
     const switchPage = async (pageSelect: number) => {
-        const count = (await dbProp.getPageCount(2)).count / 100 + 1;
-        const pages = parseInt(count + "", 10);
-        const comp = <Navigation key={pageSelect} count={pages} page={pageSelect} switchPage={switchPage} />
-        reloadComponent(pageSelect);
-        setComponentPages([comp]);
+        const count = (await dbProp.getPageCount(2)).count;
+        const countMath = (count / 100 + 1);
+        const pages = parseInt(countMath + "", 10);
+        if (count === 0)
+            setComponent([<MessageCom key={999} msg="Search for some anime music ani on top, this page only displays information that you have already searched for." />])
+        else {
+            const comp = <Navigation key={pageSelect} count={pages} page={pageSelect} switchPage={switchPage} />
+            reloadComponent(pageSelect);
+            setComponentPages([comp]);
+        }
     }
 
     const reloadComponent = (pageSelect: number) => {
@@ -65,7 +75,7 @@ function HomeArtist({ pageProps, dbProp }: pageProps) {
     }
 
     return (
-        <div className="row justify-content-center">
+        <div className="row justify-content-center mt-3">
             {componentPages}
             <div className="row p-0">
                 {component}

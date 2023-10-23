@@ -35,8 +35,17 @@ nav {
 }
 
 .bi-plus-custom{
-  font-size: 50px;
+  font-size: 35px;
 }
+
+.card-playlist {
+  min-height: 185px;
+}
+
+.bg-trans-modal{
+  background-color: #0000009e;
+}
+
 @media screen and (max-width: 433px) {
   #top-menu{
       background-color: #2e2e36;

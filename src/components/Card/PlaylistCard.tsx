@@ -7,14 +7,15 @@ interface CardProps {
 }
 
 function PlaylistCard({ playlist, pageProps }: CardProps) {
-
     return (
-        <div className="card col-12 col-md-6 col-lg-4 col-xl-3">
+        <div className="card card-playlist col-12 col-md-6 col-lg-4 col-xl-3">
             <div className="card-body">
                 <h5 className="card-title text-center">{playlist.title}</h5>
-                <p className="text-center">0 songs</p>
+                <p className="text-center">{playlist.songsCollections.length} songs</p>
                 <div className="w-100 d-flex justify-content-center">
-                    <a href="#" className="btn btn-outline-success mt-2">Open PlayList</a>
+                    <a href="#" className="btn btn-outline-secondary mt-2" onClick={() => pageProps.pages().getPlaylist(playlist.id)}>Open PlayList</a>
+                    <a href="#" className="btn btn-outline-success mt-2 mx-1" onClick={() => pageProps.pages().playPlaylistNow(playlist.id)}><i className="bi bi-play"></i></a>
+                    <a href="#" className="btn btn-outline-danger mt-2" onClick={() => pageProps.pages().deletePlaylist(playlist.id)}>Delete</a>
                 </div>
             </div>
         </div>

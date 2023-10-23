@@ -150,6 +150,7 @@ function Artist({ id, pageProps, dbProp }: idType) {
                 Composer and Artist
             </div>
             <div className="col mt-3" id="search-anime">
+                <button className="btn btn-success m-1" onClick={() => pageProps.pages().playArtistNow(id)}><i className="bi bi-play"></i></button>
                 <button id="artist-filter-song" onClick={createAllAction} className="artist-filter btn btn-success m-1">All Songs</button>
                 <button id="artist-filter-anime" onClick={createCAnimeAction} className="artist-filter btn btn-secondary m-1">by Anime</button>
                 <button id="artist-filter-artist" onClick={createArtistAction} className="artist-filter btn btn-secondary m-1">is Artist</button>

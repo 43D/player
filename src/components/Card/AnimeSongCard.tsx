@@ -15,7 +15,7 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
         <li className="list-group-item">
             <div className="row">
                 <div className="col-2 col-sm-2 col-lg-1 border-end d-flex align-items-center">
-                    <button
+                    <button onClick={() => pageProps.pages().playSongNow(song.annSongId)}
                         className={`btn w-100 play-now song-id-${song.annSongId}`}>
                         <i className="bi bi-play"></i>
                     </button>
@@ -30,17 +30,19 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                     </button>
                     <ul className="dropdown-menu z-index-1035">
                         <li>
-                            <a className={`dropdown-item add-queue song-id-${song.annSongId}`} href="#">
+                            <a className={`dropdown-item add-queue song-id-${song.annSongId}`} href="#"
+                            onClick={() => pageProps.pages().addQueue(song.annSongId)}>
                                 <i className="bi bi-collection"></i> Add to Play queue
                             </a>
                         </li>
-                        <li data-bs-toggle="modal" data-bs-target="#addPlaylistModal">
-                            <a className={`dropdown-item add-playlist song-id-${song.annSongId}`} href="#">
+                        <li>
+                            <a className={`dropdown-item add-playlist song-id-${song.annSongId}`} href="#"
+                                onClick={() => pageProps.pages().addPlaylistModal(song.annSongId)}>
                                 <i className="bi bi-journal-plus"></i> Add to a PlayList
                             </a>
                         </li>
                         <li data-bs-toggle="collapse" data-bs-target={`#music-name-${song.annSongId}`}>
-                            <a className="dropdown-item" href="#" id="">
+                            <a className="dropdown-item" href="#">
                                 <i className="bi bi-collection"></i> Song information
                             </a>
                         </li>

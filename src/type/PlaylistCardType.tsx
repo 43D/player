@@ -1,6 +1,7 @@
 type PlaylistCardType = {
+    id: number;
     title: string;
-    songsCollections: number[]
+    songsCollections: number[];
 }
 
 export default PlaylistCardType

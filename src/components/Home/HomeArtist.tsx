@@ -64,7 +64,6 @@ function HomeArtist({ pageProps, dbProp }: pageProps) {
 
     }
 
-
     return (
         <div className="row justify-content-center">
             {componentPages}

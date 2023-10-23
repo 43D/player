@@ -31,7 +31,7 @@ function Home({ pageProps, dbProp }: pageProps) {
         setComponentArray([home]);
         setcomponentHome([home]);
 
-        setcomponentPlaylist([<HomePlaylist key={"h2"} />]);
+        setcomponentPlaylist([<HomePlaylist key={"h2"} pageProps={pageProps} dbProp={dbProp} />]);
         setcomponentMostWanted([<HomeMostWanted key={"h3"} />]);
         setcomponentAllSongs([<HomeAllSongs key={"h4"} pageProps={pageProps} dbProp={dbProp} />]);
         setcomponentArtist([<HomeArtist key={"h5"} pageProps={pageProps} dbProp={dbProp} />]);

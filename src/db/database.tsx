@@ -1,5 +1,6 @@
 import { Key } from "react-indexed-db-hook/lib/indexed-db";
 import JsonSong from "../type/Songs";
+import PlaylistCardType from "../type/PlaylistCardType";
 
 type dbType = (objectStore: string) => {
     add: <T = any>(value: T, key?: any) => Promise<number>;
@@ -29,6 +30,11 @@ export const database = (db: dbType) => {
     const addComposers = db("composers").add;
     const getByIndexComposers = db("composers").getByIndex;
     const openCursorComposers = db("composers").openCursor;
+    const getAllPl = db("playlists").getAll;
+    const addPlaylist = db("playlists").add;
+    const getByIDPl = db("playlists").getByID;
+    const updatePl = db("playlists").update;
+    const deletePl = db("playlists").deleteRecord;
     const contadorPage = { "id": 0, "count": 0 };
     const contadorAnime = { "id": 1, "count": 0 };
     const contadorArtist = { "id": 2, "count": 0 };
@@ -175,17 +181,17 @@ export const database = (db: dbType) => {
         contadorPage.count++;
         updatePages(contadorPage);
     }
-    
+
     function incrementArtistPage() {
         contadorArtist.count++;
         updatePages(contadorArtist);
     }
-    
+
     function incrementComposerPage() {
         contadorComposer.count++;
         updatePages(contadorComposer);
     }
-    
+
     function incrementAnimePage() {
         contadorAnime.count++;
         updatePages(contadorAnime);
@@ -235,6 +241,45 @@ export const database = (db: dbType) => {
         return openCursorComposers;
     }
 
+    const getAllPlaylist = async () => {
+        return await getAllPl() as PlaylistCardType[];
+    }
+
+    const createPlaylist = async (name: string) => {
+        const data = {
+            title: name,
+            songsCollections: []
+        }
+        await addPlaylist(data);
+    }
+
+    const getByIdPlaylist = async (id: number) => {
+        return await getByIDPl(id) as PlaylistCardType;
+    }
+
+
+    const getCollectionSongs = async (collection: number[]) => {
+        let result = [] as JsonSong[]
+        for (const id of collection)
+            result.push(await getByIndex("annSongId", id));
+        return result;
+    }
+
+    const getSongById = async (id: number) => {
+        return await getByIndex("annSongId", id) as JsonSong;
+    }
+
+    const addSongInPlaylist = async (idPlaylist: number, idSong: number) => {
+        const result = await getByIdPlaylist(idPlaylist);
+        if (!result.songsCollections.includes(idSong)) {
+            result.songsCollections.push(idSong);
+            updatePl(result);
+        }
+    }
+    const deletePlaylist = (id: number) => {
+        deletePl(id);
+    }
+
     return {
         saveSongList,
         getAllSongs,
@@ -242,7 +287,14 @@ export const database = (db: dbType) => {
         getCursor,
         getCursorAnime,
         getCursorArtist,
-        getCursorComposer
+        getCursorComposer,
+        getAllPlaylist,
+        createPlaylist,
+        getByIdPlaylist,
+        getCollectionSongs,
+        getSongById,
+        addSongInPlaylist,
+        deletePlaylist
     }
 
 }

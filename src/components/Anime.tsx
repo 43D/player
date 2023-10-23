@@ -81,6 +81,7 @@ function Anime({ id, pageProps, dbProp }: idType) {
                 <h5>{nameJP}</h5>
             </div>
             <div className="col mt-3" id="search-anime">
+                <button className="btn btn-success m-1" onClick={() => pageProps.pages().playAnimeNow(id)}><i className="bi bi-play"></i></button>
                 <button id="anime-filter-song" onClick={createSongAction} className="anime-filter btn btn-success m-1">All Song</button>
                 <button id="anime-filter-type" onClick={createTypeAction} className="anime-filter btn btn-secondary m-1">by Type</button>
             </div>

@@ -5,9 +5,13 @@ import Artist from "./components/Artist";
 import Anime from "./components/Anime";
 import { database } from "./db/database";
 import { useIndexedDB } from "react-indexed-db-hook";
+import Playlist from "./components/Playlist";
+import AddPlaylistModal from "./components/Modal/AddPlaylistModal";
+import DeletePlaylistModal from "./components/Modal/DeletePlaylistModal";
 
 function App() {
   const [component, setComponent] = useState<JSX.Element>();
+  const [componentModal, setComponentModal] = useState<JSX.Element | null>();
   const dbSong = useIndexedDB;
   const db = database(dbSong);
 
@@ -28,14 +32,61 @@ function App() {
       const art = <Artist id={id} pageProps={{ pages }} dbProp={db} />
       setComponent(art);
     };
+
     const getAnime = (id: number) => {
       const anime = <Anime id={id} pageProps={{ pages }} dbProp={db} />
       setComponent(anime);
     };
 
+    const getPlaylist = (id: number) => {
+      const playlist = <Playlist id={id} pageProps={{ pages }} dbProp={db} />
+      setComponent(playlist);
+    };
+
+    const addPlaylistModal = (id: number) => {
+      setComponentModal(<AddPlaylistModal key={id} id={id} pageProps={{ pages }} dbProp={db}/>);
+    };
+
+    const addQueue = (id: number) => {
+      console.log("song id: ", id);
+    };
+
+    const playSongNow = (id: number) => {
+      console.log("song id: ", id);
+    };
+
+    const playAnimeNow = (id: number) => {
+      console.log("Anime id: ", id);
+    };
+
+    const playArtistNow = (id: number) => {
+      console.log("Artist id: ", id);
+    };
+
+    const playPlaylistNow = (id: number) => {
+      console.log("Playlist id: ", id);
+    };
+
+    const deletePlaylist = (id: number) => {
+      setComponentModal(<DeletePlaylistModal key={id} id={id} pageProps={{ pages }} dbProp={db} />);
+    };
+
+    const modalClose = () => {
+      setComponentModal(null);
+    }
+
     return {
       getArtist,
-      getAnime
+      getAnime,
+      getPlaylist,
+      addPlaylistModal,
+      addQueue,
+      playSongNow,
+      playAnimeNow,
+      playArtistNow,
+      playPlaylistNow,
+      deletePlaylist,
+      modalClose
     }
   }
 
@@ -84,6 +135,7 @@ function App() {
   return (
     <div className="App pt-2 pb-4">
       {component}
+      {componentModal}
     </div>
   );
 }

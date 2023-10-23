@@ -1,3 +1,4 @@
+import PlaylistCardType from "./PlaylistCardType";
 import JsonSong from "./Songs";
 
 type pageDataType = { id: number, count: number };
@@ -11,6 +12,13 @@ type DBType = {
     getCursorAnime: () => curso;
     getCursorArtist: () => curso;
     getCursorComposer: () => curso;
+    getAllPlaylist: () => Promise<PlaylistCardType[]>;
+    createPlaylist: (name: string) => void;
+    getByIdPlaylist: (id: number) => Promise<PlaylistCardType>;
+    getCollectionSongs: (collection: number[]) => Promise<JsonSong[]>;
+    getSongById: (id: number) => Promise<JsonSong>;
+    addSongInPlaylist: (idPlaylist: number, idSong: number) => void;
+    deletePlaylist: (id: number) => void;
 }
 
 export default DBType

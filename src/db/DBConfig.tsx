@@ -1,6 +1,6 @@
 export const DBConfig = {
     name: "SuperPlayer",
-    version: 8,
+    version: 10,
     objectStoresMeta: [
         {
             store: "songs",
@@ -58,7 +58,7 @@ export const DBConfig = {
             store: "listened",
             storeConfig: { keyPath: "annSongId", autoIncrement: false },
             storeSchema: [
-                { name: "listened", keypath: "listened", options: { unique: false } },
+                { name: "count", keypath: "count", options: { unique: false } },
             ],
         },
         {

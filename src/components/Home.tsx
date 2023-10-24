@@ -29,10 +29,10 @@ function Home({ pageProps, dbProp }: pageProps) {
         setComponentArray([<MessageCom key={"1"} msg="Pesquisando músicas, aguarde...." />]);
         const home = <HomeDefault key={"h1"} />;
         setComponentArray([home]);
-        setcomponentHome([home]);
+        setcomponentHome([home]);   
 
         setcomponentPlaylist([<HomePlaylist key={"h2"} pageProps={pageProps} dbProp={dbProp} />]);
-        setcomponentMostWanted([<HomeMostWanted key={"h3"} />]);
+        setcomponentMostWanted([<HomeMostWanted key={"h3"} pageProps={pageProps} dbProp={dbProp}/>]);
         setcomponentAllSongs([<HomeAllSongs key={"h4"} pageProps={pageProps} dbProp={dbProp} />]);
         setcomponentArtist([<HomeArtist key={"h5"} pageProps={pageProps} dbProp={dbProp} />]);
         setcomponentComposer([<HomeComposer key={"h6"} pageProps={pageProps} dbProp={dbProp} />]);

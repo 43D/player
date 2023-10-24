@@ -1,6 +1,7 @@
 import { Key } from "react-indexed-db-hook/lib/indexed-db";
 import JsonSong from "../type/Songs";
 import PlaylistCardType from "../type/PlaylistCardType";
+import ListenedType from "../type/ListenedType";
 
 type dbType = (objectStore: string) => {
     add: <T = any>(value: T, key?: any) => Promise<number>;
@@ -12,6 +13,9 @@ type dbType = (objectStore: string) => {
     getByIndex: (indexName: string, key: any) => Promise<any>;
     clear: () => Promise<any>;
 }
+type actionType = {
+    action: (result: ListenedType[]) => void;
+};
 
 type pageDataType = { id: number, count: number };
 type peopleType = { idPeople: number, name: string }
@@ -35,6 +39,9 @@ export const database = (db: dbType) => {
     const getByIDPl = db("playlists").getByID;
     const updatePl = db("playlists").update;
     const deletePl = db("playlists").deleteRecord;
+    const getByIdListened = db("listened").getByID;
+    const addListened = db("listened").add;
+    const updateListened = db("listened").update;
     const contadorPage = { "id": 0, "count": 0 };
     const contadorAnime = { "id": 1, "count": 0 };
     const contadorArtist = { "id": 2, "count": 0 };
@@ -280,6 +287,56 @@ export const database = (db: dbType) => {
         deletePl(id);
     }
 
+    const addList = async (id: number) => {
+        getByIdListened(id).then((value: ListenedType) => {
+            if (value) {
+                value.count += 1;
+                updateListened(value);
+            } else {
+                const result = {
+                    annSongId: id,
+                    count: 1
+                };
+                addListened(result);
+            }
+
+        });
+    }
+    const getTopList = ({ action }: actionType) => {
+        const request = indexedDB.open('SuperPlayer', 10);
+        const resultArray: ListenedType[] = [];
+
+        request.onsuccess = (event: any) => {
+            if (event.target.result) {
+                const db = event.target.result;
+
+                const transaction = db.transaction('listened', 'readonly');
+                const objectStore = transaction.objectStore('listened');
+                const index = objectStore.index('count');
+
+                const cursorRequest = index.openCursor(null, 'prev'); // 'prev' para obter em ordem decrescente.
+
+                let count = 0;
+                cursorRequest.onsuccess = (event: any) => {
+                    if (event.target.result) {
+                        const cursor = event.target.result;
+
+                        if (cursor && count < 100) {
+                            resultArray.push(cursor.value);
+                            count++;
+                            cursor.continue();
+                        } else {
+                            action(resultArray);
+                        }
+                    } else {
+                        action(resultArray);
+                    }
+                };
+
+            };
+        }
+    }
+
     return {
         saveSongList,
         getAllSongs,
@@ -294,7 +351,8 @@ export const database = (db: dbType) => {
         getCollectionSongs,
         getSongById,
         addSongInPlaylist,
-        deletePlaylist
+        deletePlaylist,
+        addList,
+        getTopList
     }
-
 }

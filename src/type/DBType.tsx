@@ -1,9 +1,15 @@
+import ListenedType from "./ListenedType";
 import PlaylistCardType from "./PlaylistCardType";
 import JsonSong from "./Songs";
 
 type pageDataType = { id: number, count: number };
 
 type curso = (cursorCallback: (event: Event) => void, keyRange?: IDBKeyRange) => Promise<void>;
+
+type actionType = {
+    action: (result: ListenedType[]) => void;
+};
+
 type DBType = {
     saveSongList: (songList: JsonSong[]) => void;
     getAllSongs: () => Promise<JsonSong[]>;
@@ -19,6 +25,8 @@ type DBType = {
     getSongById: (id: number) => Promise<JsonSong>;
     addSongInPlaylist: (idPlaylist: number, idSong: number) => void;
     deletePlaylist: (id: number) => void;
+    addList: (id: number) => Promise<void>;
+    getTopList: ({action}: actionType) => void;
 }
 
 export default DBType

@@ -21,9 +21,13 @@ function HomeMostWanted({ pageProps, dbProp }: pageProps) {
 
     const action = async (result: ListenedType[]) => {
         const comps = [] as JSX.Element[];
-        for (const list of result) {
-            const song = await dbProp.getSongById(list.annSongId);
-            comps.push(<AnimeSongListenedCard key={list.annSongId} pageProps={pageProps} song={song} count={list.count} />);
+        if (result.length === 0) {
+            comps.push(<MessageCom key={999} msg="Play some music, this page only displays information about the songs you have already listened to." />);
+        } else {
+            for (const list of result) {
+                const song = await dbProp.getSongById(list.annSongId);
+                comps.push(<AnimeSongListenedCard key={list.annSongId} pageProps={pageProps} song={song} count={list.count} />);
+            }
         }
         setComponent(comps);
     }

@@ -15,6 +15,7 @@ type dbType = (objectStore: string) => {
 }
 type actionType = {
     action: (result: ListenedType[]) => void;
+    range: number;
 };
 
 type pageDataType = { id: number, count: number };
@@ -302,7 +303,7 @@ export const database = (db: dbType) => {
 
         });
     }
-    const getTopList = ({ action }: actionType) => {
+    const getTopList = ({ action, range }: actionType) => {
         const request = indexedDB.open('SuperPlayer', 10);
         const resultArray: ListenedType[] = [];
 
@@ -321,7 +322,7 @@ export const database = (db: dbType) => {
                     if (event.target.result) {
                         const cursor = event.target.result;
 
-                        if (cursor && count < 100) {
+                        if (cursor && count < range) {
                             resultArray.push(cursor.value);
                             count++;
                             cursor.continue();

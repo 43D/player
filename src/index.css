@@ -21,8 +21,38 @@ nav {
   margin-bottom: 0px;
 }
 
+.feed-component{
+  max-height: calc(40px * 8);
+  overflow: hidden;
+  border-bottom: 1px solid #198754;
+}
+
+.div-more-discovery{
+  display: flex;
+  height: 260px;
+  width: inherit;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  left: 0;
+}
+
+.div-more-discovery-right{
+  display: flex;
+  height: 260px;
+  width: inherit;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  left: 50%;
+}
+
 .z-index-1035{
   z-index: 1035;
+}
+
+.z-index-1{
+  z-index: 1;
 }
 
 .page-link{
@@ -120,5 +150,11 @@ nav {
   }
   #video{
       max-height: calc(100vh - 145px);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .div-more-discovery-right{
+    left: 0;
   }
 }

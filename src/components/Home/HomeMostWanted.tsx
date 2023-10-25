@@ -10,13 +10,13 @@ interface pageProps {
     dbProp: DBType;
 }
 
-
 function HomeMostWanted({ pageProps, dbProp }: pageProps) {
     const [component, setComponent] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
         setComponent([<MessageCom key={"512"} msg="Pesquisando a mais escutadas, aguarde...." />])
-        dbProp.getTopList({ action });
+        const range = 99;
+        dbProp.getTopList({ action, range });
     }, []);
 
     const action = async (result: ListenedType[]) => {

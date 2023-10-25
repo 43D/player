@@ -115,6 +115,21 @@ export const feacthAniSong = () => {
         return requestOptions;
     }
 
+    const randomdBody = () => {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const requestBody = {};
+
+        const requestOptions: RequestInit = {
+            method: 'POST',
+            headers: myHeaders,
+            body: JSON.stringify(requestBody),
+            redirect: 'follow',
+        };
+
+        return requestOptions;
+    }
     function fetchAllSong(parse: string) {
         const requestOptions = searchAllBody(parse);
         return fetchApi("https://anisongdb.com/api/search_request", requestOptions);
@@ -133,6 +148,11 @@ export const feacthAniSong = () => {
     function fetchComposerById(parse: number) {
         const requestOptions = composerByIdBody(parse);
         return fetchApi("https://anisongdb.com/api/composer_ids_request", requestOptions);
+    };
+
+    function fetchRandomAnime() {
+        const requestOptions = randomdBody();
+        return fetchApi("https://anisongdb.com/api/get_50_random_songs", requestOptions);
     };
 
     async function fetchArtistComposerById(parse: number) {
@@ -157,11 +177,13 @@ export const feacthAniSong = () => {
     };
 
 
+
     return {
         fetchArtistComposerById,
         fetchComposerById,
         fetchArtistById,
         fetchSongById,
-        fetchAllSong
+        fetchAllSong,
+        fetchRandomAnime
     }
 }

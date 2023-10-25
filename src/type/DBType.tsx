@@ -8,6 +8,7 @@ type curso = (cursorCallback: (event: Event) => void, keyRange?: IDBKeyRange) =>
 
 type actionType = {
     action: (result: ListenedType[]) => void;
+    range: number;
 };
 
 type DBType = {
@@ -26,7 +27,7 @@ type DBType = {
     addSongInPlaylist: (idPlaylist: number, idSong: number) => void;
     deletePlaylist: (id: number) => void;
     addList: (id: number) => Promise<void>;
-    getTopList: ({action}: actionType) => void;
+    getTopList: ({action, range}: actionType) => void;
 }
 
 export default DBType

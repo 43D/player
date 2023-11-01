@@ -13,9 +13,8 @@ interface pageProps {
 
 function FeedDiscovery({ pageProps, dbProp }: pageProps) {
     const [component, setComponent] = useState<JSX.Element[]>([]);
-    const [nameBtn, setNameBtn] = useState<string>("more");
+    const [nameBtn, setNameBtn] = useState<string>("Show more...");
     const feedDiscovery = useRef<HTMLDivElement>(null);
-    const divMore = useRef<HTMLDivElement>(null);
 
 
     useEffect(() => {
@@ -23,12 +22,6 @@ function FeedDiscovery({ pageProps, dbProp }: pageProps) {
         setComponent([comp]);
         getRandomAnime();
     }, []);
-
-    useEffect(() => {
-        if (feedDiscovery.current && divMore.current)
-            divMore.current.style.height = (feedDiscovery.current.clientHeight + 20) + "px";
-    }, [divMore, feedDiscovery, component]);
-
 
     const getRandomAnime = async () => {
         const result = await feacthAniSong().fetchRandomAnime();
@@ -49,22 +42,20 @@ function FeedDiscovery({ pageProps, dbProp }: pageProps) {
 
     const showMoreFeed = () => {
         setNameBtn("more");
-        if (feedDiscovery.current && divMore.current) {
-            console.log();
+        if (feedDiscovery.current) {
             const style = (feedDiscovery.current.style.maxHeight == 'none') ? "240px" : "none";
             feedDiscovery.current.style.maxHeight = style;
-            divMore.current.style.height = (feedDiscovery.current.clientHeight + 20) + "px";
             if (style == "none")
-                setNameBtn("less");
+                setNameBtn("Show less...");
         }
     }
 
     return (
         <div className="col-12 feed-component" ref={feedDiscovery}>
-            <div className="div-more-discovery" ref={divMore}>
-                <button className="btn btn-success z-index-1" onClick={showMoreFeed}>{nameBtn}</button>
+            <div className="d-flex justify-content-between mb-2">
+                <h2>Discovery</h2>
+                <button className="btn btn-success" onClick={showMoreFeed}>{nameBtn}</button>
             </div>
-            <h2>Discovery</h2>
             {component}
         </div>
     )

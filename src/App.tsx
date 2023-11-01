@@ -53,6 +53,7 @@ function App() {
 
     const playSongNow = (id: number) => {
       console.log("song id: ", id);
+      db.addListen(id);
     };
 
     const playAnimeNow = (id: number) => {

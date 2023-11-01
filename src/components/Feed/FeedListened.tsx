@@ -3,6 +3,8 @@ import PagesType from "../../type/PagesType";
 import MessageCom from "../MessageCom";
 import HomePagesType from "../../type/HomePagesType";
 import DBType from "../../type/DBType";
+import ListenedType from "../../type/ListenedType";
+import AnimeSongListenedCard from "../Card/AnimeSongListenedCard";
 
 interface pageProps {
     pageProps: PagesType;
@@ -13,30 +15,44 @@ interface pageProps {
 function FeedListened({ pageProps, dbProp, homePages }: pageProps) {
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const feedDiscovery = useRef<HTMLDivElement>(null);
-    const divMore = useRef<HTMLDivElement>(null);
-
 
     useEffect(() => {
         const comp = <MessageCom key={987} msg="Buscando algo...." />;
         setComponent([comp]);
+        getListened();
     }, []);
-
-    useEffect(() => {
-        if (feedDiscovery.current && divMore.current)
-            divMore.current.style.height = (feedDiscovery.current.clientHeight + 20) + "px";
-    }, [divMore, feedDiscovery, component]);
 
     const showMoreFeed = () => {
         homePages().createMostAction();
     }
 
+    const getListened = () => {
+        const range = 10;
+        dbProp.getTopList({ action, range });
+    }
+    const action = async (result: ListenedType[]) => {
+        if (result.length === 0)
+            setComponent([<MessageCom key={"978"} msg="No music listened to…" />])
+        else {
+            const components: JSX.Element[] = [];
+            for (const list of result) {
+                const song = await dbProp.getSongById(list.annSongId);
+                components.push(<AnimeSongListenedCard key={list.annSongId} count={list.count} song={song} pageProps={pageProps} />);
+            }
+            setComponent(components);
+        }
+
+    }
+
     return (
-        <div className="col-12 col-lg-6 mt-5 feed-component" ref={feedDiscovery}>
-            <div className="div-more-discovery-right" ref={divMore}>
-                <button className="btn btn-success z-index-1" onClick={showMoreFeed}>more...</button>
+        <div className="col-12 mt-5" ref={feedDiscovery}>
+            <div className="d-flex justify-content-between mb-2">
+                <h4>Most Listened (Top 10)</h4>
+                <button className="btn btn-success" onClick={showMoreFeed}>Open Most Listened</button>
             </div>
-            <h4>Most Listened</h4>
-            {component}
+            <ul className="list-group">
+                {component}
+            </ul>
         </div>
     )
 }

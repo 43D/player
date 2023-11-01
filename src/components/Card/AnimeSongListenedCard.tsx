@@ -15,13 +15,13 @@ function AnimeSongListenedCard({ song, pageProps, count }: CardProps) {
     return (
         <li className="list-group-item">
             <div className="row">
-                <div className="col-2 col-sm-2 col-lg-1 border-end d-flex align-items-center">
+                <div className="col-3 col-sm-2 col-lg-1 border-end d-flex align-items-center">
                     <button onClick={() => pageProps.pages().playSongNow(song.annSongId)}
                         className={`btn w-100 play-now song-id-${song.annSongId}`}>
                         <i className="bi bi-play"></i>
                     </button>
                 </div>
-                <div className="col-8 col-sm d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                <div className="col-7 col-sm d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
                     data-bs-target={`#music-name-${song.annSongId}`}>
                     <p className='m-0 p-0'>{song.songName}</p>
                     <p className='m-0 p-0'>played {count} times</p>

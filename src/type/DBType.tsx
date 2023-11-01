@@ -26,7 +26,7 @@ type DBType = {
     getSongById: (id: number) => Promise<JsonSong>;
     addSongInPlaylist: (idPlaylist: number, idSong: number) => void;
     deletePlaylist: (id: number) => void;
-    addList: (id: number) => Promise<void>;
+    addListen: (id: number) => Promise<void>;
     getTopList: ({action, range}: actionType) => void;
 }
 

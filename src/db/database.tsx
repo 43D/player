@@ -288,7 +288,7 @@ export const database = (db: dbType) => {
         deletePl(id);
     }
 
-    const addList = async (id: number) => {
+    const addListen = async (id: number) => {
         getByIdListened(id).then((value: ListenedType) => {
             if (value) {
                 value.count += 1;
@@ -353,7 +353,7 @@ export const database = (db: dbType) => {
         getSongById,
         addSongInPlaylist,
         deletePlaylist,
-        addList,
+        addListen,
         getTopList
     }
 }

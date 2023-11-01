@@ -41,7 +41,7 @@ function FeedDiscovery({ pageProps, dbProp }: pageProps) {
     };
 
     const showMoreFeed = () => {
-        setNameBtn("more");
+        setNameBtn("Show more...");
         if (feedDiscovery.current) {
             const style = (feedDiscovery.current.style.maxHeight == 'none') ? "240px" : "none";
             feedDiscovery.current.style.maxHeight = style;

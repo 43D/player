@@ -122,9 +122,9 @@ nav {
   }
 }
 
-@media screen and (max-width: 455px) {
+@media screen and (max-width: 530px) {
   #search-value{
-    width: calc( 100vw * 0.3);
+    width: calc( 100vw * 0.4);
   }
 }
 
@@ -136,5 +136,5 @@ nav {
   #top-menu{
     background-color: #2e2e36;
     height: 110px;
-}
+  }
 }

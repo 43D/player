@@ -21,6 +21,11 @@ nav {
   margin-bottom: 0px;
 }
 
+.cover-anime{
+  width: auto;
+  max-height: 240px;
+}
+
 .feed-component{
   max-height: calc(40px * 8);
   overflow: hidden;
@@ -106,6 +111,11 @@ nav {
   #video{
       max-height: calc(100vh - 190px);
   }
+  .cover-anime{
+    width: 100%;
+    max-height: none;
+    height: fit-content;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -120,11 +130,23 @@ nav {
   #video{
       max-height: calc(100vh - 145px);
   }
+  .cover-anime{
+    width: 100%;
+    max-height: none;
+    height: fit-content;
+  }
 }
 
 @media screen and (max-width: 530px) {
   #search-value{
     width: calc( 100vw * 0.4);
+  }
+  .table-anime tr {
+    display: block;
+  }
+  .table-anime th,
+  .table-anime td {
+    display: block;
   }
 }
 

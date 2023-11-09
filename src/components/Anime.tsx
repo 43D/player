@@ -47,7 +47,6 @@ function Anime({ id, pageProps, dbProp }: idType) {
 
             dbProp.saveSongList(result);
         } catch (error) {
-            console.log(error);
             setComponent([<MessageCom key={"433"} msg="Api off-line" />])
         }
 
@@ -55,7 +54,6 @@ function Anime({ id, pageProps, dbProp }: idType) {
     };
 
     const searchAnimeInfo = async (song: JsonSong) => {
-        console.log(song);
         const year = (song.animeVintage) ? song.animeVintage.split(" ")[1] : "1900";
         const animeEN = await feacthAnimeInfo().fetchAnimeInfo(song.animeENName, year);
         let result = searchMatch(animeEN, song);
@@ -83,10 +81,11 @@ function Anime({ id, pageProps, dbProp }: idType) {
             return {
                 data: [value]
             };
-        if (includeStringArray(value.title_english, song.animeENName, song.animeJPName))
-            return {
-                data: [value]
-            };
+        if (value.title_english)
+            if (includeStringArray(value.title_english, song.animeENName, song.animeJPName))
+                return {
+                    data: [value]
+                };
 
         for (let title in value.title_synonyms)
             if (includeStringArray(title, song.animeENName, song.animeJPName))

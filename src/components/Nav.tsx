@@ -24,7 +24,7 @@ function Nav() {
             <nav className="navbar navbar-expand-md">
                 <div className="container-fluid">
                     <Link className="navbar-brand btn" to={"/"} >
-                        <img src="/logo.png" width="32" height="32" alt="Anime Song Player" />
+                        <img src="https://43d.github.io/player/logo.png" width="32" height="32" alt="Anime Song Player" />
                     </Link>
                     <div className="d-flex">
                         <form className="d-flex" role="search" onSubmit={handleSubmit}>

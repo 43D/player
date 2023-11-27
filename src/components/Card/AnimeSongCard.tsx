@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PagesType from '../../type/PagesType';
 import JsonSong from '../../type/Songs';
 
@@ -31,7 +32,7 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                     <ul className="dropdown-menu z-index-1035">
                         <li>
                             <a className={`dropdown-item add-queue song-id-${song.annSongId}`} href="#"
-                            onClick={() => pageProps.pages().addQueue(song.annSongId)}>
+                                onClick={() => pageProps.pages().addQueue(song.annSongId)}>
                                 <i className="bi bi-collection"></i> Add to Play queue
                             </a>
                         </li>
@@ -61,10 +62,10 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                         <tr>
                             <th>Anime</th>
                             <td>
-                                <a href="#" onClick={() => pageProps.pages().getAnime(song.annId)}>{song.animeENName}</a>
+                                <Link to={"/player/anime/" + song.annId}>{song.animeENName}</Link>
                             </td>
                             <td colSpan={2}>
-                                <a href="#" onClick={() => pageProps.pages().getAnime(song.annId)}>{song.animeJPName}</a>
+                                <Link to={"/player/anime/" + song.annId}>{song.animeJPName}</Link>
                             </td>
                         </tr>
                         <tr>
@@ -72,7 +73,8 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                             <td colSpan={3}>
                                 {artists.map((item) => (
                                     <span key={item.id}>
-                                        <a href="#" onClick={() => pageProps.pages().getArtist(item.id)}>{item.names.toString()}</a>     </span>
+                                        <Link to={"/player/artist/" + item.id}>{item.names.toString()}</Link>
+                                    </span>
                                 ))}
                             </td>
                         </tr>
@@ -81,8 +83,8 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                             <td colSpan={3}>
                                 {composers.map((item) => (
                                     <span key={item.id}>
-                                        <a href="#" onClick={() => pageProps.pages().getArtist(item.id)}>{item.names.toString()}</a>  </span>
-
+                                        <Link to={"/player/artist/" + item.id}>{item.names.toString()}</Link>
+                                    </span>
                                 ))}
                             </td>
                         </tr>
@@ -91,7 +93,8 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                             <td colSpan={3}>
                                 {arrangers.map((item) => (
                                     <span key={item.id}>
-                                        <a href="#" onClick={() => pageProps.pages().getArtist(item.id)}>{item.names.toString()}</a>  </span>
+                                        <Link to={"/player/artist/" + item.id}>{item.names.toString()}</Link>
+                                    </span>
                                 ))}
                             </td>
                         </tr>

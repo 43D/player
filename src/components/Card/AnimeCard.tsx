@@ -1,19 +1,18 @@
-import PagesType from "../../type/PagesType";
 import AnimeCardType from "../../type/AnimeCardType";
+import { Link } from "react-router-dom";
 
 interface CardProps {
     anime: AnimeCardType;
-    pageProps: PagesType;
 }
 
-function AnimeCard({ anime, pageProps }: CardProps) {
+function AnimeCard({ anime }: CardProps) {
 
     return (
         <div className="card col-12 col-md-6 col-lg-4 col-xl-3">
             <div className="card-body">
                 <h5 className="card-title">{anime.name}</h5>
                 <div className="w-100 d-flex justify-content-center">
-                    <a href="#" onClick={() => pageProps.pages().getAnime(anime.annId)} className="btn btn-outline-success mt-2">Open Anime</a>
+                    <Link className="btn btn-outline-success mt-2" to={"/player/anime/" + anime.annId}>Open Anime</Link>
                 </div>
             </div>
         </div>

@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import AnimeCardType from "../../type/AnimeCardType";
 import DBType from "../../type/DBType";
-import PagesType from "../../type/PagesType";
 import Navigation from "../utils/Navigation";
 import MessageCom from "../MessageCom";
 import AnimeCard from "../Card/AnimeCard";
 
 interface pageProps {
-    pageProps: PagesType;
     dbProp: DBType;
 }
 
-function HomeAnime({ pageProps, dbProp }: pageProps) {
+function HomeAnime({ dbProp }: pageProps) {
     const cursor = dbProp.getCursorAnime();
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [componentPages, setComponentPages] = useState<JSX.Element[]>([]);
@@ -35,7 +33,7 @@ function HomeAnime({ pageProps, dbProp }: pageProps) {
                 var cursor = evt.target.result;
                 if (cursor) {
                     let result = cursor.value as AnimeCardType;
-                    comp.push(<AnimeCard key={"ann" + result.annId} anime={result} pageProps={pageProps} />);
+                    comp.push(<AnimeCard key={"ann" + result.annId} anime={result} />);
                     cursor.continue();
                 } else {
                     setComponent(comp);
@@ -65,7 +63,7 @@ function HomeAnime({ pageProps, dbProp }: pageProps) {
             var cursor = evt.target.result;
             if (cursor) {
                 let result = cursor.value as AnimeCardType;
-                comp.push(<AnimeCard key={"ann" + result.annId} anime={result} pageProps={pageProps} />);
+                comp.push(<AnimeCard key={"ann" + result.annId} anime={result} />);
                 cursor.continue();
             } else {
                 setComponent(comp);

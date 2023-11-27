@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import PagesType from "../../type/PagesType";
 import MessageCom from "../MessageCom";
 import HomePagesType from "../../type/HomePagesType";
 import DBType from "../../type/DBType";
@@ -7,12 +6,11 @@ import PlaylistCardType from "../../type/PlaylistCardType";
 import PlaylistCompactCard from "../Card/PlaylistCompactCard";
 
 interface pageProps {
-    pageProps: PagesType;
     dbProp: DBType;
     homePages: HomePagesType;
 }
 
-function FeedPlaylist({ pageProps, dbProp, homePages }: pageProps) {
+function FeedPlaylist({ dbProp, homePages }: pageProps) {
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const feedDiscovery = useRef<HTMLDivElement>(null);
 
@@ -49,7 +47,7 @@ function FeedPlaylist({ pageProps, dbProp, homePages }: pageProps) {
         const components: JSX.Element[] = [];
         for (let index = 0; index < playlists.length; index++) {
             const playlist = playlists[index];
-            components.push(<PlaylistCompactCard key={index} pageProps={pageProps} playlist={playlist} />);
+            components.push(<PlaylistCompactCard key={index} playlist={playlist} />);
 
             if (index >= 11)
                 break;

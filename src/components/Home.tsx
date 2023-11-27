@@ -20,7 +20,7 @@ function Home({ pageProps, dbProp }: pageProps) {
 
     useEffect(() => {
         setComponentArray([<MessageCom key={"1"} msg="Pesquisando músicas, aguarde...." />]);
-        setComponentArray([<HomeFeed key={"h1"} pageProps={pageProps} dbProp={dbProp} homePages={homePages}/>]);
+        setComponentArray([<HomeFeed key={"h1"} pageProps={pageProps} dbProp={dbProp} homePages={homePages} />]);
     }, []);
 
     const switchBtn = (id: string) => {
@@ -38,7 +38,7 @@ function Home({ pageProps, dbProp }: pageProps) {
         }
     };
 
-    const homePages = () =>{
+    const homePages = () => {
         return {
             createHomeAction,
             createPlaylistction,
@@ -52,7 +52,7 @@ function Home({ pageProps, dbProp }: pageProps) {
 
     const createHomeAction = () => {
         switchBtn("main-filter-home");
-        setComponentArray([<HomeFeed key={"h1"} pageProps={pageProps} dbProp={dbProp} homePages={homePages}/>]);
+        setComponentArray([<HomeFeed key={"h1"} pageProps={pageProps} dbProp={dbProp} homePages={homePages} />]);
     };
 
     const createPlaylistction = () => {
@@ -62,7 +62,7 @@ function Home({ pageProps, dbProp }: pageProps) {
 
     const createMostAction = () => {
         switchBtn("main-filter-most");
-        setComponentArray([<HomeMostWanted key={"h3"} pageProps={pageProps} dbProp={dbProp}/>]);
+        setComponentArray([<HomeMostWanted key={"h3"} pageProps={pageProps} dbProp={dbProp} />]);
     };
 
     const createAllAction = () => {
@@ -72,31 +72,35 @@ function Home({ pageProps, dbProp }: pageProps) {
 
     const createArtistAction = () => {
         switchBtn("main-filter-artist");
-        setComponentArray([<HomeArtist key={"h5"} pageProps={pageProps} dbProp={dbProp} />]);
+        setComponentArray([<HomeArtist key={"h5"} dbProp={dbProp} />]);
     };
 
     const createComposerAction = () => {
         switchBtn("main-filter-composer");
-        setComponentArray([<HomeComposer key={"h6"} pageProps={pageProps} dbProp={dbProp} />]);
+        setComponentArray([<HomeComposer key={"h6"} dbProp={dbProp} />]);
     };
 
     const createAnimeAction = () => {
         switchBtn("main-filter-anime");
-        setComponentArray([<HomeAnime key={"h7"} pageProps={pageProps} dbProp={dbProp} />]);
+        setComponentArray([<HomeAnime key={"h7"} dbProp={dbProp} />]);
     };
 
     return (
-        <div className="row">
-            <div className="col">
-                <button id="main-filter-home" onClick={createHomeAction} className="btn btn-success home-filter m-1">Home</button>
-                <button id="main-filter-playlist" onClick={createPlaylistction} className="btn btn-secondary home-filter m-1">Playlist</button>
-                <button id="main-filter-most" onClick={createMostAction} className="btn btn-secondary home-filter m-1">Most listened</button>
-                <button id="main-filter-all" onClick={createAllAction} className="btn btn-secondary home-filter m-1">My songs</button>
-                <button id="main-filter-anime" onClick={createAnimeAction} className="btn btn-secondary home-filter m-1">Animes</button>
-                <button id="main-filter-artist" onClick={createArtistAction} className="btn btn-secondary home-filter m-1">Artists</button>
-                <button id="main-filter-composer" onClick={createComposerAction} className="btn btn-secondary home-filter m-1">Composers/Arrangers</button>
-                <div className="row justify-content-center">
-                    {componentArray}
+        <div id="display-main" className="container-fluid displays">
+            <div className="App pt-2 pb-4">
+                <div className="row">
+                    <div className="col">
+                        <button id="main-filter-home" onClick={createHomeAction} className="btn btn-success home-filter m-1">Home</button>
+                        <button id="main-filter-playlist" onClick={createPlaylistction} className="btn btn-secondary home-filter m-1">Playlist</button>
+                        <button id="main-filter-most" onClick={createMostAction} className="btn btn-secondary home-filter m-1">Most listened</button>
+                        <button id="main-filter-all" onClick={createAllAction} className="btn btn-secondary home-filter m-1">My songs</button>
+                        <button id="main-filter-anime" onClick={createAnimeAction} className="btn btn-secondary home-filter m-1">Animes</button>
+                        <button id="main-filter-artist" onClick={createArtistAction} className="btn btn-secondary home-filter m-1">Artists</button>
+                        <button id="main-filter-composer" onClick={createComposerAction} className="btn btn-secondary home-filter m-1">Composers/Arrangers</button>
+                        <div className="row justify-content-center">
+                            {componentArray}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

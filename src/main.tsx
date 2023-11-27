@@ -10,6 +10,5 @@ initDB(DBConfig);
 ReactDOM.createRoot(document.getElementById('main')!).render(
   <React.StrictMode>
     <App />
-    
   </React.StrictMode>,
 )

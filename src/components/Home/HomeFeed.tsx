@@ -29,7 +29,7 @@ function HomeFeed({ pageProps, dbProp, homePages }: pageProps) {
     }
 
     const feedPlaylist = () => {
-        const comp = <FeedPlaylist key={987} pageProps={pageProps} dbProp={dbProp} homePages={homePages} />;
+        const comp = <FeedPlaylist key={987} dbProp={dbProp} homePages={homePages} />;
         setComponentPlaylist([comp]);
     }
 

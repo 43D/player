@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import DBType from "../../type/DBType";
-import PagesType from "../../type/PagesType";
 import MessageCom from "../MessageCom";
 import Navigation from "../utils/Navigation";
 import PeopleCardType from "../../type/PeopleCardType";
 import ProfileCard from "../Card/ProfileCard";
 
 interface pageProps {
-    pageProps: PagesType;
     dbProp: DBType;
 }
 
-function HomeComposer({ pageProps, dbProp }: pageProps) {
+function HomeComposer({ dbProp }: pageProps) {
 
     const cursor = dbProp.getCursorComposer();
     const [component, setComponent] = useState<JSX.Element[]>([]);
@@ -36,7 +34,7 @@ function HomeComposer({ pageProps, dbProp }: pageProps) {
                 var cursor = evt.target.result;
                 if (cursor) {
                     let result = cursor.value as PeopleCardType;
-                    comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} pageProps={pageProps} />);
+                    comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} />);
                     cursor.continue();
                 } else {
                     setComponent(comp);
@@ -66,7 +64,7 @@ function HomeComposer({ pageProps, dbProp }: pageProps) {
             var cursor = evt.target.result;
             if (cursor) {
                 let result = cursor.value as PeopleCardType;
-                comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} pageProps={pageProps} />);
+                comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} />);
                 cursor.continue();
             } else {
                 setComponent(comp);

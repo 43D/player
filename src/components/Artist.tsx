@@ -6,14 +6,19 @@ import JsonSong from "../type/Songs";
 import ArtistAll from "./Artist/ArtistAll";
 import ArtistAnime from "./Artist/ArtistAnime";
 import DBType from "../type/DBType";
+import { Navigate, useParams } from "react-router-dom";
 
 type idType = {
-    id: number;
     pageProps: PagesType;
     dbProp: DBType;
 }
 
-function Artist({ id, pageProps, dbProp }: idType) {
+function Artist({ pageProps, dbProp }: idType) {
+    const { idArtist } = useParams<string>();
+    const id = idArtist ? parseInt(idArtist, 10) : 0;
+    if (id == 0)
+        return <Navigate replace to="/player/404" />
+
     const [name, setName] = useState<String>("");
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
@@ -142,24 +147,29 @@ function Artist({ id, pageProps, dbProp }: idType) {
 
 
     return (
-        <div className="row">
-            <div className="col-12 d-flex align-items-center">
-                <h2>{name}</h2>
-            </div>
-            <div className="col-12">
-                Composer and Artist
-            </div>
-            <div className="col mt-3" id="search-anime">
-                <button className="btn btn-success m-1" onClick={() => pageProps.pages().playArtistNow(id)}><i className="bi bi-play"></i></button>
-                <button id="artist-filter-song" onClick={createAllAction} className="artist-filter btn btn-success m-1">All Songs</button>
-                <button id="artist-filter-anime" onClick={createCAnimeAction} className="artist-filter btn btn-secondary m-1">by Anime</button>
-                <button id="artist-filter-artist" onClick={createArtistAction} className="artist-filter btn btn-secondary m-1">is Artist</button>
-                <button id="artist-filter-composer" onClick={createComposerAction} className="artist-filter btn btn-secondary m-1">is Composer/Arranger</button>
-            </div>
-            <div className="col-12 mt-3">
-                {component}
+        <div id="display-main" className="container-fluid displays">
+            <div className="App pt-2 pb-4">
+                <div className="row">
+                    <div className="col-12 d-flex align-items-center">
+                        <h2>{name}</h2>
+                    </div>
+                    <div className="col-12">
+                        Composer and Artist
+                    </div>
+                    <div className="col mt-3" id="search-anime">
+                        <button className="btn btn-success m-1" onClick={() => pageProps.pages().playArtistNow(id)}><i className="bi bi-play"></i></button>
+                        <button id="artist-filter-song" onClick={createAllAction} className="artist-filter btn btn-success m-1">All Songs</button>
+                        <button id="artist-filter-anime" onClick={createCAnimeAction} className="artist-filter btn btn-secondary m-1">by Anime</button>
+                        <button id="artist-filter-artist" onClick={createArtistAction} className="artist-filter btn btn-secondary m-1">is Artist</button>
+                        <button id="artist-filter-composer" onClick={createComposerAction} className="artist-filter btn btn-secondary m-1">is Composer/Arranger</button>
+                    </div>
+                    <div className="col-12 mt-3">
+                        {component}
+                    </div>
+                </div>
             </div>
         </div>
+
     );
 }
 

@@ -1,50 +1,25 @@
 import { useEffect, useState } from "react";
-import Home from "./components/Home";
-import Search from "./components/Search";
-import Artist from "./components/Artist";
-import Anime from "./components/Anime";
+import { BrowserRouter } from "react-router-dom";
+import RoutesApp from "./routes/routes";
+
 import { database } from "./db/database";
 import { useIndexedDB } from "react-indexed-db-hook";
-import Playlist from "./components/Playlist";
 import AddPlaylistModal from "./components/Modal/AddPlaylistModal";
 import DeletePlaylistModal from "./components/Modal/DeletePlaylistModal";
+import Nav from "./components/Nav";
 
 function App() {
-  const [component, setComponent] = useState<JSX.Element>();
   const [componentModal, setComponentModal] = useState<JSX.Element | null>();
   const dbSong = useIndexedDB;
   const db = database(dbSong);
 
   useEffect(() => {
-    eventsBtn();
-    const componentHome = <Home pageProps={{ pages }} dbProp={db} />
-    setComponent(componentHome);
+    btnClear();
   }, []);
 
-  const eventsBtn = () => {
-    btnSearch();
-    btnHome();
-    btnClear();
-  }
-
   const pages = () => {
-    const getArtist = (id: number) => {
-      const art = <Artist id={id} pageProps={{ pages }} dbProp={db} />
-      setComponent(art);
-    };
-
-    const getAnime = (id: number) => {
-      const anime = <Anime id={id} pageProps={{ pages }} dbProp={db} />
-      setComponent(anime);
-    };
-
-    const getPlaylist = (id: number) => {
-      const playlist = <Playlist id={id} pageProps={{ pages }} dbProp={db} />
-      setComponent(playlist);
-    };
-
     const addPlaylistModal = (id: number) => {
-      setComponentModal(<AddPlaylistModal key={id} id={id} pageProps={{ pages }} dbProp={db}/>);
+      setComponentModal(<AddPlaylistModal key={id} id={id} pageProps={{ pages }} dbProp={db} />);
     };
 
     const addQueue = (id: number) => {
@@ -77,9 +52,6 @@ function App() {
     }
 
     return {
-      getArtist,
-      getAnime,
-      getPlaylist,
       addPlaylistModal,
       addQueue,
       playSongNow,
@@ -89,17 +61,6 @@ function App() {
       deletePlaylist,
       modalClose
     }
-  }
-
-  const btnSearch = () => {
-    const btn = document.getElementById('btn-search') as HTMLButtonElement;
-
-    btn.addEventListener('click', () => {
-      const inputSearch = document.getElementById('search-value') as HTMLInputElement;
-      const text = inputSearch["value"];
-      const componentSearch = <Search searchString={`${text}`} pageProps={{ pages }} dbProp={db} />;
-      setComponent(componentSearch); //pages
-    });
   }
 
   const btnClear = () => {
@@ -123,21 +84,13 @@ function App() {
 
   }
 
-  const btnHome = () => {
-    const btnImg = document.getElementById('img-home') as HTMLButtonElement;
-    btnImg.addEventListener('click', () => {
-      const componentHome = <Home pageProps={{ pages }} dbProp={db} />
-      setComponent(componentHome);
-    });
-  }
-
-
 
   return (
-    <div className="App pt-2 pb-4">
-      {component}
+    <BrowserRouter>
+      <Nav />
+      <RoutesApp dbProp={db} pageProps={{ pages }} key={"0"} />
       {componentModal}
-    </div>
+    </BrowserRouter>
   );
 }
 

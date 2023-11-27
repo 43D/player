@@ -8,14 +8,17 @@ import SearchArtist from './Search/SearchArtist';
 import MessageCom from './MessageCom';
 import { feacthAniSong } from '../services/feacthAniSong';
 import DBType from '../type/DBType';
+import { useParams } from 'react-router-dom';
 
 interface SearchProps {
-    searchString: string;
     pageProps: PagesType;
     dbProp: DBType;
 }
 
-function Search({ searchString, pageProps, dbProp }: SearchProps) {
+function Search({ pageProps, dbProp }: SearchProps) {
+
+    const { parse } = useParams<string>();
+    const searchString = parse || "";
     const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
     const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
     const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
@@ -23,6 +26,9 @@ function Search({ searchString, pageProps, dbProp }: SearchProps) {
     const [component, setComponent] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
+        const inputSearch = document.getElementById('search-value') as HTMLInputElement;
+        inputSearch["value"] = searchString;
+
         setComponent([<MessageCom key={"1"} msg="Pesquisando músicas, aguarde...." />])
         searchAllSong();
     }, [searchString]);
@@ -161,13 +167,20 @@ function Search({ searchString, pageProps, dbProp }: SearchProps) {
     };
 
     return (
-        <div className='row'>
-            <div className="col mt-3" id="search-anime">
-                <button id="search-filter-all" onClick={createAllAction} className="search-filter       btn btn-success m-1">All</button>
-                <button id="search-filter-song" onClick={createSongAction} className="search-filter     btn btn-secondary m-1">Song Name</button>
-                <button id="search-filter-anime" onClick={createAnimeAction} className="search-filter   btn btn-secondary m-1">Anime Name</button>
-                <button id="search-filter-artist" onClick={createArtistAction} className="search-filter btn btn-secondary m-1">Artist Name</button>
-                {component}
+        <div id="display-main" className="container-fluid displays">
+            <div className="App pt-2 pb-4">
+                <div className='row'>
+                    <div className='col-12 ps-4'>
+                        <h1>{searchString}</h1>
+                    </div>
+                    <div className="col mt-3" id="search-anime">
+                        <button id="search-filter-all" onClick={createAllAction} className="search-filter       btn btn-success m-1">All</button>
+                        <button id="search-filter-song" onClick={createSongAction} className="search-filter     btn btn-secondary m-1">Song Name</button>
+                        <button id="search-filter-anime" onClick={createAnimeAction} className="search-filter   btn btn-secondary m-1">Anime Name</button>
+                        <button id="search-filter-artist" onClick={createArtistAction} className="search-filter btn btn-secondary m-1">Artist Name</button>
+                        {component}
+                    </div>
+                </div>
             </div>
         </div>
     );

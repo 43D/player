@@ -6,14 +6,19 @@ import DBType from "../type/DBType";
 import JsonSong from "../type/Songs";
 import SearchAnime from "./Search/SearchAnime";
 import SearchArtist from "./Search/SearchArtist";
+import { Navigate, useParams } from "react-router-dom";
 
 type idType = {
-    id: number;
     pageProps: PagesType;
     dbProp: DBType;
 }
 
-function Playlist({ id, pageProps, dbProp }: idType) {
+function Playlist({ pageProps, dbProp }: idType) {
+    const { idPlaylist } = useParams<string>();
+    const id = idPlaylist ? parseInt(idPlaylist, 10) : 0;
+    if (id == 0)
+        return <Navigate replace to="/player/404" />
+
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [name, setName] = useState<String>("");
     const [qtd, setQtd] = useState<number>(0);
@@ -127,21 +132,25 @@ function Playlist({ id, pageProps, dbProp }: idType) {
 
 
     return (
-        <div className="row">
-            <div className="col-12 d-flex align-items-center">
-                <h2>{name}</h2>
-            </div>
-            <div className="col-12">
-                <h5>{qtd} songs</h5>
-            </div>
-            <div className="col mt-3" id="search-anime">
-                <button className="btn btn-success m-1" onClick={() => pageProps.pages().playPlaylistNow(id)}><i className="bi bi-play"></i></button>
-                <button id="anime-filter-song" onClick={createSongAction} className="playlist-filter btn btn-success m-1">All Song</button>
-                <button id="anime-filter-anime" onClick={createAnimeAction} className="playlist-filter btn btn-secondary m-1">Anime</button>
-                <button id="anime-filter-artist" onClick={createArtistAction} className="playlist-filter btn btn-secondary m-1">Artist/Composers/Arranger</button>
-            </div>
-            <div className="col-12 mt-3">
-                {component}
+        <div id="display-main" className="container-fluid displays">
+            <div className="App pt-2 pb-4">
+                <div className="row">
+                    <div className="col-12 d-flex align-items-center">
+                        <h2>{name}</h2>
+                    </div>
+                    <div className="col-12">
+                        <h5>{qtd} songs</h5>
+                    </div>
+                    <div className="col mt-3" id="search-anime">
+                        <button className="btn btn-success m-1" onClick={() => pageProps.pages().playPlaylistNow(id)}><i className="bi bi-play"></i></button>
+                        <button id="anime-filter-song" onClick={createSongAction} className="playlist-filter btn btn-success m-1">All Song</button>
+                        <button id="anime-filter-anime" onClick={createAnimeAction} className="playlist-filter btn btn-secondary m-1">Anime</button>
+                        <button id="anime-filter-artist" onClick={createArtistAction} className="playlist-filter btn btn-secondary m-1">Artist/Composers/Arranger</button>
+                    </div>
+                    <div className="col-12 mt-3">
+                        {component}
+                    </div>
+                </div>
             </div>
         </div>
     );

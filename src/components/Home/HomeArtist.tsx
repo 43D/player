@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import DBType from "../../type/DBType";
-import PagesType from "../../type/PagesType";
 import MessageCom from "../MessageCom";
 import Navigation from "../utils/Navigation";
 import ProfileCard from "../Card/ProfileCard";
 import PeopleCardType from "../../type/PeopleCardType";
 
 interface pageProps {
-    pageProps: PagesType;
     dbProp: DBType;
 }
 
-function HomeArtist({ pageProps, dbProp }: pageProps) {
+function HomeArtist({  dbProp }: pageProps) {
     const cursor = dbProp.getCursorArtist();
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [componentPages, setComponentPages] = useState<JSX.Element[]>([]);
@@ -35,7 +33,7 @@ function HomeArtist({ pageProps, dbProp }: pageProps) {
                 var cursor = evt.target.result;
                 if (cursor) {
                     let result = cursor.value as PeopleCardType;
-                    comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} pageProps={pageProps} />);
+                    comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} />);
                     cursor.continue();
                 } else {
                     setComponent(comp);
@@ -65,7 +63,7 @@ function HomeArtist({ pageProps, dbProp }: pageProps) {
             var cursor = evt.target.result;
             if (cursor) {
                 let result = cursor.value as PeopleCardType;
-                comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} pageProps={pageProps} />);
+                comp.push(<ProfileCard key={"ann" + result.idPeople} people={result}/>);
                 cursor.continue();
             } else {
                 setComponent(comp);

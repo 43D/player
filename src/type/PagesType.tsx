@@ -1,8 +1,5 @@
 type PagesType = {
     pages: () => {
-        getArtist: (id: number) => void;
-        getAnime: (id: number) => void;
-        getPlaylist: (id: number) => void;
         addPlaylistModal: (id: number) => void;
         addQueue: (id: number) => void;
         playSongNow: (id: number) => void;

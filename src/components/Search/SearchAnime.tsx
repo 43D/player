@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import JsonSong from '../../type/Songs';
 import AnimeSongCard from '../Card/AnimeSongCard';
 import PagesType from '../../type/PagesType';
+import { useNavigate } from 'react-router-dom';
 
 interface AnimeProps {
     songList: JsonSong[];
@@ -10,7 +11,9 @@ interface AnimeProps {
 
 function SearchAnime({ songList, pageProps }: AnimeProps){
     const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
+    const navigate = useNavigate();
 
+    
     useEffect(() => {
         const components = [];
 
@@ -26,7 +29,7 @@ function SearchAnime({ songList, pageProps }: AnimeProps){
 
     return (
         <div>
-            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() => pageProps.pages().getAnime(songList[0].annId)}>{songList[0].animeJPName}</h4>
+            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() =>  navigate("/player/anime/" + songList[0].annId)}>{songList[0].animeJPName}</h4>
             <ul className="list-group">
                 {componentCard}
             </ul>

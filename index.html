@@ -43,24 +43,8 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div class="fixed-top text-light" id="top-menu">
-    <nav class="navbar navbar-expand-md">
-      <div class="container-fluid">
-        <button class="navbar-brand btn" id="img-home">
-          <img src="/logo.png" width="32" height="32" alt="Anime Song Player">
-        </button>
-        <div class="d-flex">
-          <form class="d-flex" method="get" role="search" action="javascript:void(0);">
-            <input id="search-value" class="form-control me-2 bg-dark-subtle" type="search" placeholder="Search"
-              aria-label="Search">
-            <button class="btn btn-outline-success" type="submit" id="btn-search">Search</button>
-          </form>
-          <button class="nav-link mx-4" type="button" data-bs-toggle="modal" data-bs-target="#configsModal">
-            <i class="bi bi-gear"></i>
-          </button>
-        </div>
-      </div>
-    </nav>
+  <div id="main">
+
   </div>
   <div id="display-video" style="margin-bottom: 0px!important;"
     class="container-fluid displays p-0 m-0 d-flex align-items: center d-none">
@@ -73,11 +57,6 @@
           <audio id="audio"></audio>
         </div>
       </div>
-    </div>
-  </div>
-  <div id="display-main" class="container-fluid displays">
-    <div class="row" id="main">
-
     </div>
   </div>
 

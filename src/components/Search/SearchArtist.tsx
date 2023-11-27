@@ -28,7 +28,7 @@ function SearchArtist({ songList, pageProps }: AnimeProps) {
 
     return (
         <div>
-            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() => navigate("/player/artist/" + songList[0].artists[0].id)}> {songList[0].artists[0].names.toString()}</h4>
+            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() => navigate("/artist/" + songList[0].artists[0].id)}> {songList[0].artists[0].names.toString()}</h4>
             <ul className="list-group">
                 {componentCard}
             </ul>

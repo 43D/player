@@ -14,7 +14,7 @@ function PlaylistCard({ playlist, pageProps }: CardProps) {
                 <h5 className="card-title text-center">{playlist.title}</h5>
                 <p className="text-center">{playlist.songsCollections.length} songs</p>
                 <div className="w-100 d-flex justify-content-center">
-                    <Link className="btn btn-outline-secondary mt-2" to={"/player/playlist/" + playlist.id}>Open PlayList</Link>
+                    <Link className="btn btn-outline-secondary mt-2" to={"/playlist/" + playlist.id}>Open PlayList</Link>
                     <a href="#" className="btn btn-outline-success mt-2 mx-1" onClick={() => pageProps.pages().playPlaylistNow(playlist.id)}><i className="bi bi-play"></i></a>
                     <a href="#" className="btn btn-outline-danger mt-2" onClick={() => pageProps.pages().deletePlaylist(playlist.id)}>Delete</a>
                 </div>

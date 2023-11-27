@@ -16,14 +16,14 @@ function Nav() {
     };
 
     const searchPage = (parse: string) => {
-        navigate("/player/search/" + parse);
+        navigate("/search/" + parse);
     };
 
     return (
         <div className="fixed-top text-light" id="top-menu">
             <nav className="navbar navbar-expand-md">
                 <div className="container-fluid">
-                    <Link className="navbar-brand btn" to={"/player/"} >
+                    <Link className="navbar-brand btn" to={"/"} >
                         <img src="/logo.png" width="32" height="32" alt="Anime Song Player" />
                     </Link>
                     <div className="d-flex">

@@ -17,7 +17,7 @@ function Artist({ pageProps, dbProp }: idType) {
     const { idArtist } = useParams<string>();
     const id = idArtist ? parseInt(idArtist, 10) : 0;
     if (id == 0)
-        return <Navigate replace to="/player/404" />
+        return <Navigate replace to="/404" />
 
     const [name, setName] = useState<String>("");
     const [component, setComponent] = useState<JSX.Element[]>([]);

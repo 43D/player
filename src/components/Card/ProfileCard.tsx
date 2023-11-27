@@ -12,7 +12,7 @@ function ProfileCard({ people }: CardProps) {
             <div className="card-body">
                 <h5 className="card-title">{people.name}</h5>
                 <div className="w-100 d-flex justify-content-center">
-                    <Link className="btn btn-outline-success mt-2" to={"/player/artist/" + people.idPeople}>Open Profile</Link>
+                    <Link className="btn btn-outline-success mt-2" to={"/artist/" + people.idPeople}>Open Profile</Link>
                 </div>
             </div>
         </div>

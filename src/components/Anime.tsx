@@ -21,7 +21,7 @@ function Anime({ pageProps, dbProp }: idType) {
     const { idAnime } = useParams<string>();
     const id = idAnime ? parseInt(idAnime, 10) : 0;
     if (id == 0)
-        return <Navigate replace to="/player/404" />
+        return <Navigate replace to="/404" />
 
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [name, setName] = useState<String>("");

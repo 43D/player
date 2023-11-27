@@ -62,10 +62,10 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                         <tr>
                             <th>Anime</th>
                             <td>
-                                <Link to={"/player/anime/" + song.annId}>{song.animeENName}</Link>
+                                <Link to={"/anime/" + song.annId}>{song.animeENName}</Link>
                             </td>
                             <td colSpan={2}>
-                                <Link to={"/player/anime/" + song.annId}>{song.animeJPName}</Link>
+                                <Link to={"/anime/" + song.annId}>{song.animeJPName}</Link>
                             </td>
                         </tr>
                         <tr>
@@ -73,7 +73,7 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                             <td colSpan={3}>
                                 {artists.map((item) => (
                                     <span key={item.id}>
-                                        <Link to={"/player/artist/" + item.id}>{item.names.toString()}</Link>
+                                        <Link to={"/artist/" + item.id}>{item.names.toString()}</Link>
                                     </span>
                                 ))}
                             </td>
@@ -83,7 +83,7 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                             <td colSpan={3}>
                                 {composers.map((item) => (
                                     <span key={item.id}>
-                                        <Link to={"/player/artist/" + item.id}>{item.names.toString()}</Link>
+                                        <Link to={"/artist/" + item.id}>{item.names.toString()}</Link>
                                     </span>
                                 ))}
                             </td>
@@ -93,7 +93,7 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                             <td colSpan={3}>
                                 {arrangers.map((item) => (
                                     <span key={item.id}>
-                                        <Link to={"/player/artist/" + item.id}>{item.names.toString()}</Link>
+                                        <Link to={"/artist/" + item.id}>{item.names.toString()}</Link>
                                     </span>
                                 ))}
                             </td>

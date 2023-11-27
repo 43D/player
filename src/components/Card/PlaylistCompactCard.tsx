@@ -11,7 +11,7 @@ function PlaylistCompactCard({ playlist }: CardProps) {
             <div className="card-body d-flex justify-content-between flex-column">
                 <h5 className="card-title">{playlist.title}</h5>
                 <div className="w-100">
-                    <Link className="btn btn-outline-secondary mt-2 w-100" to={"/player/playlist/" + playlist.id}>Open</Link>
+                    <Link className="btn btn-outline-secondary mt-2 w-100" to={"/playlist/" + playlist.id}>Open</Link>
                 </div>
             </div>
         </div>

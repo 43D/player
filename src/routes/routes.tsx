@@ -16,13 +16,13 @@ type dependencias = {
 function RoutesApp({ pageProps, dbProp }: dependencias) {
   return (
     <Routes>
-      <Route path="/player/" element={<Home key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/player/search/:parse" element={<Search key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/player/anime/:idAnime" element={<Anime key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/player/artist/:idArtist" element={<Artist key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/player/playlist/:idPlaylist" element={<Playlist key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/player/404" element={<NotFound />} />
-      <Route path="/player/*" element={<NotFound />} />
+      <Route path="/" element={<Home key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/search/:parse" element={<Search key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/anime/:idAnime" element={<Anime key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/artist/:idArtist" element={<Artist key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/playlist/:idPlaylist" element={<Playlist key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/404" element={<NotFound />} />
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   );
 }

@@ -30,7 +30,7 @@ function ArtistAnime({ songList, pageProps }: AnimeProps){
 
     return (
         <div>
-            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() => navigate("/player/anime/" + songList[0].annId)}>{songList[0].animeJPName}</h4>
+            <h4 className="my-2" style={{ cursor: 'pointer' }} onClick={() => navigate("/anime/" + songList[0].annId)}>{songList[0].animeJPName}</h4>
             <ul className="list-group">
                 {componentCard}
             </ul>

@@ -12,7 +12,7 @@ function AnimeCard({ anime }: CardProps) {
             <div className="card-body">
                 <h5 className="card-title">{anime.name}</h5>
                 <div className="w-100 d-flex justify-content-center">
-                    <Link className="btn btn-outline-success mt-2" to={"/player/anime/" + anime.annId}>Open Anime</Link>
+                    <Link className="btn btn-outline-success mt-2" to={"/anime/" + anime.annId}>Open Anime</Link>
                 </div>
             </div>
         </div>

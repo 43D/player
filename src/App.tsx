@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import RoutesApp from "./routes/routes";
 
 import { database } from "./db/database";
@@ -86,11 +86,11 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Nav />
       <RoutesApp dbProp={db} pageProps={{ pages }} key={"0"} />
       {componentModal}
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

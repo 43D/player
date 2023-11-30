@@ -16,9 +16,27 @@ nav {
   /* background-color: red; */
 }
 
-#display-video{
+#display-video,
+#display-image{
   position: relative;
   margin-bottom: 0px;
+}
+
+#display-image{
+  background: #000;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+#alert-404{
+  background: #2e2e366b;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
+  border: 1px solid #2e2e36;
 }
 
 .cover-anime{
@@ -62,7 +80,8 @@ nav {
       top: 110px;
       margin-bottom: 300px;
   }
-  #display-video{
+  #display-video,
+  #display-image{
       top: 110px;
       height: calc(100vh - 300px);
   }
@@ -76,7 +95,8 @@ nav {
       top: 64px;
       margin-bottom: 275px;
   }
-  #display-video{
+  #display-video,
+  #display-image{
       top: 64px;
       height: calc(100vh - 229px);
   }
@@ -90,7 +110,8 @@ nav {
       top: 64px;
       margin-bottom: 275px;
   }
-  #display-video{
+  #display-video,
+  #display-image{
       top: 64px;
       height: calc(100vh - 229px);
   }
@@ -104,7 +125,8 @@ nav {
       top: 64px;
       margin-bottom: 229px;
   }
-  #display-video{
+  #display-video,
+  #display-image{
       top: 64px;
       height: calc(100vh - 190px);
   }
@@ -123,7 +145,8 @@ nav {
       top: 64px;
       margin-bottom: 190px;
   }
-  #display-video{
+  #display-video,
+  #display-image{
       top: 64px;
       height: calc(100vh - 145px);
   }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { HashRouter } from "react-router-dom";
 import RoutesApp from "./routes/routes";
 
@@ -7,15 +7,14 @@ import { useIndexedDB } from "react-indexed-db-hook";
 import AddPlaylistModal from "./components/Modal/AddPlaylistModal";
 import DeletePlaylistModal from "./components/Modal/DeletePlaylistModal";
 import Nav from "./components/Nav";
+import ConfigMenu from "./components/Config/ConfigMenu";
+import StorageLocal from "./db/StorageLocal";
 
 function App() {
   const [componentModal, setComponentModal] = useState<JSX.Element | null>();
   const dbSong = useIndexedDB;
   const db = database(dbSong);
-
-  useEffect(() => {
-    btnClear();
-  }, []);
+  const store = StorageLocal();
 
   const pages = () => {
     const addPlaylistModal = (id: number) => {
@@ -63,33 +62,12 @@ function App() {
     }
   }
 
-  const btnClear = () => {
-    const btn = document.getElementById('btn-clear-data') as HTMLButtonElement;
-
-    btn.addEventListener('click', () => {
-      const dbName = 'SuperPlayer';
-      const request = indexedDB.deleteDatabase(dbName);
-
-      request.onsuccess = () => {
-        console.log(`Banco de dados ${dbName} foi excluído com sucesso.`);
-      };
-
-      request.onerror = (event) => {
-        console.error(`Erro ao excluir o banco de dados ${dbName}: ${event}`);
-      };
-
-      location.reload();
-    });
-
-
-  }
-
-
   return (
     <HashRouter>
       <Nav />
       <RoutesApp dbProp={db} pageProps={{ pages }} key={"0"} />
       {componentModal}
+      <ConfigMenu store={store}/>
     </HashRouter>
   );
 }

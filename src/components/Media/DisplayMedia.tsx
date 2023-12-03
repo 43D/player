@@ -85,8 +85,10 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
                     audioRef.current.src = song.media;
                 pauseAll();
                 audioRef.current.play();
-                if (videoRef.current && videoRef.current?.src != "")
-                    videoRef.current.src = ""
+                if (videoRef.current && videoRef.current?.src) {
+                    videoRef.current.src = "0";
+                    videoRef.current.removeAttribute("src");
+                }
             }
 
         if (song.streaming == "video")
@@ -95,6 +97,10 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
                     videoRef.current.src = song.media;
                 pauseAll();
                 videoRef.current.play();
+                if (audioRef.current && audioRef.current?.src != "") {
+                    audioRef.current.src = "0";
+                    audioRef.current.removeAttribute("src");
+                }
             }
 
         changeVolume(json.volume * 100);
@@ -148,25 +154,23 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
     }
 
     const showCurrentTime = () => {
-        if (store.getConfig().streaming == "0") {
-            if (audioRef.current)
+        if (audioRef.current)
+            if (audioRef.current.src != "")
                 timelineProp().setTimeline(120000 / audioRef.current.duration * audioRef.current.currentTime, audioRef.current.duration);
-        } else {
-            if (videoRef.current)
+        if (videoRef.current)
+            if (videoRef.current.src != "")
                 timelineProp().setTimeline(120000 / videoRef.current.duration * videoRef.current.currentTime, videoRef.current.duration);
-        }
-    };
+    }
 
 
     const changeTime = (value: string) => {
-        if (store.getConfig().streaming == "0") {
-
-            if (audioRef.current)
+        if (audioRef.current)
+            if (audioRef.current.src != "")
                 audioRef.current.currentTime = (Number(value) * audioRef.current.duration / 120000);
-        } else {
-            if (videoRef.current)
+        if (videoRef.current)
+            if (videoRef.current.src != "")
                 videoRef.current.currentTime = (Number(value) * videoRef.current.duration / 120000);
-        }
+
     }
 
 

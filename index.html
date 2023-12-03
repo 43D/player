@@ -39,8 +39,8 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <script type="module" crossorigin src="/player/assets/index-fa12960c.js"></script>
-  <link rel="stylesheet" href="/player/assets/index-3e5f2a16.css">
+  <script type="module" crossorigin src="/player/assets/index-ea86d7e4.js"></script>
+  <link rel="stylesheet" href="/player/assets/index-c36f4799.css">
 </head>
 
 <body>
@@ -48,94 +48,6 @@
   <div id="main">
 
   </div>
-  <div id="display-video" style="margin-bottom: 0px!important;"
-    class="container-fluid displays p-0 m-0 d-flex align-items: center d-none">
-    <div class="row h-100 w-100  p-0 m-0">
-      <div class="col-12 h-100 p-0 m-0">
-        <div class="h-100 d-flex justify-content-center flex-column">
-          <video id="video" style="max-height: 100%;"></video>
-        </div>
-        <div class="col d-none">
-          <audio id="audio"></audio>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="bottom-menu" class="fixed-bottom border-top text-light">
-    <div class="container-fluid">
-      <div class="row py-3">
-        <form action="javascript:void(0);" class="col-12 col-md-6  my-1 col-lg-5 col-xl-4">
-          <div class="d-flex justify-content-center">
-            <div class="d-flex justify-content-center -flex-warp">
-              <button id="btn-video-collapse" type="button"
-                class="btn btn-outline-dark text-light border rounded-circle">
-                <i class="bi bi-film"></i>
-              </button>
-              <button type="button" id="btn-random" class="mx-1 btn btn-outline-dark text-light border rounded-circle">
-                <i class="bi bi-shuffle"></i>
-              </button>
-              <button type="button" id="btn-preview" class="mx-1 btn btn-outline-dark text-light border rounded-circle">
-                <i class="bi bi-arrow-left"></i>
-              </button>
-            </div>
-            <div class="d-flex justify-content-center">
-
-              <button type="button" id="btn-play" class="btn mx-1 btn-outline-dark text-light border rounded-pill">
-                <i class="bi bi-play"></i>
-                <i class="bi bi-pause"></i>
-              </button>
-
-            </div>
-            <div class="d-flex justify-content-center -flex-warp-reverse">
-              <button type="button" id="btn-next" class="btn mx-1  btn-outline-dark text-light border rounded-circle">
-                <i class="bi bi-arrow-right"></i>
-              </button>
-              <button type="button" id="btn-loop" class="btn mx-1 btn-outline-dark text-light border rounded-circle">
-                <i class="bi bi-arrow-clockwise"></i>
-              </button>
-              <button type="button" class="btn btn-outline-dark text-light dropdown-toggle border rounded-pill"
-                data-bs-toggle="dropdown" aria-expanded="false" id="btn-volume">
-                <i class="bi bi-volume-up"></i>
-              </button>
-              <div class="dropdown-menu" id="menu-volume">
-                <div class="d-flex align-items-center">
-                  <button id="volume-mute" type="button"
-                    class="mx-2 btn btn-outline-dark text-light border rounded-circle">
-                    <span id="play">
-                      <i class="bi bi-volume-mute"></i>
-                    </span>
-                  </button>
-                  <input type="range" min="0" max="100" value="100" class="ui-slider mx-2 " id="volume">
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-        <div class="col-12 col-sm my-1">
-          <div class="ui-seekbar px-3 d-flex h-100 justify-content-center flex-column">
-            <input type="range" id="timeline-now" class="ui-slider w-100" min="0" max="120000" value="0">
-            <div class="h-100 mb-0 row">
-              <div class="col-3 col-sm-2">
-                <span id="time">00:00</span>
-              </div>
-              <div class="col text-center">
-                <span id="name-bar">........?</span>
-              </div>
-              <div class="col-3 col-sm-2 text-end">
-                <span id="duration">00:00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 col-xl-2">
-          <button id="btn-list-collapse" class="btn btn-outline-dark text-light w-100">Lista de reprodução</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
   <script rel="preconnect" defer src="https://code.jquery.com/jquery-3.6.1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

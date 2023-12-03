@@ -43,27 +43,60 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         audioRef.current?.pause();
     }
 
-    const setAndPlay = async (json: ConfigType) => {
+    const getMedia = async (json: ConfigType) => {
         const song = await dbProp.getSongById(Number(json.playNowId));
-        if (json.streaming == "0") {
-            if (audioRef.current) {
-                if (audioRef.current.src != song.audio)
-                    audioRef.current.src = song.audio;
-                audioRef.current.play();
+        const parse = {
+            media: "",
+            streaming: "audio"
+        }
+
+        if (song.audio) {
+            parse.media = song.audio;
+        } else if (song.MQ) {
+            parse.media = song.MQ;
+            parse.streaming = "video";
+        } else if (song.HQ) {
+            parse.media = song.HQ;
+            parse.streaming = "video";
+        }
+
+        if (json.streaming == "720") {
+            if (song.HQ) {
+                parse.media = song.HQ;
+                parse.streaming = "video";
+            } else if (song.MQ) {
+                parse.media = song.MQ;
+                parse.streaming = "video";
             }
-        } else if (json.streaming == "480") {
-            if (videoRef.current) {
-                if (videoRef.current.src != song.audio)
-                    videoRef.current.src = song.MQ;
-                videoRef.current.play();
-            }
-        } else {
-            if (videoRef.current) {
-                if (videoRef.current.src != song.audio)
-                    videoRef.current.src = song.HQ;
-                videoRef.current.play();
+        } else if ((json.streaming == "480")) {
+            if (song.MQ) {
+                parse.media = song.MQ;
+                parse.streaming = "video";
             }
         }
+        return parse;
+    }
+
+    const setAndPlay = async (json: ConfigType) => {
+        const song = await getMedia(json);
+        if (song.streaming == "audio")
+            if (audioRef.current) {
+                if (audioRef.current?.src != song.media)
+                    audioRef.current.src = song.media;
+                pauseAll();
+                audioRef.current.play();
+                if (videoRef.current && videoRef.current?.src != "")
+                    videoRef.current.src = ""
+            }
+
+        if (song.streaming == "video")
+            if (videoRef.current) {
+                if (videoRef.current.src != song.media)
+                    videoRef.current.src = song.media;
+                pauseAll();
+                videoRef.current.play();
+            }
+
         changeVolume(json.volume * 100);
     }
 
@@ -73,13 +106,14 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         if (json.playNowId == "0")
             return;
 
-        if (played) {
+        if (played)
             setAndPlay(json);
-
-        } else
+        else
             pauseAll();
+
         store.setConfig(json);
         timelineProp().setId(json.playNowId);
+        dbProp.addListen(Number(json.playNowId));
     }
 
     const changeVolume = (volume: number) => {

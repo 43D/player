@@ -44,7 +44,6 @@ function App() {
     const playSongNow = (id: number) => {
       store.setQueue([id + ""]);
       mediaControl.current?.play(true);
-      db.addListen(id);
     };
 
     const playAnimeNow = (songs: string[]) => {

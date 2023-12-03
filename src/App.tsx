@@ -119,12 +119,23 @@ function App() {
       mediaControl.current?.play(true);
     };
 
+    const getLink = async () => {
+      const conf = StorageLocal().getConfig();
+      const song = await db.getSongById(Number(conf.playNowId));
+      let link = "";
+      if (conf.streaming == "0")
+        link = song.audio;
+      else if (conf.streaming == "480")
+        link = song.MQ;
+      else
+        link = song.HQ;
+
+      navigator.clipboard.writeText(link);
+    };
+
     const showVideo = () => {
+      mediaControl.current?.showMedia();
     };
-
-    const getLink = () => {
-    };
-
 
     return {
       addPlaylistModal,
@@ -149,7 +160,7 @@ function App() {
       mediaTimeline.current?.setTimeline(time, duration);
     };
 
-    const setId = (id: string) =>{
+    const setId = (id: string) => {
       mediaTimeline.current?.setId(id);
     }
 
@@ -162,21 +173,24 @@ function App() {
   const menu = (): InterfaceMediaControl => {
     const play = (played: boolean) => {
       mediaControl.current?.play(played);
-    };
+    }
 
     const setVolume = (volume: number) => {
       mediaControl.current?.setVolume(volume);
-    };
+    }
 
     const changeTimeline = (value: string) => {
       mediaControl.current?.changeTimeline(value);
     }
-
+    const showMedia = () => {
+      mediaControl.current?.showMedia();
+    }
 
     return {
       play,
       setVolume,
-      changeTimeline
+      changeTimeline,
+      showMedia
     }
   }
 

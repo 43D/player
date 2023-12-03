@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import InterfaceMediaControl from "../../type/InterfaceMediaControl";
 import ConfigType from "../../type/ConfigType";
 import InterfaceMediaTimeline from "../../type/InterfaceMediaTimeline";
@@ -18,12 +18,22 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
+    const [componentStyle, setComponentStyle] = useState<React.CSSProperties>({
+        top: "64px",
+        backgroundColor: "#212529",
+        display: "none",
+        position: "fixed",
+        zIndex: "43"
+    });
+
+
     useEffect(() => {
         if (videoRef.current) {
             control({
                 play: (played: boolean) => playMedia(played),
                 setVolume: (volume: number) => changeVolume(volume),
                 changeTimeline: (value: string) => changeTime(value),
+                showMedia: () => showVideo(),
             });
         }
     }, [control]);
@@ -104,14 +114,25 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
     }
 
     const showCurrentTime = () => {
-        if (audioRef.current)
-            timelineProp().setTimeline(120000 / audioRef.current.duration * audioRef.current.currentTime, audioRef.current.duration);
+        if (store.getConfig().streaming == "0") {
+            if (audioRef.current)
+                timelineProp().setTimeline(120000 / audioRef.current.duration * audioRef.current.currentTime, audioRef.current.duration);
+        } else {
+            if (videoRef.current)
+                timelineProp().setTimeline(120000 / videoRef.current.duration * videoRef.current.currentTime, videoRef.current.duration);
+        }
     };
 
 
     const changeTime = (value: string) => {
-        if (audioRef.current)
-            audioRef.current.currentTime = (Number(value) * audioRef.current.duration / 120000);
+        if (store.getConfig().streaming == "0") {
+
+            if (audioRef.current)
+                audioRef.current.currentTime = (Number(value) * audioRef.current.duration / 120000);
+        } else {
+            if (videoRef.current)
+                videoRef.current.currentTime = (Number(value) * videoRef.current.duration / 120000);
+        }
     }
 
 
@@ -121,8 +142,15 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         return () => clearInterval(intervalId); // Limpa o intervalo ao desmontar o componente
     }, []);
 
+    const showVideo = () => {
+        setComponentStyle((prevStyle) => {
+            const newDisplay = prevStyle.display === "none" ? "block" : "none";
+            return { ...prevStyle, display: newDisplay };
+        });
+    }
+
     return (
-        <div id="display-media" className="container-fluid displays p-0 m-0 d-flex align-items: center d-none">
+        <div id="display-media" style={componentStyle} className=" fixed-top container-fluid displays p-0 m-0">
             <div className="row h-100 w-100  p-0 m-0">
                 <div className="col-12 h-100 p-0 m-0">
                     <div className="h-100 d-flex justify-content-center flex-column">

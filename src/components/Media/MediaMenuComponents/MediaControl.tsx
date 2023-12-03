@@ -31,11 +31,11 @@ function MediaControl({ pagesProps, control, store }: menuType) {
         if (mutedBtn.current)
             mutedBtn.current.className = (volumeValue == "0")
                 ? 'mx-2 btn btn-danger text-light border rounded-circle'
-                : 'mx-2 btn btn-outline-dark text-light border rounded-circle';
+                : 'mx-2 btn btn-dark text-light border rounded-circle';
         if (loopBtn.current)
             loopBtn.current.className = (loopStatus)
                 ? "w-100 btn btn-success text-light"
-                : "w-100 btn btn-outline-dark text-light";
+                : "w-100 btn btn-dark text-light";
     }, []);
 
     const setVolume = (event: ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +44,7 @@ function MediaControl({ pagesProps, control, store }: menuType) {
         if (mutedBtn.current)
             mutedBtn.current.className = (value == "0")
                 ? 'mx-2 btn btn-danger text-light border rounded-circle'
-                : 'mx-2 btn btn-outline-dark text-light border rounded-circle';
+                : 'mx-2 btn btn-dark text-light border rounded-circle';
 
         control().setVolume(Number(value));
     }
@@ -69,7 +69,7 @@ function MediaControl({ pagesProps, control, store }: menuType) {
             if (mutedBtn.current)
                 mutedBtn.current.className = (newVolume == "0")
                     ? 'mx-2 btn btn-danger text-light border rounded-circle'
-                    : 'mx-2 btn btn-outline-dark text-light border rounded-circle';
+                    : 'mx-2 btn btn-dark text-light border rounded-circle';
 
             control().setVolume(Number(newVolume));
         }
@@ -84,7 +84,7 @@ function MediaControl({ pagesProps, control, store }: menuType) {
         if (loopBtn.current)
             loopBtn.current.className = (status)
                 ? "w-100 btn btn-success text-light"
-                : "w-100 btn btn-outline-dark text-light";
+                : "w-100 btn btn-dark text-light";
 
         pagesProps().loopQueue(status);
         setLoopStatus(status);
@@ -115,22 +115,22 @@ function MediaControl({ pagesProps, control, store }: menuType) {
                     </button>
                     <ul className="dropdown-menu" id="menu-more">
                         <li>
-                            <button id="btn-video-collapse" onClick={showVideo} type="button" className="btn btn-outline-dark w-100 text-light">
+                            <button id="btn-video-collapse" onClick={showVideo} type="button" className="btn btn-dark w-100 text-light">
                                 <i className="bi bi-film"></i> Show video
                             </button>
                         </li>
                         <li>
-                            <button type="button" id="btn-random" onClick={ShuffleQueue} className="w-100 btn btn-outline-dark text-light">
+                            <button type="button" id="btn-random" onClick={ShuffleQueue} className="w-100 btn btn-dark text-light">
                                 <i className="bi bi-shuffle"></i> Shuffle queue
                             </button>
                         </li>
                         <li>
-                            <button type="button" id="btn-loop" ref={loopBtn} onClick={loopQueue} className="w-100 btn btn-outline-dark text-light">
+                            <button type="button" id="btn-loop" ref={loopBtn} onClick={loopQueue} className="w-100 btn btn-dark text-light">
                                 <i className="bi bi-arrow-clockwise"></i> Loop queue
                             </button>
                         </li>
                         <li>
-                            <button type="button" id="btn-link" onClick={getLink} className="w-100 btn btn-outline-dark text-light">
+                            <button type="button" id="btn-link" onClick={getLink} className="w-100 btn btn-dark text-light">
                                 <i className="bi bi-link-45deg"></i> Get link
                             </button>
                         </li>
@@ -154,7 +154,7 @@ function MediaControl({ pagesProps, control, store }: menuType) {
                     <div className="dropdown-menu" id="menu-volume">
                         <div className="d-flex align-items-center">
                             <button id="volume-mute" type="button" onClick={changeMute} ref={mutedBtn}
-                                className="mx-2 btn btn-outline-dark text-light border rounded-circle">
+                                className="mx-2 btn btn-dark text-light border rounded-circle">
                                 <span id="play">
                                     <i className="bi bi-volume-mute"></i>
                                 </span>

@@ -48,7 +48,6 @@ function StorageLocal() {
     }
 
     function setConfig(data: ConfigType) {
-        console.log("save config", data);
         setLocalStorage("config", data);
     }
 

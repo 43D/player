@@ -76,7 +76,6 @@ function App() {
       const json = StorageLocal().getConfig();
       const queue = StorageLocal().getQueue();
       const index = (json.playIndex + 1 == queue.length) ? 0 : json.playIndex + 1;
-      console.log(json, index);
       json.playIndex = index;
       json.playNowId = queue[index];
       StorageLocal().setConfig(json);
@@ -146,11 +145,18 @@ function App() {
     }
   }
   const timeline = (): InterfaceMediaTimeline => {
-    const setTimeline = (time: number) => {
-      mediaTimeline.current?.setTimeline(time);
+    const setTimeline = (time: number, duration: number) => {
+      mediaTimeline.current?.setTimeline(time, duration);
     };
 
-    return { setTimeline }
+    const setId = (id: string) =>{
+      mediaTimeline.current?.setId(id);
+    }
+
+    return {
+      setTimeline,
+      setId
+    }
   }
 
   const menu = (): InterfaceMediaControl => {
@@ -185,7 +191,7 @@ function App() {
       {componentModal}
       <DisplayMedia dbProp={db} timelineProp={timeline} control={(control) => (mediaControl.current = control)} store={store} />
       {componentQueue}
-      <MediaMenu pagesProps={pages} menuControlProp={menu} timelineProp={(timelineProp) => (mediaTimeline.current = timelineProp)}  store={store} key={4658465} />
+      <MediaMenu dbProp={db} pagesProps={pages} menuControlProp={menu} timelineProp={(timelineProp) => (mediaTimeline.current = timelineProp)} store={store} key={4658465} />
       <ConfigMenu store={store} />
     </HashRouter>
   );

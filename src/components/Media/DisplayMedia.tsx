@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import InterfaceMediaControl from "../../type/InterfaceMediaControl";
 import ConfigType from "../../type/ConfigType";
 import InterfaceMediaTimeline from "../../type/InterfaceMediaTimeline";
@@ -15,8 +15,6 @@ interface MediaProps {
 }
 
 const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaControl) => void }> = ({ store, timelineProp, control, dbProp }) => {
-    const [config, setConfig] = useState<ConfigType>(store.getConfig());
-    const [isPlayed, setIiPlayed] = useState<boolean>(false);
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -39,35 +37,20 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         const song = await dbProp.getSongById(Number(json.playNowId));
         if (json.streaming == "0") {
             if (audioRef.current) {
-                audioRef.current.src = song.audio;
+                if (audioRef.current.src != song.audio)
+                    audioRef.current.src = song.audio;
                 audioRef.current.play();
             }
         } else if (json.streaming == "480") {
             if (videoRef.current) {
-                videoRef.current.src = song.MQ;
+                if (videoRef.current.src != song.audio)
+                    videoRef.current.src = song.MQ;
                 videoRef.current.play();
             }
         } else {
             if (videoRef.current) {
-                videoRef.current.src = song.HQ;
-                videoRef.current.play();
-            }
-        }
-        changeVolume(json.volume * 100);
-        setIiPlayed(true);
-    }
-
-    const play = async (json: ConfigType) => {
-        if (json.streaming == "0") {
-            if (audioRef.current) {
-                audioRef.current.play();
-            }
-        } else if (json.streaming == "480") {
-            if (videoRef.current) {
-                videoRef.current.play();
-            }
-        } else {
-            if (videoRef.current) {
+                if (videoRef.current.src != song.audio)
+                    videoRef.current.src = song.HQ;
                 videoRef.current.play();
             }
         }
@@ -80,24 +63,19 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         if (json.playNowId == "0")
             return;
 
-
         if (played) {
-            if (json.playNowId == config.playNowId && isPlayed)
-                play(json)
-            else
-                setAndPlay(json);
+            setAndPlay(json);
 
         } else
             pauseAll();
-        setConfig(json);
         store.setConfig(json);
+        timelineProp().setId(json.playNowId);
     }
 
     const changeVolume = (volume: number) => {
         const json = store.getConfig();
         json.volume = volume / 100;
         store.setConfig(json);
-        setConfig(json);
         if (videoRef.current) {
             videoRef.current.volume = json.volume;
             videoRef.current.muted = false;
@@ -127,7 +105,7 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
 
     const showCurrentTime = () => {
         if (audioRef.current)
-            timelineProp().setTimeline(120000 / audioRef.current.duration * audioRef.current.currentTime);
+            timelineProp().setTimeline(120000 / audioRef.current.duration * audioRef.current.currentTime, audioRef.current.duration);
     };
 
 

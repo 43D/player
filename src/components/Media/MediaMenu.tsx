@@ -1,4 +1,5 @@
 import ConfigType from "../../type/ConfigType";
+import DBType from "../../type/DBType";
 import InterfaceMediaControl from "../../type/InterfaceMediaControl";
 import InterfaceMediaTimeline from "../../type/InterfaceMediaTimeline";
 import PagesType from "../../type/PagesType";
@@ -13,9 +14,10 @@ type menuType = {
         getConfig: () => ConfigType;
         setConfig: (data: ConfigType) => void;
     };
+    dbProp: DBType;
 }
 
-const MediaMenu: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMediaTimeline)  => void }> = ({ pagesProps, menuControlProp, timelineProp, store }) => {
+const MediaMenu: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMediaTimeline)  => void }> = ({ pagesProps, menuControlProp, timelineProp, store, dbProp }) => {
 
 
     return (
@@ -23,7 +25,7 @@ const MediaMenu: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
             <div className="container-fluid">
                 <div className="row py-3">
                     <MediaControl pagesProps={pagesProps} control={menuControlProp} store={store} />
-                    <MediaInfo control={menuControlProp} timelineProp={timelineProp}/>
+                    <MediaInfo dbProp={dbProp} control={menuControlProp} timelineProp={timelineProp}/>
                     <MediaQueue key={47854} pagesProps={pagesProps} />
                 </div>
             </div>

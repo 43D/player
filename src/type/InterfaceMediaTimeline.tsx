@@ -1,3 +1,4 @@
 export default interface InterfaceMediaTimeline {
-    setTimeline: (time: number) => void;
+    setTimeline: (time: number, duration: number) => void;
+    setId: (id: string)=> void;
 }

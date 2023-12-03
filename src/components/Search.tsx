@@ -11,7 +11,7 @@ import DBType from '../type/DBType';
 import { useParams } from 'react-router-dom';
 
 interface SearchProps {
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
 }
 

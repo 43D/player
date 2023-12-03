@@ -9,7 +9,7 @@ import SearchArtist from "./Search/SearchArtist";
 import { Navigate, useParams } from "react-router-dom";
 
 type idType = {
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
 }
 
@@ -142,7 +142,7 @@ function Playlist({ pageProps, dbProp }: idType) {
                         <h5>{qtd} songs</h5>
                     </div>
                     <div className="col mt-3" id="search-anime">
-                        <button className="btn btn-success m-1" onClick={() => pageProps.pages().playPlaylistNow(id)}><i className="bi bi-play"></i></button>
+                        <button className="btn btn-success m-1" onClick={() => pageProps().playPlaylistNow(id)}><i className="bi bi-play"></i></button>
                         <button id="anime-filter-song" onClick={createSongAction} className="playlist-filter btn btn-success m-1">All Song</button>
                         <button id="anime-filter-anime" onClick={createAnimeAction} className="playlist-filter btn btn-secondary m-1">Anime</button>
                         <button id="anime-filter-artist" onClick={createArtistAction} className="playlist-filter btn btn-secondary m-1">Artist/Composers/Arranger</button>

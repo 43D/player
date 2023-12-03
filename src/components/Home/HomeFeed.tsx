@@ -7,7 +7,7 @@ import FeedListened from "../Feed/FeedListened";
 import HomePagesType from "../../type/HomePagesType";
 
 interface pageProps {
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
     homePages: HomePagesType;
 }

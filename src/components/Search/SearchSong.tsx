@@ -5,7 +5,7 @@ import PagesType from '../../type/PagesType';
 
 interface AnimeProps {
     songList: JsonSong[];
-    pageProps: PagesType;
+    pageProps: () => PagesType;
 }
 
 function SearchSong({ songList, pageProps }: AnimeProps){

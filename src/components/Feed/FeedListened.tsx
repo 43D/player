@@ -7,7 +7,7 @@ import ListenedType from "../../type/ListenedType";
 import AnimeSongListenedCard from "../Card/AnimeSongListenedCard";
 
 interface pageProps {
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
     homePages: HomePagesType;
 }

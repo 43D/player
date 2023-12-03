@@ -4,7 +4,7 @@ import PlaylistCardType from "../../type/PlaylistCardType";
 
 interface CardProps {
     playlist: PlaylistCardType;
-    pageProps: PagesType;
+    pageProps: () => PagesType;
 }
 
 function PlaylistCard({ playlist, pageProps }: CardProps) {
@@ -15,8 +15,8 @@ function PlaylistCard({ playlist, pageProps }: CardProps) {
                 <p className="text-center">{playlist.songsCollections.length} songs</p>
                 <div className="w-100 d-flex justify-content-center">
                     <Link className="btn btn-outline-secondary mt-2" to={"/playlist/" + playlist.id}>Open PlayList</Link>
-                    <a href="#" className="btn btn-outline-success mt-2 mx-1" onClick={() => pageProps.pages().playPlaylistNow(playlist.id)}><i className="bi bi-play"></i></a>
-                    <a href="#" className="btn btn-outline-danger mt-2" onClick={() => pageProps.pages().deletePlaylist(playlist.id)}>Delete</a>
+                    <button className="btn btn-outline-success mt-2 mx-1" onClick={() => pageProps().playPlaylistNow(playlist.id)}><i className="bi bi-play"></i></button>
+                    <button className="btn btn-outline-danger mt-2" onClick={() => pageProps().deletePlaylist(playlist.id)}>Delete</button>
                 </div>
             </div>
         </div>

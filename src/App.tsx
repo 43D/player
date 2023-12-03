@@ -9,46 +9,123 @@ import DeletePlaylistModal from "./components/Modal/DeletePlaylistModal";
 import Nav from "./components/Nav";
 import ConfigMenu from "./components/Config/ConfigMenu";
 import StorageLocal from "./db/StorageLocal";
+import DisplayMedia from "./components/Media/DisplayMedia";
+import MediaMenu from "./components/Media/MediaMenu";
+import DisplayQueue from "./components/Media/DisplayQueue";
+import InterfaceMediaControl from "./type/InterfaceMediaControl";
+import React from "react";
+import PagesType from "./type/PagesType";
+import InterfaceMediaTimeline from "./type/InterfaceMediaTimeline";
 
 function App() {
   const [componentModal, setComponentModal] = useState<JSX.Element | null>();
+  const [queueControll, setQueueControll] = useState<boolean>(false);
+  const [componentQueue, setComponentQueue] = useState<JSX.Element>(<DisplayQueue key={564468} show={queueControll} />);
+  const mediaControl = React.useRef<InterfaceMediaControl | null>(null);
+  const mediaTimeline = React.useRef<InterfaceMediaTimeline | null>(null);
   const dbSong = useIndexedDB;
   const db = database(dbSong);
   const store = StorageLocal();
 
-  const pages = () => {
+  const pages = (): PagesType => {
     const addPlaylistModal = (id: number) => {
-      setComponentModal(<AddPlaylistModal key={id} id={id} pageProps={{ pages }} dbProp={db} />);
+      setComponentModal(<AddPlaylistModal key={id} id={id} pageProps={pages} dbProp={db} />);
+    };
+
+    const openQueue = () => {
+      (queueControll) ? setQueueControll(false) : setQueueControll(true);
+      setComponentQueue(<DisplayQueue key={5648} show={!queueControll} />)
     };
 
     const addQueue = (id: number) => {
-      console.log("song id: ", id);
+      store.addQueue(id + "");
     };
 
     const playSongNow = (id: number) => {
-      console.log("song id: ", id);
+      store.setQueue([id + ""]);
+      mediaControl.current?.play(true);
       db.addListen(id);
     };
 
-    const playAnimeNow = (id: number) => {
-      console.log("Anime id: ", id);
+    const playAnimeNow = (songs: string[]) => {
+      store.setQueue(songs);
+      mediaControl.current?.play(true);
     };
 
-    const playArtistNow = (id: number) => {
-      console.log("Artist id: ", id);
+    const playArtistNow = async (songs: string[]) => {
+      store.setQueue(songs);
+      mediaControl.current?.play(true);
     };
 
-    const playPlaylistNow = (id: number) => {
-      console.log("Playlist id: ", id);
+    const playPlaylistNow = async (id: number) => {
+      const result = await db.getByIdPlaylist(id);
+      const arrayDeStrings: string[] = result.songsCollections.map(numero => String(numero));
+      store.setQueue(arrayDeStrings);
+      mediaControl.current?.play(true);
     };
 
     const deletePlaylist = (id: number) => {
-      setComponentModal(<DeletePlaylistModal key={id} id={id} pageProps={{ pages }} dbProp={db} />);
+      setComponentModal(<DeletePlaylistModal key={id} id={id} pageProps={pages} dbProp={db} />);
     };
 
     const modalClose = () => {
       setComponentModal(null);
     }
+
+    const nextQueue = () => {
+      const json = StorageLocal().getConfig();
+      const queue = StorageLocal().getQueue();
+      const index = (json.playIndex + 1 == queue.length) ? 0 : json.playIndex + 1;
+      console.log(json, index);
+      json.playIndex = index;
+      json.playNowId = queue[index];
+      StorageLocal().setConfig(json);
+      mediaControl.current?.play(true);
+    };
+
+    const previousQueue = () => {
+      const json = StorageLocal().getConfig();
+      const queue = StorageLocal().getQueue();
+      const index = (json.playIndex - 1 < 0) ? queue.length - 1 : json.playIndex - 1;
+      json.playIndex = index;
+      json.playNowId = queue[index];
+      StorageLocal().setConfig(json);
+      mediaControl.current?.play(true);
+    };
+
+    const loopQueue = (loop: boolean) => {
+      const json = StorageLocal().getConfig();
+      json.loop = loop;
+      StorageLocal().setConfig(json);
+    };
+
+
+    const shuffleArray = (array: string[]) => {
+      let currentIndex = array.length;
+      let randomIndex;
+      while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]];
+      }
+
+      return array;
+    }
+    const shuffleQueue = () => {
+      let json = StorageLocal().getQueue();
+      json = shuffleArray(json);
+      StorageLocal().setQueue(json);
+      mediaControl.current?.play(true);
+    };
+
+    const showVideo = () => {
+    };
+
+    const getLink = () => {
+    };
+
 
     return {
       addPlaylistModal,
@@ -58,18 +135,61 @@ function App() {
       playArtistNow,
       playPlaylistNow,
       deletePlaylist,
-      modalClose
+      modalClose,
+      openQueue,
+      nextQueue,
+      previousQueue,
+      loopQueue,
+      shuffleQueue,
+      showVideo,
+      getLink
     }
   }
+  const timeline = (): InterfaceMediaTimeline => {
+    const setTimeline = (time: number) => {
+      mediaTimeline.current?.setTimeline(time);
+    };
+
+    return { setTimeline }
+  }
+
+  const menu = (): InterfaceMediaControl => {
+    const play = (played: boolean) => {
+      mediaControl.current?.play(played);
+    };
+
+    const setVolume = (volume: number) => {
+      mediaControl.current?.setVolume(volume);
+    };
+
+    const changeTimeline = (value: string) => {
+      mediaControl.current?.changeTimeline(value);
+    }
+
+
+    return {
+      play,
+      setVolume,
+      changeTimeline
+    }
+  }
+
+
+
+
 
   return (
     <HashRouter>
       <Nav />
-      <RoutesApp dbProp={db} pageProps={{ pages }} key={"0"} />
+      <RoutesApp dbProp={db} pageProps={pages} key={"0"} />
       {componentModal}
-      <ConfigMenu store={store}/>
+      <DisplayMedia dbProp={db} timelineProp={timeline} control={(control) => (mediaControl.current = control)} store={store} />
+      {componentQueue}
+      <MediaMenu pagesProps={pages} menuControlProp={menu} timelineProp={(timelineProp) => (mediaTimeline.current = timelineProp)}  store={store} key={4658465} />
+      <ConfigMenu store={store} />
     </HashRouter>
   );
 }
+
 
 export default App

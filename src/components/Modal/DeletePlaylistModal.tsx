@@ -4,7 +4,7 @@ import PagesType from "../../type/PagesType";
 
 type idType = {
     id: number;
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
 
 }
@@ -22,7 +22,7 @@ function DeletePlaylistModal({ id, pageProps, dbProp }: idType) {
 
     const deletePlaylist = () => {
         dbProp.deletePlaylist(id);
-        pageProps.pages().modalClose();
+        pageProps().modalClose();
         location.reload();
     }
 
@@ -33,7 +33,7 @@ function DeletePlaylistModal({ id, pageProps, dbProp }: idType) {
                     <div className="modal-content ">
                         <div className="modal-header">
                             <h1 className="modal-title fs-5" id="addPlaylistModalTitle">Delete playlist</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" onClick={() => pageProps.pages().modalClose()} aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" onClick={() => pageProps().modalClose()} aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <p>Delete this: {name}</p>
@@ -41,7 +41,7 @@ function DeletePlaylistModal({ id, pageProps, dbProp }: idType) {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-outline-danger" onClick={deletePlaylist} data-bs-dismiss="modal">Delete</button>
-                            <button type="button" className="btn btn-outline-secondary" onClick={() => pageProps.pages().modalClose()} data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" className="btn btn-outline-secondary" onClick={() => pageProps().modalClose()} data-bs-dismiss="modal">Cancel</button>
                         </div>
                     </div>
                 </div>

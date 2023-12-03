@@ -11,7 +11,7 @@ import PagesType from "../type/PagesType";
 import DBType from "../type/DBType";
 
 interface pageProps {
-    pageProps: PagesType;
+    pageProps: () =>  PagesType;
     dbProp: DBType;
 }
 

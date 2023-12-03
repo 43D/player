@@ -13,7 +13,7 @@ import { useParams, Navigate } from 'react-router-dom';
 
 
 type idType = {
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
 }
 
@@ -29,6 +29,7 @@ function Anime({ pageProps, dbProp }: idType) {
     const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
     const [componentType, setComponentType] = useState<JSX.Element[]>([]);
     const [componentInfo, setComponentInfo] = useState<JSX.Element[]>([]);
+    const [result, setResult] = useState<JsonSong[] | null>(null);
 
 
     useEffect(() => {
@@ -52,6 +53,7 @@ function Anime({ pageProps, dbProp }: idType) {
             setComponent([compSong]);
 
             dbProp.saveSongList(result);
+            setResult(result);
         } catch (error) {
             setComponent([<MessageCom key={"433"} msg="Api off-line" />])
         }
@@ -143,6 +145,16 @@ function Anime({ pageProps, dbProp }: idType) {
         switchBtn("anime-filter-info");
     };
 
+    const playSongs = () => {
+        if (result) {
+            let arr = [] as string[];
+            for (const value of result) {
+                arr.push(value.annSongId + "");
+            }
+            pageProps().playAnimeNow(arr);
+        }
+    }
+
     return (
         <div id="display-main" className="container-fluid displays">
             <div className="App pt-2 pb-4">
@@ -154,7 +166,7 @@ function Anime({ pageProps, dbProp }: idType) {
                         <h5>{nameJP}</h5>
                     </div>
                     <div className="col mt-3" id="search-anime">
-                        <button className="btn btn-success m-1" onClick={() => pageProps.pages().playAnimeNow(id)}><i className="bi bi-play"></i></button>
+                        <button className="btn btn-success m-1" onClick={playSongs}><i className="bi bi-play"></i></button>
                         <button id="anime-filter-song" onClick={createSongAction} className="anime-filter btn btn-success m-1">All Song</button>
                         <button id="anime-filter-type" onClick={createTypeAction} className="anime-filter btn btn-secondary m-1">by Type</button>
                         <button id="anime-filter-info" onClick={createInfoAction} className="anime-filter btn btn-secondary m-1">Information</button>

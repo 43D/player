@@ -7,7 +7,7 @@ import DBType from "../../type/DBType";
 import Navigation from "../utils/Navigation";
 
 interface pageProps {
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
 }
 

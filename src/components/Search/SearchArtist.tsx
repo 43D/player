@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 interface AnimeProps {
     songList: JsonSong[];
-    pageProps: PagesType;
+    pageProps: () => PagesType;
 }
 
 function SearchArtist({ songList, pageProps }: AnimeProps) {

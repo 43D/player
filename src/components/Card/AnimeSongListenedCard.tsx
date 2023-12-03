@@ -4,7 +4,7 @@ import JsonSong from '../../type/Songs';
 
 interface CardProps {
     song: JsonSong;
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     count: number;
 }
 
@@ -17,7 +17,7 @@ function AnimeSongListenedCard({ song, pageProps, count }: CardProps) {
         <li className="list-group-item">
             <div className="row">
                 <div className="col-3 col-sm-2 col-lg-1 border-end d-flex align-items-center">
-                    <button onClick={() => pageProps.pages().playSongNow(song.annSongId)}
+                    <button onClick={() => pageProps().playSongNow(song.annSongId)}
                         className={`btn w-100 play-now song-id-${song.annSongId}`}>
                         <i className="bi bi-play"></i>
                     </button>
@@ -33,21 +33,21 @@ function AnimeSongListenedCard({ song, pageProps, count }: CardProps) {
                     </button>
                     <ul className="dropdown-menu z-index-1035">
                         <li>
-                            <a className={`dropdown-item add-queue song-id-${song.annSongId}`} href="#"
-                                onClick={() => pageProps.pages().addQueue(song.annSongId)}>
+                            <button className={`dropdown-item add-queue song-id-${song.annSongId}`}
+                                onClick={() => pageProps().addQueue(song.annSongId)}>
                                 <i className="bi bi-collection"></i> Add to Play queue
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a className={`dropdown-item add-playlist song-id-${song.annSongId}`} href="#"
-                                onClick={() => pageProps.pages().addPlaylistModal(song.annSongId)}>
+                            <button className={`dropdown-item add-playlist song-id-${song.annSongId}`}
+                                onClick={() => pageProps().addPlaylistModal(song.annSongId)}>
                                 <i className="bi bi-journal-plus"></i> Add to a PlayList
-                            </a>
+                            </button>
                         </li>
                         <li data-bs-toggle="collapse" data-bs-target={`#music-name-${song.annSongId}`}>
-                            <a className="dropdown-item" href="#">
+                            <button className="dropdown-item">
                                 <i className="bi bi-collection"></i> Song information
-                            </a>
+                            </button>
                         </li>
                     </ul>
                 </div>

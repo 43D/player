@@ -16,7 +16,7 @@ nav {
   /* background-color: red; */
 }
 
-#display-video,
+#display-media,
 #display-image{
   position: relative;
   margin-bottom: 0px;
@@ -75,12 +75,17 @@ nav {
   background-color: #0000009e;
 }
 
+video{
+  max-height: 100%;
+}
+
 @media screen and (max-width: 372px) {
-  #display-main{
+  #display-main,
+  #display-queue{
       top: 110px;
       margin-bottom: 300px;
   }
-  #display-video,
+  #display-media,
   #display-image{
       top: 110px;
       height: calc(100vh - 300px);
@@ -91,11 +96,12 @@ nav {
 }
 
 @media screen and (min-width: 373px) and (max-width: 490px) {
-  #display-main{
+  #display-main,
+  #display-queue{
       top: 64px;
       margin-bottom: 275px;
   }
-  #display-video,
+  #display-media,
   #display-image{
       top: 64px;
       height: calc(100vh - 229px);
@@ -106,11 +112,12 @@ nav {
 }
 
 @media screen and (min-width: 491px) and (max-width: 767px) {
-  #display-main{
+  #display-main,
+  #display-queue{
       top: 64px;
       margin-bottom: 275px;
   }
-  #display-video,
+  #display-media,
   #display-image{
       top: 64px;
       height: calc(100vh - 229px);
@@ -121,11 +128,12 @@ nav {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  #display-main{
+  #display-main,
+  #display-queue{
       top: 64px;
       margin-bottom: 229px;
   }
-  #display-video,
+  #display-media,
   #display-image{
       top: 64px;
       height: calc(100vh - 190px);
@@ -141,11 +149,12 @@ nav {
 }
 
 @media screen and (min-width: 992px) {
-  #display-main{
+  #display-main,
+  #display-queue{
       top: 64px;
       margin-bottom: 190px;
   }
-  #display-video,
+  #display-media,
   #display-image{
       top: 64px;
       height: calc(100vh - 145px);

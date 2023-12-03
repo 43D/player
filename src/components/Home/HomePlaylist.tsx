@@ -5,7 +5,7 @@ import MessageCom from "../MessageCom";
 import PlaylistCard from "../Card/PlaylistCard";
 
 interface pageProps {
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
 }
 

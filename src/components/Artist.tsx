@@ -9,7 +9,7 @@ import DBType from "../type/DBType";
 import { Navigate, useParams } from "react-router-dom";
 
 type idType = {
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
 }
 
@@ -20,6 +20,7 @@ function Artist({ pageProps, dbProp }: idType) {
         return <Navigate replace to="/404" />
 
     const [name, setName] = useState<String>("");
+    const [result, setResult] = useState<JsonSong[] | null>(null);
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
     const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
@@ -52,6 +53,7 @@ function Artist({ pageProps, dbProp }: idType) {
             setComponent([compAll]);
 
             dbProp.saveSongList(result);
+            setResult(result);
         } catch (error) {
             setComponent([<MessageCom key={"431"} msg="Api off-line" />])
         }
@@ -145,6 +147,15 @@ function Artist({ pageProps, dbProp }: idType) {
         switchBtn("artist-filter-anime");
     };
 
+    const playSongs = () => {
+        if (result) {
+            let arr = [] as string[];
+            for (const value of result) {
+                arr.push(value.annSongId + "");
+            }
+            pageProps().playArtistNow(arr);
+        }
+    }
 
     return (
         <div id="display-main" className="container-fluid displays">
@@ -157,7 +168,7 @@ function Artist({ pageProps, dbProp }: idType) {
                         Composer and Artist
                     </div>
                     <div className="col mt-3" id="search-anime">
-                        <button className="btn btn-success m-1" onClick={() => pageProps.pages().playArtistNow(id)}><i className="bi bi-play"></i></button>
+                        <button className="btn btn-success m-1" onClick={playSongs}><i className="bi bi-play"></i></button>
                         <button id="artist-filter-song" onClick={createAllAction} className="artist-filter btn btn-success m-1">All Songs</button>
                         <button id="artist-filter-anime" onClick={createCAnimeAction} className="artist-filter btn btn-secondary m-1">by Anime</button>
                         <button id="artist-filter-artist" onClick={createArtistAction} className="artist-filter btn btn-secondary m-1">is Artist</button>

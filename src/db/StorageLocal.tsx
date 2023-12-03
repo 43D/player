@@ -20,15 +20,23 @@ function StorageLocal() {
         return JSON.parse(value);
     }
 
-
     function createConfig() {
         const config = {
             theme: "dark",
-            audio: "0"
+            audio: "0",
+            loop: true,
+            playIndex: 0,
+            playNowId: "0",
+            streaming: "0",
+            volume: 1
         }
         setConfig(config);
     }
 
+    function createQueue() {
+        const queue: string[] = [];
+        setQueue(queue);
+    }
 
     function getConfig() {
         const json = getLocalStorage("config") as ConfigType | null;
@@ -40,12 +48,45 @@ function StorageLocal() {
     }
 
     function setConfig(data: ConfigType) {
+        console.log("save config", data);
         setLocalStorage("config", data);
+    }
+
+    function setQueue(data: string[]) {
+        setLocalStorage("queue", data);
+        let json = getConfig();
+        json.playIndex = 0;
+        json.playNowId = data[0];
+        setConfig(json);
+    }
+
+    function addQueue(data: string) {
+        let json = getLocalStorage("queue") as string[] | null;
+        if (!json) {
+            createQueue();
+        } else {
+            if (!json?.includes(data)) {
+                json?.push(data);
+                setQueue(json);
+            }
+        }
+    }
+
+    function getQueue() {
+        const json = getLocalStorage("queue") as string[] | null;
+        if (!json) {
+            createQueue();
+            return getQueue();
+        }
+        return json;
     }
 
     return {
         getConfig,
-        setConfig
+        setConfig,
+        setQueue,
+        addQueue,
+        getQueue
     }
 }
 

@@ -7,7 +7,7 @@ import JsonSong from "../../type/Songs";
 import SearchAll from "../Search/SearchAll";
 
 interface pageProps {
-    pageProps: PagesType;
+    pageProps:() =>  PagesType;
     dbProp: DBType;
 }
 

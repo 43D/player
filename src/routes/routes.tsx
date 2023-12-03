@@ -9,7 +9,7 @@ import PagesType from '../type/PagesType';
 import DBType from '../type/DBType';
 
 type dependencias = {
-  pageProps: PagesType;
+  pageProps: () => PagesType;
   dbProp: DBType;
 }
 

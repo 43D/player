@@ -5,7 +5,7 @@ import PlaylistCardType from "../../type/PlaylistCardType";
 
 type idType = {
     id: number;
-    pageProps: PagesType;
+    pageProps: () => PagesType;
     dbProp: DBType;
 
 }
@@ -31,7 +31,7 @@ function AddPlaylistModal({ id, pageProps, dbProp }: idType) {
         if (selectRef.current)
             dbProp.addSongInPlaylist(Number(selectRef.current.value), id);
         
-        pageProps.pages().modalClose();
+        pageProps().modalClose();
     }
 
     return (
@@ -41,7 +41,7 @@ function AddPlaylistModal({ id, pageProps, dbProp }: idType) {
                     <div className="modal-content ">
                         <div className="modal-header">
                             <h1 className="modal-title fs-5" id="addPlaylistModalTitle">Add playlist</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" onClick={() => pageProps.pages().modalClose()} aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" onClick={() => pageProps().modalClose()} aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <h6>Music: {music}</h6>
@@ -59,7 +59,7 @@ function AddPlaylistModal({ id, pageProps, dbProp }: idType) {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-outline-success" onClick={addPlaylist} data-bs-dismiss="modal">Add</button>
-                            <button type="button" className="btn btn-outline-secondary" onClick={() => pageProps.pages().modalClose()} data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-outline-secondary" onClick={() => pageProps().modalClose()} data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>

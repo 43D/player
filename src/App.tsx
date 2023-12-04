@@ -193,9 +193,23 @@ function App() {
     }
   }
 
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.setActionHandler('play', function () {
+      mediaControl.current?.play(true);
+    });
 
+    navigator.mediaSession.setActionHandler('pause', function () {
+      mediaControl.current?.play(false);
+    });
 
+    navigator.mediaSession.setActionHandler('previoustrack', function () {
+      pages().nextQueue();
+    });
 
+    navigator.mediaSession.setActionHandler('nexttrack', function () {
+      pages().previousQueue();
+    });
+  }
 
   return (
     <HashRouter>

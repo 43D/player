@@ -3,6 +3,7 @@ import InterfaceMediaControl from "../../type/InterfaceMediaControl";
 import ConfigType from "../../type/ConfigType";
 import InterfaceMediaTimeline from "../../type/InterfaceMediaTimeline";
 import DBType from "../../type/DBType";
+import JsonSong from "../../type/Songs";
 
 interface MediaProps {
     store: {
@@ -74,6 +75,8 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
                 parse.streaming = "video";
             }
         }
+
+        metadado(song);
         return parse;
     }
 
@@ -120,6 +123,7 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         store.setConfig(json);
         timelineProp().setId(json.playNowId);
         dbProp.addListen(Number(json.playNowId));
+
     }
 
     const changeVolume = (volume: number) => {
@@ -185,6 +189,17 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
             const newDisplay = prevStyle.display === "none" ? "block" : "none";
             return { ...prevStyle, display: newDisplay };
         });
+    }
+
+    const metadado = (json: JsonSong) => {
+        if ('mediaSession' in navigator) {
+            const artist = (json.songArtist) ? json.songArtist.toString() : "????";
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: json.songName,
+                artist: artist,
+                album: json.animeENName,
+            });
+        }
     }
 
     return (

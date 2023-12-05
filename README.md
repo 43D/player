@@ -1,6 +1,8 @@
-# Anime Music Player
+# [Anime Music Player](https://43d.github.io/player/)
 
 Listen to the openings, endings, and insert songs from your favorite anime.
+[LINK](https://43d.github.io/player/)
+
 
 ## Implemented Features
 * Playlist

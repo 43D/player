@@ -1,4 +1,4 @@
-# [Anime Music Player](https://43d.github.io/player/)
+# [Anime Song Player](https://43d.github.io/player/)
 
 Listen to the openings, endings, and insert songs from your favorite anime.
 [AMP link](https://43d.github.io/player/)
@@ -25,3 +25,7 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * Light Theme
 * Pagination for most listened songs (necessary for performance)
 * Add an option to disable "Discovery"
+
+<hr>
+
+Anime Song Player © 2023 by 43D is licensed under CC BY-NC-SA 4.0 

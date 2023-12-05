@@ -28,4 +28,4 @@ This application uses the **AniSong Database API** as a base to function. Read m
 
 <hr>
 
-Anime Song Player © 2023 by 43D is licensed under CC BY-NC-SA 4.0 
+Anime Song Player © 2023 by 43D is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/

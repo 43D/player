@@ -2,17 +2,21 @@ import { ChangeEvent, useEffect, useRef, useState } from "react";
 import InterfaceMediaControl from "../../../type/InterfaceMediaControl";
 import InterfaceMediaTimeline from "../../../type/InterfaceMediaTimeline";
 import DBType from "../../../type/DBType";
+import { useNavigate } from "react-router-dom";
 
 type menuType = {
     control: () => InterfaceMediaControl;
     dbProp: DBType;
 }
 const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMediaTimeline) => void }> = ({ control, timelineProp, dbProp }) => {
-
+    const navigate = useNavigate();
     const [timeLineValue, setTimeLineValue] = useState<string>("0");
     const [currentTime, setCurrentTime] = useState<string>("0");
     const [durationValue, setDurationValue] = useState<string>("0");
-    const [title, setTitle] = useState<string>("-");
+    const [titleAnime, setTitleAnime] = useState<string>("");
+    const [titleArtist, setTitleArtist] = useState<string>("");
+    const [animeLink, setAnimeLink] = useState<string>("#");
+    const [artistLink, setArtistLink] = useState<string>("#");
 
     const timeLineInput = useRef<HTMLInputElement | null>(null);
 
@@ -41,7 +45,13 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
 
     const getInfo = async (id: string) => {
         const song = await dbProp.getSongById(Number(id));
-        setTitle(song.songName + " - " + song.songArtist);
+        setTitleAnime(song.songName);
+        setTitleArtist(song.songArtist);
+        const idArt = (song.artists[0]) ? song.artists[0].id : 0;
+        setAnimeLink("/anime/" + song.annId);
+        setArtistLink("/artist/" + idArt);
+
+        // 
     }
 
     return (
@@ -53,7 +63,11 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
                         <span id="time">{currentTime}</span>
                     </div>
                     <div className="col text-center">
-                        <span id="name-bar">{title}</span>
+                        <p className="m-0 p-0">
+                            <span id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(animeLink)}>{titleAnime}</span>
+                            <span> - </span>
+                            <span id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(artistLink)}>{titleArtist}</span>
+                        </p>
                     </div>
                     <div className="col-3 col-sm-2 text-end">
                         <span id="duration">{durationValue}</span>

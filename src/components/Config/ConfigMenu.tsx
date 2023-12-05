@@ -45,16 +45,19 @@ function ConfigMenu({ store }: storeType) {
 
     const theme = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        config.theme = value;
-        store.setConfig(config);
-        setConfig(store.getConfig());
+        const json = store.getConfig();
+        json.theme = value;
+        store.setConfig(json);
+        setConfig(json);
     }
 
     const qualityStreaming = (event: ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
-        config.streaming = value;
-        store.setConfig(config);
-        setConfig(store.getConfig());
+        const json = store.getConfig();
+    
+        json.streaming = value;
+        store.setConfig(json);
+        setConfig(json);
     }
 
     const btnClear = () => {

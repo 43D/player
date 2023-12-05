@@ -4,6 +4,7 @@ type ConfigType = {
     loop: boolean,
     playIndex: number,
     playNowId: string,
+    played: boolean,
     streaming: string,
     volume: number
 }

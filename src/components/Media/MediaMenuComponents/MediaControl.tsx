@@ -16,7 +16,6 @@ function MediaControl({ pagesProps, control, store }: menuType) {
     const config = store.getConfig();
 
     const playBtn = useRef<HTMLElement | null>(null);
-    const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
     const mutedBtn = useRef<HTMLButtonElement | null>(null);
 
@@ -38,6 +37,12 @@ function MediaControl({ pagesProps, control, store }: menuType) {
                 : "w-100 btn btn-dark text-light";
     }, []);
 
+    useEffect(() => {
+        const intervalId = setInterval(checkBtnPlay, 500);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
     const setVolume = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setVolumeValue(value);
@@ -47,14 +52,6 @@ function MediaControl({ pagesProps, control, store }: menuType) {
                 : 'mx-2 btn btn-dark text-light border rounded-circle';
 
         control().setVolume(Number(value));
-    }
-
-    const onChangePlay = () => {
-        if (playBtn.current) {
-            setIsPlaying(!isPlaying);
-            playBtn.current.className = !isPlaying ? 'bi bi-pause' : 'bi bi-play';
-        }
-        control().play(!isPlaying);
     }
 
     const changeMute = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -103,6 +100,22 @@ function MediaControl({ pagesProps, control, store }: menuType) {
     const getLink = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         pagesProps().getLink();
+    }
+
+    const onChangePlay = () => {
+        const config = store.getConfig();
+        if (playBtn.current)
+            playBtn.current.className = config.played ? 'bi bi-pause' : 'bi bi-play';
+
+        control().play(!config.played);
+        config.played = !config.played;
+        store.setConfig(config);
+    }
+
+    const checkBtnPlay = () => {
+        const config = store.getConfig();
+        if (playBtn.current)
+            playBtn.current.className = config.played ? 'bi bi-pause' : 'bi bi-play';
     }
 
     return (

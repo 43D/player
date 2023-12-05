@@ -39,6 +39,12 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         }
     }, [control]);
 
+    useEffect(() => {
+        const intervalId = setInterval(showCurrentTime, 1000); // Atualiza a cada segundo
+
+        return () => clearInterval(intervalId); // Limpa o intervalo ao desmontar o componente
+    }, []);
+    
     const pauseAll = () => {
         videoRef.current?.pause();
         audioRef.current?.pause();
@@ -120,6 +126,7 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         else
             pauseAll();
 
+        json["played"] = played;
         store.setConfig(json);
         timelineProp().setId(json.playNowId);
         dbProp.addListen(Number(json.playNowId));
@@ -176,13 +183,6 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
                 videoRef.current.currentTime = (Number(value) * videoRef.current.duration / 120000);
 
     }
-
-
-    useEffect(() => {
-        const intervalId = setInterval(showCurrentTime, 1000); // Atualiza a cada segundo
-
-        return () => clearInterval(intervalId); // Limpa o intervalo ao desmontar o componente
-    }, []);
 
     const showVideo = () => {
         setComponentStyle((prevStyle) => {

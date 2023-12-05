@@ -27,6 +27,7 @@ function StorageLocal() {
             loop: true,
             playIndex: 0,
             playNowId: "0",
+            played: false,
             streaming: "0",
             volume: 1
         }

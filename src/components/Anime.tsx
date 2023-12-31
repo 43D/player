@@ -26,6 +26,7 @@ function Anime({ pageProps, dbProp }: idType) {
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [name, setName] = useState<String>("");
     const [nameJP, setNameJP] = useState<String>("");
+    const [nameSeason, setNameSeason] = useState<String>("");
     const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
     const [componentType, setComponentType] = useState<JSX.Element[]>([]);
     const [componentInfo, setComponentInfo] = useState<JSX.Element[]>([]);
@@ -42,7 +43,7 @@ function Anime({ pageProps, dbProp }: idType) {
             const result = await feacthAniSong().fetchSongById(id);
             await searchAnimeInfo(result[0]);
             setName(result[0].animeENName);
-            setNameJP(result[0].animeJPName + " - " + result[0].animeVintage + " (" + result[0].animeType + ")");
+            setNameJP(result[0].animeJPName);
 
             const compSong = <AnimeAll key={"13"} songList={result} pageProps={pageProps} />
             setComponentSong([compSong]);
@@ -62,29 +63,32 @@ function Anime({ pageProps, dbProp }: idType) {
     };
 
     const searchAnimeInfo = async (song: JsonSong) => {
-        const year = (song.animeVintage) ? song.animeVintage.split(" ")[1] : "1900";
-        const animeEN = await feacthAnimeInfo().fetchAnimeInfo(song.animeENName, year);
-        let result = searchMatch(animeEN, song);
-        if (!result) {
-            const animeJP = await feacthAnimeInfo().fetchAnimeInfo(song.animeJPName, year);
-            result = searchMatch(animeJP, song);
-        }
+        const animeInfomation = await feacthAnimeInfo().fetchAnimeInfoAnn(String(song.annId)) as Document;
+        const releaseDateText = (animeInfomation.querySelector('anime > info[type="Vintage"]') as Element).textContent;
+        const year = (releaseDateText) ? releaseDateText.split("-")[0] : "1900"
+        const animeEN = await feacthAnimeInfo().fetchAnimeInfoJikan(song.animeENName, year);
+        const result = searchMatch(animeEN, year, song);
+
         if (result)
-            setComponentInfo([<AnimeInfomation key={"9787"} anime={result} />]);
+            setNameSeason(`- ${result.data[0].season.toUpperCase()} ${result.data[0].year} (${result.data[0].type})`);
+
+        setComponentInfo([<AnimeInfomation key={"9787"} animeMal={result} animeAnn={animeInfomation} />]);
     }
 
-    const searchMatch = (anime: AnimeInfo, song: JsonSong): AnimeInfo | null => {
-        if (!song.animeVintage)
-            return null;
+    const searchMatch = (anime: AnimeInfo, year: string, song: JsonSong): AnimeInfo | null => {
         for (let key in anime.data)
-            if (anime.data[key].year + "" == song.animeVintage.split(" ")[1] || !anime.data[key].year)
-                return filterByString(anime, key, song);
+            if (anime.data[key].year + "" == year) {
+                const res = filterByString(anime, key, song);
+                if (res)
+                    return res;
+            }
 
         return null;
     }
 
     const filterByString = (anime: AnimeInfo, key: any, song: JsonSong): AnimeInfo | null => {
         const value = anime.data[key];
+
         if (includeStringArray(value.title, song.animeENName, song.animeJPName))
             return {
                 data: [value]
@@ -163,7 +167,7 @@ function Anime({ pageProps, dbProp }: idType) {
                         <h2>{name}</h2>
                     </div>
                     <div className="col-12">
-                        <h5>{nameJP}</h5>
+                        <h5>{nameJP} {nameSeason}</h5>
                     </div>
                     <div className="col mt-3" id="search-anime">
                         <button className="btn btn-success m-1" onClick={playSongs}><i className="bi bi-play"></i></button>

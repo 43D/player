@@ -42,6 +42,7 @@ type data = {
     scored_by: number,
     synopsis: string,
     studios: studio[],
+    season: string,
     year: number
 }
 

@@ -69,26 +69,36 @@ function Anime({ pageProps, dbProp }: idType) {
         const animeEN = await feacthAnimeInfo().fetchAnimeInfoJikan(song.animeENName, year);
         const result = searchMatch(animeEN, year, song);
 
-        if (result)
-            setNameSeason(`- ${result.data[0].season.toUpperCase()} ${result.data[0].year} (${result.data[0].type})`);
+        if (result) {
+            const seasonMAl = (result.data[0].season) ? result.data[0].season : "";
+            const typeMAL = (result.data[0].type) ? `(${result.data[0].type})` : "";
+
+            setNameSeason(`- ${seasonMAl.toUpperCase()} ${year} ${typeMAL}`);
+        }
 
         setComponentInfo([<AnimeInfomation key={"9787"} animeMal={result} animeAnn={animeInfomation} />]);
     }
 
     const searchMatch = (anime: AnimeInfo, year: string, song: JsonSong): AnimeInfo | null => {
-        for (let key in anime.data)
-            if (anime.data[key].year + "" == year) {
+
+        for (let key in anime.data) {
+
+            let yearMal = String(anime.data[key].year);
+            if (yearMal == "null")
+                yearMal = anime.data[key].aired.from.split("-")[0];
+
+
+            if (yearMal == year) {
                 const res = filterByString(anime, key, song);
                 if (res)
                     return res;
             }
-
+        }
         return null;
     }
 
     const filterByString = (anime: AnimeInfo, key: any, song: JsonSong): AnimeInfo | null => {
         const value = anime.data[key];
-
         if (includeStringArray(value.title, song.animeENName, song.animeJPName))
             return {
                 data: [value]
@@ -120,6 +130,7 @@ function Anime({ pageProps, dbProp }: idType) {
             return true;
         return false;
     }
+
     const switchBtn = (id: string) => {
         const elements = document.querySelectorAll('.anime-filter');
         elements.forEach(element => {

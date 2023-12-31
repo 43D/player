@@ -15,7 +15,8 @@ type titles = {
 }
 
 type aired = {
-    string: string
+    string: string,
+    from: string
 }
 
 type studio = {

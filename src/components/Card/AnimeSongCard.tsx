@@ -105,6 +105,7 @@ function AnimeSongCard({ song, pageProps }: CardProps) {
                     </tbody>
                 </table>
             </div>
+            
         </li>
     );
 }

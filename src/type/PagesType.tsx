@@ -6,7 +6,6 @@ type PagesType = {
     playArtistNow: (songs: string[]) => void;
     playPlaylistNow: (id: number) => void;
     deletePlaylist: (id: number) => void;
-    modalClose: () => void;
     openQueue: () => void;
     nextQueue: () => void;
     previousQueue: () => void;

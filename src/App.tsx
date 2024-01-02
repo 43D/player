@@ -18,7 +18,6 @@ import PagesType from "./type/PagesType";
 import InterfaceMediaTimeline from "./type/InterfaceMediaTimeline";
 
 function App() {
-  const [componentModal, setComponentModal] = useState<JSX.Element | null>();
   const [queueControll, setQueueControll] = useState<boolean>(false);
   const [componentQueue, setComponentQueue] = useState<JSX.Element>(<DisplayQueue key={564468} show={queueControll} />);
   const mediaControl = React.useRef<InterfaceMediaControl | null>(null);
@@ -26,10 +25,20 @@ function App() {
   const dbSong = useIndexedDB;
   const db = database(dbSong);
   const store = StorageLocal();
+  const [idAddPlaylist, setIdAddPlaylist] = useState<number>(0);
+  const [idDeletePlaylist, setIdDeletePlaylist] = useState<number>(0);
+  const [observerPlaylist, setObserverPlaylist] = useState<number>(0);
+  const [observerDeletePlaylist, setObserverDeletePlaylist] = useState<number>(0);
 
   const pages = (): PagesType => {
     const addPlaylistModal = (id: number) => {
-      setComponentModal(<AddPlaylistModal key={id} id={id} pageProps={pages} dbProp={db} />);
+      setIdAddPlaylist(id);
+      setObserverPlaylist(prevObserverPlaylist => prevObserverPlaylist + 1);
+    };
+
+    const deletePlaylist = (id: number) => {
+      setIdDeletePlaylist(id);
+      setObserverDeletePlaylist(prevObserverPlaylist => prevObserverPlaylist + 1);
     };
 
     const openQueue = () => {
@@ -62,14 +71,6 @@ function App() {
       store.setQueue(arrayDeStrings);
       mediaControl.current?.play(true);
     };
-
-    const deletePlaylist = (id: number) => {
-      setComponentModal(<DeletePlaylistModal key={id} id={id} pageProps={pages} dbProp={db} />);
-    };
-
-    const modalClose = () => {
-      setComponentModal(null);
-    }
 
     const nextQueue = () => {
       const json = StorageLocal().getConfig();
@@ -144,7 +145,6 @@ function App() {
       playArtistNow,
       playPlaylistNow,
       deletePlaylist,
-      modalClose,
       openQueue,
       nextQueue,
       previousQueue,
@@ -215,11 +215,14 @@ function App() {
     <HashRouter>
       <Nav />
       <RoutesApp dbProp={db} pageProps={pages} key={"0"} />
-      {componentModal}
       <DisplayMedia dbProp={db} timelineProp={timeline} control={(control) => (mediaControl.current = control)} store={store} />
       {componentQueue}
       <MediaMenu dbProp={db} pagesProps={pages} menuControlProp={menu} timelineProp={(timelineProp) => (mediaTimeline.current = timelineProp)} store={store} key={4658465} />
       <ConfigMenu store={store} />
+      <div>
+        <AddPlaylistModal key={idAddPlaylist + "add"} id={idAddPlaylist} observer={observerPlaylist} dbProp={db} />
+        <DeletePlaylistModal key={idDeletePlaylist + "dele"} id={idDeletePlaylist} observer={observerDeletePlaylist} dbProp={db} />
+      </div>
     </HashRouter>
   );
 }

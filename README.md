@@ -21,7 +21,6 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * All buttons are functional
 
 ## Features Yet to be Released:
-* UI displaying the current Queue
 * Light Theme
 * Pagination for most listened songs (necessary for performance)
 * Add an option to disable "Discovery"

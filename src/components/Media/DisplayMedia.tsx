@@ -4,18 +4,22 @@ import ConfigType from "../../type/ConfigType";
 import InterfaceMediaTimeline from "../../type/InterfaceMediaTimeline";
 import DBType from "../../type/DBType";
 import JsonSong from "../../type/Songs";
+import InterfaceMediaQueue from "../../type/InterfaceMediaQueue";
 
 interface MediaProps {
     store: {
         getConfig: () => ConfigType;
         setConfig: (data: ConfigType) => void;
         getQueue: () => string[];
+        setQueue: (data: string[]) => void;
     };
     timelineProp: () => InterfaceMediaTimeline;
     dbProp: DBType;
+    control: (control: InterfaceMediaControl) => void;
+    queueControllProp: () => InterfaceMediaQueue;
 }
 
-const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaControl) => void }> = ({ store, timelineProp, control, dbProp }) => {
+const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timelineProp, control, dbProp }) => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -35,6 +39,8 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
                 setVolume: (volume: number) => changeVolume(volume),
                 changeTimeline: (value: string) => changeTime(value),
                 showMedia: () => showVideo(),
+                playAnotherInTheQueue: (index: number) => playAnotherInTheQueue(index),
+                removeFromQueue: (songId: number) => removeFromQueue(songId),
             });
         }
     }, [control]);
@@ -44,7 +50,7 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
 
         return () => clearInterval(intervalId); // Limpa o intervalo ao desmontar o componente
     }, []);
-    
+
     const pauseAll = () => {
         videoRef.current?.pause();
         audioRef.current?.pause();
@@ -118,8 +124,11 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
     const playMedia = (played: boolean) => {
         const json = store.getConfig();
         json.playNowId = store.getQueue()[json.playIndex];
-        if (json.playNowId == "0")
+        if (json.playNowId == "0" || json.playNowId == undefined) {
+            timelineProp().setId("0");
+            pauseAll();
             return;
+        }
 
         if (played)
             setAndPlay(json);
@@ -130,7 +139,7 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         store.setConfig(json);
         timelineProp().setId(json.playNowId);
         dbProp.addListen(Number(json.playNowId));
-
+        queueControllProp().updateQueue();
     }
 
     const changeVolume = (volume: number) => {
@@ -162,6 +171,7 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
         json.playNowId = queue[json.playIndex];
         store.setConfig(json);
         playMedia(true);
+        queueControllProp().updateQueue();
     }
 
     const showCurrentTime = () => {
@@ -201,6 +211,50 @@ const DisplayMedia: React.FC<MediaProps & { control: (control: InterfaceMediaCon
             });
         }
     }
+
+    const playAnotherInTheQueue = (playIndex: number) => {
+        const json = store.getConfig();
+        const queue = store.getQueue();
+        json.playIndex = playIndex;
+        json.playNowId = queue[json.playIndex];
+        store.setConfig(json);
+        playMedia(true);
+        queueControllProp().updateQueue();
+    }
+
+    const removeFromQueue = (songId: number) => {
+        const json = store.getConfig();
+        const queue = store.getQueue();
+        const indexRemoval = queue.indexOf(String(songId));
+        const indexPlayActual = queue.indexOf(json.playNowId);
+        const newQueue = queue.filter(item => item !== String(songId));
+
+        if (newQueue.length == 0) {
+            json.playIndex = 0;
+            json.playNowId = "0";
+            store.setQueue(newQueue);
+            store.setConfig(json);
+            playMedia(true);
+            queueControllProp().updateQueue();
+            return;
+        }
+
+        if (indexRemoval == -1) return;
+        if (indexPlayActual >= indexRemoval) json.playIndex -= 1;
+        if (json.playIndex < 0) json.playIndex = 0;
+
+        json.playNowId = newQueue[json.playIndex];
+
+        console.log(newQueue, json);
+
+
+        store.setQueue(newQueue);
+        store.setConfig(json);
+        playMedia(true);
+
+        queueControllProp().updateQueue();
+    }
+
 
     return (
         <div id="display-media" style={componentStyle} className=" fixed-top container-fluid displays p-0 m-0">

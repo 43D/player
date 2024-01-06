@@ -44,6 +44,13 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
     }
 
     const getInfo = async (id: string) => {
+        if (id == "0" || id == undefined) {
+            setTitleAnime("");
+            setTitleArtist("");
+            setAnimeLink("/");
+            setArtistLink("/");
+            return;
+        }
         const song = await dbProp.getSongById(Number(id));
         setTitleAnime(song.songName);
         setTitleArtist(song.songArtist);
@@ -64,9 +71,8 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
                     </div>
                     <div className="col text-center">
                         <p className="m-0 p-0">
-                            <span id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(animeLink)}>{titleAnime}</span>
-                            <span> - </span>
-                            <span id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(artistLink)}>{titleArtist}</span>
+                            <span id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(animeLink)}>「{titleAnime}」</span>
+                            <span id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(artistLink)}>【{titleArtist}】</span>
                         </p>
                     </div>
                     <div className="col-3 col-sm-2 text-end">

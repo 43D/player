@@ -3,4 +3,6 @@ export default interface InterfaceMediaControl {
     setVolume: (volume: number) => void;
     changeTimeline: (value: string) => void;
     showMedia: () => void;
+    playAnotherInTheQueue: (index: number) => void;
+    removeFromQueue: (songId: number) => void;
 }

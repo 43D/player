@@ -8,7 +8,6 @@ type idType = {
     id: number;
     observer: number;
     dbProp: DBType;
-
 }
 
 function AddPlaylistModal({ id, observer, dbProp }: idType) {
@@ -60,6 +59,7 @@ function AddPlaylistModal({ id, observer, dbProp }: idType) {
     const close = () => {
         modalPlayList.hide();
         document.getElementsByClassName("modal-backdrop fade show")[0].remove();
+        // document.getElementsByTagName("body")[0].style.overflow = "auto";
     }
 
     return (

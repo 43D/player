@@ -13,6 +13,8 @@ type PagesType = {
     shuffleQueue: () => void;
     showVideo: () => void;
     getLink: () => void;
+    playQueueId: (index: number) => void
+    removeQueue: (songId: number) => void
 }
 
 export default PagesType

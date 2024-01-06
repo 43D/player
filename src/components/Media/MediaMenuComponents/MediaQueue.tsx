@@ -1,7 +1,7 @@
 import PagesType from "../../../type/PagesType";
 
 type queueType = {
-    pagesProps: () => PagesType
+    pagesProps: () => PagesType;
 }
 
 

@@ -16,12 +16,13 @@ import InterfaceMediaControl from "./type/InterfaceMediaControl";
 import React from "react";
 import PagesType from "./type/PagesType";
 import InterfaceMediaTimeline from "./type/InterfaceMediaTimeline";
+import InterfaceMediaQueue from "./type/InterfaceMediaQueue";
 
 function App() {
   const [queueControll, setQueueControll] = useState<boolean>(false);
-  const [componentQueue, setComponentQueue] = useState<JSX.Element>(<DisplayQueue key={564468} show={queueControll} />);
   const mediaControl = React.useRef<InterfaceMediaControl | null>(null);
   const mediaTimeline = React.useRef<InterfaceMediaTimeline | null>(null);
+  const mediaQueue = React.useRef<InterfaceMediaQueue | null>(null);
   const dbSong = useIndexedDB;
   const db = database(dbSong);
   const store = StorageLocal();
@@ -43,7 +44,8 @@ function App() {
 
     const openQueue = () => {
       (queueControll) ? setQueueControll(false) : setQueueControll(true);
-      setComponentQueue(<DisplayQueue key={5648} show={!queueControll} />)
+      setComponentQueue(<DisplayQueue key={5648} dbProp={db} pageProps={pages} store={store} queueControllProp={(control) => (mediaQueue.current = control)} show={!queueControll} />)
+      queuePages().updateQueue();
     };
 
     const addQueue = (id: number) => {
@@ -137,6 +139,14 @@ function App() {
       mediaControl.current?.showMedia();
     };
 
+    const playQueueId = (index: number) => {
+      menu().playAnotherInTheQueue(index);
+    }
+
+    const removeQueue = (songId: number) => {
+      menu().removeFromQueue(songId);
+    }
+
     return {
       addPlaylistModal,
       addQueue,
@@ -151,9 +161,15 @@ function App() {
       loopQueue,
       shuffleQueue,
       showVideo,
-      getLink
+      getLink,
+      playQueueId,
+      removeQueue
     }
   }
+
+  const [componentQueue, setComponentQueue] = useState<JSX.Element>(<DisplayQueue key={564468} pageProps={pages} store={store} dbProp={db} queueControllProp={(control) => (mediaQueue.current = control)} show={queueControll} />);
+
+
   const timeline = (): InterfaceMediaTimeline => {
     const setTimeline = (time: number, duration: number) => {
       mediaTimeline.current?.setTimeline(time, duration);
@@ -185,11 +201,21 @@ function App() {
       mediaControl.current?.showMedia();
     }
 
+    const playAnotherInTheQueue = (index: number) => {
+      mediaControl.current?.playAnotherInTheQueue(index);
+    }
+
+    const removeFromQueue = (songId: number) => {
+      mediaControl.current?.removeFromQueue(songId);
+    }
+
     return {
       play,
       setVolume,
       changeTimeline,
-      showMedia
+      showMedia,
+      playAnotherInTheQueue,
+      removeFromQueue
     }
   }
 
@@ -211,11 +237,19 @@ function App() {
     });
   }
 
+  const queuePages = (): InterfaceMediaQueue => {
+    const updateQueue = () => {
+      mediaQueue.current?.updateQueue();
+    }
+
+    return { updateQueue }
+  }
+
   return (
     <HashRouter>
       <Nav />
       <RoutesApp dbProp={db} pageProps={pages} key={"0"} />
-      <DisplayMedia dbProp={db} timelineProp={timeline} control={(control) => (mediaControl.current = control)} store={store} />
+      <DisplayMedia dbProp={db} timelineProp={timeline} queueControllProp={queuePages} control={(control) => (mediaControl.current = control)} store={store} />
       {componentQueue}
       <MediaMenu dbProp={db} pagesProps={pages} menuControlProp={menu} timelineProp={(timelineProp) => (mediaTimeline.current = timelineProp)} store={store} key={4658465} />
       <ConfigMenu store={store} />

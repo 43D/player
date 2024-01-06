@@ -5,6 +5,7 @@ import InterfaceMediaTimeline from "../../type/InterfaceMediaTimeline";
 import DBType from "../../type/DBType";
 import JsonSong from "../../type/Songs";
 import InterfaceMediaQueue from "../../type/InterfaceMediaQueue";
+import { feacthAnimeInfo } from "../../services/feacthAnimeInfo";
 
 interface MediaProps {
     store: {
@@ -201,15 +202,41 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
         });
     }
 
-    const metadado = (json: JsonSong) => {
+    const metadado = async (json: JsonSong) => {
         if ('mediaSession' in navigator) {
             const artist = (json.songArtist) ? json.songArtist.toString() : "????";
+            const ann = await feacthAnimeInfo().fetchAnimeInfoAnn(String(json.annId));
+            let image = getImage(ann);
+            if (image == "") image = "https://43d.github.io/player/logo.png";
+
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: json.songName,
                 artist: artist,
                 album: json.animeENName,
+                artwork: [
+                    { src: image, sizes: '512x512', type: 'image/png' },
+                ],
             });
         }
+    }
+
+    const getImage = (animeAnn: Document) => {
+        if (animeAnn) {
+            const pictureNodes = animeAnn.querySelectorAll('anime > info[type="Picture"] > img');
+            let maxResolution = 0;
+            let maxResolutionImgSrc = '';
+            pictureNodes.forEach((node) => {
+                const width = parseInt(node.getAttribute('width') as string);
+                const height = parseInt(node.getAttribute('height') as string);
+                const resolution = width * height;
+                if (resolution > maxResolution) {
+                    maxResolution = resolution;
+                    maxResolutionImgSrc = node.getAttribute('src') as string;
+                }
+            });
+            return maxResolutionImgSrc;
+        }
+        return "";
     }
 
     const playAnotherInTheQueue = (playIndex: number) => {

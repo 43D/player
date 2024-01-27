@@ -6,7 +6,8 @@ type ConfigType = {
     playNowId: string,
     played: boolean,
     streaming: string,
-    volume: number
+    volume: number,
+    server: string,
 }
 
 export default ConfigType

@@ -17,6 +17,12 @@
 * The season and type of anime along with the secondary title no longer appear as null in some cases.
 
 
+## (27/01/2024)
+* Fixed the bug where nothing appeared when clicking to open the queue for the first time.
+* UI: removed streaming quality option from settings
+* UI: added streaming quality options in the media control bar
+* UI: added servers option in the media control bar (will soon be functional)
+
 <hr>
 
 Anime Song Player © 2023 by 43D is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/

@@ -29,7 +29,8 @@ function StorageLocal() {
             playNowId: "0",
             played: false,
             streaming: "0",
-            volume: 1
+            volume: 1,
+            server: "NA1"
         }
         setConfig(config);
     }
@@ -44,6 +45,10 @@ function StorageLocal() {
         if (!json) {
             createConfig();
             return getConfig();
+        }
+        if(!json.server){
+            json.server = "NA1"
+            setConfig(json);
         }
         return json;
     }

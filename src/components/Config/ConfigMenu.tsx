@@ -51,15 +51,6 @@ function ConfigMenu({ store }: storeType) {
         setConfig(json);
     }
 
-    const qualityStreaming = (event: ChangeEvent<HTMLSelectElement>) => {
-        const value = event.target.value;
-        const json = store.getConfig();
-    
-        json.streaming = value;
-        store.setConfig(json);
-        setConfig(json);
-    }
-
     const btnClear = () => {
         const dbName = 'SuperPlayer';
         const request = indexedDB.deleteDatabase(dbName);
@@ -75,7 +66,6 @@ function ConfigMenu({ store }: storeType) {
 
         location.reload();
     }
-
 
     return (
         <div className="modal fade" id="configsModal" tabIndex={-1} aria-labelledby="configurações" aria-hidden="true">
@@ -117,17 +107,6 @@ function ConfigMenu({ store }: storeType) {
                                         Dark Mode
                                     </label>
                                 </div>
-                            </div>
-                        </div>
-                        <hr />
-                        <div>
-                            <div>
-                                <label htmlFor="select-quality" className="form-label">Streaming quality</label>
-                                <select id="select-quality" value={config.streaming} onChange={qualityStreaming} className="form-select" aria-label="Qualidade da media">
-                                    <option value="0">Only audio</option>
-                                    <option value="480">Video 480p</option>
-                                    <option value="720">Video 720p</option>
-                                </select>
                             </div>
                         </div>
                         <hr />

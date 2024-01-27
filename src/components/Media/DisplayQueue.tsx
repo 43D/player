@@ -38,6 +38,10 @@ function DisplayQueue({ queueControllProp, show, store, dbProp, pageProps }: dis
         });
     }, [queueControllProp]);
 
+    useEffect(() => {
+        updateQueue();
+    }, []);
+
     const updateQueue = () => {
         const playIndex = store.getConfig().playIndex;
         const queueIndex = store.getQueue();

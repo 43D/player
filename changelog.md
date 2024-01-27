@@ -21,7 +21,7 @@
 * Fixed the bug where nothing appeared when clicking to open the queue for the first time.
 * UI: removed streaming quality option from settings
 * UI: added streaming quality options in the media control bar
-* UI: added servers option in the media control bar (will soon be functional)
+* UI: added servers option in the media control bar (functional)
 
 <hr>
 

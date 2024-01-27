@@ -23,6 +23,8 @@ interface MediaProps {
 const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timelineProp, control, dbProp }) => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    let servers = ["NA1", "NA2", "EU1", "CAT"];
+    let serverAtual = store.getConfig().server;
 
     const [componentStyle, setComponentStyle] = useState<React.CSSProperties>({
         top: "64px",
@@ -31,7 +33,6 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
         position: "fixed",
         zIndex: "43"
     });
-
 
     useEffect(() => {
         if (videoRef.current) {
@@ -95,32 +96,125 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
 
     const setAndPlay = async (json: ConfigType) => {
         const song = await getMedia(json);
+        servers = ["NA1", "NA2", "EU1", "CAT"];
         if (song.streaming == "audio")
             if (audioRef.current) {
                 if (audioRef.current?.src != song.media)
-                    audioRef.current.src = song.media;
+                    setAudioSrc(song.media);
                 pauseAll();
                 audioRef.current.play();
-                if (videoRef.current && videoRef.current?.src) {
-                    videoRef.current.src = "0";
-                    videoRef.current.removeAttribute("src");
-                }
+                if (videoRef.current && videoRef.current?.src)
+                    setVideoSrc("0");
             }
 
         if (song.streaming == "video")
             if (videoRef.current) {
                 if (videoRef.current.src != song.media)
-                    videoRef.current.src = song.media;
+                    setVideoSrc(song.media);
                 pauseAll();
                 videoRef.current.play();
-                if (audioRef.current && audioRef.current?.src != "") {
-                    audioRef.current.src = "0";
-                    audioRef.current.removeAttribute("src");
-                }
+                if (audioRef.current && audioRef.current?.src != "")
+                    setAudioSrc("0");
             }
 
         changeVolume(json.volume * 100);
     }
+
+    const setAudioSrc = (url: string) => {
+        if (audioRef.current) {
+            if (url == "0") {
+                audioRef.current.src = "0";
+                audioRef.current.removeAttribute("src");
+            } else {
+                audioRef.current.src = getCurrretServerUrl(url);
+            }
+        }
+    }
+
+    const setVideoSrc = (url: string) => {
+        if (videoRef.current) {
+            if (url == "0") {
+                videoRef.current.src = "0";
+                videoRef.current.removeAttribute("src");
+            }
+            else {
+                videoRef.current.src = getCurrretServerUrl(url);
+            }
+        }
+    }
+
+    const getCurrretServer = () => {
+        const json = store.getConfig();
+        return json.server;
+    }
+
+
+    const getCurrretServerUrl = (url: string, server: string = getCurrretServer()) => {
+        let base = "";
+        const parse_url = url.split("/");
+        const sub = parse_url[parse_url.length - 1];
+        if (server == "NA1")
+            base = "https://ladist1.catbox.video/";
+        else if (server == "NA2")
+            base = "https://vhdist1.catbox.video/";
+        else if (server == "EU1")
+            base = "https://nl.catbox.video/";
+        else
+            base = "https://files.catbox.moe/";
+
+        serverAtual = server;
+        return base + sub;
+    }
+
+    const setAlternativeServerVideo = () => {
+        servers = servers.filter(item => item !== serverAtual);
+        serverAtual = servers[0];
+
+        if (servers.length > 0) {
+            if (videoRef.current)
+                videoRef.current.src = getCurrretServerUrl(videoRef.current.src, servers[0]);
+        } else {
+            nextSong();
+        }
+    }
+
+    const setAlternativeServerAudio = () => {
+        servers = servers.filter(item => item !== serverAtual);
+        serverAtual = servers[0];
+
+        if (servers.length > 0) {
+            if (audioRef.current)
+                audioRef.current.src = getCurrretServerUrl(audioRef.current.src, servers[0]);
+        } else {
+            nextSong();
+        }
+    }
+
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        video.addEventListener('error', setAlternativeServerVideo);
+
+        return () => {
+            video.removeEventListener('error', setAlternativeServerVideo);
+        };
+    }, []);
+
+    useEffect(() => {
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        audio.addEventListener('error', setAlternativeServerAudio);
+
+        return () => {
+            audio.removeEventListener('error', setAlternativeServerAudio);
+        };
+    }, []);
+
+
+
 
     const playMedia = (played: boolean) => {
         const json = store.getConfig();

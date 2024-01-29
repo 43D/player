@@ -185,6 +185,10 @@ function MediaControl({ pagesProps, control, store }: menuType) {
                                     <i className="bi bi-badge-hd" /> 720p
                                 </label>
                             </div>
+                            <div>
+                                <p className="mb-0 mt-2 text-center"> <i className="bi bi-info"></i> Change effective <br />
+                                from the next song</p>
+                            </div>
                         </li>
                         <li>
                             <button type="button" id="btn-server" className="w-100 btn btn-dark text-light dropdown-toggle"
@@ -210,6 +214,10 @@ function MediaControl({ pagesProps, control, store }: menuType) {
                                 <label className="btn btn-outline-success" htmlFor="radio-server-option4">
                                     Catbox Moe
                                 </label>
+                            </div>
+                            <div>
+                                <p className="mb-0 mt-2 text-center"> <i className="bi bi-info"></i> Change effective <br />
+                                from the next song</p>
                             </div>
                         </li>
                     </ul>

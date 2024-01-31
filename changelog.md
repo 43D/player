@@ -27,7 +27,12 @@
 ## (29/01/2024)
 * Fixed the issue of pausing and playing.
 * UI: Added warnings in hosts and streming quality options
- 
+
+
+## (31/01/2024)
+* UI & Feature: remove song from playlist is impl.
+
+
 
 <hr>
 

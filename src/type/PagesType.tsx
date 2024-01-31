@@ -13,8 +13,9 @@ type PagesType = {
     shuffleQueue: () => void;
     showVideo: () => void;
     getLink: () => void;
-    playQueueId: (index: number) => void
-    removeQueue: (songId: number) => void
+    playQueueId: (index: number) => void;
+    removeQueue: (songId: number) => void;
+    removeFromPlaylist: (songId: number, playlist: number, obs: any) => void;
 }
 
 export default PagesType

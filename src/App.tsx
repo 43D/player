@@ -147,6 +147,10 @@ function App() {
       menu().removeFromQueue(songId);
     }
 
+    const removeFromPlaylist = (songId: number, playlistId: number, obs: any) => {
+      db.removeSongInPlaylist(playlistId, songId, obs);
+    }
+
     return {
       addPlaylistModal,
       addQueue,
@@ -163,7 +167,8 @@ function App() {
       showVideo,
       getLink,
       playQueueId,
-      removeQueue
+      removeQueue,
+      removeFromPlaylist
     }
   }
 

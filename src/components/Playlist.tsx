@@ -25,12 +25,18 @@ function Playlist({ pageProps, dbProp }: idType) {
     const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
     const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
     const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
+    const [observer, setObserver] = useState<number>(0);
 
 
     useEffect(() => {
         setComponent([<MessageCom key={"43"} msg="Pesquisando músicas, aguarde...." />])
         searchAllPlaylist();
     }, [id]);
+
+    
+    useEffect(() => {
+        searchAllPlaylist();
+    }, [observer]);
 
     async function searchAllPlaylist() {
         try {
@@ -39,7 +45,7 @@ function Playlist({ pageProps, dbProp }: idType) {
             setQtd(result.songsCollections.length);
             const songs = await dbProp.getCollectionSongs(result.songsCollections);
 
-            const compSong = <AnimeAll key={"13"} songList={songs} pageProps={pageProps} />
+            const compSong = <AnimeAll key={"13"} songList={songs} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver}/>
             setComponentSong([compSong]);
 
             createAnime(songs);
@@ -48,15 +54,13 @@ function Playlist({ pageProps, dbProp }: idType) {
         } catch (error) {
             setComponent([<MessageCom key={"433"} msg="Error pane geral" />])
         }
-
-
     };
 
     const createAnime = (song: JsonSong[]) => {
         const components: JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
-                components.push(<MessageCom msg="Nada foi encontrado anime..." />)
+                components.push(<MessageCom key={"4333"} msg="Nada foi encontrado anime..." />)
             else {
                 const groupSong = song.reduce((acc: { [x: string]: any[]; }, obj: JsonSong) => {
                     const key = obj.annId;
@@ -71,7 +75,7 @@ function Playlist({ pageProps, dbProp }: idType) {
                 entries.sort(([, a], [, b]) => a[0].animeENName.localeCompare(b[0].animeENName));
 
                 for (const [key, value] of entries)
-                    components.push(<SearchAnime key={key} songList={value} pageProps={pageProps} />);
+                    components.push(<SearchAnime key={key} songList={value} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver}/>);
             }
         }
         setComponentAnime(components)
@@ -81,7 +85,7 @@ function Playlist({ pageProps, dbProp }: idType) {
         const components: JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
-                components.push(<MessageCom msg="Nada foi encontrado artistas..." />)
+                components.push(<MessageCom key={"43333"} msg="Nada foi encontrado artistas..." />)
             else {
                 const groupSong: { [artist: string]: JsonSong[] } = {};
                 song.forEach((item) => {
@@ -94,7 +98,7 @@ function Playlist({ pageProps, dbProp }: idType) {
 
                 const sortedKeys = Object.keys(groupSong).sort();
                 sortedKeys.forEach((key) => {
-                    components.push(<SearchArtist key={key} songList={groupSong[key]} pageProps={pageProps} />);
+                    components.push(<SearchArtist key={key} songList={groupSong[key]} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver}/>);
                 });
             }
         }

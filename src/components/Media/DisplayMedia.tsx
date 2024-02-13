@@ -58,6 +58,14 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
         audioRef.current?.pause();
     }
 
+    const getUrlParse = (url: string) => {
+        const src = url.split("/");
+        const inter = src[src.length - 1].length;
+        if (inter > 0)
+            return src[src.length - 1]
+        return src[src.length - 2]
+    }
+
     const getMedia = async (json: ConfigType) => {
         const song = await dbProp.getSongById(Number(json.playNowId));
         const parse = {
@@ -99,7 +107,7 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
         servers = ["NA1", "NA2", "EU1", "CAT"];
         if (song.streaming == "audio")
             if (audioRef.current) {
-                if (audioRef.current?.src != song.media)
+                if (getUrlParse(audioRef.current?.src) != getUrlParse(song.media))
                     setAudioSrc(song.media);
                 pauseAll();
                 audioRef.current.play();
@@ -109,7 +117,7 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
 
         if (song.streaming == "video")
             if (videoRef.current) {
-                if (videoRef.current.src != song.media)
+                if (getUrlParse(videoRef.current.src) != getUrlParse(song.media))
                     setVideoSrc(song.media);
                 pauseAll();
                 videoRef.current.play();
@@ -151,8 +159,7 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
 
     const getCurrretServerUrl = (url: string, server: string = getCurrretServer()) => {
         let base = "";
-        const parse_url = url.split("/");
-        const sub = parse_url[parse_url.length - 1];
+        const sub = getUrlParse(url);
         if (server == "NA1")
             base = "https://ladist1.catbox.video/";
         else if (server == "NA2")

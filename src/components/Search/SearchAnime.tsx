@@ -3,13 +3,17 @@ import JsonSong from '../../type/Songs';
 import AnimeSongCard from '../Card/AnimeSongCard';
 import PagesType from '../../type/PagesType';
 import { useNavigate } from 'react-router-dom';
+import AnimeSongPlaylistCard from '../Card/AnimeSongPlaylistCard';
 
 interface AnimeProps {
     songList: JsonSong[];
     pageProps: () => PagesType;
+    playlist?: boolean;
+    idPlaylist?: number;
+    observer?: any;
 }
 
-function SearchAnime({ songList, pageProps }: AnimeProps){
+function SearchAnime({ songList, pageProps, playlist = false, idPlaylist = 0, observer }: AnimeProps){
     const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
     const navigate = useNavigate();
 
@@ -20,7 +24,7 @@ function SearchAnime({ songList, pageProps }: AnimeProps){
         for (const key in songList) {
             if (songList.hasOwnProperty(key)) {
                 const value = songList[key];
-                components.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
+                (playlist)? components.push(<AnimeSongPlaylistCard key={key+ "anime"} idPlaylist={idPlaylist} observer={observer} song={value} pageProps={pageProps} />) :components.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
             }
         }
 

@@ -284,6 +284,18 @@ export const database = (db: dbType) => {
             updatePl(result);
         }
     }
+
+    const removeSongInPlaylist = async (idPlaylist: number, idSong: number, obs: any) => {
+        const result = await getByIdPlaylist(idPlaylist);
+        if (result.songsCollections.includes(idSong)) {
+            const array = result.songsCollections.filter(num => num !== idSong);
+            result.songsCollections = array;
+            updatePl(result);
+            obs((prev: number) => prev + 1);
+        }
+    }
+
+
     const deletePlaylist = (id: number) => {
         deletePl(id);
     }
@@ -352,6 +364,7 @@ export const database = (db: dbType) => {
         getCollectionSongs,
         getSongById,
         addSongInPlaylist,
+        removeSongInPlaylist,
         deletePlaylist,
         addListen,
         getTopList

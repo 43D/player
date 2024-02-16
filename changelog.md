@@ -33,6 +33,11 @@
 * UI & Feature: remove song from playlist is impl.
 
 
+## (16/02/2024)
+* New bar Ui
+* Fix some issues  (UI)
+
+
 
 <hr>
 

@@ -41,6 +41,10 @@ nav {
   border: 1px solid #2e2e36;
 }
 
+#btn-list-collapse {
+  border-color: #495057;
+}
+
 .cover-anime {
   width: auto;
   max-height: 240px;
@@ -82,6 +86,28 @@ video {
   max-height: 100%;
 }
 
+.titule-bar-name {
+  justify-content: center;
+  align-items: center;
+}
+
+.queue-list-title {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 435px) {
+  .queue-display-content{
+    padding-top: 50px!important;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .queue-display-content{
+    padding-bottom: 60px!important;
+  }
+}
+
 @media screen and (max-width: 372px) {
 
   #display-main,
@@ -94,11 +120,11 @@ video {
   #display-queue,
   #display-image {
     top: 110px;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 274px);
   }
 
   #video {
-    max-height: calc(100vh - 300px);
+    max-height: calc(100vh - 274px);
   }
 }
 
@@ -107,7 +133,7 @@ video {
   #display-main,
   #display-queue {
     top: 64px;
-    margin-bottom: 275px;
+    margin-bottom: 300px;
   }
 
   #display-media,
@@ -134,11 +160,11 @@ video {
   #display-queue,
   #display-image {
     top: 64px;
-    height: calc(100vh - 229px);
+    height: calc(100vh - 275px);
   }
 
   #video {
-    max-height: calc(100vh - 229px);
+    max-height: calc(100vh - 275px);
   }
 }
 
@@ -154,11 +180,11 @@ video {
   #display-queue,
   #display-image {
     top: 64px;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 230px);
   }
 
   #video {
-    max-height: calc(100vh - 190px);
+    max-height: calc(100vh - 230px);
   }
 
   .cover-anime {
@@ -180,17 +206,31 @@ video {
   #display-queue,
   #display-image {
     top: 64px;
-    height: calc(100vh - 145px);
+    height: calc(100vh - 167px);
   }
 
   #video {
-    max-height: calc(100vh - 145px);
+    max-height: calc(100vh - 167px);
   }
 
   .cover-anime {
     width: 100%;
     max-height: none;
     height: fit-content;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+  #display-media,
+  #display-queue,
+  #display-image {
+    top: 64px;
+    height: calc(100vh - 190px);
+  }
+
+  #video {
+    max-height: calc(100vh - 190px);
   }
 }
 
@@ -217,5 +257,21 @@ video {
   #top-menu {
     background-color: #2e2e36;
     height: 110px;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .titule-bar-name {
+    flex-direction: column;
+  }
+
+  .queue-list-title {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+  .queue-list-title > p > span {
+    display: block;
   }
 }

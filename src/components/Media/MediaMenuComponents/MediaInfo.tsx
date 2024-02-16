@@ -64,20 +64,14 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
     return (
         <div className="col-12 col-sm my-1">
             <div className="ui-seekbar px-3 d-flex h-100 justify-content-center flex-column">
+                <div className="d-flex justify-content-between">
+                    <p className="mb-0" id="time">{currentTime}</p>
+                    <p className="mb-0" id="duration">{durationValue}</p>
+                </div>
                 <input type="range" id="timeline-now" ref={timeLineInput} onChange={onChangeTime} className="ui-slider w-100" min="0" max="120000" value={timeLineValue} />
-                <div className="h-100 mb-0 row">
-                    <div className="col-3 col-sm-2">
-                        <span id="time">{currentTime}</span>
-                    </div>
-                    <div className="col text-center">
-                        <p className="m-0 p-0">
-                            <span id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(animeLink)}>「{titleAnime}」</span>
-                            <span id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(artistLink)}>【{titleArtist}】</span>
-                        </p>
-                    </div>
-                    <div className="col-3 col-sm-2 text-end">
-                        <span id="duration">{durationValue}</span>
-                    </div>
+                <div className="d-flex titule-bar-name text-center">
+                    <p className="m-0 p-0" id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(animeLink)}>「{titleAnime}」</p>
+                    <p className="m-0 p-0" id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(artistLink)}>【{titleArtist}】</p>
                 </div>
             </div>
         </div>

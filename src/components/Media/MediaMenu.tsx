@@ -26,7 +26,7 @@ const MediaMenu: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
                 <div className="row py-3">
                     <MediaControl pagesProps={pagesProps} control={menuControlProp} store={store} />
                     <MediaInfo dbProp={dbProp} control={menuControlProp} timelineProp={timelineProp}/>
-                    <MediaQueue key={47854} pagesProps={pagesProps} />
+                    <MediaQueue key={47854} pagesProps={pagesProps} store={store}/>
                 </div>
             </div>
         </div>

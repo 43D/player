@@ -54,7 +54,7 @@ function AnimeSongQueueCard({ id, pageProps, dbProp, playIndex, indexQueue }: Ca
                         <i className="bi bi-play"></i>
                     </button>
                 </div>
-                <div className="col-7 col-sm d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                <div className="col-7 col-sm d-flex queue-list-title" style={{wordBreak: 'break-all'}} data-bs-toggle="collapse"
                     data-bs-target={`#music-name-${Number(id)}`}>
                     <p className='m-0 p-0'><span>「{songName}」</span><span>【{songArtist}】</span></p>
                     <p className='m-0 p-0'>{anime}</p>

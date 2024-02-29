@@ -10,6 +10,7 @@ import { feacthAnimeInfo } from "../services/feacthAnimeInfo";
 import AnimeInfo from "../type/AnimeInfo";
 import AnimeInfomation from "./Anime/AnimeInfomation";
 import { useParams, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
 type idType = {
@@ -31,12 +32,16 @@ function Anime({ pageProps, dbProp }: idType) {
     const [componentType, setComponentType] = useState<JSX.Element[]>([]);
     const [componentInfo, setComponentInfo] = useState<JSX.Element[]>([]);
     const [result, setResult] = useState<JsonSong[] | null>(null);
-
+    const [image, setImage] = useState<string>("https://43d.github.io/player/logo.png");
 
     useEffect(() => {
         setComponent([<MessageCom key={"43"} msg="Pesquisando músicas, aguarde...." />])
         searchAllSong();
     }, [id]);
+
+    useEffect(() => {
+        getImageUrl();
+    }, []);
 
     const searchAllSong = async () => {
         try {
@@ -170,7 +175,62 @@ function Anime({ pageProps, dbProp }: idType) {
         }
     }
 
-    return (
+    const getImageUrl = () => {
+        const exec = async () => {
+            const ann = await feacthAnimeInfo().fetchAnimeInfoAnn(String(id));
+            let image = getImage(ann);
+            if (image == "")
+                image = "https://43d.github.io/player/logo.png";
+            setImage(image);
+        }
+        exec();
+    }
+
+    const getImage = (animeAnn: Document) => {
+        if (animeAnn) {
+            const pictureNodes = animeAnn.querySelectorAll('anime > info[type="Picture"] > img');
+            let maxResolution = 0;
+            let maxResolutionImgSrc = '';
+            pictureNodes.forEach((node) => {
+                const width = parseInt(node.getAttribute('width') as string);
+                const height = parseInt(node.getAttribute('height') as string);
+                const resolution = width * height;
+                if (resolution > maxResolution) {
+                    maxResolution = resolution;
+                    maxResolutionImgSrc = node.getAttribute('src') as string;
+                }
+            });
+            return maxResolutionImgSrc;
+        }
+        return "";
+    }
+
+
+    return (<>
+        <Helmet>
+            <title>Anime Song Player: {nameJP}</title>
+            <meta name="description" content={`Anime Song Player: ${nameJP}`} />
+            <meta name="application-name" content={`Anime Song Player: ${nameJP}`} />
+            <meta name="author" content="Allan Felipe" />
+            <meta name="description"
+                content={`Anime Song Player - Listen to the openings, endings, and insert songs from ${nameJP}`} />
+            {/* Open Graph / Facebook */}
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={`https://43d.github.io/player/#/anime/${id}`} />
+            <meta property="og:title" content={`Anime Song Player: ${nameJP}`} />
+            <meta property="og:description"
+                content={`Anime Song Player - Listen to the openings, endings, and insert songs from ${nameJP}`} />
+            <meta property="og:image" content={image} />
+
+            {/* Twitter */}
+            <meta property="twitter:card" content="summary" />
+            <meta property="twitter:url" content={`https://43d.github.io/player/#/anime/${id}`} />
+            <meta property="twitter:title" content={`Anime Song Player: ${nameJP}`} />
+            <meta property="twitter:description"
+                content={`Anime Song Player - Listen to the openings, endings, and insert songs from ${nameJP}`} />
+            <meta property="twitter:image" content={image} />
+        </Helmet>
+
         <div id="display-main" className="container-fluid displays">
             <div className="App pt-2 pb-4">
                 <div className="row">
@@ -192,6 +252,7 @@ function Anime({ pageProps, dbProp }: idType) {
                 </div>
             </div>
         </div>
+    </>
     );
 }
 

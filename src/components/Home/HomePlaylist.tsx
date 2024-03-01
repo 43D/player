@@ -47,6 +47,7 @@ function HomePlaylist({ pageProps, dbProp }: pageProps) {
                         </div>
                         <div className="w-100 d-flex justify-content-center">
                             <a href="#" className="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#playlistModal">Create Playlist</a>
+                            <a href="#" className="btn btn-outline-secondary disabled mt-2 ms-1" data-bs-toggle="modal" data-bs-target="#playlistModal">Import playlist</a>
                         </div>
                     </div>
                 </div>

@@ -33,7 +33,7 @@ function Playlist({ pageProps, dbProp }: idType) {
         searchAllPlaylist();
     }, [id]);
 
-    
+
     useEffect(() => {
         searchAllPlaylist();
     }, [observer]);
@@ -45,7 +45,7 @@ function Playlist({ pageProps, dbProp }: idType) {
             setQtd(result.songsCollections.length);
             const songs = await dbProp.getCollectionSongs(result.songsCollections);
 
-            const compSong = <AnimeAll key={"13"} songList={songs} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver}/>
+            const compSong = <AnimeAll key={"13"} songList={songs} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver} />
             setComponentSong([compSong]);
 
             createAnime(songs);
@@ -75,7 +75,7 @@ function Playlist({ pageProps, dbProp }: idType) {
                 entries.sort(([, a], [, b]) => a[0].animeENName.localeCompare(b[0].animeENName));
 
                 for (const [key, value] of entries)
-                    components.push(<SearchAnime key={key} songList={value} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver}/>);
+                    components.push(<SearchAnime key={key} songList={value} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver} />);
             }
         }
         setComponentAnime(components)
@@ -98,7 +98,7 @@ function Playlist({ pageProps, dbProp }: idType) {
 
                 const sortedKeys = Object.keys(groupSong).sort();
                 sortedKeys.forEach((key) => {
-                    components.push(<SearchArtist key={key} songList={groupSong[key]} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver}/>);
+                    components.push(<SearchArtist key={key} songList={groupSong[key]} pageProps={pageProps} playlist={true} idPlaylist={id} observer={setObserver} />);
                 });
             }
         }
@@ -134,6 +134,26 @@ function Playlist({ pageProps, dbProp }: idType) {
         switchBtn("anime-filter-artist");
     };
 
+    const backupPlaylistToJson = () => {
+        const feacth = async () => {
+            const result = await dbProp.getByIdPlaylist(id);
+            const songs = await dbProp.getCollectionSongs(result.songsCollections);
+            const json = {
+                playlist: result,
+                songs: songs
+            }
+            console.log(json);
+
+            const blob = new Blob([JSON.stringify(json)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = result.title + '.playlist.json'; // Nome do arquivo personalizado
+            link.click();
+        }
+        feacth();
+    }
+
 
     return (
         <div id="display-main" className="container-fluid displays">
@@ -150,6 +170,7 @@ function Playlist({ pageProps, dbProp }: idType) {
                         <button id="anime-filter-song" onClick={createSongAction} className="playlist-filter btn btn-success m-1">All Song</button>
                         <button id="anime-filter-anime" onClick={createAnimeAction} className="playlist-filter btn btn-secondary m-1">Anime</button>
                         <button id="anime-filter-artist" onClick={createArtistAction} className="playlist-filter btn btn-secondary m-1">Artist/Composers/Arranger</button>
+                        <button id="anime-filter-backup" onClick={backupPlaylistToJson} className="anime-filter btn btn-outline-success m-1">Backup Playlist</button>
                     </div>
                     <div className="col-12 mt-3">
                         {component}

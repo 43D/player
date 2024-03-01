@@ -38,6 +38,10 @@
 * Fix some issues  (UI)
 
 
+## (01/03/2024)
+* Playlist backup in json file
+* Importing json into the system coming soon
+
 
 <hr>
 

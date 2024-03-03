@@ -23,7 +23,6 @@ function AddPlaylistModal({ id, observer, dbProp }: idType) {
             var myModal = new bootstrap.Modal(modalElement, {});
             setModalPlayList(myModal);
         }
-
     }, []);
 
     useEffect(() => {

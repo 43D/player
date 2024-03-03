@@ -12,7 +12,7 @@ type actionType = {
 };
 
 type DBType = {
-    saveSongList: (songList: JsonSong[]) => void;
+    saveSongList: (songList: JsonSong[]) => Promise<void>;
     getAllSongs: () => Promise<JsonSong[]>;
     getPageCount: (id: number) => Promise<pageDataType>;
     getCursor: () => curso;
@@ -24,10 +24,10 @@ type DBType = {
     getByIdPlaylist: (id: number) => Promise<PlaylistCardType>;
     getCollectionSongs: (collection: number[]) => Promise<JsonSong[]>;
     getSongById: (id: number) => Promise<JsonSong>;
-    addSongInPlaylist: (idPlaylist: number, idSong: number) => void;
-    deletePlaylist: (id: number) => void;
+    addSongInPlaylist: (idPlaylist: number, idSong: number) => Promise<void>;
+    deletePlaylist: (id: number) => Promise<void>;
     addListen: (id: number) => Promise<void>;
-    getTopList: ({action, range}: actionType) => void;
+    getTopList: ({ action, range }: actionType) => void;
 }
 
 export default DBType

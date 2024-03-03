@@ -107,7 +107,7 @@ export const database = (db: dbType) => {
         });
     }
 
-    const saveSongList = (songList: JsonSong[]) => {
+    const saveSongList = async (songList: JsonSong[]) => {
         songList.forEach((v) => {
             getByIndex("annSongId", v.annSongId).then((song) => {
                 if (song) {
@@ -168,8 +168,6 @@ export const database = (db: dbType) => {
                     );
                 }
             });
-
-
         });
     };
 
@@ -296,8 +294,8 @@ export const database = (db: dbType) => {
     }
 
 
-    const deletePlaylist = (id: number) => {
-        deletePl(id);
+    const deletePlaylist = async (id: number) => {
+        await deletePl(id);
     }
 
     const addListen = async (id: number) => {

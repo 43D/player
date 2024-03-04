@@ -88,21 +88,21 @@ function ConfigMenu({ store }: storeType) {
                             <div>
                                 <div className="form-check">
                                     <input className="form-check-input radioTheme" onChange={theme} type="radio" name="flexRadioOptionTheme"
-                                        id="flexRadioOptionTheme1" value="system" checked={config.theme === 'system'} />
+                                        id="flexRadioOptionTheme1" value="system" checked={config.theme === 'system'} disabled />
                                     <label className="form-check-label" htmlFor="flexRadioOptionTheme1">
                                         Padrão do Sistema Operacional
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input radioTheme" onChange={theme} type="radio" name="flexRadioOptionTheme"
-                                        id="flexRadioOptionTheme2" value="light" checked={config.theme === 'light'} />
+                                        id="flexRadioOptionTheme2" value="light" checked={config.theme === 'light'} disabled />
                                     <label className="form-check-label" htmlFor="flexRadioOptionTheme2">
                                         Light Mode
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input radioTheme" onChange={theme} type="radio" name="flexRadioOptionTheme"
-                                        id="flexRadioOptionTheme3" value="dark" checked={config.theme === 'dark'} />
+                                        id="flexRadioOptionTheme3" value="dark" checked={config.theme === 'dark'} disabled />
                                     <label className="form-check-label" htmlFor="flexRadioOptionTheme3">
                                         Dark Mode
                                     </label>

@@ -19,6 +19,7 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * List with all songs, artists, and composers that have been recommended or searched in the system.
 * 50 random songs are displayed on the home page.
 * All buttons are functional
+* Share playlists via json
 
 ## Features Yet to be Released:
 * Light Theme
@@ -26,8 +27,6 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * Add an option to disable "Discovery"
 * Ranked warning. As it shares the same information as AMQ, during ranked matches some features must be disabled (search by name, artist or composer);
 * Implement keyboard shortcuts for player and navigation
-* Remove song from playlist
-* Share playlists
 * Buttons for sharing anime and artist profile links
 * Routes to Home pages
 * Back button to previous page on subpages

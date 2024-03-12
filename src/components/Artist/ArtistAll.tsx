@@ -14,9 +14,11 @@ function ArtistAll({ songList, pageProps }: AnimeProps){
     useEffect(() => {
         const components = [];
 
-        for (const key in songList) {
-            if (songList.hasOwnProperty(key)) {
-                const value = songList[key];
+        const sortedSongs = [...songList].sort((a, b) => a.songName.localeCompare(b.songName));
+
+        for (const key in sortedSongs) {
+            if (sortedSongs.hasOwnProperty(key)) {
+                const value = sortedSongs[key];
                 components.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
             }
         }

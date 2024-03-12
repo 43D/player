@@ -149,8 +149,10 @@ function Artist({ pageProps, dbProp }: idType) {
 
     const playSongs = () => {
         if (result) {
+            const sortedSongs = [...result].sort((a, b) => a.songName.localeCompare(b.songName));
+
             let arr = [] as string[];
-            for (const value of result) {
+            for (const value of sortedSongs) {
                 arr.push(value.annSongId + "");
             }
             pageProps().playArtistNow(arr);

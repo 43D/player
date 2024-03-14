@@ -111,6 +111,13 @@ function ConfigMenu({ store }: storeType) {
                         </div>
                         <hr />
                         <div>
+                            <div className="form-check form-switch">
+                                <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchDisabledDiscovery" disabled/>
+                                <label className="form-check-label" htmlFor="flexSwitchDisabledDiscovery">Disable <span className="fw-bold">Discovery</span> on the homepage?</label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div>
                             <div>
                                 <p>Clean all Data</p>
                                 <button onClick={btnClear} className="btn btn-outline-danger">Clean Data</button>

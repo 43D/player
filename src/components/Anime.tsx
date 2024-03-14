@@ -11,6 +11,7 @@ import AnimeInfo from "../type/AnimeInfo";
 import AnimeInfomation from "./Anime/AnimeInfomation";
 import { useParams, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import HomeNav from "./Home/HomeNav";
 
 
 type idType = {
@@ -166,9 +167,11 @@ function Anime({ pageProps, dbProp }: idType) {
     };
 
     const playSongs = () => {
+        
         if (result) {
+            const sortedSongs = [...result].sort((a, b) => a.songName.localeCompare(b.songName));
             let arr = [] as string[];
-            for (const value of result) {
+            for (const value of sortedSongs) {
                 arr.push(value.annSongId + "");
             }
             pageProps().playAnimeNow(arr);
@@ -234,6 +237,7 @@ function Anime({ pageProps, dbProp }: idType) {
         <div id="display-main" className="container-fluid displays">
             <div className="App pt-2 pb-4">
                 <div className="row">
+                    {<HomeNav />}
                     <div className="col-12 d-flex align-items-center">
                         <h2>{name}</h2>
                     </div>

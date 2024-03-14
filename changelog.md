@@ -46,6 +46,10 @@
 ## (03/03/2024)
 * Importing playlist json 
 
+## (14/03/2024)
+* Navigation Improvements (UI/UX)
+* Route Improvements
+
 
 <hr>
 

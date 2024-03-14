@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import MessageCom from "../MessageCom";
-import HomePagesType from "../../type/HomePagesType";
 import DBType from "../../type/DBType";
 import PlaylistCardType from "../../type/PlaylistCardType";
 import PlaylistCompactCard from "../Card/PlaylistCompactCard";
+import { useNavigate } from "react-router-dom";
 
 interface pageProps {
     dbProp: DBType;
-    homePages: HomePagesType;
 }
 
-function FeedPlaylist({ dbProp, homePages }: pageProps) {
+function FeedPlaylist({ dbProp }: pageProps) {
+    const navigate = useNavigate();
+
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const feedDiscovery = useRef<HTMLDivElement>(null);
 
@@ -19,10 +20,6 @@ function FeedPlaylist({ dbProp, homePages }: pageProps) {
         setComponent([comp]);
         getPlaylist();
     }, []);
-
-    const showMoreFeed = () => {
-        homePages().createPlaylistction();
-    }
 
     const getPlaylist = async () => {
         const result = await dbProp.getAllPlaylist();
@@ -59,7 +56,7 @@ function FeedPlaylist({ dbProp, homePages }: pageProps) {
         <div className="col-12 mt-5" ref={feedDiscovery}>
             <div className="d-flex justify-content-between mb-2">
                 <h4>My Playlists</h4>
-                <button className="btn btn-success" onClick={showMoreFeed}>Open Playlists</button>
+                <button className="btn btn-success" onClick={() => navigate("/playlist")}>Open Playlists</button>
             </div>
 
             <div className="row">

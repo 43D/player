@@ -7,6 +7,7 @@ import ArtistAll from "./Artist/ArtistAll";
 import ArtistAnime from "./Artist/ArtistAnime";
 import DBType from "../type/DBType";
 import { Navigate, useParams } from "react-router-dom";
+import HomeNav from "./Home/HomeNav";
 
 type idType = {
     pageProps: () => PagesType;
@@ -163,6 +164,7 @@ function Artist({ pageProps, dbProp }: idType) {
         <div id="display-main" className="container-fluid displays">
             <div className="App pt-2 pb-4">
                 <div className="row">
+                    {<HomeNav />}
                     <div className="col-12 d-flex align-items-center">
                         <h2>{name}</h2>
                     </div>

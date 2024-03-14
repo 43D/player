@@ -5,6 +5,7 @@ import PagesType from "../../type/PagesType";
 import JsonSong from "../../type/Songs";
 import DBType from "../../type/DBType";
 import Navigation from "../utils/Navigation";
+import HomeNav from "./HomeNav";
 
 interface pageProps {
     pageProps: () => PagesType;
@@ -77,11 +78,19 @@ function HomeAllSongs({ pageProps, dbProp }: pageProps) {
     }
 
     return (
-        <div className="mt-3">
-            {componentPages}
-            <ul className="list-group">
-                {component}
-            </ul>
+        <div id="display-main" className="container-fluid displays">
+            <div className="row justify-content-center">
+                {<HomeNav />}
+                <div className="col-12">
+                    <h4>All songs found...</h4>
+                </div>
+                {componentPages}
+                <div className="col">
+                    <ul className="list-group">
+                        {component}
+                    </ul>
+                </div>
+            </div >
         </div>
     );
 }

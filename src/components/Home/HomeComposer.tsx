@@ -4,6 +4,7 @@ import MessageCom from "../MessageCom";
 import Navigation from "../utils/Navigation";
 import PeopleCardType from "../../type/PeopleCardType";
 import ProfileCard from "../Card/ProfileCard";
+import HomeNav from "./HomeNav";
 
 interface pageProps {
     dbProp: DBType;
@@ -74,10 +75,16 @@ function HomeComposer({ dbProp }: pageProps) {
     }
 
     return (
-        <div className="row justify-content-center mt-3">
-            {componentPages}
-            <div className="row p-0">
-                {component}
+        <div id="display-main" className="container-fluid displays">
+            <div className="row justify-content-center">
+                {<HomeNav />}
+                <div className="col-12">
+                    <h4>All composers or arrangers found...</h4>
+                </div>
+                {componentPages}
+                <div className="row p-0">
+                    {component}
+                </div>
             </div>
         </div>
     );

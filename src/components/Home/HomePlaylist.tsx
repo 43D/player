@@ -5,6 +5,7 @@ import MessageCom from "../MessageCom";
 import PlaylistCard from "../Card/PlaylistCard";
 import PlaylistCardType from "../../type/PlaylistCardType";
 import JsonSong from "../../type/Songs";
+import HomeNav from "./HomeNav";
 
 interface pageProps {
     pageProps: () => PagesType;
@@ -184,21 +185,26 @@ function HomePlaylist({ pageProps, dbProp }: pageProps) {
     }
 
     return (
-        <div className="row justify-content-center mt-3">
-            <div className="row">
-                <div className="card card-playlist col-12 col-md-6 col-lg-4 col-xl-3">
-                    <div className="card-body">
-                        <h5 className="card-title text-center">Create a Playlist</h5>
-                        <div className="d-flex justify-content-center">
-                            <i className="bi bi-plus bi-plus-custom"></i>
-                        </div>
-                        <div className="w-100 d-flex justify-content-center">
-                            <a href="#" className="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#playlistModal">Create Playlist</a>
-                            <a href="#" className="btn btn-outline-secondary mt-2 ms-1" data-bs-toggle="modal" data-bs-target="#importModal">Import playlist</a>
+        <div id="display-main" className="container-fluid displays">
+            <div className="row justify-content-center mt-3">
+                {<HomeNav />}
+                <div className="col-12 row">
+                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+                        <div className="card card-playlist">
+                            <div className="card-body">
+                                <h5 className="card-title text-center">Create a Playlist</h5>
+                                <div className="d-flex justify-content-center">
+                                    <i className="bi bi-plus bi-plus-custom"></i>
+                                </div>
+                                <div className="w-100 d-flex justify-content-center">
+                                    <a href="#" className="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#playlistModal">Create Playlist</a>
+                                    <a href="#" className="btn btn-outline-secondary mt-2 ms-1" data-bs-toggle="modal" data-bs-target="#importModal">Import playlist</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    {component}
                 </div>
-                {component}
                 <div className="modal-playlist">
                     <div className="modal fade" id="playlistModal" tabIndex={-1} aria-labelledby="playlistModalTitle" aria-hidden="true">
                         <div className="modal-dialog modal-lg">

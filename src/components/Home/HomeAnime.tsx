@@ -4,6 +4,7 @@ import DBType from "../../type/DBType";
 import Navigation from "../utils/Navigation";
 import MessageCom from "../MessageCom";
 import AnimeCard from "../Card/AnimeCard";
+import HomeNav from "./HomeNav";
 
 interface pageProps {
     dbProp: DBType;
@@ -73,10 +74,16 @@ function HomeAnime({ dbProp }: pageProps) {
     }
 
     return (
-        <div className="row justify-content-center mt-3">
-            {componentPages}
-            <div className="row p-0">
-                {component}
+        <div id="display-main" className="container-fluid displays">
+            <div className="row justify-content-center">
+                {<HomeNav />}
+                <div className="col-12">
+                    <h4>All animes found...</h4>
+                </div>
+                {componentPages}
+                <div className="row p-0">
+                    {component}
+                </div>
             </div>
         </div>
     );

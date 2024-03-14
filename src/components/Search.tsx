@@ -9,6 +9,7 @@ import MessageCom from './MessageCom';
 import { feacthAniSong } from '../services/feacthAniSong';
 import DBType from '../type/DBType';
 import { useParams } from 'react-router-dom';
+import HomeNav from './Home/HomeNav';
 
 interface SearchProps {
     pageProps: () => PagesType;
@@ -170,6 +171,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
         <div id="display-main" className="container-fluid displays">
             <div className="App pt-2 pb-4">
                 <div className='row'>
+                    {<HomeNav />}
                     <div className='col-12 ps-4'>
                         <h1>{searchString}</h1>
                     </div>

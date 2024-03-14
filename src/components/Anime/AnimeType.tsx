@@ -37,18 +37,24 @@ function AnimeType({ songList, pageProps }: AnimeProps) {
 
     return (
         <div>
-            <h4>Opening</h4>
-            <ul className="list-group">
-                {componentCardOpening}
-            </ul>
-            <h4>Ending</h4>
-            <ul className="list-group">
-                {componentCardEnding}
-            </ul>
-            <h4>Insert Song</h4>
-            <ul className="list-group">
-                {componentCardInsert}
-            </ul>
+            {componentCardOpening.length > 0 && <>
+                <h4>Opening</h4>
+                <ul className="list-group">
+                    {componentCardOpening}
+                </ul>
+            </>}
+            {componentCardEnding.length > 0 && <>
+                <h4>Ending</h4>
+                <ul className="list-group">
+                    {componentCardEnding}
+                </ul>
+            </>}
+            {componentCardInsert.length > 0 && <>
+                <h4>Insert Song</h4>
+                <ul className="list-group">
+                    {componentCardInsert}
+                </ul>
+            </>}
         </div>
     );
 }

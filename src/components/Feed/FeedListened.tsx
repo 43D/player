@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import PagesType from "../../type/PagesType";
 import MessageCom from "../MessageCom";
-import HomePagesType from "../../type/HomePagesType";
 import DBType from "../../type/DBType";
 import ListenedType from "../../type/ListenedType";
 import AnimeSongListenedCard from "../Card/AnimeSongListenedCard";
+import { useNavigate } from "react-router-dom";
 
 interface pageProps {
     pageProps: () => PagesType;
     dbProp: DBType;
-    homePages: HomePagesType;
 }
 
-function FeedListened({ pageProps, dbProp, homePages }: pageProps) {
+function FeedListened({ pageProps, dbProp }: pageProps) {
+    const navigate = useNavigate();
+
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const feedDiscovery = useRef<HTMLDivElement>(null);
 
@@ -21,10 +22,6 @@ function FeedListened({ pageProps, dbProp, homePages }: pageProps) {
         setComponent([comp]);
         getListened();
     }, []);
-
-    const showMoreFeed = () => {
-        homePages().createMostAction();
-    }
 
     const getListened = () => {
         const range = 10;
@@ -48,7 +45,7 @@ function FeedListened({ pageProps, dbProp, homePages }: pageProps) {
         <div className="col-12 mt-5" ref={feedDiscovery}>
             <div className="d-flex justify-content-between mb-2">
                 <h4>Most Listened (Top 10)</h4>
-                <button className="btn btn-success" onClick={showMoreFeed}>Open Most Listened</button>
+                <button className="btn btn-success" onClick={() => navigate("/listened")}>Open Most Listened</button>
             </div>
             <ul className="list-group">
                 {component}

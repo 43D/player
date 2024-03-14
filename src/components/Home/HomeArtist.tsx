@@ -4,12 +4,13 @@ import MessageCom from "../MessageCom";
 import Navigation from "../utils/Navigation";
 import ProfileCard from "../Card/ProfileCard";
 import PeopleCardType from "../../type/PeopleCardType";
+import HomeNav from "./HomeNav";
 
 interface pageProps {
     dbProp: DBType;
 }
 
-function HomeArtist({  dbProp }: pageProps) {
+function HomeArtist({ dbProp }: pageProps) {
     const cursor = dbProp.getCursorArtist();
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [componentPages, setComponentPages] = useState<JSX.Element[]>([]);
@@ -63,7 +64,7 @@ function HomeArtist({  dbProp }: pageProps) {
             var cursor = evt.target.result;
             if (cursor) {
                 let result = cursor.value as PeopleCardType;
-                comp.push(<ProfileCard key={"ann" + result.idPeople} people={result}/>);
+                comp.push(<ProfileCard key={"ann" + result.idPeople} people={result} />);
                 cursor.continue();
             } else {
                 setComponent(comp);
@@ -73,10 +74,16 @@ function HomeArtist({  dbProp }: pageProps) {
     }
 
     return (
-        <div className="row justify-content-center mt-3">
-            {componentPages}
-            <div className="row p-0">
-                {component}
+        <div id="display-main" className="container-fluid displays">
+            <div className="row justify-content-center ">
+                {<HomeNav />}
+                <div className="col-12">
+                    <h4>All artists found...</h4>
+                </div>
+                {componentPages}
+                <div className="col row">
+                    {component}
+                </div>
             </div>
         </div>
     );

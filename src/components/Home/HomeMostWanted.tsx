@@ -4,6 +4,7 @@ import PagesType from "../../type/PagesType";
 import MessageCom from "../MessageCom";
 import ListenedType from "../../type/ListenedType";
 import AnimeSongListenedCard from "../Card/AnimeSongListenedCard";
+import HomeNav from "./HomeNav";
 
 interface pageProps {
     pageProps: () => PagesType;
@@ -33,10 +34,18 @@ function HomeMostWanted({ pageProps, dbProp }: pageProps) {
     }
 
     return (
-        <div className="col mt-3">
-            <ul className="list-group">
-                {component}
-            </ul>
+        <div id="display-main" className="container-fluid displays">
+            <div className="row justify-content-center mt-3">
+                {<HomeNav />}
+                <div className="col-12">
+                    <h4>Most Listened songs</h4>
+                </div>
+                <div className="col-12 mt-3">
+                    <ul className="list-group">
+                        {component}
+                    </ul>
+                </div>
+            </div>
         </div>
     );
 }

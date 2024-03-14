@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import MessageCom from "../MessageCom";
 import DBType from "../../type/DBType";
 import PlaylistCardType from "../../type/PlaylistCardType";
@@ -13,7 +13,6 @@ function FeedPlaylist({ dbProp }: pageProps) {
     const navigate = useNavigate();
 
     const [component, setComponent] = useState<JSX.Element[]>([]);
-    const feedDiscovery = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const comp = <MessageCom key={987} msg="Buscando algo...." />;
@@ -46,23 +45,22 @@ function FeedPlaylist({ dbProp }: pageProps) {
             const playlist = playlists[index];
             components.push(<PlaylistCompactCard key={index} playlist={playlist} />);
 
-            if (index >= 11)
+            if (index >= 8)
                 break;
         }
         setComponent(components);
     }
 
     return (
-        <div className="col-12 mt-5" ref={feedDiscovery}>
-            <div className="d-flex justify-content-between mb-2">
+        <>
+            <div className="d-flex justify-content-between mb-2 mt-5">
                 <h4>My Playlists</h4>
                 <button className="btn btn-success" onClick={() => navigate("/playlist")}>Open Playlists</button>
             </div>
-
-            <div className="row">
+            <div className="row px-2">
                 {component}
             </div>
-        </div>
+        </>
     )
 }
 

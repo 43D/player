@@ -5,6 +5,7 @@ import FeedDiscovery from "./Feed/FeedDiscovery";
 import FeedPlaylist from "./Feed/FeedPlaylist";
 import FeedListened from "./Feed/FeedListened";
 import HomeNav from "./Home/HomeNav";
+import FeedYouTube from "./Feed/FeedYouTube";
 
 interface pageProps {
     pageProps: () => PagesType;
@@ -43,7 +44,14 @@ function Home({ pageProps, dbProp }: pageProps) {
                 {<HomeNav />}
                 <div className="col-12">
                     {componentDiscovery}
+                </div>
+                <div className="col-12 col-lg-7">
                     {componentPlaylist}
+                </div>
+                <div className="col-12 col-lg-5">
+                    <FeedYouTube />
+                </div>
+                <div className="col-12 mb-5">
                     {componentListened}
                 </div>
             </div>

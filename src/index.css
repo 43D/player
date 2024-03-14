@@ -97,14 +97,14 @@ video {
 }
 
 @media screen and (max-width: 435px) {
-  .queue-display-content{
-    padding-top: 50px!important;
+  .queue-display-content {
+    padding-top: 50px !important;
   }
 }
 
 @media screen and (max-width: 490px) {
-  .queue-display-content{
-    padding-bottom: 60px!important;
+  .queue-display-content {
+    padding-bottom: 60px !important;
   }
 }
 
@@ -271,7 +271,20 @@ video {
     align-items: start;
     justify-content: start;
   }
-  .queue-list-title > p > span {
+
+  .queue-list-title>p>span {
     display: block;
+  }
+}
+
+.yt-frame {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+  .yt-frame {
+    height: calc(100vw / 16 * 9);
+    width: 100%;
   }
 }

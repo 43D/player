@@ -28,7 +28,6 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * Ranked warning. As it shares the same information as AMQ, during ranked matches some features must be disabled (search by name, artist or composer);
 * Implement keyboard shortcuts for player and navigation
 * Buttons for sharing anime and artist profile links
-* Routes to Home pages
 * Back button to previous page on subpages
 * Copy link get the current url and the current server
 

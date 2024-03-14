@@ -39,19 +39,19 @@ function AnimeType({ songList, pageProps }: AnimeProps) {
         <div>
             {componentCardOpening.length > 0 && <>
                 <h4>Opening</h4>
-                <ul className="list-group">
+                <ul className="list-group mb-4">
                     {componentCardOpening}
                 </ul>
             </>}
             {componentCardEnding.length > 0 && <>
                 <h4>Ending</h4>
-                <ul className="list-group">
+                <ul className="list-group mb-4">
                     {componentCardEnding}
                 </ul>
             </>}
             {componentCardInsert.length > 0 && <>
                 <h4>Insert Song</h4>
-                <ul className="list-group">
+                <ul className="list-group mb-4">
                     {componentCardInsert}
                 </ul>
             </>}

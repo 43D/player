@@ -49,6 +49,7 @@
 ## (14/03/2024)
 * Navigation Improvements (UI/UX)
 * Route Improvements
+* Fixed the type title appearing without music in the list
 
 
 <hr>

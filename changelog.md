@@ -50,6 +50,8 @@
 * Navigation Improvements (UI/UX)
 * Route Improvements
 * Fixed the type title appearing without music in the list
+* Add Ranked AMQ Alert
+
 
 
 <hr>

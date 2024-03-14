@@ -17,6 +17,21 @@ interface SearchProps {
 }
 
 function Search({ pageProps, dbProp }: SearchProps) {
+    const rankedTimeIntervals = [
+        // thanks y xSardine
+        {
+            start: new Date().setUTCHours(2, 30, 0, 0),
+            end: new Date().setUTCHours(3, 23, 0, 0)
+        },
+        {
+            start: new Date().setUTCHours(12, 30, 0, 0),
+            end: new Date().setUTCHours(13, 23, 0, 0)
+        },
+        {
+            start: new Date().setUTCHours(19, 30, 0, 0),
+            end: new Date().setUTCHours(20, 23, 0, 0)
+        }
+    ];
 
     const { parse } = useParams<string>();
     const searchString = parse || "";
@@ -25,11 +40,13 @@ function Search({ pageProps, dbProp }: SearchProps) {
     const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
     const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
     const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [timeLeft, SetTimeLeft] = useState<number>(0);
 
     useEffect(() => {
         const inputSearch = document.getElementById('search-value') as HTMLInputElement;
         inputSearch["value"] = searchString;
 
+        checkRanked();
         setComponent([<MessageCom key={"1"} msg="Pesquisando músicas, aguarde...." />])
         searchAllSong();
     }, [searchString]);
@@ -167,18 +184,46 @@ function Search({ pageProps, dbProp }: SearchProps) {
         switchBtn("search-filter-artist");
     };
 
+    const alertRankedTime = (n: number) => {
+        const intervalId = setInterval(() => {
+            const timeLeft = (Math.ceil((n - Date.now()) / 1000 / 60));
+            SetTimeLeft(timeLeft);
+            if (timeLeft <= 0)
+                clearInterval(intervalId);
+        }, 5000);
+    }
+
+    const checkRanked = () => {
+        const date = Date.now();
+        const rankedTimeInterval = rankedTimeIntervals.find(interval => {
+            return date >= interval.start && date < interval.end;
+        });
+
+        console.log(rankedTimeInterval);
+        if (rankedTimeInterval)
+            alertRankedTime(rankedTimeInterval.end);
+    }
+
+
     return (
         <div id="display-main" className="container-fluid displays">
             <div className="App pt-2 pb-4">
                 <div className='row'>
                     {<HomeNav />}
+                    {timeLeft > 0 &&
+                        <div className='col-12 ps-4 bg-warning text-dark'>
+                            <h1>Ranked AMQ Alert</h1>
+                            <h5>Time left: {timeLeft} minutes</h5>
+                            <p>During ranked AMQ matches, some search functions are limited, such as searching by artist or song name.</p>
+                        </div>
+                    }
                     <div className='col-12 ps-4'>
                         <h1>{searchString}</h1>
                     </div>
                     <div className="col mt-3" id="search-anime">
-                        <button id="search-filter-all" onClick={createAllAction} className="search-filter       btn btn-success m-1">All</button>
-                        <button id="search-filter-song" onClick={createSongAction} className="search-filter     btn btn-secondary m-1">Song Name</button>
-                        <button id="search-filter-anime" onClick={createAnimeAction} className="search-filter   btn btn-secondary m-1">Anime Name</button>
+                        <button id="search-filter-all" onClick={createAllAction} className="search-filter btn btn-success m-1">All</button>
+                        <button id="search-filter-song" onClick={createSongAction} className="search-filter btn btn-secondary m-1">Song Name</button>
+                        <button id="search-filter-anime" onClick={createAnimeAction} className="search-filter btn btn-secondary m-1">Anime Name</button>
                         <button id="search-filter-artist" onClick={createArtistAction} className="search-filter btn btn-secondary m-1">Artist Name</button>
                         {component}
                     </div>

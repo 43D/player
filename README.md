@@ -25,7 +25,6 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * Light Theme
 * Pagination for most listened songs (necessary for performance)
 * Add an option to disable "Discovery"
-* Ranked warning. As it shares the same information as AMQ, during ranked matches some features must be disabled (search by name, artist or composer);
 * Implement keyboard shortcuts for player and navigation
 * Buttons for sharing anime and artist profile links
 * Back button to previous page on subpages

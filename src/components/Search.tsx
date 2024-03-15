@@ -200,7 +200,6 @@ function Search({ pageProps, dbProp }: SearchProps) {
             return date >= interval.start && date < interval.end;
         });
 
-        console.log(rankedTimeInterval);
         if (rankedTimeInterval)
             alertRankedTime(rankedTimeInterval.end);
     }

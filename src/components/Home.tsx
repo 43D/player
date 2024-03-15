@@ -45,10 +45,10 @@ function Home({ pageProps, dbProp }: pageProps) {
                 <div className="col-12">
                     {componentDiscovery}
                 </div>
-                <div className="col-12 col-lg-7">
+                <div className="col-12 col-lg-6">
                     {componentPlaylist}
                 </div>
-                <div className="col-12 col-lg-5">
+                <div className="col-12 col-lg-6">
                     <FeedYouTube />
                 </div>
                 <div className="col-12 mb-5">

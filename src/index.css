@@ -278,7 +278,7 @@ video {
 }
 
 .yt-frame {
-  height: 100%;
+  height: calc(100vw / 12 * 6 / 16 * 9);
   width: 100%;
 }
 

@@ -56,6 +56,9 @@
 ## (15/03/2024)
 * Add Share button
 * Add go Back button
+* -----------
+* Fixed Prev/Next Song by System Media
+* Add keyPress support (BETA)
 
 
 <hr>

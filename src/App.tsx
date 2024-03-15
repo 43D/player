@@ -17,6 +17,8 @@ import React from "react";
 import PagesType from "./type/PagesType";
 import InterfaceMediaTimeline from "./type/InterfaceMediaTimeline";
 import InterfaceMediaQueue from "./type/InterfaceMediaQueue";
+import { KeyListenerPlayer } from "./components/utils/KeyListenerPlayer";
+import { KeyPressAction } from "./Core/KeyPressAction";
 
 function App() {
   const [queueControll, setQueueControll] = useState<boolean>(false);
@@ -234,11 +236,11 @@ function App() {
     });
 
     navigator.mediaSession.setActionHandler('previoustrack', function () {
-      pages().nextQueue();
+      pages().previousQueue();
     });
 
     navigator.mediaSession.setActionHandler('nexttrack', function () {
-      pages().previousQueue();
+      pages().nextQueue();
     });
   }
 
@@ -249,6 +251,36 @@ function App() {
 
     return { updateQueue }
   }
+
+  const keyPressAction = KeyPressAction({ pageProps: pages });
+
+  const keyConfig = {
+    " ": keyPressAction.play,
+    "ArrowUp": keyPressAction.volumeMore,
+    "ArrowDown": keyPressAction.volumeLess,
+    "f": keyPressAction.fullScreenVideo,
+    ".": keyPressAction.nextSong, // 100%
+    ",": keyPressAction.prevSong, // 100%
+    "l": keyPressAction.LoopQueue,
+    "m": keyPressAction.muted,
+    "s": keyPressAction.shuffle, // 100%
+    "q": keyPressAction.showQueue, // 50%
+    "z": keyPressAction.getLink, // 100%
+    "w": keyPressAction.showQualityBtn,
+    "e": keyPressAction.setQualityAudio,
+    "r": keyPressAction.setQualityVideo480,
+    "t": keyPressAction.setQualityVideo720,
+    "v": keyPressAction.showVideo, // 100%
+    "x": keyPressAction.openAnime,
+    "c": keyPressAction.openArtist,
+    "ArrowRight": keyPressAction.skipFiveSecond,
+    "ArrowLeft": keyPressAction.prevFiveSecond
+  }
+
+  for (let [key, action] of Object.entries(keyConfig)) {
+    KeyListenerPlayer(key, action)
+  }
+
 
   return (
     <HashRouter>

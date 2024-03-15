@@ -26,8 +26,6 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * Pagination for most listened songs (necessary for performance)
 * Add an option to disable "Discovery"
 * Implement keyboard shortcuts for player and navigation
-* Buttons for sharing anime and artist profile links
-* Back button to previous page on subpages
 * Copy link get the current url and the current server
 
 

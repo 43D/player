@@ -9,7 +9,7 @@ import JsonSong from "../type/Songs";
 import { feacthAnimeInfo } from "../services/feacthAnimeInfo";
 import AnimeInfo from "../type/AnimeInfo";
 import AnimeInfomation from "./Anime/AnimeInfomation";
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import HomeNav from "./Home/HomeNav";
 
@@ -34,6 +34,7 @@ function Anime({ pageProps, dbProp }: idType) {
     const [componentInfo, setComponentInfo] = useState<JSX.Element[]>([]);
     const [result, setResult] = useState<JsonSong[] | null>(null);
     const [image, setImage] = useState<string>("https://43d.github.io/player/logo.png");
+    const navigate = useNavigate();
 
     useEffect(() => {
         setComponent([<MessageCom key={"43"} msg="Pesquisando músicas, aguarde...." />])
@@ -167,7 +168,7 @@ function Anime({ pageProps, dbProp }: idType) {
     };
 
     const playSongs = () => {
-        
+
         if (result) {
             const sortedSongs = [...result].sort((a, b) => a.songName.localeCompare(b.songName));
             let arr = [] as string[];
@@ -208,6 +209,17 @@ function Anime({ pageProps, dbProp }: idType) {
         return "";
     }
 
+    const shareThisPage = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Anime Song Player: ' + nameJP,
+                text: 'Songs of ' + nameJP,
+                url: window.location.href,
+            })
+                .then(() => console.log('Conteúdo compartilhado!'))
+                .catch((erro) => console.log('Erro ao compartilhar', erro));
+        }
+    };
 
     return (<>
         <Helmet>
@@ -245,7 +257,12 @@ function Anime({ pageProps, dbProp }: idType) {
                         <h5>{nameJP} {nameSeason}</h5>
                     </div>
                     <div className="col mt-3" id="search-anime">
-                        <button className="btn btn-success m-1" onClick={playSongs}><i className="bi bi-play"></i></button>
+                        <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
+                            <i className="bi bi-chevron-left"></i>
+                        </button>
+                        <button className="btn btn-outline-success m-1" onClick={playSongs}><i className="bi bi-play"></i> Play</button>
+                        <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
+                        <br />
                         <button id="anime-filter-song" onClick={createSongAction} className="anime-filter btn btn-success m-1">All Song</button>
                         <button id="anime-filter-type" onClick={createTypeAction} className="anime-filter btn btn-secondary m-1">by Type</button>
                         <button id="anime-filter-info" onClick={createInfoAction} className="anime-filter btn btn-secondary m-1">Information</button>

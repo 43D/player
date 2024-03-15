@@ -17,13 +17,14 @@ function AnimeAll({ songList, pageProps, playlist = false, idPlaylist = 0, obser
 
     useEffect(() => {
         const components = [];
-
-        const sortedSongs = [...songList].sort((a, b) => a.songName.localeCompare(b.songName));
+        let sortedSongs = songList;
+        if (idPlaylist === 0)
+            sortedSongs = [...songList].sort((a, b) => a.songName.localeCompare(b.songName));
 
         for (const key in sortedSongs) {
             if (sortedSongs.hasOwnProperty(key)) {
                 const value = sortedSongs[key];
-                (playlist)? components.push(<AnimeSongPlaylistCard key={key} idPlaylist={idPlaylist} observer={observer} song={value} pageProps={pageProps} />): components.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
+                (playlist) ? components.push(<AnimeSongPlaylistCard key={key} idPlaylist={idPlaylist} observer={observer} song={value} pageProps={pageProps} />) : components.push(<AnimeSongCard key={key} song={value} pageProps={pageProps} />);
             }
         }
 

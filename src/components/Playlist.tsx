@@ -6,7 +6,7 @@ import DBType from "../type/DBType";
 import JsonSong from "../type/Songs";
 import SearchAnime from "./Search/SearchAnime";
 import SearchArtist from "./Search/SearchArtist";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import HomeNav from "./Home/HomeNav";
 
 type idType = {
@@ -27,6 +27,7 @@ function Playlist({ pageProps, dbProp }: idType) {
     const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
     const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
     const [observer, setObserver] = useState<number>(0);
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -168,11 +169,15 @@ function Playlist({ pageProps, dbProp }: idType) {
                         <h5>{qtd} songs</h5>
                     </div>
                     <div className="col mt-3" id="search-anime">
-                        <button className="btn btn-success m-1" onClick={() => pageProps().playPlaylistNow(id)}><i className="bi bi-play"></i></button>
+                        <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
+                            <i className="bi bi-chevron-left"></i>
+                        </button>
+                        <button className="btn btn-outline-success m-1" onClick={() => pageProps().playPlaylistNow(id)}><i className="bi bi-play"></i></button>
+                        <button id="anime-filter-backup" onClick={backupPlaylistToJson} className="anime-filter btn btn-outline-success m-1">Backup Playlist</button>
+                        <br />
                         <button id="anime-filter-song" onClick={createSongAction} className="playlist-filter btn btn-success m-1">All Song</button>
                         <button id="anime-filter-anime" onClick={createAnimeAction} className="playlist-filter btn btn-secondary m-1">Anime</button>
                         <button id="anime-filter-artist" onClick={createArtistAction} className="playlist-filter btn btn-secondary m-1">Artist/Composers/Arranger</button>
-                        <button id="anime-filter-backup" onClick={backupPlaylistToJson} className="anime-filter btn btn-outline-success m-1">Backup Playlist</button>
                     </div>
                     <div className="col-12 mt-3">
                         {component}

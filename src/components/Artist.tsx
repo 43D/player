@@ -6,7 +6,7 @@ import JsonSong from "../type/Songs";
 import ArtistAll from "./Artist/ArtistAll";
 import ArtistAnime from "./Artist/ArtistAnime";
 import DBType from "../type/DBType";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import HomeNav from "./Home/HomeNav";
 
 type idType = {
@@ -27,6 +27,7 @@ function Artist({ pageProps, dbProp }: idType) {
     const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
     const [componentComposer, setComponentComposer] = useState<JSX.Element[]>([]);
     const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setComponent([<MessageCom key={"43"} msg="Pesquisando músicas, aguarde...." />])
@@ -160,6 +161,18 @@ function Artist({ pageProps, dbProp }: idType) {
         }
     }
 
+    const shareThisPage = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Anime Song Player: ' + name,
+                text: 'Songs of ' + name,
+                url: window.location.href,
+            })
+                .then(() => console.log('Conteúdo compartilhado!'))
+                .catch((erro) => console.log('Erro ao compartilhar', erro));
+        }
+    };
+
     return (
         <div id="display-main" className="container-fluid displays">
             <div className="App pt-2 pb-4">
@@ -172,7 +185,12 @@ function Artist({ pageProps, dbProp }: idType) {
                         Composer and Artist
                     </div>
                     <div className="col mt-3" id="search-anime">
-                        <button className="btn btn-success m-1" onClick={playSongs}><i className="bi bi-play"></i></button>
+                        <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
+                            <i className="bi bi-chevron-left"></i>
+                        </button>
+                        <button className="btn btn-outline-success m-1" onClick={playSongs}><i className="bi bi-play"></i></button>
+                        <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
+                        <br />
                         <button id="artist-filter-song" onClick={createAllAction} className="artist-filter btn btn-success m-1">All Songs</button>
                         <button id="artist-filter-anime" onClick={createCAnimeAction} className="artist-filter btn btn-secondary m-1">by Anime</button>
                         <button id="artist-filter-artist" onClick={createArtistAction} className="artist-filter btn btn-secondary m-1">is Artist</button>

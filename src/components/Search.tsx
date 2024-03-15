@@ -8,7 +8,7 @@ import SearchArtist from './Search/SearchArtist';
 import MessageCom from './MessageCom';
 import { feacthAniSong } from '../services/feacthAniSong';
 import DBType from '../type/DBType';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import HomeNav from './Home/HomeNav';
 
 interface SearchProps {
@@ -41,6 +41,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
     const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [timeLeft, SetTimeLeft] = useState<number>(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const inputSearch = document.getElementById('search-value') as HTMLInputElement;
@@ -204,6 +205,17 @@ function Search({ pageProps, dbProp }: SearchProps) {
             alertRankedTime(rankedTimeInterval.end);
     }
 
+    const shareThisPage = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Anime Song Player: ' + searchString,
+                text: 'Search: ' + searchString,
+                url: window.location.href,
+            })
+                .then(() => console.log('Conteúdo compartilhado!'))
+                .catch((erro) => console.log('Erro ao compartilhar', erro));
+        }
+    };
 
     return (
         <div id="display-main" className="container-fluid displays">
@@ -221,6 +233,11 @@ function Search({ pageProps, dbProp }: SearchProps) {
                         <h1>{searchString}</h1>
                     </div>
                     <div className="col mt-3" id="search-anime">
+                        <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
+                            <i className="bi bi-chevron-left"></i>
+                        </button>
+                        <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
+                        <br />
                         <button id="search-filter-all" onClick={createAllAction} className="search-filter btn btn-success m-1">All</button>
                         <button id="search-filter-song" onClick={createSongAction} className="search-filter btn btn-secondary m-1">Song Name</button>
                         <button id="search-filter-anime" onClick={createAnimeAction} className="search-filter btn btn-secondary m-1">Anime Name</button>

@@ -307,7 +307,7 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
         if ('mediaSession' in navigator) {
             const artist = (json.songArtist) ? json.songArtist.toString() : "????";
             const ann = await feacthAnimeInfo().fetchAnimeInfoAnn(String(json.annId));
-            let image = getImage(ann);
+            let image = getImage(ann as Document);
             if (image == "") image = "https://43d.github.io/player/logo.png";
 
             navigator.mediaSession.metadata = new MediaMetadata({

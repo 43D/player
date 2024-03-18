@@ -41,14 +41,16 @@ function Search({ pageProps, dbProp }: SearchProps) {
     const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
     const [component, setComponent] = useState<JSX.Element[]>([]);
     const [timeLeft, SetTimeLeft] = useState<number>(0);
+    const [showBTNs, setShowBTNs] = useState<boolean>(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         const inputSearch = document.getElementById('search-value') as HTMLInputElement;
         inputSearch["value"] = searchString;
+        setShowBTNs(false);
 
         checkRanked();
-        setComponent([<MessageCom key={"1"} msg="Pesquisando músicas, aguarde...." />])
+        setComponent([<MessageCom key={"1"} msg="Searching, wait..." />])
         searchAllSong();
     }, [searchString]);
 
@@ -60,6 +62,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
             createSong(result);
             createArtist(result);
             dbProp.saveSongList(result);
+            setShowBTNs(true);
         } catch (error) {
             setComponent([<MessageCom key={"432"} msg="Api off-line" />])
         }
@@ -84,7 +87,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
         const components: JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
-                components.push(<MessageCom key={"2"} msg="Nada foi encontrado nada..." />)
+                components.push(<MessageCom key={"2"} msg="Not found..." />)
             else
                 components.push(<SearchAll key={"3"} songList={song} pageProps={pageProps} />);
         }
@@ -97,7 +100,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
         const components: JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
-                components.push(<MessageCom msg="Nada foi encontrado anime..." />)
+                components.push(<MessageCom msg="Not found (anime)..." />)
             else {
                 const groupSong = song.reduce((acc: { [x: string]: any[]; }, obj: JsonSong) => {
                     const key = obj.annId;
@@ -122,7 +125,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
         const components: JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
-                components.push(<MessageCom msg="Nada foi encontrado música..." />)
+                components.push(<MessageCom msg="Song not found..." />)
             else {
                 const groupSong: { [letter: string]: JsonSong[] } = {};
                 song.forEach((item) => {
@@ -148,7 +151,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
         const components: JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
-                components.push(<MessageCom msg="Nada foi encontrado artistas..." />)
+                components.push(<MessageCom msg="Not found (artist)..." />)
             else {
                 const groupSong: { [artist: string]: JsonSong[] } = {};
                 song.forEach((item) => {
@@ -186,6 +189,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
     };
 
     const alertRankedTime = (n: number) => {
+        SetTimeLeft((Math.ceil((n - Date.now()) / 1000 / 60)));
         const intervalId = setInterval(() => {
             const timeLeft = (Math.ceil((n - Date.now()) / 1000 / 60));
             SetTimeLeft(timeLeft);
@@ -222,7 +226,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
                 <div className='row'>
                     {<HomeNav />}
                     {timeLeft > 0 &&
-                        <div className='col-12 ps-4 bg-warning text-dark'>
+                        <div className='col-12 ps-4 bg-warning text-dark mb-4'>
                             <h1>Ranked AMQ Alert</h1>
                             <h5>Time left: {timeLeft} minutes</h5>
                             <p>During ranked AMQ matches, some search functions are limited, such as searching by artist or song name.</p>
@@ -231,16 +235,21 @@ function Search({ pageProps, dbProp }: SearchProps) {
                     <div className='col-12 ps-4'>
                         <h1>{searchString}</h1>
                     </div>
-                    <div className="col mt-3" id="search-anime">
-                        <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
-                            <i className="bi bi-chevron-left"></i>
-                        </button>
-                        <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
-                        <br />
-                        <button id="search-filter-all" onClick={createAllAction} className="search-filter btn btn-success m-1">All</button>
-                        <button id="search-filter-song" onClick={createSongAction} className="search-filter btn btn-secondary m-1">Song Name</button>
-                        <button id="search-filter-anime" onClick={createAnimeAction} className="search-filter btn btn-secondary m-1">Anime Name</button>
-                        <button id="search-filter-artist" onClick={createArtistAction} className="search-filter btn btn-secondary m-1">Artist Name</button>
+                    {showBTNs && <>
+                        <div className="col-12 mt-3" id="search-anime">
+                            <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
+                                <i className="bi bi-chevron-left"></i>
+                            </button>
+                            <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
+                            <br />
+                            <button id="search-filter-all" onClick={createAllAction} className="search-filter btn btn-success m-1">All</button>
+                            <button id="search-filter-song" onClick={createSongAction} className="search-filter btn btn-secondary m-1">Song Name</button>
+                            <button id="search-filter-anime" onClick={createAnimeAction} className="search-filter btn btn-secondary m-1">Anime Name</button>
+                            <button id="search-filter-artist" onClick={createArtistAction} className="search-filter btn btn-secondary m-1">Artist Name</button>
+                        </div>
+
+                    </>}
+                    <div className="col-12 mt-3">
                         {component}
                     </div>
                 </div>

@@ -60,6 +60,10 @@
 * Fixed Prev/Next Song by System Media
 * Add keyPress support (BETA)
 
+## (15/03/2024)
+* Update timer && timeline
+* Loading pages...
+
 
 <hr>
 

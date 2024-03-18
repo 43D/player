@@ -34,10 +34,14 @@ function Anime({ pageProps, dbProp }: idType) {
     const [componentInfo, setComponentInfo] = useState<JSX.Element[]>([]);
     const [result, setResult] = useState<JsonSong[] | null>(null);
     const [image, setImage] = useState<string>("https://43d.github.io/player/logo.png");
+    const [showBTNs, setShowBTNs] = useState<boolean>(false);
+    const [showBTNInformation, setShowBTNInformation] = useState<boolean>(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        setComponent([<MessageCom key={"43"} msg="Pesquisando músicas, aguarde...." />])
+        setShowBTNs(false);
+        setShowBTNInformation(false);
+        setComponent([<MessageCom key={"43"} msg="Searching, wait..." />])
         searchAllSong();
     }, [id]);
 
@@ -48,32 +52,35 @@ function Anime({ pageProps, dbProp }: idType) {
     const searchAllSong = async () => {
         try {
             const result = await feacthAniSong().fetchSongById(id);
-            await searchAnimeInfo(result[0]);
-            setName(result[0].animeENName);
-            setNameJP(result[0].animeJPName);
+            if (result.length > 0) {
+                searchAnimeInfo(result[0]);
+                setName(result[0].animeENName);
+                setNameJP(result[0].animeJPName);
+                setShowBTNs(true);
 
-            const compSong = <AnimeAll key={"13"} songList={result} pageProps={pageProps} />
-            setComponentSong([compSong]);
+                const compSong = <AnimeAll key={"13"} songList={result} pageProps={pageProps} />
+                setComponentSong([compSong]);
 
-            const compType = <AnimeType key={"14"} songList={result} pageProps={pageProps} />
-            setComponentType([compType]);
+                const compType = <AnimeType key={"14"} songList={result} pageProps={pageProps} />
+                setComponentType([compType]);
 
-            setComponent([compSong]);
+                setComponent([compSong]);
 
-            dbProp.saveSongList(result);
-            setResult(result);
+                dbProp.saveSongList(result);
+                setResult(result);
+            } else {
+                setComponent([<MessageCom key={"43"} msg="Songs not found..." />]);
+            }
         } catch (error) {
-            setComponent([<MessageCom key={"433"} msg="Api off-line" />])
+            setComponent([<MessageCom key={"433"} msg="Api off-line" />]);
         }
-
-
     };
 
     const searchAnimeInfo = async (song: JsonSong) => {
         const animeInfomation = await feacthAnimeInfo().fetchAnimeInfoAnn(String(song.annId)) as Document;
         const releaseDateText = (animeInfomation.querySelector('anime > info[type="Vintage"]') as Element).textContent;
         const year = (releaseDateText) ? releaseDateText.split("-")[0] : "1900"
-        const animeEN = await feacthAnimeInfo().fetchAnimeInfoJikan(song.animeENName, year);
+        const animeEN = await feacthAnimeInfo().fetchAnimeInfoJikan(song.animeENName, year) as AnimeInfo;
         const result = searchMatch(animeEN, year, song);
 
         if (result) {
@@ -84,23 +91,23 @@ function Anime({ pageProps, dbProp }: idType) {
         }
 
         setComponentInfo([<AnimeInfomation key={"9787"} animeMal={result} animeAnn={animeInfomation} />]);
+        setShowBTNInformation(true);
     }
 
     const searchMatch = (anime: AnimeInfo, year: string, song: JsonSong): AnimeInfo | null => {
+        if (anime)
+            for (let key in anime.data) {
+                let yearMal = String(anime.data[key].year);
+                if (yearMal == "null")
+                    yearMal = anime.data[key].aired.from.split("-")[0];
 
-        for (let key in anime.data) {
 
-            let yearMal = String(anime.data[key].year);
-            if (yearMal == "null")
-                yearMal = anime.data[key].aired.from.split("-")[0];
-
-
-            if (yearMal == year) {
-                const res = filterByString(anime, key, song);
-                if (res)
-                    return res;
+                if (yearMal == year) {
+                    const res = filterByString(anime, key, song);
+                    if (res)
+                        return res;
+                }
             }
-        }
         return null;
     }
 
@@ -182,7 +189,7 @@ function Anime({ pageProps, dbProp }: idType) {
     const getImageUrl = () => {
         const exec = async () => {
             const ann = await feacthAnimeInfo().fetchAnimeInfoAnn(String(id));
-            let image = getImage(ann);
+            let image = getImage(ann as Document);
             if (image == "")
                 image = "https://43d.github.io/player/logo.png";
             setImage(image);
@@ -250,23 +257,25 @@ function Anime({ pageProps, dbProp }: idType) {
             <div className="App pt-2 pb-4">
                 <div className="row">
                     {<HomeNav />}
-                    <div className="col-12 d-flex align-items-center">
-                        <h2>{name}</h2>
-                    </div>
-                    <div className="col-12">
-                        <h5>{nameJP} {nameSeason}</h5>
-                    </div>
-                    <div className="col mt-3" id="search-anime">
-                        <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
-                            <i className="bi bi-chevron-left"></i>
-                        </button>
-                        <button className="btn btn-outline-success m-1" onClick={playSongs}><i className="bi bi-play"></i> Play</button>
-                        <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
-                        <br />
-                        <button id="anime-filter-song" onClick={createSongAction} className="anime-filter btn btn-success m-1">All Song</button>
-                        <button id="anime-filter-type" onClick={createTypeAction} className="anime-filter btn btn-secondary m-1">by Type</button>
-                        <button id="anime-filter-info" onClick={createInfoAction} className="anime-filter btn btn-secondary m-1">Information</button>
-                    </div>
+                    {showBTNs && <>
+                        <div className="col-12 d-flex align-items-center">
+                            <h2>{name}</h2>
+                        </div>
+                        <div className="col-12">
+                            <h5>{nameJP} {nameSeason}</h5>
+                        </div>
+                        <div className="col mt-3" id="search-anime">
+                            <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
+                                <i className="bi bi-chevron-left"></i>
+                            </button>
+                            <button className="btn btn-outline-success m-1" onClick={playSongs}><i className="bi bi-play"></i> Play</button>
+                            <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
+                            <br />
+                            <button id="anime-filter-song" onClick={createSongAction} className="anime-filter btn btn-success m-1">All Song</button>
+                            <button id="anime-filter-type" onClick={createTypeAction} className="anime-filter btn btn-secondary m-1">by Type</button>
+                            <button id="anime-filter-info" onClick={createInfoAction} className="anime-filter btn btn-secondary m-1" disabled={!showBTNInformation}>Information</button>
+                        </div>
+                    </>}
                     <div className="col-12 mt-3">
                         {component}
                     </div>

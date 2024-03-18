@@ -31,7 +31,6 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * Save thumbnail links locally (decrease ANN API usage rate)
 * Add a section with a personalized playlist of anime from the season (homepage).
 * Inconsistency between title information and information page (type of anime, number of episodes)
-* Update the timeline to MM:SS
 * Add discrete loading screens (sometimes you can exit by clicking buttons before the information is ready to be displayed)
 
 <hr>

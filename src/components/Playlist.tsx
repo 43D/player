@@ -31,7 +31,7 @@ function Playlist({ pageProps, dbProp }: idType) {
 
 
     useEffect(() => {
-        setComponent([<MessageCom key={"43"} msg="Pesquisando músicas, aguarde...." />])
+        setComponent([<MessageCom key={"43"} msg="Searching, wait..." />])
         searchAllPlaylist();
     }, [id]);
 
@@ -62,7 +62,7 @@ function Playlist({ pageProps, dbProp }: idType) {
         const components: JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
-                components.push(<MessageCom key={"4333"} msg="Nada foi encontrado anime..." />)
+                components.push(<MessageCom key={"4333"} msg="Not found..." />)
             else {
                 const groupSong = song.reduce((acc: { [x: string]: any[]; }, obj: JsonSong) => {
                     const key = obj.annId;
@@ -87,7 +87,7 @@ function Playlist({ pageProps, dbProp }: idType) {
         const components: JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
-                components.push(<MessageCom key={"43333"} msg="Nada foi encontrado artistas..." />)
+                components.push(<MessageCom key={"43333"} msg="Not found (artists)..." />)
             else {
                 const groupSong: { [artist: string]: JsonSong[] } = {};
                 song.forEach((item) => {

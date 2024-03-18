@@ -27,10 +27,12 @@ function Artist({ pageProps, dbProp }: idType) {
     const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
     const [componentComposer, setComponentComposer] = useState<JSX.Element[]>([]);
     const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
+    const [showBTNs, setShowBTNs] = useState<boolean>(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        setComponent([<MessageCom key={"43"} msg="Pesquisando músicas, aguarde...." />])
+        setShowBTNs(false);
+        setComponent([<MessageCom key={"43"} msg="Searching, wait..." />])
         searchAllSong();
     }, [id]);
 
@@ -39,23 +41,26 @@ function Artist({ pageProps, dbProp }: idType) {
             const resultArtist = await feacthAniSong().fetchArtistById(id);
             const resultComposer = await feacthAniSong().fetchComposerById(id);
             const result = unionArray(resultArtist, resultComposer);
-            searchName(result);
+            if (result.length > 0) {
+                searchName(result);
+                setShowBTNs(true);
 
-            const compAll = <ArtistAll key={"21"} songList={result} pageProps={pageProps} />
-            setComponentAll([compAll]);
+                const compAll = <ArtistAll key={"21"} songList={result} pageProps={pageProps} />
+                setComponentAll([compAll]);
 
-            const compArt = <ArtistAll key={"22"} songList={resultArtist} pageProps={pageProps} />
-            setComponentArtist([compArt]);
+                const compArt = <ArtistAll key={"22"} songList={resultArtist} pageProps={pageProps} />
+                setComponentArtist([compArt]);
 
-            const compCom = <ArtistAll key={"23"} songList={resultComposer} pageProps={pageProps} />
-            setComponentComposer([compCom]);
+                const compCom = <ArtistAll key={"23"} songList={resultComposer} pageProps={pageProps} />
+                setComponentComposer([compCom]);
 
-            createAnime(result);
+                createAnime(result);
 
-            setComponent([compAll]);
+                setComponent([compAll]);
 
-            dbProp.saveSongList(result);
-            setResult(result);
+                dbProp.saveSongList(result);
+                setResult(result);
+            }
         } catch (error) {
             setComponent([<MessageCom key={"431"} msg="Api off-line" />])
         }
@@ -178,24 +183,26 @@ function Artist({ pageProps, dbProp }: idType) {
             <div className="App pt-2 pb-4">
                 <div className="row">
                     {<HomeNav />}
-                    <div className="col-12 d-flex align-items-center">
-                        <h2>{name}</h2>
-                    </div>
-                    <div className="col-12">
-                        Composer and Artist
-                    </div>
-                    <div className="col mt-3" id="search-anime">
-                        <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
-                            <i className="bi bi-chevron-left"></i>
-                        </button>
-                        <button className="btn btn-outline-success m-1" onClick={playSongs}><i className="bi bi-play"></i></button>
-                        <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
-                        <br />
-                        <button id="artist-filter-song" onClick={createAllAction} className="artist-filter btn btn-success m-1">All Songs</button>
-                        <button id="artist-filter-anime" onClick={createCAnimeAction} className="artist-filter btn btn-secondary m-1">by Anime</button>
-                        <button id="artist-filter-artist" onClick={createArtistAction} className="artist-filter btn btn-secondary m-1">is Artist</button>
-                        <button id="artist-filter-composer" onClick={createComposerAction} className="artist-filter btn btn-secondary m-1">is Composer/Arranger</button>
-                    </div>
+                    {showBTNs && <>
+                        <div className="col-12 d-flex align-items-center">
+                            <h2>{name}</h2>
+                        </div>
+                        <div className="col-12">
+                            Composer and Artist
+                        </div>
+                        <div className="col mt-3" id="search-anime">
+                            <button className='btn btn-outline-secondary m-1 px-2' onClick={() => navigate(-1)}>
+                                <i className="bi bi-chevron-left"></i>
+                            </button>
+                            <button className="btn btn-outline-success m-1" onClick={playSongs}><i className="bi bi-play"></i></button>
+                            <button className="btn btn-outline-success m-1" onClick={shareThisPage}><i className="bi bi-share-fill me-1"></i>Share</button>
+                            <br />
+                            <button id="artist-filter-song" onClick={createAllAction} className="artist-filter btn btn-success m-1">All Songs</button>
+                            <button id="artist-filter-anime" onClick={createCAnimeAction} className="artist-filter btn btn-secondary m-1">by Anime</button>
+                            <button id="artist-filter-artist" onClick={createArtistAction} className="artist-filter btn btn-secondary m-1">is Artist</button>
+                            <button id="artist-filter-composer" onClick={createComposerAction} className="artist-filter btn btn-secondary m-1">is Composer/Arranger</button>
+                        </div>
+                    </>}
                     <div className="col-12 mt-3">
                         {component}
                     </div>

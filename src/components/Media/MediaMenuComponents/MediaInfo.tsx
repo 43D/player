@@ -61,12 +61,23 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
         // 
     }
 
+    const secondToTimer = (seconds: string) => {
+        const data = new Date(0);
+        data.setSeconds(Number(seconds));
+        return data.toISOString().substr(14, 5);
+    }
+
+    useEffect(() => {
+        setCurrentTime(String(Number(timeLineValue) * Number(durationValue) / 120000));
+    }, [timeLineValue]);
+
+
     return (
         <div className="col-12 col-sm my-1">
             <div className="ui-seekbar px-3 d-flex h-100 justify-content-center flex-column">
                 <div className="d-flex justify-content-between">
-                    <p className="mb-0" id="time">{currentTime}</p>
-                    <p className="mb-0" id="duration">{durationValue}</p>
+                    <p className="mb-0" id="time">{secondToTimer(currentTime)}</p>
+                    <p className="mb-0" id="duration">{secondToTimer(durationValue)}</p>
                 </div>
                 <input type="range" id="timeline-now" ref={timeLineInput} onChange={onChangeTime} className="ui-slider w-100" min="0" max="120000" value={timeLineValue} />
                 <div className="d-flex titule-bar-name text-center">

@@ -29,18 +29,32 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
     const [myAnimeList, setMyAnimeList] = useState<string>("");
     const [myAnimeListId, setMyAnimeListId] = useState<string>("");
     const [annId, setANNId] = useState<string>("");
+    const [relatedNextIds, setRelatedNextIds] = useState<string[]>([]);
 
     useEffect(() => {
         setInfoAnn();
         setInfoMal();
     }, []);
 
+    useEffect(() => {
+        if (relatedNextIds.length > 0) {
+            const endpoint = "https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=" + relatedNextIds.join('&anime=');
+
+            setTimeout(() => {
+                fetch(endpoint)
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => console.error('Erro ao buscar dados:', error));
+            }, 700);
+        }
+
+    }, [relatedNextIds]);
+
     const setInfoAnn = () => {
         setPictureAnime(getImage());
         setAnimeName(getByString('anime > info[type="Main title"]'));
-        setType(getByAttributeString('anime', 'type'));
-        const episodeCount = animeAnn.querySelectorAll('anime > episode').length;
-        setEpisode(String(episodeCount));
         setReviewer(getByAttributeString('anime > ratings', 'nb_votes'));
         setScore(getByAttributeString('anime > ratings', 'weighted_score'));
         setANNId(getByAttributeString('anime', 'id'));
@@ -48,10 +62,15 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
         setSynopsis(getByString('anime > info[type="Plot Summary"]'));
         setLinks(getWebSites());
         setStudios(getStudios());
+        const list = getRelatedNextIds('related-next');
+        if (list != null)
+            setRelatedNextIds(list as string[]);
     }
 
     const setInfoMal = () => {
         if (animeMal) {
+            setEpisode(String(animeMal.data[0].episodes));
+            setType(animeMal.data[0].type);
             setDuration(animeMal.data[0].duration);
             setScoreMAL(String(animeMal.data[0].score));
             setReviewerMAL(String(animeMal.data[0].scored_by));
@@ -94,6 +113,16 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
         }
         return res;
     }
+    const getRelatedNextIds = (parse: string) => {
+        if (animeAnn) {
+            const selectors = animeAnn.querySelectorAll(parse);
+            const ids = Array.from(selectors).map(selector => selector.getAttribute('id'));
+            return ids;
+        }
+        return [];
+    }
+
+
 
     const getStudios = () => {
         const res = [] as string[];
@@ -197,6 +226,13 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
                                         <span className='fw-bold'>Synopsis:</span>
                                         <br />
                                         {synopsis}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={6}>
+                                        <span className='fw-bold'>related-next:</span>
+                                        <br />
+                                        a
                                     </td>
                                 </tr>
                             </tbody>

@@ -4,25 +4,34 @@ export const feacthAnimeInfo = () => {
     const urlJikan = "https://api.jikan.moe/v4/anime?";
     const urlAnn = "https://cdn.animenewsnetwork.com/encyclopedia/api.xml?"
 
-    async function fetchApiJikan(url: string, requestOptions: RequestInit): Promise<AnimeInfo> {
-        const response = await fetch(urlJikan + url, requestOptions);
-        if (!response.ok)
-            throw new Error('Erro na solicitação');
-
-        const resultText = await response.text();
-        const result = JSON.parse(resultText);
-        return result;
+    async function fetchApiJikan(url: string, requestOptions: RequestInit): Promise<AnimeInfo | null> {
+        try {
+            const response = await fetch(urlJikan + url, requestOptions);
+            if (!response.ok)
+                throw new Error('Erro na solicitação');
+    
+            const resultText = await response.text();
+            const result = JSON.parse(resultText);
+            return result;
+        } catch (error) {
+            return null;
+        }
     };
 
-    async function fetchApiAnn(url: string, requestOptions: RequestInit): Promise<Document> {
-        const response = await fetch(urlAnn + url, requestOptions);
-        if (!response.ok)
-            throw new Error('Erro na solicitação');
-
-        const resultText = await response.text();
-        const doc = new DOMParser().parseFromString(resultText, 'application/xml');
-
-        return doc;
+    async function fetchApiAnn(url: string, requestOptions: RequestInit): Promise<Document | null> {
+        try {
+            const response = await fetch(urlAnn + url, requestOptions)
+            if (!response.ok)
+                throw new Error('Erro na solicitação');
+    
+            const resultText = await response.text();
+            const doc = new DOMParser().parseFromString(resultText, 'application/xml');
+    
+            return doc;
+            
+        } catch (error) {
+            return null;
+        }
     };
 
     async function fetchAnimeInfoJikan(name: string, year: string) {

@@ -2,7 +2,7 @@ import HomeNav from "../Home/HomeNav";
 
 function SeasonIndex() {
     const yearOptions = [];
-
+    // last id: 32502
     for (let year = 2023; year >= 1953; year--)
         yearOptions.push(<option value={year}>{year}</option>);
 

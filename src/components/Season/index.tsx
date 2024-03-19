@@ -13,11 +13,13 @@ function SeasonIndex() {
                 <div className="col-12">
                     <h4>Search for anime by season</h4>
                     <p>Last update: Winter 2024</p>
+                    <p>Some anime can only be found by the year</p>
                 </div>
                 <div className="col-12">
                     <div className="input-group mb-3">
                         <label className="input-group-text" htmlFor="inputGroupSelect01">Year</label>
                         <select className="form-select" id="inputGroupSelect01">
+                            <option value="0">No date</option>
                             <option value="2025">2025</option>
                             <option value="2024" selected>2024</option>
                             {yearOptions}

@@ -1,0 +1,602 @@
+[
+    {
+        "name": "Hello Kitty & Friends \u2013 Let's Learn Together",
+        "id": "29926",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Natsume's Book of Friends: The Stump of the Suzunaru Tree",
+        "id": "28838",
+        "type": "OAV",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Haikyu!! Special Feature! The Spring Tournament of Their Youth",
+        "id": "26701",
+        "type": "OAV",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Hinomaru!",
+        "id": "26320",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Onagawa Ch\u016b Baske-bu: 5-nin no Natsu",
+        "id": "25829",
+        "type": "special",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "She's a Pervert and She's All Mine! - Part 2",
+        "id": "24866",
+        "type": "OAV",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "She's a Pervert and She's All Mine! - Part 1",
+        "id": "24865",
+        "type": "OAV",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Tramp Stamp: Anime Edition",
+        "id": "24863",
+        "type": "OAV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Lusty Ladies of Mayohiga",
+        "id": "24853",
+        "type": "OAV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Harem of the Hell Spawn",
+        "id": "24851",
+        "type": "OAV",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Live Animation Heart \u00d7 Algorhythm",
+        "id": "24782",
+        "type": "ONA",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Yume ga Sameru Made",
+        "id": "23874",
+        "type": "ONA",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Deep Blue Song",
+        "id": "23764",
+        "type": "ONA",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Deep Blue Town e Oide yo",
+        "id": "23763",
+        "type": "ONA",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "40-Sh\u016bnen da yo! Coro Coro All-Star Sh\u014dgakk\u014d",
+        "id": "23230",
+        "type": "ONA",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Cogimyun",
+        "id": "23211",
+        "type": "ONA",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Eiga Kuma no Gakk\u014d: Patissier Jackie to Ohisama no Sweets",
+        "id": "23057",
+        "type": "movie",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "F\u016bsen Inu Tinny: Nandaka Fushigi na Ky\u014dry\u016b no Kuni",
+        "id": "23056",
+        "type": "movie",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "UQ Holder! Magister Negi Magi! 2",
+        "id": "23050",
+        "type": "OAV",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Pikotar\u014d no Lullaby Lu-llaby",
+        "id": "22237",
+        "type": "TV",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Starship Troopers: Traitor of Mars",
+        "id": "21558",
+        "type": "movie",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Implicity",
+        "id": "20650",
+        "type": "OAV",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Dragon Quest X: B\u014dkensha-tachi no Kiseki",
+        "id": "20013",
+        "type": "ONA",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Red Ash -Magicicada-",
+        "id": "20003",
+        "type": "OAV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Marvel Future Avengers",
+        "id": "19946",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Gundam Build Fighters: GM's Counterattack",
+        "id": "19917",
+        "type": "ONA",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Gundam Build Fighters: Battlogue",
+        "id": "19916",
+        "type": "ONA",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Eureka Seven Hi-Evolution",
+        "id": "19907",
+        "type": "movie",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Idolm@ster SideM",
+        "id": "19884",
+        "type": "TV",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Seizei Gambare Mah\u014d Sh\u014djo Kurumi",
+        "id": "19882",
+        "type": "ONA",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Dream Festival! R",
+        "id": "19878",
+        "type": "ONA",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Dekiru kana",
+        "id": "19841",
+        "type": "ONA",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Digimon Adventure tri.: Coexistence",
+        "id": "19808",
+        "type": "movie",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "One Piece Episode of East Blue: Luffy to 4-nin no Nakama no Daib\u014dken",
+        "id": "19806",
+        "type": "special",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Karada Sagashi",
+        "id": "19778",
+        "type": "ONA",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Irresponsible Galaxy Tylor",
+        "id": "19763",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Yamishibai: Japanese Ghost Stories",
+        "id": "19761",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Nora, Princess, and Stray Cat",
+        "id": "19749",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Haikyu!! The Movie: Battle of Concepts",
+        "id": "19746",
+        "type": "movie",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Haikyu!! Sain\u014d to Sense",
+        "id": "19745",
+        "type": "movie",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Sound! Euphonium: May the Melody Reach You!",
+        "id": "19744",
+        "type": "movie",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Ik\u00e9men Sengoku: Bromances Across Time",
+        "id": "19725",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Senki Zessh\u014d Symphogear AXZ",
+        "id": "19724",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Predator in a Skirt",
+        "id": "19667",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "DIVE!!",
+        "id": "19659",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Kaito \u00d7 Ansa",
+        "id": "19621",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "New Game!!",
+        "id": "19593",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Soreike! Anpanman Buruburu no Takarasagashi Daib\u014dken!",
+        "id": "19589",
+        "type": "movie",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Classroom of the Elite",
+        "id": "19544",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Teeky\u016b",
+        "id": "19543",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Cardcaptor Sakura: Clear Card Prologue",
+        "id": "19484",
+        "type": "OAV",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Fireworks, Should We See it from the Side or the Bottom?",
+        "id": "19481",
+        "type": "movie",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Restaurant to Another World",
+        "id": "19479",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Action Heroine Cheer Fruits",
+        "id": "19478",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Convenience Store Boy Friends",
+        "id": "19475",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Escha Chron",
+        "id": "19474",
+        "type": "OAV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Bungo Stray Dogs: Hitori Ayumu",
+        "id": "19473",
+        "type": "OAV",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Hell Girl: Fourth Twilight",
+        "id": "19416",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Katsugeki: Touken Ranbu",
+        "id": "19412",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "A-Channel",
+        "id": "19411",
+        "type": "OAV",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "18if",
+        "id": "19410",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Hitorijime My Hero",
+        "id": "19409",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "No Game, No Life Zero",
+        "id": "19405",
+        "type": "movie",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Centaur's Life",
+        "id": "19402",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Gamers!",
+        "id": "19399",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Owarimonogatari",
+        "id": "19397",
+        "type": "special",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Princess Principal",
+        "id": "19393",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Elegant Yokai Apartment Life",
+        "id": "19391",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Reflection",
+        "id": "19388",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Kimi no Koe o Todoketai",
+        "id": "19386",
+        "type": "movie",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "In Another World With My Smartphone",
+        "id": "19380",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Battle Girl High School",
+        "id": "19376",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Knight's & Magic",
+        "id": "19362",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Lights of the Clione",
+        "id": "19360",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Cute High Earth Defense Club LOVE! LOVE! LOVE!",
+        "id": "19355",
+        "type": "OAV",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Free! The Movie -Timeless Medley- the Promise",
+        "id": "19352",
+        "type": "movie",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Pok\u00e9mon the Movie: I Choose You!",
+        "id": "19350",
+        "type": "movie",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "My First Girlfriend is a Gal",
+        "id": "19254",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Mary and The Witch's Flower",
+        "id": "19223",
+        "type": "movie",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Vatican Miracle Examiner",
+        "id": "19188",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Love and Lies",
+        "id": "19145",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Clean Freak! Aoyama kun",
+        "id": "19104",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Kakegurui",
+        "id": "19102",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Tsuredure Children",
+        "id": "19057",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Netsuzou Trap -NTR-",
+        "id": "19054",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Fate/kaleid liner Prisma Illya: Vow in the Snow",
+        "id": "19029",
+        "type": "movie",
+        "vintage": "2017-08"
+    },
+    {
+        "name": "Aho-Girl",
+        "id": "19022",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Magical Circle Guru-Guru",
+        "id": "19008",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Saiyuki Reload Blast",
+        "id": "18999",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Fate/Apocrypha",
+        "id": "18983",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Welcome to the Ballroom",
+        "id": "18982",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Altair: A Record of Battles",
+        "id": "18966",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Made in Abyss",
+        "id": "18952",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Fastest Finger First",
+        "id": "18946",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Shokugeki no Soma: T\u014dtsuki J\u016bkketsu",
+        "id": "18938",
+        "type": "OAV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Chronos Ruler",
+        "id": "18936",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Angel's 3Piece",
+        "id": "18908",
+        "type": "TV",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Seitokai Yakuindomo",
+        "id": "18907",
+        "type": "movie",
+        "vintage": "2017-07"
+    },
+    {
+        "name": "Blood Blockade Battlefront & Beyond",
+        "id": "18900",
+        "type": "TV",
+        "vintage": "2017-09"
+    },
+    {
+        "name": "Magical Girl Lyrical Nanoha Reflection",
+        "id": "15211",
+        "type": "movie",
+        "vintage": "2017-07"
+    }
+]

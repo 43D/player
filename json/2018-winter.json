@@ -1,0 +1,596 @@
+[
+    {
+        "name": "Jewelry The Animation",
+        "id": "24850",
+        "type": "OAV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Fate/kaleid liner Prisma\u2606Illya: Sekka no Chikai",
+        "id": "23768",
+        "type": "OAV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Days: T\u014din Gakuen-sen",
+        "id": "23325",
+        "type": "OAV",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Ple Ple Pleiades 2",
+        "id": "23244",
+        "type": "ONA",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Chichibu de Buchichi",
+        "id": "23210",
+        "type": "ONA",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Sakura no Chikai",
+        "id": "23200",
+        "type": "special",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Tabechattatte Ii no ni na!",
+        "id": "23195",
+        "type": "ONA",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Chiky\u016b to no Yakusoku",
+        "id": "23188",
+        "type": "OAV",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Watashitachi no Mirai",
+        "id": "23187",
+        "type": "OAV",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "SNS Police",
+        "id": "23176",
+        "type": "ONA",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Eiga Shimajir\u014d Mah\u014d no Shima no Daib\u014dken",
+        "id": "23116",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Sword Dynasty",
+        "id": "22988",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Hentatsu",
+        "id": "22973",
+        "type": "ONA",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Pikachin-Kit",
+        "id": "22451",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Keifuku-san",
+        "id": "20789",
+        "type": "OAV",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Mob Psycho 100 REIGEN: The Miraculous Unknown Psychic",
+        "id": "20761",
+        "type": "special",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Midnight Crazy Trail",
+        "id": "20664",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Milky Panic twelve",
+        "id": "20663",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Engimon",
+        "id": "20662",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "TIME DRIVER: Bokura ga Kaita Mirai",
+        "id": "20661",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "G\u014d-chan: Moco to Koori no Ue no Yakusoku",
+        "id": "20637",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Tanuki to Kitsune",
+        "id": "20635",
+        "type": "ONA",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "IDOLiSH7 Vibrato",
+        "id": "20627",
+        "type": "ONA",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Gan Gan Ganko-chan",
+        "id": "20605",
+        "type": "TV",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Spiritpact -Bond of the Underworld-",
+        "id": "20591",
+        "type": "TV",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Akuma no Memumemu-chan",
+        "id": "20571",
+        "type": "ONA",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Tomica Hyper Rescue Drive Head Kid\u014d Ky\u016bky\u016b Keisatsu 2018",
+        "id": "20568",
+        "type": "ONA",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Testament of Sister New Devil Departures",
+        "id": "20552",
+        "type": "OAV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Hitori No Shita The Outcast 2 (Raten Taisho Chapter)",
+        "id": "20547",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Sword Art Online Fatal Bullet -The Third Episode-",
+        "id": "20515",
+        "type": "special",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Precure Super Stars!",
+        "id": "20510",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Attack on Titan: The Roar of Awakening",
+        "id": "20508",
+        "type": "movie",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Boro the Caterpillar",
+        "id": "20506",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Working Buddies!",
+        "id": "20505",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Kaiju Girls",
+        "id": "20504",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Silver Guardian 2",
+        "id": "20500",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Today's Menu for Emiya Family",
+        "id": "20493",
+        "type": "ONA",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Hugtto! Precure",
+        "id": "20473",
+        "type": "TV",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Uchi no Oochopus",
+        "id": "20472",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Infini-T Force the Movie Farewell, Friend",
+        "id": "20468",
+        "type": "movie",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Mitchiri Neko",
+        "id": "20462",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "ReLIFE: Final Arc",
+        "id": "20461",
+        "type": "OAV",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "gdgd men's party",
+        "id": "20460",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Overlord II",
+        "id": "20397",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Takunomi.",
+        "id": "20394",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "25-Year-Old High School Girl, I Wouldn't Do This with a Kid",
+        "id": "20391",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Mitsuboshi Colors",
+        "id": "20373",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Zoku Touken Ranbu: Hanamaru.",
+        "id": "20366",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Doraemon the Movie: Nobita's Treasure Island",
+        "id": "20361",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Last Hope",
+        "id": "20354",
+        "type": "TV",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Beatless",
+        "id": "20316",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Seven Heavenly Virtues",
+        "id": "20315",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Shinkansen Henkei Robo Shinkalion the Animation",
+        "id": "20288",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Pop Team Epic",
+        "id": "20287",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Mameneko",
+        "id": "20243",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "After the Rain",
+        "id": "20226",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Killing Bites",
+        "id": "20213",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Tokimeki Restaurant: Miracle6",
+        "id": "20212",
+        "type": "movie",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Junji Ito \"Collection\"",
+        "id": "20207",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Kokkoku",
+        "id": "20205",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Inazuma Eleven Reloaded",
+        "id": "20193",
+        "type": "special",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Yowamushi Pedal Glory Line",
+        "id": "20190",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Hakumei and Mikochi",
+        "id": "20186",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Basilisk: The Ouka Ninja Scrolls",
+        "id": "20185",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Macross Delta the Movie: Passionate Walk\u016bre",
+        "id": "20180",
+        "type": "movie",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Disastrous Life of Saiki K.",
+        "id": "20177",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Teasing Master Takagi-san",
+        "id": "20176",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "IDOLiSH7",
+        "id": "20122",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "How to keep a mummy",
+        "id": "20060",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Katana Maidens: Toji no Miko",
+        "id": "20019",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Sanrio Boys",
+        "id": "20015",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Hakata Tonkotsu Ramens",
+        "id": "20014",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Dagashi Kashi 2",
+        "id": "20012",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Laid-Back Camp",
+        "id": "20010",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Death March to The Parallel World Rhapsody",
+        "id": "19996",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "A.I.C.O. -Incarnation-",
+        "id": "19989",
+        "type": "ONA",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Lost Song",
+        "id": "19988",
+        "type": "ONA",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "B: The Beginning",
+        "id": "19987",
+        "type": "ONA",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Haky\u016b H\u014dshin Engi",
+        "id": "19986",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Sword Gai: The Animation",
+        "id": "19984",
+        "type": "ONA",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "DEVILMAN crybaby",
+        "id": "19982",
+        "type": "ONA",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "M\u00e4rchen M\u00e4dchen",
+        "id": "19975",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Slow Start",
+        "id": "19972",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "DamePri Anime Caravan",
+        "id": "19922",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Love, Chunibyo and Other Delusions! Take On Me",
+        "id": "19920",
+        "type": "movie",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Puchimas! -Petit Idolm@ster-",
+        "id": "19889",
+        "type": "OAV",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Seven Deadly Sins: Revival of The Commandments",
+        "id": "19885",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Ryuo's Work Is Never Done!",
+        "id": "19872",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "DARLING in the FRANXX",
+        "id": "19850",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Maquia - When the Promised Flower Blooms",
+        "id": "19848",
+        "type": "movie",
+        "vintage": "2018-02"
+    },
+    {
+        "name": "Place Further Than the Universe",
+        "id": "19828",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Bungo Stray Dogs: Dead Apple",
+        "id": "19773",
+        "type": "movie",
+        "vintage": "2018-03"
+    },
+    {
+        "name": "Record of Grancrest War",
+        "id": "19711",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Ms. Koizumi loves ramen noodles",
+        "id": "19675",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Violet Evergarden",
+        "id": "19665",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Cardcaptor Sakura: Clear Card",
+        "id": "19487",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "School Babysitters",
+        "id": "19400",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Citrus",
+        "id": "19398",
+        "type": "TV",
+        "vintage": "2018-01"
+    },
+    {
+        "name": "Fate/Extra Last Encore",
+        "id": "18984",
+        "type": "TV",
+        "vintage": "2018-01"
+    }
+]

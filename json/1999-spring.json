@@ -1,0 +1,242 @@
+[
+    {
+        "name": "Nintama Rantaro",
+        "id": "14265",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Word of Original Sin",
+        "id": "9379",
+        "type": "OAV",
+        "vintage": "1999-06"
+    },
+    {
+        "name": "Saiyuki",
+        "id": "7211",
+        "type": "OAV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Crayon Shin-chan: Bakuhatsu! Onsen Wakuwaku Daikessen",
+        "id": "6746",
+        "type": "movie",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Little Susie and Marvy",
+        "id": "6607",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Surfside High School",
+        "id": "6317",
+        "type": "TV",
+        "vintage": "1999-06"
+    },
+    {
+        "name": "Marco - Carry a Dream",
+        "id": "5991",
+        "type": "movie",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Survival 2.7D",
+        "id": "5853",
+        "type": "OAV",
+        "vintage": "1999-05"
+    },
+    {
+        "name": "Sins of the Flesh",
+        "id": "4366",
+        "type": "OAV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Cybuster",
+        "id": "4197",
+        "type": "TV",
+        "vintage": "1999-05"
+    },
+    {
+        "name": "Case Closed: The Last Wizard of the Century",
+        "id": "2683",
+        "type": "movie",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Bondage House",
+        "id": "2072",
+        "type": "OAV",
+        "vintage": "1999-05"
+    },
+    {
+        "name": "Kaikan Phrase",
+        "id": "2029",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "BuBu ChaCha",
+        "id": "2002",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Shin Hakkenden",
+        "id": "1988",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Tokimeki Memorial",
+        "id": "1550",
+        "type": "OAV",
+        "vintage": "1999-06"
+    },
+    {
+        "name": "Corrector Yui",
+        "id": "1282",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Barbapapa Around the World",
+        "id": "1209",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "To Heart",
+        "id": "1089",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Aesop's World",
+        "id": "1046",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Meltylancer: The Animation",
+        "id": "1008",
+        "type": "OAV",
+        "vintage": "1999-05"
+    },
+    {
+        "name": "Eden's Bowy",
+        "id": "996",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Turn A Gundam",
+        "id": "917",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Tenchi Forever!: The Movie",
+        "id": "663",
+        "type": "movie",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "You're Under Arrest: The Motion Picture",
+        "id": "622",
+        "type": "movie",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "City Hunter: Death of the Vicious Criminal Ryo Saeba",
+        "id": "554",
+        "type": "special",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Jubei-Chan The Ninja Girl - Secret of the Lovely Eyepatch",
+        "id": "503",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Monster Rancher",
+        "id": "500",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "D4 Princess",
+        "id": "414",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Betterman",
+        "id": "350",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Power Stone",
+        "id": "300",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "A.D. Police",
+        "id": "292",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "I'm Gonna Be An Angel",
+        "id": "278",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Gokudo",
+        "id": "250",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Arc the Lad",
+        "id": "246",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Tenamonya Voyagers",
+        "id": "229",
+        "type": "OAV",
+        "vintage": "1999-06"
+    },
+    {
+        "name": "GTO: Great Teacher Onizuka",
+        "id": "153",
+        "type": "TV",
+        "vintage": "1999-06"
+    },
+    {
+        "name": "Dual! Parallel Trouble Adventure",
+        "id": "141",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Starship Girl Yamamoto Yohko",
+        "id": "96",
+        "type": "TV",
+        "vintage": "1999-04"
+    },
+    {
+        "name": "Angel Links",
+        "id": "1",
+        "type": "TV",
+        "vintage": "1999-04"
+    }
+]

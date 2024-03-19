@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Space Battleship Yamato",
+        "id": "3751",
+        "type": "movie",
+        "vintage": "1977-08"
+    },
+    {
+        "name": "Danguard Ace vs. Insect Robot Troop",
+        "id": "3618",
+        "type": "movie",
+        "vintage": "1977-07"
+    },
+    {
+        "name": "Ippatsu Kanta-kun",
+        "id": "1770",
+        "type": "TV",
+        "vintage": "1977-09"
+    },
+    {
+        "name": "Teppei",
+        "id": "1687",
+        "type": "TV",
+        "vintage": "1977-09"
+    },
+    {
+        "name": "Chiisana Jumbo",
+        "id": "1667",
+        "type": "movie",
+        "vintage": "1977-09"
+    },
+    {
+        "name": "Super Grand Prix",
+        "id": "1163",
+        "type": "TV",
+        "vintage": "1977-09"
+    },
+    {
+        "name": "Balatack",
+        "id": "927",
+        "type": "TV",
+        "vintage": "1977-07"
+    }
+]

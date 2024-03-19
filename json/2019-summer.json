@@ -1,0 +1,452 @@
+[
+    {
+        "name": "Butt Detective",
+        "id": "24320",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Konketsu no Karekore",
+        "id": "24230",
+        "type": "ONA",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Zannen na Ikimono Jiten",
+        "id": "23989",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Legend of Super Normal City Kashiwa Z",
+        "id": "23883",
+        "type": "ONA",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Girl from the Other Side: Si\u00fail, a R\u00fan",
+        "id": "23604",
+        "type": "OAV",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Fate/Grand Order -Absolute Demonic Front: Babylonia-",
+        "id": "23547",
+        "type": "special",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "That Time I Got Reincarnated as a Slime",
+        "id": "23357",
+        "type": "OAV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Sayonara, Tyranno",
+        "id": "23292",
+        "type": "movie",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Kaiju Step Wandabada",
+        "id": "23082",
+        "type": "TV",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Zenonzard: The Animation Episode 0",
+        "id": "23044",
+        "type": "ONA",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Mugyutto! Black Clover",
+        "id": "22967",
+        "type": "ONA",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "ON-GAKU: Our Sound",
+        "id": "22544",
+        "type": "movie",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Mono no Kami-sama Cocotama",
+        "id": "22538",
+        "type": "ONA",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Mob Psycho 100 II",
+        "id": "22493",
+        "type": "OAV",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Dragon Quest Your Story",
+        "id": "22481",
+        "type": "movie",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Another World",
+        "id": "22467",
+        "type": "TV",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Cannon Busters",
+        "id": "22448",
+        "type": "ONA",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Sh\u014djo\u2606Conto All Starlight",
+        "id": "22447",
+        "type": "ONA",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Ninja Box",
+        "id": "22433",
+        "type": "ONA",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Bananya and the Curious Bunch",
+        "id": "22414",
+        "type": "TV",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Violet Evergarden I: Eternity and the Auto Memory Doll",
+        "id": "22377",
+        "type": "movie",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Cardfight!! Vanguard: Shinemon Arc",
+        "id": "22336",
+        "type": "TV",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Ch\u014d Jigen Game Neptune The Animation: Nepu no Natsuyasumi",
+        "id": "22316",
+        "type": "OAV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Free! -Road to the World- The Dream",
+        "id": "22313",
+        "type": "movie",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Business Fish",
+        "id": "22289",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Odoru Mowai-kun",
+        "id": "22286",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Waresho! Warera! Sh\u014dd\u014dbutsu Aigo Iinkai",
+        "id": "22275",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Teasing Master Takagi-san",
+        "id": "22274",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "SD Gundam World Sangoku S\u014dketsuden",
+        "id": "22268",
+        "type": "ONA",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Ensemble Stars!",
+        "id": "22259",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Hakata Mentai! Pirikarako-chan",
+        "id": "22257",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Fire in His Fingertips -My Childhood Friend is a Fireman-",
+        "id": "22242",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Yamishibai: Japanese Ghost Stories",
+        "id": "22234",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Hello World",
+        "id": "22139",
+        "type": "movie",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Weathering With You",
+        "id": "22137",
+        "type": "movie",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "BanG Dream! FILM LIVE",
+        "id": "22045",
+        "type": "movie",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Senki Zessh\u014d Symphogear XV",
+        "id": "22019",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Hensuki",
+        "id": "22018",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Cop Craft",
+        "id": "22012",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Demon Girl Next Door",
+        "id": "22008",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "If It\u2019s for My Daughter, I\u2019d Even Defeat a Demon Lord",
+        "id": "22006",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "BEM",
+        "id": "21994",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "H\u014dzuki no Reitetsu",
+        "id": "21988",
+        "type": "OAV",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Is the order a rabbit?? Sing For You",
+        "id": "21985",
+        "type": "OAV",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "STARMYU",
+        "id": "21981",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Given",
+        "id": "21958",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Try Knights",
+        "id": "21956",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Kochoki",
+        "id": "21915",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Isekai Cheat Magician",
+        "id": "21891",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Are You Lost?",
+        "id": "21890",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "O Maidens in Your Savage Season",
+        "id": "21874",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Granbelm",
+        "id": "21873",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Re:Stage! Dream Days",
+        "id": "21866",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Mewtwo Strikes Back Evolution",
+        "id": "21865",
+        "type": "movie",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Fire Force",
+        "id": "21852",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Demon Lord, Retry!",
+        "id": "21809",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Ni no Kuni",
+        "id": "21794",
+        "type": "movie",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Astra Lost in Space",
+        "id": "21779",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "to the abandoned Sacred Beasts",
+        "id": "21778",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "How Heavy Are the Dumbbells You Lift?",
+        "id": "21764",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Wasteful Days of High School Girl",
+        "id": "21762",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "One Piece Stampede",
+        "id": "21732",
+        "type": "movie",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Lord El-Melloi II's Case Files: Rail Zeppelin Grace note",
+        "id": "21727",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Dr. Stone",
+        "id": "21703",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Magical Sempai",
+        "id": "21549",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Do You Love Your Mom and Her Two-Hit Multi-Target Attacks?",
+        "id": "21508",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Certain Scientific Accelerator",
+        "id": "21485",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Ones Within",
+        "id": "21408",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "KONOSUBA - God's Blessing on This Wonderful World\u2013 Legend of Crimson",
+        "id": "21138",
+        "type": "movie",
+        "vintage": "2019-08"
+    },
+    {
+        "name": "Vinland Saga",
+        "id": "20778",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+        "id": "20673",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Kengan Ashura",
+        "id": "20427",
+        "type": "ONA",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Arifureta - From Commonplace to World's Strongest",
+        "id": "20363",
+        "type": "TV",
+        "vintage": "2019-07"
+    },
+    {
+        "name": "Legend of the Galactic Heroes: Die Neue These Second",
+        "id": "20145",
+        "type": "movie",
+        "vintage": "2019-09"
+    },
+    {
+        "name": "Knights of the Zodiac: Saint Seiya",
+        "id": "19985",
+        "type": "ONA",
+        "vintage": "2019-07"
+    }
+]

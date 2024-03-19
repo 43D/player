@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Thousand & One Nights",
+        "id": "3265",
+        "type": "movie",
+        "vintage": "1969-06"
+    },
+    {
+        "name": "Roppo Yabure-kun",
+        "id": "2376",
+        "type": "TV",
+        "vintage": "1969-04"
+    },
+    {
+        "name": "Ninpu Kamui Gaiden",
+        "id": "2375",
+        "type": "TV",
+        "vintage": "1969-04"
+    },
+    {
+        "name": "Umeboshi Denka",
+        "id": "1735",
+        "type": "TV",
+        "vintage": "1969-04"
+    },
+    {
+        "name": "M\u014dretsu Atar\u014d",
+        "id": "1460",
+        "type": "TV",
+        "vintage": "1969-04"
+    },
+    {
+        "name": "Dororo",
+        "id": "1320",
+        "type": "TV",
+        "vintage": "1969-04"
+    },
+    {
+        "name": "Judo Boy",
+        "id": "291",
+        "type": "TV",
+        "vintage": "1969-04"
+    }
+]

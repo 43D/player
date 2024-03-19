@@ -1,0 +1,350 @@
+[
+    {
+        "name": "Gotcha!",
+        "id": "25818",
+        "type": "ONA",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Kamen Rider Zero-One Short Anime Everyone's Daily Life",
+        "id": "25498",
+        "type": "ONA",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Fudanshi Sh\u014dkan: Isekai de Shinj\u016b ni Hameraremashita",
+        "id": "24929",
+        "type": "ONA",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Cooking With Valkyries II",
+        "id": "24474",
+        "type": "ONA",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Eiga Oshiri Tantei: Tent\u014d Mushi Iseki no Nazo",
+        "id": "24324",
+        "type": "movie",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Black Channel",
+        "id": "24227",
+        "type": "ONA",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Magnificent KOTOBUKI: The Movie",
+        "id": "24143",
+        "type": "movie",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Love Live! Nijigasaki High School Idol Club",
+        "id": "23886",
+        "type": "ONA",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Legend of Super Normal City Kashiwa R",
+        "id": "23884",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Eiga Crayon Shin-chan Gekitotsu! Rakuga Kingdom to Hobo Yonin no Y\u016bsha",
+        "id": "23723",
+        "type": "movie",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Sword Art Online: Alicization - War of Underworld",
+        "id": "23721",
+        "type": "special",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Hallelujah: Unmei no Sentaku",
+        "id": "23720",
+        "type": "ONA",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Attack on Titan: Chronicle",
+        "id": "23718",
+        "type": "movie",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Date A Bullet",
+        "id": "23706",
+        "type": "movie",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Dragon's Dogma",
+        "id": "23688",
+        "type": "ONA",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "22/7",
+        "id": "23687",
+        "type": "OAV",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Fushigi Dagashiya Zenitend\u014d",
+        "id": "23665",
+        "type": "TV",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Sakura Kakumei ~Hana Saku Otome-tachi~",
+        "id": "23605",
+        "type": "ONA",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Doraemon the Movie: Nobita's New Dinosaur",
+        "id": "23592",
+        "type": "movie",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "My Hero Academia: Make It! Do-or-Die Survival Training",
+        "id": "23572",
+        "type": "OAV",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Fushigi Dagashiya Zenitend\u014d",
+        "id": "23571",
+        "type": "movie",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Mouseman: Ai no Katamari",
+        "id": "23569",
+        "type": "movie",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "I Want to Be His Prey",
+        "id": "23568",
+        "type": "TV",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Battle Spirits: Kakumei no Galette",
+        "id": "23557",
+        "type": "ONA",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Aggretsuko",
+        "id": "23549",
+        "type": "ONA",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Hataraku Saib\u014d!!",
+        "id": "23509",
+        "type": "movie",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Survive! Inside the Human Body",
+        "id": "23496",
+        "type": "movie",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Umayon",
+        "id": "23494",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Obake Zukan",
+        "id": "23490",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Journal of the Mysterious Creatures",
+        "id": "23484",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Ninja Collection",
+        "id": "23474",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Transformers: War for Cybertron Trilogy: Siege",
+        "id": "23473",
+        "type": "ONA",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Stranger by the Shore",
+        "id": "23373",
+        "type": "movie",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Uzaki-chan Wants to Hang Out!",
+        "id": "23371",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Monster Girl Doctor",
+        "id": "23370",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Kyoshin to Hy\u014dka no Shiro",
+        "id": "23300",
+        "type": "TV",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Titan's Bride",
+        "id": "23299",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "God of High School",
+        "id": "23279",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Japan Sinks: 2020",
+        "id": "23133",
+        "type": "ONA",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "No Guns Life",
+        "id": "23084",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Given",
+        "id": "23072",
+        "type": "movie",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Sword Art Online: Alicization - War of Underworld Part 2",
+        "id": "23030",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Sh\u014djo Kageki Revue Starlight Rondo Rondo Rondo",
+        "id": "22992",
+        "type": "movie",
+        "vintage": "2020-08"
+    },
+    {
+        "name": "Muhyo & Roji's Bureau of Supernatural Investigation",
+        "id": "22979",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Peter Grill and the Philosopher's Time",
+        "id": "22963",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Fire Force",
+        "id": "22952",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Lapis Re:LiGHTs",
+        "id": "22935",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Rent-A-Girlfriend",
+        "id": "22933",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Omoi, Omoware, Furi, Furare",
+        "id": "22922",
+        "type": "movie",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Deca-Dence",
+        "id": "22721",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "SUPER HXEROES: \"H\"EROES SAVE THE WORLD",
+        "id": "22606",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Misfit of Demon King Academy",
+        "id": "22555",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Fate/stay night: Heaven's Feel III. spring song",
+        "id": "22382",
+        "type": "movie",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Violet Evergarden: The Movie",
+        "id": "22376",
+        "type": "movie",
+        "vintage": "2020-09"
+    },
+    {
+        "name": "Gibiate",
+        "id": "22314",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Mr Love: Queen\u2019s Choice",
+        "id": "22299",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "Re:ZERO -Starting Life in Another World-",
+        "id": "22005",
+        "type": "TV",
+        "vintage": "2020-07"
+    },
+    {
+        "name": "My Teen Romantic Comedy SNAFU Climax",
+        "id": "21999",
+        "type": "TV",
+        "vintage": "2020-07"
+    }
+]

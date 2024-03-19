@@ -1,0 +1,782 @@
+[
+    {
+        "name": "My Teen Romantic Comedy SNAFU TOO!",
+        "id": "26892",
+        "type": "OAV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Pochi Hana",
+        "id": "26316",
+        "type": "movie",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Tokyo Twins Athletic Tournament",
+        "id": "25344",
+        "type": "TV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Tawawa on Monday",
+        "id": "25035",
+        "type": "OAV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Cocolors",
+        "id": "24072",
+        "type": "movie",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Oni Chichi Refresh",
+        "id": "24033",
+        "type": "OAV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Trickster",
+        "id": "23927",
+        "type": "OAV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Ch\u016bko Video-Ya no Onna Tenin X",
+        "id": "23606",
+        "type": "ONA",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Yoiko no Rekishi Anime: \u014ckina Kabu",
+        "id": "23406",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Dochamon Junior 2",
+        "id": "23259",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kuroko's Basketball Winter Cup Highlights -Crossing the Door-",
+        "id": "23256",
+        "type": "movie",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Master of Torque: Epilogue",
+        "id": "23253",
+        "type": "ONA",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Nineko Gel\u00e9e",
+        "id": "23222",
+        "type": "ONA",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kamigami no Ki",
+        "id": "23212",
+        "type": "TV",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Sanp\u014d Sh\u014djo",
+        "id": "23185",
+        "type": "movie",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Monster Strike: Rain of Memories",
+        "id": "23065",
+        "type": "ONA",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Girl Friend Note",
+        "id": "22917",
+        "type": "ONA",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Detective Conan - Episode One: The Great Detective Turned Small",
+        "id": "22487",
+        "type": "special",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Monster Musume no Iru Nichij\u014d SP",
+        "id": "19964",
+        "type": "OAV",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Inazuma Eleven Outer Code",
+        "id": "19385",
+        "type": "ONA",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+        "id": "19317",
+        "type": "OAV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "My Hero Academia",
+        "id": "19307",
+        "type": "special",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Kabaneri of the Iron Fortress",
+        "id": "18964",
+        "type": "movie",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Gan Gan Ganko-chan",
+        "id": "18958",
+        "type": "TV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Tantei Opera Milky Holmes: Fun Fun Party Night - Ken to Janet no Okurimono",
+        "id": "18945",
+        "type": "special",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Gravity Rush: The Animation - Overture",
+        "id": "18944",
+        "type": "special",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Nananin no Ayakashi - Chimi Chimi M\u014dry\u014d!! Ima Monogatari",
+        "id": "18940",
+        "type": "TV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Shokugeki no Soma: Sh\u016bgetsu no Meguriai",
+        "id": "18937",
+        "type": "special",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Osomatsu-san Ouma de Kobanashi",
+        "id": "18904",
+        "type": "special",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Koro Sensei Quest!",
+        "id": "18899",
+        "type": "ONA",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Fate/Grand Order: First Order",
+        "id": "18870",
+        "type": "special",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Cyborg 009 Call of Justice",
+        "id": "18841",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Monster Strike The Movie",
+        "id": "18803",
+        "type": "movie",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Black Clover",
+        "id": "18802",
+        "type": "special",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Mutsugo to Ouma no Monogatari",
+        "id": "18793",
+        "type": "ONA",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Higanjima X",
+        "id": "18788",
+        "type": "ONA",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "PePePePengiin",
+        "id": "18787",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Tawawa on Monday",
+        "id": "18786",
+        "type": "ONA",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kimoshiba",
+        "id": "18785",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Ohay\u014d! Kokekko-san",
+        "id": "18784",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Pittanko! Nekozakana",
+        "id": "18783",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Tama & Friends: Uchi no Tama Shirimasen ka?",
+        "id": "18779",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Cardfight!! Vanguard G NEXT",
+        "id": "18773",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kuroko no Basuke Winter Cup S\u014dsh\u016b-hen: Namida no Saki e",
+        "id": "18763",
+        "type": "movie",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Orange: Mirai",
+        "id": "18756",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Koro Teacher Quest!",
+        "id": "18754",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Assassination Classroom the Movie: 365 Days' Time",
+        "id": "18752",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Rainy Cocoa in Hawaii",
+        "id": "18750",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kagerou Daze -in a day's-",
+        "id": "18748",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Baki-Dou",
+        "id": "18746",
+        "type": "OAV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Pok\u00e9mon Sun & Moon",
+        "id": "18745",
+        "type": "TV",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Luger Code 1951",
+        "id": "18744",
+        "type": "ONA",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Eiy\u016b\" Kaitai",
+        "id": "18735",
+        "type": "OAV",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Glass Mask Year 3 Class D",
+        "id": "18733",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Crane Game Girls Galaxy",
+        "id": "18732",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Hagane Orchestra",
+        "id": "18729",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "To Be Hero",
+        "id": "18728",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Cheating Craft",
+        "id": "18727",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Chi's Sweet Adventure",
+        "id": "18723",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Bloodivores",
+        "id": "18719",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Mysterious Joker Season 4",
+        "id": "18716",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kinmoza!: Pretty Days!",
+        "id": "18711",
+        "type": "special",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Bungo Stray Dogs 2",
+        "id": "18709",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Soul Buster",
+        "id": "18708",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kiitaro's yokai picture diary",
+        "id": "18706",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kubikiri Cycle: Aoiro Savant to Zaregoto Tsukai",
+        "id": "18704",
+        "type": "OAV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Age 12",
+        "id": "18702",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Great Passage",
+        "id": "18698",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Miss Bernard said.",
+        "id": "18697",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Strike the Blood II",
+        "id": "18696",
+        "type": "OAV",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Aooni The Blue Monster",
+        "id": "18694",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Tenchi Muyo! Ryo Ohki",
+        "id": "18688",
+        "type": "OAV",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Teeky\u016b",
+        "id": "18687",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Idol Memories",
+        "id": "18685",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "SENGOKUCHOJYUGIGA",
+        "id": "18684",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "BBK/BRNK: The Gentle Giants of the Galaxy",
+        "id": "18682",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Mahou Shoujo Nante Mouiidesukara. Second Season",
+        "id": "18681",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Lostorage incited WIXOSS",
+        "id": "18680",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Girlish Number",
+        "id": "18676",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Zegapain ADP",
+        "id": "18674",
+        "type": "movie",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Anime De Training! Xx!",
+        "id": "18673",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "My Wife is the Student Council President+!",
+        "id": "18672",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Yo-kai Watch: Sora Tobu Kujira to Double Sekai no Daib\u014dken da Nyan!",
+        "id": "18669",
+        "type": "movie",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Gakuen Handsome",
+        "id": "18667",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "ViVid Strike!",
+        "id": "18664",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Tiger Mask W",
+        "id": "18637",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Digimon Universe: Appli Monsters",
+        "id": "18636",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Nazotokine",
+        "id": "18634",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Eiga Mah\u014d Tsukai Precure! Kiseki no Henshin! Cure Mofurun!",
+        "id": "18589",
+        "type": "movie",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Matoi the Sacred Slayer",
+        "id": "18588",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Moment You Fall in Love",
+        "id": "18587",
+        "type": "movie",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Mobile Suit Gundam: Iron-Blooded Orphans",
+        "id": "18586",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Sound! Euphonium 2",
+        "id": "18558",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Scorching Ping Pong Girls",
+        "id": "18557",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Show By Rock!!#",
+        "id": "18546",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Izetta: The Last Witch",
+        "id": "18506",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Magic-kyun! Renaissance",
+        "id": "18467",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Ajin",
+        "id": "18466",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Haikyu!!",
+        "id": "18459",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Trickster",
+        "id": "18456",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Monster Hunter Stories RIDE ON",
+        "id": "18446",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Keijo!!!!!!!!",
+        "id": "18413",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "WWW.WAGNARIA!!",
+        "id": "18412",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "GANTZ:O",
+        "id": "18277",
+        "type": "movie",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Kantai Collection: KanColle",
+        "id": "18245",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Majestic Prince -Genetic Awakening-",
+        "id": "18198",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Nanbaka",
+        "id": "18196",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Yuri!!! on Ice",
+        "id": "18191",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Touken Ranbu: Hanamaru",
+        "id": "18182",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Drifters",
+        "id": "18181",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Time Bokan 24",
+        "id": "18180",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Flip Flappers",
+        "id": "18177",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Utano\u2606Princesama Legend Star",
+        "id": "18173",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Natsume Y\u016bjin-Ch\u014d Go",
+        "id": "18168",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Magical Girl Raising Project",
+        "id": "18167",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "March comes in like a lion",
+        "id": "18166",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Occultic;Nine",
+        "id": "18156",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Magic of Stella",
+        "id": "18155",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Popin Q",
+        "id": "18140",
+        "type": "movie",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Kiss Him, Not Me",
+        "id": "18135",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Brave Witches",
+        "id": "18118",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Ninja Girl & Samurai Master",
+        "id": "18115",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "Poco's Udon World",
+        "id": "18057",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "All Out!!",
+        "id": "17826",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "ClassicaLoid",
+        "id": "17269",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "In This Corner of the World",
+        "id": "17177",
+        "type": "movie",
+        "vintage": "2016-11"
+    },
+    {
+        "name": "Long Riders!",
+        "id": "16986",
+        "type": "TV",
+        "vintage": "2016-10"
+    },
+    {
+        "name": "6HP - Six Hearts Princess",
+        "id": "16749",
+        "type": "special",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Chain Chronicle: The Light of Haecceitas",
+        "id": "16678",
+        "type": "TV",
+        "vintage": "2016-12"
+    },
+    {
+        "name": "Trick or Alice",
+        "id": "16463",
+        "type": "OAV",
+        "vintage": "2016-12"
+    }
+]

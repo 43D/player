@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Cigarettes and Ashes",
+        "id": "3406",
+        "type": "movie",
+        "vintage": "1965-10"
+    },
+    {
+        "name": "Drop",
+        "id": "3405",
+        "type": "movie",
+        "vintage": "1965-10"
+    },
+    {
+        "name": "Fight! Osper",
+        "id": "2365",
+        "type": "TV",
+        "vintage": "1965-12"
+    },
+    {
+        "name": "Hustle Punch",
+        "id": "1507",
+        "type": "TV",
+        "vintage": "1965-11"
+    },
+    {
+        "name": "Kimba the White Lion",
+        "id": "627",
+        "type": "TV",
+        "vintage": "1965-10"
+    }
+]

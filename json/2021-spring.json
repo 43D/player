@@ -1,0 +1,578 @@
+[
+    {
+        "name": "Blossom's Dream",
+        "id": "29220",
+        "type": "ONA",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Pancham Who Wants to Be a Hero",
+        "id": "29219",
+        "type": "ONA",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Ensemble Stars!! 5th Anniversary Animation PV",
+        "id": "26315",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Saga of Tanya the Evil: Operation Desert Pasta",
+        "id": "25992",
+        "type": "special",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Neko Jockey",
+        "id": "24804",
+        "type": "TV",
+        "vintage": "2021-05"
+    },
+    {
+        "name": "Tomorrow's Leaves",
+        "id": "24533",
+        "type": "movie",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Yu-Gi-Oh! Sevens",
+        "id": "24452",
+        "type": "TV",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Bottom-Tier Character Tomozaki",
+        "id": "24450",
+        "type": "OAV",
+        "vintage": "2021-05"
+    },
+    {
+        "name": "Fate/Grand Carnival",
+        "id": "24414",
+        "type": "OAV",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "ArtisWitch",
+        "id": "24373",
+        "type": "ONA",
+        "vintage": "2021-05"
+    },
+    {
+        "name": "Ky\u043e\u0304 no Uraken",
+        "id": "24353",
+        "type": "TV",
+        "vintage": "2021-05"
+    },
+    {
+        "name": "Butt Detective",
+        "id": "24322",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Aoi Hane Mitsuketa! Sagashitemiy\u014d Mijika na Tori-tachi",
+        "id": "24318",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Hyper Positive Yogoremon",
+        "id": "24309",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Night World",
+        "id": "24298",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Miss Kobayashi's Dragon Maid S Short Animation Series",
+        "id": "24247",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "In\u014d no Aicis",
+        "id": "24216",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Wonder Egg Priority",
+        "id": "24211",
+        "type": "special",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Dosukoi Sushi-Zum\u014d",
+        "id": "24210",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Motto! Majime ni Fumajime Kaiketsu Zorori",
+        "id": "24209",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Ningen Kaish\u016bsha",
+        "id": "24185",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "SD Gundam World Heroes",
+        "id": "24158",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Record of Ragnarok",
+        "id": "24148",
+        "type": "TV",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Uch\u016b Senkan Yamato\" to Iu Jidai: Seireki 2202-nen no Sentaku",
+        "id": "24145",
+        "type": "movie",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Beyblade Burst QuadDrive",
+        "id": "24144",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Ahare! Meisaku-kun",
+        "id": "24136",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Yasuke",
+        "id": "24121",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Dinosaur Biyori",
+        "id": "24103",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Mazica Party",
+        "id": "24099",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Y\u014dkai Watch \u266a",
+        "id": "24091",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Shikaruneko",
+        "id": "24080",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Mewkledreamy Mix!",
+        "id": "24065",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Blue Reflection Ray",
+        "id": "24041",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Seduced By My Best Friend",
+        "id": "24037",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Uch\u016b Nanchara Kotetsu-kun",
+        "id": "24035",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Joran: The Princess of Snow and Blood",
+        "id": "24030",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "SEVEN KNIGHTS REVOLUTION: Hero Successor",
+        "id": "24021",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Way of the Househusband",
+        "id": "24020",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Zombie Land Saga Revenge",
+        "id": "24019",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Welcome to Demon School, Iruma-kun",
+        "id": "24018",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Cestvs: The Roman Fighter",
+        "id": "24017",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Koikimo",
+        "id": "24011",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Fortune Favors Lady Nikuko",
+        "id": "23992",
+        "type": "movie",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Pretty Boy Detective Club",
+        "id": "23985",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Yuki Yuna is a Hero: Churutto!",
+        "id": "23982",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Fruits Basket the Final",
+        "id": "23980",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Kaguya-sama: Love is War",
+        "id": "23977",
+        "type": "OAV",
+        "vintage": "2021-05"
+    },
+    {
+        "name": "Moriarty the Patriot",
+        "id": "23976",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Megalobox 2: Nomad",
+        "id": "23970",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Duel Masters King!",
+        "id": "23962",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Backflip!!",
+        "id": "23955",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Osamake: Romcom Where The Childhood Friend Won't Lose",
+        "id": "23945",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Cardfight!! Vanguard overDress",
+        "id": "23938",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Shinkansen Henkei Robo Shinkalion Z",
+        "id": "23937",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Vivy -Fluorite Eye's Song-",
+        "id": "23935",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Fairy Ranmaru",
+        "id": "23933",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "BanG Dream! Episode of Roselia",
+        "id": "23928",
+        "type": "movie",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Farewell, My Dear Cramer",
+        "id": "23925",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Farewell, My Dear Cramer: The Movie",
+        "id": "23924",
+        "type": "movie",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "ODDTAXI",
+        "id": "23921",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Edens Zero",
+        "id": "23915",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Gloomy the Naughty Grizzly",
+        "id": "23902",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Etotama ~Nyan-Kyaku Banrai~",
+        "id": "23899",
+        "type": "ONA",
+        "vintage": "2021-05"
+    },
+    {
+        "name": "Saint's Magic Power is Omnipotent",
+        "id": "23896",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "MARS RED",
+        "id": "23889",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Hetalia World Stars",
+        "id": "23864",
+        "type": "ONA",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? III",
+        "id": "23854",
+        "type": "OAV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "iii icecrin",
+        "id": "23848",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Tokyo Revengers",
+        "id": "23847",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "SSSS.Dynazenon",
+        "id": "23822",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Full Dive",
+        "id": "23820",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Eiga Soreike! Anpanman Fuwafuwa Fuwari to Kumo no Kuni",
+        "id": "23772",
+        "type": "movie",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Burning Kabaddi",
+        "id": "23757",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Don't Toy with Me, Miss Nagatoro",
+        "id": "23755",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Shadows House",
+        "id": "23751",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "To Your Eternity",
+        "id": "23600",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Battle Athletes Victory ReSTART!",
+        "id": "23597",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Revue Starlight The Movie",
+        "id": "23563",
+        "type": "movie",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Dragon Goes House-Hunting",
+        "id": "23561",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Those Snow White Notes",
+        "id": "23554",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Let's Make a Mug Too",
+        "id": "23544",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Higehiro",
+        "id": "23528",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Knights of Sidonia: Love Woven in the Stars",
+        "id": "23512",
+        "type": "movie",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "World Ends with You the Animation",
+        "id": "23510",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "How NOT to Summon a Demon Lord Omega",
+        "id": "23505",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Shaman King",
+        "id": "23413",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Slime Diaries",
+        "id": "23359",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Super Cub",
+        "id": "23261",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Combatants Will Be Dispatched!",
+        "id": "23090",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "86",
+        "id": "23089",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Pompo: The Cin\u00e9phile",
+        "id": "23070",
+        "type": "movie",
+        "vintage": "2021-06"
+    },
+    {
+        "name": "Mobile Suit Gundam Hathaway",
+        "id": "22960",
+        "type": "movie",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Detective Conan: The Scarlet Bullet",
+        "id": "22901",
+        "type": "movie",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Eden",
+        "id": "22602",
+        "type": "ONA",
+        "vintage": "2021-05"
+    },
+    {
+        "name": "I've Been Killing Slimes for 300 Years and Maxed Out My Level",
+        "id": "22583",
+        "type": "TV",
+        "vintage": "2021-04"
+    },
+    {
+        "name": "Deer King",
+        "id": "22024",
+        "type": "movie",
+        "vintage": "2021-06"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Band of Ninja",
+        "id": "4544",
+        "type": "movie",
+        "vintage": "1967-02"
+    },
+    {
+        "name": "Jack and the Witch",
+        "id": "3564",
+        "type": "movie",
+        "vintage": "1967-03"
+    },
+    {
+        "name": "Cyborg 009 and the Monster Wars",
+        "id": "2881",
+        "type": "movie",
+        "vintage": "1967-03"
+    },
+    {
+        "name": "Goku no Daib\u014dken",
+        "id": "1502",
+        "type": "TV",
+        "vintage": "1967-01"
+    }
+]

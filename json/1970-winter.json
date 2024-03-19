@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Tiger Mask",
+        "id": "24022",
+        "type": "movie",
+        "vintage": "1970-03"
+    },
+    {
+        "name": "Kyojin no Hoshi: Dai League Ball",
+        "id": "22455",
+        "type": "movie",
+        "vintage": "1970-03"
+    },
+    {
+        "name": "Chibikko Remi to Meiken Kapi",
+        "id": "3567",
+        "type": "movie",
+        "vintage": "1970-03"
+    },
+    {
+        "name": "Once Upon A Time",
+        "id": "3374",
+        "type": "movie",
+        "vintage": "1970-03"
+    },
+    {
+        "name": "Dobutsu Mura Monogatari",
+        "id": "2179",
+        "type": "TV",
+        "vintage": "1970-03"
+    },
+    {
+        "name": "Yasashii Lion",
+        "id": "1720",
+        "type": "movie",
+        "vintage": "1970-03"
+    },
+    {
+        "name": "Itazura Tenshi Chippo-chan",
+        "id": "1719",
+        "type": "TV",
+        "vintage": "1970-03"
+    }
+]

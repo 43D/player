@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Fables from Hans Christian Andersen",
+        "id": "3531",
+        "type": "movie",
+        "vintage": "1968-03"
+    },
+    {
+        "name": "Wanpaku Tanteidan",
+        "id": "2371",
+        "type": "TV",
+        "vintage": "1968-02"
+    },
+    {
+        "name": "Kyojin no Hoshi",
+        "id": "1446",
+        "type": "TV",
+        "vintage": "1968-03"
+    },
+    {
+        "name": "Gegege no Kitar\u014d",
+        "id": "1328",
+        "type": "TV",
+        "vintage": "1968-01"
+    }
+]

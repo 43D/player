@@ -1,0 +1,530 @@
+[
+    {
+        "name": "Maneaters Gang: Last Order",
+        "id": "30425",
+        "type": "OAV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Ikemen Ky\u016bgo-tai Nurse Angels",
+        "id": "23686",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Ch\u016bniby\u014d demo Koi ga Shitai!",
+        "id": "23593",
+        "type": "OAV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Little Charo 4: Eigo de Aruku New York",
+        "id": "23095",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Ro-Kyu-Bu!: Tomoka no Ichigo Sundae",
+        "id": "23020",
+        "type": "OAV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Mini Van",
+        "id": "22406",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Sex Hypnotist Zero",
+        "id": "19663",
+        "type": "OAV",
+        "vintage": "2013-05"
+    },
+    {
+        "name": "Nintama Rantaro",
+        "id": "19639",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Gundam Stand at Jaburo",
+        "id": "17533",
+        "type": "movie",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Pac-Man and the Ghostly Adventures",
+        "id": "15998",
+        "type": "TV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Donyatsu",
+        "id": "15755",
+        "type": "ONA",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Lust-Struck Trilogy",
+        "id": "15675",
+        "type": "OAV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Y\u016bto-kun ga Iku",
+        "id": "15385",
+        "type": "TV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "World God Only Knows: Magical Star Kanon 100%",
+        "id": "15378",
+        "type": "OAV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Space Battleship Yamato 2199 Chapter 6: T\u014dtatsu! Dai Magellan",
+        "id": "15357",
+        "type": "movie",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Inazuma Eleven GO Galaxy",
+        "id": "15331",
+        "type": "TV",
+        "vintage": "2013-05"
+    },
+    {
+        "name": "Papa no Iu Koto o Kikinasai!",
+        "id": "15286",
+        "type": "OAV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Duel Masters Victory V3",
+        "id": "15281",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Heisei Policemen!!",
+        "id": "15278",
+        "type": "ONA",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Miyakawa-ke no K\u016bfuku",
+        "id": "15276",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Bakuj\u016b Gasshin Ziguru Hazeru",
+        "id": "15275",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Train Heroes",
+        "id": "15272",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Glass no Kamen Desu ga Onna Spy no Koi! Murasaki no Bara wa Kiken na Kaori!?",
+        "id": "15216",
+        "type": "movie",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Baka Mukashi Banashi Gekij\u014dban ~Jijii Wars~",
+        "id": "15215",
+        "type": "movie",
+        "vintage": "2013-05"
+    },
+    {
+        "name": "Line Town",
+        "id": "15209",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Tanken Driland - 1000-nen no Mah\u014d -",
+        "id": "15206",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Baku Tech! Bakugan Gachi",
+        "id": "15203",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Iron Man: Rise of Technovore",
+        "id": "15202",
+        "type": "OAV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Space Battleship Yamato 2199 Chapter 5: B\u014dky\u014d no Gingakan K\u016bkan",
+        "id": "15196",
+        "type": "movie",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Haitai Nanafa",
+        "id": "15194",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Dibetagurashi: Ahiru no Seikatsu",
+        "id": "15193",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Ketsuekigata-kun!",
+        "id": "15190",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Koitabi ~True Tours Nanto",
+        "id": "15189",
+        "type": "special",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Kuromajyo-san ga T\u014dru!!",
+        "id": "15188",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Gakkatsu!",
+        "id": "15187",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Hayate the Combat Butler! Cuties",
+        "id": "15186",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Battle Spirits: Sword Eyes Gekit\u014dden",
+        "id": "15185",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Leviathan: The Last Defense",
+        "id": "15184",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Danb\u014dru Senki Wars",
+        "id": "15177",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Boku wa \u014c-sama",
+        "id": "15166",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Sparrow's Hotel",
+        "id": "15153",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Odoriko Clinoppe",
+        "id": "15146",
+        "type": "TV",
+        "vintage": "2013-05"
+    },
+    {
+        "name": "Himitsu Kessha Taka no Tsume MAX",
+        "id": "15145",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Glass no Kamen Desu ga",
+        "id": "15135",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Jewelpet Happiness",
+        "id": "15130",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Rescue Me!",
+        "id": "15128",
+        "type": "OAV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Aiura",
+        "id": "15125",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Dream 9 Toriko & One Piece & Dragon Ball Z Ch\u014d Collaboration Special!!",
+        "id": "15122",
+        "type": "special",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "DD Fist of the North Star",
+        "id": "15114",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Kingdom",
+        "id": "15113",
+        "type": "TV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Mushibugy\u014d",
+        "id": "15109",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Tetsujin 28-g\u014d Gao!",
+        "id": "15108",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Ghost in the Shell: Arise",
+        "id": "15096",
+        "type": "OAV",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Pretty Rhythm Rainbow Live",
+        "id": "15094",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Danchi Tomoo",
+        "id": "15053",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Kick-Heart",
+        "id": "15034",
+        "type": "movie",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Eiga Hana Kappa Hana-sake! Pakkaan Ch\u014d no Kuni no Daib\u014dken",
+        "id": "15026",
+        "type": "movie",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "You're Being Summoned, Azazel Z",
+        "id": "15003",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Muromi-san",
+        "id": "14999",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Samurai Bride",
+        "id": "14997",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Garden of Words",
+        "id": "14995",
+        "type": "movie",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Nyaruko: Crawling with Love!",
+        "id": "14989",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Valvrave the Liberator",
+        "id": "14983",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Wind Rises",
+        "id": "14975",
+        "type": "movie",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Majestic Prince",
+        "id": "14971",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Hal",
+        "id": "14970",
+        "type": "movie",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Arata The Legend",
+        "id": "14962",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Gargantia on the Verdurous Planet",
+        "id": "14961",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Devil Survivor 2 The Animation",
+        "id": "14955",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Attack on Titan",
+        "id": "14950",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Eiga Crayon Shin-chan: Bakauma\u2014! B-Ky\u016b Gourmet Survival!!",
+        "id": "14933",
+        "type": "movie",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Angel's Drop",
+        "id": "14931",
+        "type": "special",
+        "vintage": "2013-05"
+    },
+    {
+        "name": "Photo Kano",
+        "id": "14902",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Severing Crime Edge",
+        "id": "14894",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "My Teen Romantic Comedy SNAFU",
+        "id": "14888",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Uta no Prince-sama - Maji Love 2000%",
+        "id": "14884",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Karneval",
+        "id": "14855",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Certain Scientific Railgun S",
+        "id": "14853",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Devil Is a Part-Timer!",
+        "id": "14846",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Saint Young Men",
+        "id": "14826",
+        "type": "movie",
+        "vintage": "2013-05"
+    },
+    {
+        "name": "Yuyushiki",
+        "id": "14576",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Flowers of Evil",
+        "id": "14570",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Hentai\" Prince and the Stony Cat.",
+        "id": "14549",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Kubbe",
+        "id": "14332",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Oreimo 2",
+        "id": "14208",
+        "type": "TV",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Patema Inverted",
+        "id": "13906",
+        "type": "movie",
+        "vintage": "2013-06"
+    },
+    {
+        "name": "Aura: Koga Maryuin's Last War",
+        "id": "13894",
+        "type": "movie",
+        "vintage": "2013-04"
+    },
+    {
+        "name": "Steins;Gate: The Movie - Load Region of D\u00e9j\u00e0 Vu",
+        "id": "13542",
+        "type": "movie",
+        "vintage": "2013-04"
+    }
+]

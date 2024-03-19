@@ -1,0 +1,368 @@
+[
+    {
+        "name": "Mori no And\u014d",
+        "id": "24334",
+        "type": "ONA",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Ocha-ken: Hotto Monogatari",
+        "id": "23226",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Ry\u016bsei Tenshi Prima Veil",
+        "id": "17620",
+        "type": "OAV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Onimusha: Dawn of Dreams",
+        "id": "15507",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Gunparade Orchestra",
+        "id": "11075",
+        "type": "OAV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Dai Mahou Touge Omake",
+        "id": "10669",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Ikusa Otome Valkyrie Shinsh\u014d",
+        "id": "9335",
+        "type": "OAV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Shakugan no Shana-tan",
+        "id": "8173",
+        "type": "OAV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Hit\u014d Meguri The Animation",
+        "id": "8078",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Invisible Stud",
+        "id": "7833",
+        "type": "OAV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Consenting Adultery",
+        "id": "7452",
+        "type": "OAV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Stringendo - Angel-tachi no Private Lesson",
+        "id": "7444",
+        "type": "OAV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Haru no Ashioto The Movie: Ourin Dakkan",
+        "id": "7230",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Dark Future",
+        "id": "7210",
+        "type": "OAV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Beyond the Train Tracks",
+        "id": "7156",
+        "type": "movie",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Sin in the Rain",
+        "id": "7020",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Project Boobs",
+        "id": "6995",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Funny Pets",
+        "id": "6915",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Fullmetal Alchemist: Premium Collection",
+        "id": "6779",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Kaky\u016bsei 2: Anthology",
+        "id": "6642",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Ginyuu Mokushiroku Meine Liebe wieder",
+        "id": "6509",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Cream Lemon: New Generation",
+        "id": "6497",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Magical Witch Punie-chan",
+        "id": "6473",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Bakkyuu HIT! Crash Bedaman",
+        "id": "6465",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Kaiketsu Zorori",
+        "id": "6419",
+        "type": "movie",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Keroro Guns\u014d",
+        "id": "6418",
+        "type": "movie",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Memories Off #5 Togireta Film",
+        "id": "6369",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Nerima Daikon Brothers",
+        "id": "6366",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Rakugo Tennyo Oyui",
+        "id": "6356",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Pale Cocoon",
+        "id": "6352",
+        "type": "OAV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Spider Riders",
+        "id": "6316",
+        "type": "TV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Looking Up At The Half-Moon",
+        "id": "6300",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Ar Tonelico",
+        "id": "6277",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Prince of Tennis: The National Tournament",
+        "id": "6249",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Kyo no Gononi",
+        "id": "6245",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Ghost in the Shell: Stand Alone Complex - Individual Eleven",
+        "id": "6243",
+        "type": "OAV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Yomigaeru Sora - RESCUE WINGS",
+        "id": "6234",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Futari wa Precure Splash Star",
+        "id": "6221",
+        "type": "TV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Amaenaide yo!! Katsu!!",
+        "id": "6204",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Wan Wan Serebu Soreyuke! Tetsunoshin",
+        "id": "6203",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Ayakashi - Samurai Horror Tales",
+        "id": "6202",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Momo: The Girl God of Death",
+        "id": "6201",
+        "type": "TV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Mon Mon the Water Spider",
+        "id": "6170",
+        "type": "movie",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Day I Bought a Star",
+        "id": "6169",
+        "type": "movie",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "House Hunting",
+        "id": "6168",
+        "type": "movie",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Cleavage",
+        "id": "6148",
+        "type": "OAV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Guardian Ninja Mamoru",
+        "id": "6114",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Lemon Angel Project",
+        "id": "6095",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "One Piece: Mega Mecha Soldier of Karakuri Castle",
+        "id": "6058",
+        "type": "movie",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Magikano",
+        "id": "6035",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Eternal Alice",
+        "id": "6027",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Papillon Rose",
+        "id": "6010",
+        "type": "TV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "REC",
+        "id": "6008",
+        "type": "TV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Kasimasi - Girl Meets Girl",
+        "id": "5835",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Doraemon the Movie: Nobita's Dinosaur 2006",
+        "id": "5769",
+        "type": "movie",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Tactical Roar",
+        "id": "5760",
+        "type": "TV",
+        "vintage": "2006-01"
+    },
+    {
+        "name": "Bincho-tan",
+        "id": "5314",
+        "type": "TV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Ergo Proxy",
+        "id": "5115",
+        "type": "TV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "Hellsing Ultimate",
+        "id": "5114",
+        "type": "OAV",
+        "vintage": "2006-02"
+    },
+    {
+        "name": "TANK S.W.A.T. 01",
+        "id": "5045",
+        "type": "OAV",
+        "vintage": "2006-03"
+    },
+    {
+        "name": "Fist of the North Star - Legend of Raoh: Chapter of Death in Love",
+        "id": "5025",
+        "type": "movie",
+        "vintage": "2006-03"
+    }
+]

@@ -13,6 +13,7 @@ import HomeAllSongs from '../components/Home/HomeAllSongs';
 import HomeAnime from '../components/Home/HomeAnime';
 import HomeArtist from '../components/Home/HomeArtist';
 import HomeComposer from '../components/Home/HomeComposer';
+import SeasonIndex from '../components/Season';
 
 type dependencias = {
   pageProps: () => PagesType;
@@ -23,10 +24,11 @@ function RoutesApp({ pageProps, dbProp }: dependencias) {
   return (
     <Routes>
       <Route path="/" element={<Home key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/search/:parse" element={<Search key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/anime/:idAnime" element={<Anime key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/artist/:idArtist" element={<Artist key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
-      <Route path="/playlist/:idPlaylist" element={<Playlist key={"0"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/season" element={<SeasonIndex key={"1"} />} />
+      <Route path="/search/:parse" element={<Search key={"2"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/anime/:idAnime" element={<Anime key={"3"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/artist/:idArtist" element={<Artist key={"4"} dbProp={dbProp} pageProps={pageProps} />} />
+      <Route path="/playlist/:idPlaylist" element={<Playlist key={"5"} dbProp={dbProp} pageProps={pageProps} />} />
       <Route path="/playlist" element={<HomePlaylist key={"h2"} pageProps={pageProps} dbProp={dbProp} />} />
       <Route path="/listened" element={<HomeMostWanted key={"h3"} pageProps={pageProps} dbProp={dbProp} />} />
       <Route path="/song" element={<HomeAllSongs key={"h4"} pageProps={pageProps} dbProp={dbProp} />} />

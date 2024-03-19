@@ -1,0 +1,512 @@
+[
+    {
+        "name": "Kagaku Manga Survival Series",
+        "id": "32114",
+        "type": "ONA",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Move to the Future",
+        "id": "25406",
+        "type": "ONA",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Teik\u014d Penguin",
+        "id": "24229",
+        "type": "ONA",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Wotakoi: Love is Hard for Otaku",
+        "id": "24089",
+        "type": "OAV",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Aihime MEGOHIME",
+        "id": "24074",
+        "type": "ONA",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Zannen na Ikimono Jiten",
+        "id": "23988",
+        "type": "TV",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Mah\u014dtsukai no Yome: Gakuin-hen",
+        "id": "23599",
+        "type": "ONA",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Eromanga Sensei",
+        "id": "23239",
+        "type": "OAV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Shimajir\u014d to Ururu no Hero Land",
+        "id": "23117",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "IT'S MY LIFE",
+        "id": "22970",
+        "type": "OAV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Phantasy Star Online 2 Comic",
+        "id": "22969",
+        "type": "ONA",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Virtual-san wa Miteiru",
+        "id": "22413",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Forest of Piano",
+        "id": "22260",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Midnight Voitore Boys",
+        "id": "22250",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Hulaing Babies",
+        "id": "22244",
+        "type": "ONA",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Ikki Tousen: Western Wolves",
+        "id": "22179",
+        "type": "OAV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Doraemon the Movie: Nobita's Chronicle of the Moon Exploration",
+        "id": "22155",
+        "type": "movie",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Lupin III: Goodbye Partner",
+        "id": "22121",
+        "type": "special",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Captain Bal",
+        "id": "22110",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Zip! Shimezo",
+        "id": "22106",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Tatakae! Space Attendant Aoi",
+        "id": "22104",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Hello WeGo!",
+        "id": "22097",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Hora, Mimi ga Mieteru yo!",
+        "id": "22046",
+        "type": "TV",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Ojamajo Doremi: Owarai Gekij\u014d",
+        "id": "22002",
+        "type": "ONA",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Ero Lover",
+        "id": "21980",
+        "type": "ONA",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Demon Slayer: Kimetsu no Yaiba: Bonds of Siblings",
+        "id": "21817",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "PERSONA 5 the Animation: Stars and Ours",
+        "id": "21797",
+        "type": "special",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Y\u016bki no Hana ga Hiraku Toki: Yanase Takashi to Anpanman no Monogatari",
+        "id": "21795",
+        "type": "special",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Precure Miracle Universe",
+        "id": "21747",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Star Twinkle Precure",
+        "id": "21719",
+        "type": "TV",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Eiga no Osomatsu-san",
+        "id": "21718",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Korasho no Kaitei Wakuwaku Daibouken!",
+        "id": "21705",
+        "type": "movie",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Hi Score Girl",
+        "id": "21704",
+        "type": "OAV",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Katana Maidens: Mini Toji",
+        "id": "21680",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Even a Dad Still Wants It...",
+        "id": "21674",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Trinity Seven: Heavens Library & Crimson Lord",
+        "id": "21599",
+        "type": "movie",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "Fight League: Gear Gadget Generators",
+        "id": "21592",
+        "type": "ONA",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Kemono Friends 2",
+        "id": "21589",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "All Might: Rising The Animation",
+        "id": "21585",
+        "type": "OAV",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Promised Neverland",
+        "id": "21552",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Dimension High School",
+        "id": "21548",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Psycho-Pass: Sinners of the System",
+        "id": "21547",
+        "type": "movie",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Quintessential Quintuplets",
+        "id": "21514",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Rainy Cocoa SideG",
+        "id": "21510",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Date A Live III",
+        "id": "21509",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Price of Smiles",
+        "id": "21497",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Relative Worlds",
+        "id": "21491",
+        "type": "movie",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Real Girl",
+        "id": "21480",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Royal Tutor",
+        "id": "21403",
+        "type": "movie",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Kaguya-sama: Love is War",
+        "id": "21401",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Magnificent KOTOBUKI",
+        "id": "21371",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Kakegurui",
+        "id": "21292",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "BanG Dream!",
+        "id": "21289",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Bermuda Triangle: Colorful Pastrale",
+        "id": "21284",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Rinshi!! Ekoda-chan",
+        "id": "21281",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Kemurikusa",
+        "id": "21280",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Circlet Princess",
+        "id": "21272",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "My Roommate is a Cat",
+        "id": "21270",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Grimms Notes the Animation",
+        "id": "21266",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Code Geass: Lelouch of the Re;surrection",
+        "id": "21251",
+        "type": "movie",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "How Clumsy you are, Miss Ueno",
+        "id": "21248",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "City Hunter: Shinjuku Private Eyes",
+        "id": "21247",
+        "type": "movie",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Made in Abyss",
+        "id": "21238",
+        "type": "movie",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Endro~!",
+        "id": "21228",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Magical Girl Spec-Ops Asuka",
+        "id": "21226",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Domestic Girlfriend",
+        "id": "21205",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Mob Psycho 100 II",
+        "id": "21204",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "B-PROJECT: Zecch\u014d Emotion",
+        "id": "21202",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Boogiepop and Others",
+        "id": "21201",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Morose Mononokean II",
+        "id": "21128",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Grisaia: Phantom Trigger",
+        "id": "21126",
+        "type": "OAV",
+        "vintage": "2019-03"
+    },
+    {
+        "name": "revisions",
+        "id": "21122",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "WATATEN!: an Angel Flew Down to Me",
+        "id": "21114",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Love Live! Sunshine!! The School Idol Movie Over the Rainbow",
+        "id": "21110",
+        "type": "movie",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Girly Air Force",
+        "id": "21099",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Fate/stay night: Heaven's Feel II. lost butterfly",
+        "id": "20899",
+        "type": "movie",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Pastel Memories",
+        "id": "20804",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Mannaka no Rikkun",
+        "id": "20782",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Dororo",
+        "id": "20779",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "W'z",
+        "id": "20759",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon?: Arrow of the Orion",
+        "id": "20674",
+        "type": "movie",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Meiji Tokyo Renka",
+        "id": "20572",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Saga of Tanya the Evil",
+        "id": "20509",
+        "type": "movie",
+        "vintage": "2019-02"
+    },
+    {
+        "name": "Rising of The Shield Hero",
+        "id": "19826",
+        "type": "TV",
+        "vintage": "2019-01"
+    },
+    {
+        "name": "Mysteria Friends",
+        "id": "17601",
+        "type": "TV",
+        "vintage": "2019-01"
+    }
+]

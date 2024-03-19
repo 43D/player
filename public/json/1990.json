@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Perspektivenbox",
+        "id": "7861",
+        "type": "movie",
+        "vintage": "1990"
+    },
+    {
+        "name": "Taiman Blues: Ladies Hen Mayumi",
+        "id": "7116",
+        "type": "OAV",
+        "vintage": "1990"
+    },
+    {
+        "name": "Transformers: Zone",
+        "id": "2477",
+        "type": "OAV",
+        "vintage": "1990"
+    },
+    {
+        "name": "Demon Beast Invasion",
+        "id": "2112",
+        "type": "OAV",
+        "vintage": "1990"
+    },
+    {
+        "name": "Vampire Wars",
+        "id": "596",
+        "type": "OAV",
+        "vintage": "1990"
+    },
+    {
+        "name": "Dark Myth",
+        "id": "573",
+        "type": "OAV",
+        "vintage": "1990"
+    },
+    {
+        "name": "Wind Named Amnesia",
+        "id": "99",
+        "type": "movie",
+        "vintage": "1990"
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Panda! Go, Panda!: Rainy Day Circus",
+        "id": "3703",
+        "type": "movie",
+        "vintage": "1973-03"
+    },
+    {
+        "name": "Panda no Daib\u014dken",
+        "id": "1423",
+        "type": "movie",
+        "vintage": "1973-03"
+    },
+    {
+        "name": "Brave Frog",
+        "id": "1399",
+        "type": "TV",
+        "vintage": "1973-01"
+    },
+    {
+        "name": "Babel II",
+        "id": "1192",
+        "type": "TV",
+        "vintage": "1973-01"
+    },
+    {
+        "name": "Fables of the Green Forest",
+        "id": "432",
+        "type": "TV",
+        "vintage": "1973-01"
+    },
+    {
+        "name": "Jungle Kurobe",
+        "id": "118",
+        "type": "TV",
+        "vintage": "1973-03"
+    }
+]

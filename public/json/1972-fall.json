@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Hazedon",
+        "id": "2250",
+        "type": "TV",
+        "vintage": "1972-10"
+    },
+    {
+        "name": "Onbu Obake",
+        "id": "1733",
+        "type": "TV",
+        "vintage": "1972-10"
+    },
+    {
+        "name": "Gutsy Frog",
+        "id": "1311",
+        "type": "TV",
+        "vintage": "1972-10"
+    },
+    {
+        "name": "Astroganger",
+        "id": "1184",
+        "type": "TV",
+        "vintage": "1972-10"
+    },
+    {
+        "name": "Mazinger Z",
+        "id": "1100",
+        "type": "TV",
+        "vintage": "1972-12"
+    },
+    {
+        "name": "Panda! Go, Panda!",
+        "id": "352",
+        "type": "movie",
+        "vintage": "1972-12"
+    },
+    {
+        "name": "Kaiketsu Tamagon",
+        "id": "151",
+        "type": "TV",
+        "vintage": "1972-10"
+    },
+    {
+        "name": "Gatchaman",
+        "id": "4",
+        "type": "TV",
+        "vintage": "1972-10"
+    }
+]

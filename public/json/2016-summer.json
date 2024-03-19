@@ -1,0 +1,530 @@
+[
+    {
+        "name": "Eyedrops",
+        "id": "24586",
+        "type": "ONA",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Fate/kaleid liner Prisma\u2606Illya 3rei!!",
+        "id": "23762",
+        "type": "OAV",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Sh\u014dnen Maid: Onna wa Doky\u014d, Otoko wa Aiky\u014d?",
+        "id": "23075",
+        "type": "OAV",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Monster Strike: Mermaid Rhapsody",
+        "id": "23066",
+        "type": "ONA",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Danganronpa 3: The End of Hope's Peak High School: Hope Arc",
+        "id": "20490",
+        "type": "special",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Non Non Biyori Repeat",
+        "id": "20466",
+        "type": "OAV",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Onara Goro",
+        "id": "20238",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Taka no Tsume 8: Yoshida-kun no \u00d7 File",
+        "id": "19838",
+        "type": "movie",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Majestic Prince: Wings to the Future",
+        "id": "19760",
+        "type": "special",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Shin chan Spin-off vol.1: Aliens vs. Shinnosuke",
+        "id": "19418",
+        "type": "ONA",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Rudolf the Black Cat",
+        "id": "19417",
+        "type": "movie",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Too Hot For Teacher",
+        "id": "19408",
+        "type": "OAV",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Pok\u00e9mon Generations",
+        "id": "18902",
+        "type": "ONA",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Kaiju Girls",
+        "id": "18762",
+        "type": "ONA",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Nyanbo!",
+        "id": "18759",
+        "type": "TV",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Heybot!",
+        "id": "18695",
+        "type": "TV",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Kochikame THE FINAL: Ry\u014dtsu Kankichi Saigo no Hi",
+        "id": "18683",
+        "type": "special",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Under the Dog",
+        "id": "18675",
+        "type": "OAV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Dream Festival!",
+        "id": "18665",
+        "type": "ONA",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Yowamushi Pedal: Spare Bike",
+        "id": "18663",
+        "type": "movie",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Persona 5 the Animation -The Day Breakers-",
+        "id": "18635",
+        "type": "special",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Gundam Build Fighters Try Island Wars",
+        "id": "18581",
+        "type": "special",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "One Piece: Heart of Gold",
+        "id": "18559",
+        "type": "special",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Chobitto-Zukan",
+        "id": "18555",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Aikatsu! ~Nerawareta Mah\u014d no Aikatsu! Card~",
+        "id": "18548",
+        "type": "movie",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Aikatsu Stars!",
+        "id": "18547",
+        "type": "movie",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Toukiden 2",
+        "id": "18507",
+        "type": "ONA",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "GraP & RodeO",
+        "id": "18490",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Hitori no Shita - the outcast",
+        "id": "18478",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Ajin: Demi-Human - Collide",
+        "id": "18465",
+        "type": "movie",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Naria Girls",
+        "id": "18463",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Active Raid Second",
+        "id": "18458",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Bananya",
+        "id": "18457",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Time Travel Girl",
+        "id": "18455",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Soreike! Anpanman Omocha no Hoshi no Nanda to Runda",
+        "id": "18452",
+        "type": "movie",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Show By Rock!! Short!!",
+        "id": "18447",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Puzzle & Dragons X",
+        "id": "18430",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Kuroko's Basketball Winter Cup Highlights -Shadow and Light-",
+        "id": "18429",
+        "type": "movie",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Disastrous Life of Saiki K.",
+        "id": "18401",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "OZMAFIA!!",
+        "id": "18331",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "planetarian: Hoshi no Hito",
+        "id": "18282",
+        "type": "movie",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "planetarian",
+        "id": "18280",
+        "type": "ONA",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Danganronpa 3: The End of Hope's Peak High School: Despair Arc",
+        "id": "18272",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Regalia: The Three Sacred Stars",
+        "id": "18243",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Cute High Earth Defense Club LOVE! LOVE!",
+        "id": "18235",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Highschool Life of a Fudanshi",
+        "id": "18234",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Pok\u00e9mon the Movie: Volcanion and the Mechanical Marvel",
+        "id": "18227",
+        "type": "movie",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Scar-red Rider XechS",
+        "id": "18214",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Kingsglaive: Final Fantasy XV",
+        "id": "18201",
+        "type": "movie",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Heroic Legend of Arslan: Dust Storm Dance",
+        "id": "18197",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "D.Gray-man Hallow",
+        "id": "18193",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Starmyu",
+        "id": "18192",
+        "type": "OAV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "B-PROJECT",
+        "id": "18189",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Tsukiuta. THE ANIMATION",
+        "id": "18179",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Digimon Adventure tri.: Confession",
+        "id": "18176",
+        "type": "movie",
+        "vintage": "2016-09"
+    },
+    {
+        "name": "Cheer Boys!!",
+        "id": "18174",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "your name.",
+        "id": "18171",
+        "type": "movie",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Ange Vierge",
+        "id": "18170",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "91 Days",
+        "id": "18169",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Berserk",
+        "id": "18160",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Danganronpa 3: The End of Hope's Peak High School: Future Arc",
+        "id": "18159",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Battery the Animation",
+        "id": "18153",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Handa-kun",
+        "id": "18139",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Ancient Magus' Bride: Those Awaiting a Star",
+        "id": "18136",
+        "type": "OAV",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Sweetness & Lightning",
+        "id": "18122",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "One Piece Film Gold",
+        "id": "18113",
+        "type": "movie",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Food Wars! The Second Plate",
+        "id": "18112",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Orange",
+        "id": "18075",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Tales of Zestiria the X",
+        "id": "18072",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Mob Psycho 100",
+        "id": "18064",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Accel World: Infinite Burst",
+        "id": "18063",
+        "type": "movie",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Hybrid x Heart Magias Academy Ataraxia",
+        "id": "18036",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "This Art Club Has a Problem!",
+        "id": "18003",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "DAYS",
+        "id": "17986",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Love Live! Sunshine!!",
+        "id": "17985",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Kizumonogatari Part 2: Nekketsu",
+        "id": "17949",
+        "type": "movie",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Qualidea Code",
+        "id": "17937",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "To Love-Ru -Trouble- Darkness",
+        "id": "17936",
+        "type": "OAV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "New Game!",
+        "id": "17756",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Alderamin on the Sky",
+        "id": "17755",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Amanchu!",
+        "id": "17700",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Fate/kaleid liner Prisma\u2606Illya 3rei!!",
+        "id": "17690",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Rewrite",
+        "id": "17689",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Seven Deadly Sins -Signs of Holy War-",
+        "id": "17688",
+        "type": "TV",
+        "vintage": "2016-08"
+    },
+    {
+        "name": "Servamp",
+        "id": "17328",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "First Love Monster",
+        "id": "17236",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Taboo Tattoo",
+        "id": "17122",
+        "type": "TV",
+        "vintage": "2016-07"
+    },
+    {
+        "name": "Silent Voice",
+        "id": "16661",
+        "type": "movie",
+        "vintage": "2016-09"
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Pictures at an Exhibition",
+        "id": "3414",
+        "type": "movie",
+        "vintage": "1966-11"
+    },
+    {
+        "name": "Jump Out! Batchiri",
+        "id": "2368",
+        "type": "TV",
+        "vintage": "1966-11"
+    },
+    {
+        "name": "Robotan",
+        "id": "2367",
+        "type": "TV",
+        "vintage": "1966-10"
+    },
+    {
+        "name": "New Jungle Emperor, Go Ahead Leo!",
+        "id": "1707",
+        "type": "TV",
+        "vintage": "1966-10"
+    },
+    {
+        "name": "Mah\u014dtsukai Sally",
+        "id": "1385",
+        "type": "TV",
+        "vintage": "1966-12"
+    },
+    {
+        "name": "Ganbare! Marine Kid",
+        "id": "777",
+        "type": "TV",
+        "vintage": "1966-10"
+    }
+]

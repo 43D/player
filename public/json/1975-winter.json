@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Kore ga UFO da! Soratobu Enban",
+        "id": "3606",
+        "type": "movie",
+        "vintage": "1975-03"
+    },
+    {
+        "name": "Hans Christian Andersen's The Little Mermaid",
+        "id": "3604",
+        "type": "movie",
+        "vintage": "1975-03"
+    },
+    {
+        "name": "Great Mazinger tai Getter Robo",
+        "id": "3594",
+        "type": "movie",
+        "vintage": "1975-03"
+    },
+    {
+        "name": "Kirin Monoshiri Kan",
+        "id": "2631",
+        "type": "TV",
+        "vintage": "1975-01"
+    },
+    {
+        "name": "Manga Nihon Mukashi Banashi",
+        "id": "2175",
+        "type": "TV",
+        "vintage": "1975-01"
+    },
+    {
+        "name": "Dog of Flanders",
+        "id": "435",
+        "type": "TV",
+        "vintage": "1975-01"
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Puss 'n Boots",
+        "id": "3799",
+        "type": "movie",
+        "vintage": "1969-03"
+    },
+    {
+        "name": "Till a City Beneath the Sea is Built",
+        "id": "3315",
+        "type": "special",
+        "vintage": "1969-02"
+    },
+    {
+        "name": "Space Journey - The First Dream of Wonder-kun",
+        "id": "3314",
+        "type": "special",
+        "vintage": "1969-01"
+    },
+    {
+        "name": "Sobakasu Pucchi",
+        "id": "1776",
+        "type": "TV",
+        "vintage": "1969-03"
+    },
+    {
+        "name": "Himitsu no Akko-chan",
+        "id": "1386",
+        "type": "TV",
+        "vintage": "1969-01"
+    },
+    {
+        "name": "Marine Boy",
+        "id": "778",
+        "type": "TV",
+        "vintage": "1969-01"
+    }
+]

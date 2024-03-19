@@ -1,0 +1,422 @@
+[
+    {
+        "name": "Little Charo",
+        "id": "23093",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Shakugan no Shana-tan & Yoshida: Fumina Konoe Strikes Back",
+        "id": "20377",
+        "type": "OAV",
+        "vintage": "2008-05"
+    },
+    {
+        "name": "Gurren Lagann Parallel Works",
+        "id": "15323",
+        "type": "OAV",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "Hakken Taiken Daisuki! Shimajir\u014d",
+        "id": "14870",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Itsumo Wagamama Gama \u014cji",
+        "id": "13713",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Ikki Tousen: Great Guardians",
+        "id": "13285",
+        "type": "OAV",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "Fireball",
+        "id": "11928",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Detective Conan Magic File 2",
+        "id": "11691",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Duel Masters Cross",
+        "id": "11492",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Macross Fufonfia",
+        "id": "11484",
+        "type": "ONA",
+        "vintage": "2008-05"
+    },
+    {
+        "name": "Harukoi Otome",
+        "id": "11289",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Himitsu Kessha Taka no Tsume THE MOVIE II ~Watashi o Ai Shita Kuro Oolong-cha~",
+        "id": "11035",
+        "type": "movie",
+        "vintage": "2008-05"
+    },
+    {
+        "name": "Sugar Bunnies Chocolat!",
+        "id": "10683",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Dirty by the Dozen",
+        "id": "10071",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Gakuen Shimai",
+        "id": "10068",
+        "type": "OAV",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "Hime Dorei",
+        "id": "10061",
+        "type": "OAV",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "Tennis no \u014cji-sama: Zenkoku Taikai-hen Final",
+        "id": "10057",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Kyo kara Maoh! 3rd Series",
+        "id": "10056",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Let's Fall in Love the Ero-Manga",
+        "id": "10006",
+        "type": "OAV",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "Stringendo & Accelerando Ultimatum - Sera",
+        "id": "10005",
+        "type": "OAV",
+        "vintage": "2008-05"
+    },
+    {
+        "name": "Kojin Jugy\u014d",
+        "id": "9969",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Triple Sex tribulations",
+        "id": "9964",
+        "type": "OAV",
+        "vintage": "2008-05"
+    },
+    {
+        "name": "Iny\u014dch\u016b Shoku - Ry\u014dshokujima Taimaroku",
+        "id": "9961",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Lover-in-Law",
+        "id": "9958",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Uch\u016b Kaizoku Sara",
+        "id": "9957",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "RoboDz",
+        "id": "9946",
+        "type": "TV",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "Blue Dragon: Trials of the Seven Shadows",
+        "id": "9815",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Hennako-chan",
+        "id": "9798",
+        "type": "ONA",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Onegai My Melody Kirara",
+        "id": "9600",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Chocolate Underground",
+        "id": "9599",
+        "type": "ONA",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "Penguin Girl",
+        "id": "9598",
+        "type": "ONA",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Web Ghost PiPoPa",
+        "id": "9461",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Ikki Tousen: Great Guardians",
+        "id": "9439",
+        "type": "TV",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "Penguin no Mondai",
+        "id": "9412",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Yu-Gi-Oh! 5D's",
+        "id": "9404",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Golgo 13",
+        "id": "9341",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Glass Maiden",
+        "id": "9318",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Uchi no 3 Shimai",
+        "id": "9274",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Ky\u014dran Kazoku Nikki",
+        "id": "9236",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "ItaKiss",
+        "id": "9193",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Kaiba",
+        "id": "9178",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Psychic Squad",
+        "id": "9177",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Code Geass: Lelouch of the Rebellion R2",
+        "id": "9173",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Chiko, Heiress of the Phantom Thief",
+        "id": "9163",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Top Secret ~The Revelation~",
+        "id": "9146",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Telepathy Girl Ran",
+        "id": "9141",
+        "type": "TV",
+        "vintage": "2008-06"
+    },
+    {
+        "name": "D.C.II S.S. ~Da Capo II Second Season~",
+        "id": "9137",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Nabari no Ou",
+        "id": "9102",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "To Love-Ru",
+        "id": "9091",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Soul Eater",
+        "id": "9070",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Blassreiter",
+        "id": "9069",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Neo Angelique Abyss",
+        "id": "9068",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Crayon Shin-chan: Ch\u014d Arashi o Yobu Kinpoko no Y\u016bsha",
+        "id": "9061",
+        "type": "movie",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Naisho no Tsubomi",
+        "id": "9060",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Amatsuki",
+        "id": "9029",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Detective Conan: Full Score of Fear",
+        "id": "9028",
+        "type": "movie",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Vampire Knight",
+        "id": "9009",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Kanokon: The Girl Who Cried Fox",
+        "id": "9000",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Allison & Lillia",
+        "id": "8988",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Library War",
+        "id": "8951",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Real Drive",
+        "id": "8941",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Junj\u014d Romantica",
+        "id": "8922",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Lupin the 3rd: Green vs Red",
+        "id": "8868",
+        "type": "OAV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Monochrome Factor",
+        "id": "8844",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Our Home's Fox Deity",
+        "id": "8774",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "S.A",
+        "id": "8769",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Tower of Druaga: The Aegis of Uruk",
+        "id": "8746",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "xxxHOLiC: Kei",
+        "id": "8551",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Kurenai",
+        "id": "8518",
+        "type": "TV",
+        "vintage": "2008-04"
+    },
+    {
+        "name": "Kamen no Maid Guy",
+        "id": "8193",
+        "type": "TV",
+        "vintage": "2008-04"
+    }
+]

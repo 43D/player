@@ -1,0 +1,572 @@
+[
+    {
+        "name": "License to Sleaze",
+        "id": "30427",
+        "type": "OAV",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "Dogura Magura",
+        "id": "26805",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Code:Breaker",
+        "id": "26310",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Nagareboshi Lens",
+        "id": "25343",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Hiyokoi",
+        "id": "25342",
+        "type": "TV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Crash!",
+        "id": "24068",
+        "type": "TV",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "Saint Young Men",
+        "id": "23612",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Nura: Rise of the Yokai Clan",
+        "id": "23404",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Backstage Idol Story",
+        "id": "23353",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Komachi to Dangor\u014d",
+        "id": "22574",
+        "type": "ONA",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "iDOLM@STER Shiny Festa",
+        "id": "22181",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Robo-kun to Kotori",
+        "id": "20539",
+        "type": "movie",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Anpanman ga Umareta Hi",
+        "id": "20538",
+        "type": "movie",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Puchimas! Wakku Waku\u2014!",
+        "id": "19888",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Koiito Kinenbi The Animation",
+        "id": "17151",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Yumekuri",
+        "id": "17146",
+        "type": "OAV",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "Zekky\u014d Gakky\u016b",
+        "id": "16804",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Hanayaka Nari, Waga Ichizoku",
+        "id": "16550",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Arata-naru Sekai",
+        "id": "15676",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Love, Chunibyo & Other Delusions: Depth of Field - Love and Hate Theater",
+        "id": "15470",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Inferno Cop",
+        "id": "15419",
+        "type": "ONA",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Minami-ke: Omatase",
+        "id": "15416",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "One Piece: Glorious Island",
+        "id": "15227",
+        "type": "special",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Gintama'",
+        "id": "15223",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Nekomonogatari (Black)",
+        "id": "14954",
+        "type": "TV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Monchicchiisu",
+        "id": "14929",
+        "type": "TV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "World God Only Knows: Tenri Arc",
+        "id": "14907",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Boku no Im\u014dto wa \"\u014csaka Okan\"",
+        "id": "14906",
+        "type": "TV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "One Piece Episode of Luffy: Hand Island no B\u014dken",
+        "id": "14900",
+        "type": "special",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Lupin the 3rd: The Secret Page of Marco Polo!",
+        "id": "14828",
+        "type": "special",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "Picchipichi Shizuku-chan",
+        "id": "14820",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Dangerous Jii-san Ja",
+        "id": "14779",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "World War Blue",
+        "id": "14778",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Chiisana Ojisan",
+        "id": "14774",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "B-Daman Fireblast",
+        "id": "14767",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Bottom Biting Bug",
+        "id": "14759",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Sex Friends Convenience?",
+        "id": "14744",
+        "type": "OAV",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "Unsweet: Netorare Ochita Onna-tachi",
+        "id": "14742",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Yu-Gi-Oh! Zexal II",
+        "id": "14736",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "K",
+        "id": "14732",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Wooser's Hand-to-Mouth Life",
+        "id": "14730",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Jormungand Perfect Order",
+        "id": "14729",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Medaka Box Abnormal",
+        "id": "14726",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Kindaichi Sh\u014dnen no Jikenbo: Kuro Majutsu Satsujin Jiken-hen",
+        "id": "14724",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Tropical Kiss",
+        "id": "14653",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Haitai Nanafa",
+        "id": "14638",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Teeky\u016b",
+        "id": "14613",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Macross FB7: Ore no Uta o Kike!",
+        "id": "14610",
+        "type": "movie",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Initial D: Fifth Stage",
+        "id": "14572",
+        "type": "TV",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "Litchi DE Hikari Club",
+        "id": "14569",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Aikatsu!",
+        "id": "14566",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Hayate the Combat Butler: Can't Take My Eyes Off You",
+        "id": "14552",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Harem Time The Animation",
+        "id": "14551",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Oj\u014d-sama Yomeiri K\u014ds\u014d",
+        "id": "14534",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Kansen 5: The Daybreak",
+        "id": "14532",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Inazuma Eleven Go vs. Danb\u014dru Senki W",
+        "id": "14487",
+        "type": "movie",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Love, Chunibyo & Other Delusions!",
+        "id": "14448",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "JoJo's Bizarre Adventure",
+        "id": "14445",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Kamisama Kiss",
+        "id": "14441",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Eiga Smile Precure: Ehon no Naka wa Minna Chiguhagu!",
+        "id": "14431",
+        "type": "movie",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Space Battleship Yamato 2199 Chapter 3: Hateshinaki K\u014dkai",
+        "id": "14427",
+        "type": "movie",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Say \"I love you.\"",
+        "id": "14420",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "My Little Monster",
+        "id": "14419",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Btooom!",
+        "id": "14418",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Ixion Saga DT",
+        "id": "14401",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Magi: The Labyrinth of Magic",
+        "id": "14395",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Puella Magi Madoka Magica the Movie Part 2: Eternal",
+        "id": "14364",
+        "type": "movie",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Puella Magi Madoka Magica the Movie Part 1: Beginnings",
+        "id": "14363",
+        "type": "movie",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Busou Shinki",
+        "id": "14341",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "OniAi",
+        "id": "14338",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Girls und Panzer",
+        "id": "14334",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Blast of Tempest",
+        "id": "14331",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Psychic School Wars",
+        "id": "14328",
+        "type": "movie",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Kaiketsu Zorori Da-Da-Da-Daib\u014dken!",
+        "id": "14314",
+        "type": "movie",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "One Piece Film Z",
+        "id": "14258",
+        "type": "movie",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Pet Girl of Sakurasou",
+        "id": "14238",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Little Busters!",
+        "id": "14231",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "To Love Ru: Darkness",
+        "id": "14209",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Junj\u014d Romantica",
+        "id": "14202",
+        "type": "OAV",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Robotics;Notes",
+        "id": "14196",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Psycho-Pass",
+        "id": "14195",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "This Boy Caught a Merman",
+        "id": "14190",
+        "type": "OAV",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "Mass Effect: Paragon Lost",
+        "id": "14189",
+        "type": "movie",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Fus\u00e9: Memoirs of a Huntress",
+        "id": "14165",
+        "type": "movie",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Usogui",
+        "id": "14163",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Upotte!!",
+        "id": "14100",
+        "type": "OAV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Bakuman. 3",
+        "id": "13867",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Ch\u014d Soku Henkei Gyrozetter",
+        "id": "13831",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "009 Re:Cyborg",
+        "id": "13645",
+        "type": "movie",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Blue Exorcist",
+        "id": "13631",
+        "type": "movie",
+        "vintage": "2012-12"
+    },
+    {
+        "name": "Code:Breaker",
+        "id": "13618",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Hidamari Sketch \u00d7 Honeycomb",
+        "id": "13332",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Student Council's Discretion Lv. 2",
+        "id": "13222",
+        "type": "TV",
+        "vintage": "2012-10"
+    },
+    {
+        "name": "Hana no Utame Gothicmade",
+        "id": "10099",
+        "type": "movie",
+        "vintage": "2012-11"
+    },
+    {
+        "name": "Evangelion: 3.0 You Can (Not) Redo",
+        "id": "8422",
+        "type": "movie",
+        "vintage": "2012-11"
+    }
+]

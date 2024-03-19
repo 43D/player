@@ -1,0 +1,506 @@
+[
+    {
+        "name": "Agriculture Angel Baraki - Play with Ibaraki Hen",
+        "id": "24781",
+        "type": "ONA",
+        "vintage": "2014-06"
+    },
+    {
+        "name": "Momon's Sand Witch",
+        "id": "24778",
+        "type": "ONA",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Toki wa Meguru: Tokyo Station",
+        "id": "23336",
+        "type": "ONA",
+        "vintage": "2014-06"
+    },
+    {
+        "name": "Eiga Panpaka Pants: Bananan \u014ckoku no Hih\u014d",
+        "id": "23219",
+        "type": "movie",
+        "vintage": "2014-05"
+    },
+    {
+        "name": "Himitsu Kessha Taka no Tsume EX",
+        "id": "19833",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Nintama Rantaro",
+        "id": "19640",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Ohenro",
+        "id": "17921",
+        "type": "TV",
+        "vintage": "2014-05"
+    },
+    {
+        "name": "Pok\u00e9mon: Mega Evolution Special I",
+        "id": "17651",
+        "type": "special",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Neko no Dayan",
+        "id": "17639",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Inazuma Eleven: Ch\u014djigen Dream Match",
+        "id": "17234",
+        "type": "movie",
+        "vintage": "2014-06"
+    },
+    {
+        "name": "Hayate the Combat Butler!",
+        "id": "17119",
+        "type": "OAV",
+        "vintage": "2014-06"
+    },
+    {
+        "name": "Broken Blade",
+        "id": "17090",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Lovely Movie: Itoshi no Muco Season 2",
+        "id": "17042",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Go-Go Tamagotchi!",
+        "id": "16860",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Magi: Adventure of Sinbad",
+        "id": "16497",
+        "type": "OAV",
+        "vintage": "2014-05"
+    },
+    {
+        "name": "Ane Log",
+        "id": "16486",
+        "type": "OAV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Y\u016bto-kun ga Iku",
+        "id": "16258",
+        "type": "movie",
+        "vintage": "2014-05"
+    },
+    {
+        "name": "Duel Masters VS",
+        "id": "16243",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Dragon Ball Z Kai",
+        "id": "16190",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Lupin the IIIrd: Jigen's Gravestone",
+        "id": "16148",
+        "type": "movie",
+        "vintage": "2014-06"
+    },
+    {
+        "name": "Carino Coni",
+        "id": "16147",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "World Fool News",
+        "id": "16146",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Calimero",
+        "id": "16139",
+        "type": "TV",
+        "vintage": "2014-06"
+    },
+    {
+        "name": "Age 12",
+        "id": "16113",
+        "type": "OAV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Initial D: Final Stage",
+        "id": "16073",
+        "type": "TV",
+        "vintage": "2014-05"
+    },
+    {
+        "name": "Gakumon! ~\u014ckami Sh\u014djo wa Kujikenai~",
+        "id": "16003",
+        "type": "ONA",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Meshimase Lodoss-t\u014d Senki Sorette Oishii no?",
+        "id": "15999",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Inugami-san to Nekoyama-san",
+        "id": "15972",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Rowdy Sumo Wrestler Matsutaro!!",
+        "id": "15970",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Hero Bank",
+        "id": "15920",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Dragon Collection",
+        "id": "15914",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Oreca Battle",
+        "id": "15913",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Gigant Shooter Tsukasa",
+        "id": "15905",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Tamako Love Story",
+        "id": "15900",
+        "type": "movie",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Insufficient Direction",
+        "id": "15898",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "M3 the dark metal",
+        "id": "15897",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Mushishi: The Next Chapter",
+        "id": "15895",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Selector Infected Wixoss",
+        "id": "15894",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Blade & Soul",
+        "id": "15893",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "File of Young Kindaichi Returns",
+        "id": "15889",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Pretty Rhythm All Star Selection",
+        "id": "15888",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Lady Jewelpet",
+        "id": "15886",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "KutsuDaru.",
+        "id": "15880",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Heaven\u2019s Lost Property Final \u2013 The Movie: Eternally My Master",
+        "id": "15866",
+        "type": "movie",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "World Is Still Beautiful",
+        "id": "15853",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Ping Pong",
+        "id": "15852",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Atelier Escha & Logy: Alchemists of the Dusk Sky",
+        "id": "15842",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Kamigami no Asobi: Ludere deorum",
+        "id": "15828",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Love Live! School idol project",
+        "id": "15812",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Marvel Disk Wars: The Avengers",
+        "id": "15811",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "GJ Club@",
+        "id": "15810",
+        "type": "special",
+        "vintage": "2014-05"
+    },
+    {
+        "name": "Dai - Shogun - Great Revolution",
+        "id": "15807",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Daimidaler: Prince vs. Penguin Empire",
+        "id": "15803",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "If Her Flag Breaks",
+        "id": "15801",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Magica Wars",
+        "id": "15800",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Fairy Tail",
+        "id": "15799",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "PUCHIM@S 2",
+        "id": "15798",
+        "type": "ONA",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Mekakucity Actors",
+        "id": "15797",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Comic Artist and His Assistants",
+        "id": "15793",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Date A Live II",
+        "id": "15790",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Taka no Tsume 7 - Jo\u014d Heika no Joboob",
+        "id": "15789",
+        "type": "movie",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Majin Bone",
+        "id": "15785",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "No Game, No Life",
+        "id": "15784",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Captain Earth",
+        "id": "15773",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Persona 3 the Movie #2 Midsummer Knight's Dream",
+        "id": "15771",
+        "type": "movie",
+        "vintage": "2014-06"
+    },
+    {
+        "name": "Soul Eater Not!",
+        "id": "15770",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Black Bullet",
+        "id": "15769",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Riddle Story of Devil",
+        "id": "15767",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Yu-Gi-Oh! Arc-V",
+        "id": "15764",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "irregular at magic high school",
+        "id": "15763",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Eiga Crayon Shin-chan: Gachinko! Gyakush\u016b no Robo T\u014d-chan",
+        "id": "15762",
+        "type": "movie",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Nanana's Buried Treasure",
+        "id": "15759",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Brynhildr in the Darkness",
+        "id": "15757",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Kawai Complex Guide to Manors and Hostel Behavior",
+        "id": "15734",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "One Week Friends",
+        "id": "15721",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Is the order a rabbit?",
+        "id": "15718",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Baby Steps",
+        "id": "15714",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Dragonar Academy",
+        "id": "15707",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Corda d'Oro Blue Sky",
+        "id": "15701",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "JoJo's Bizarre Adventure: Stardust Crusaders",
+        "id": "15692",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Haikyu!!",
+        "id": "15683",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Chaika - The Coffin Princess",
+        "id": "15524",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Knights of Sidonia",
+        "id": "15496",
+        "type": "TV",
+        "vintage": "2014-04"
+    },
+    {
+        "name": "Saint Seiya: Legend of Sanctuary",
+        "id": "14017",
+        "type": "movie",
+        "vintage": "2014-06"
+    }
+]

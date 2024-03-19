@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Gatchaman The Movie",
+        "id": "6856",
+        "type": "movie",
+        "vintage": "1978-07"
+    },
+    {
+        "name": "Candy Candy - Candy no Natsu Yasumi",
+        "id": "3625",
+        "type": "movie",
+        "vintage": "1978-07"
+    },
+    {
+        "name": "Phoenix: Chapter of Dawn",
+        "id": "3342",
+        "type": "movie",
+        "vintage": "1978-08"
+    },
+    {
+        "name": "One-Million Year Trip: Bander Book",
+        "id": "3291",
+        "type": "special",
+        "vintage": "1978-08"
+    },
+    {
+        "name": "King Fang",
+        "id": "3103",
+        "type": "special",
+        "vintage": "1978-09"
+    },
+    {
+        "name": "Captain Harlock: Mystery of the Arcadia",
+        "id": "2969",
+        "type": "movie",
+        "vintage": "1978-07"
+    },
+    {
+        "name": "Farewell to Space Battleship Yamato",
+        "id": "2134",
+        "type": "movie",
+        "vintage": "1978-08"
+    },
+    {
+        "name": "Galaxy Express 999",
+        "id": "1361",
+        "type": "TV",
+        "vintage": "1978-09"
+    },
+    {
+        "name": "Adventures of the Little Prince",
+        "id": "1360",
+        "type": "TV",
+        "vintage": "1978-07"
+    },
+    {
+        "name": "Daikengo",
+        "id": "1292",
+        "type": "TV",
+        "vintage": "1978-07"
+    }
+]

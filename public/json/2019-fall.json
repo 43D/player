@@ -1,0 +1,602 @@
+[
+    {
+        "name": "From North Field",
+        "id": "26813",
+        "type": "ONA",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Sylvanian Families: Mini Story Clover",
+        "id": "26290",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Iya na Kao Sare Nagara Opantsu Misete Moraitai 2",
+        "id": "24646",
+        "type": "OAV",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Ponkotsu Quest",
+        "id": "24412",
+        "type": "ONA",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Zenryoku Kaihi Flag-chan!",
+        "id": "24231",
+        "type": "ONA",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "One Punch Man",
+        "id": "24088",
+        "type": "OAV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Senki Zessh\u014d Shinai Symphogear XV",
+        "id": "24070",
+        "type": "OAV",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Arknights",
+        "id": "23968",
+        "type": "ONA",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Road to You: Kioku ni Mau Konayuki",
+        "id": "23873",
+        "type": "ONA",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Eily wa \u014c-sama!",
+        "id": "23519",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Start",
+        "id": "23518",
+        "type": "ONA",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "\u014csu no B\u016b-chan",
+        "id": "23516",
+        "type": "special",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Arifureta - From Commonplace to World's Strongest",
+        "id": "23206",
+        "type": "OAV",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Midnight Occult Civil Servants",
+        "id": "23186",
+        "type": "OAV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "IDOLM@STER Cinderella Girls: Spin-off!",
+        "id": "23169",
+        "type": "ONA",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Why the Hell are You Here, Teacher!?",
+        "id": "23080",
+        "type": "OAV",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Baja no Studio: Baja no Mita Umi",
+        "id": "23078",
+        "type": "OAV",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Gaina Tamager",
+        "id": "23024",
+        "type": "ONA",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Yo-kai Watch! Jam: Yo-kai Gakuen Y - Neko wa Hero ni Nareru ka",
+        "id": "23006",
+        "type": "movie",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Lupin III: Prison of the Past",
+        "id": "23004",
+        "type": "special",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Sword Art Online: Alicization - War of Underworld Reflection",
+        "id": "22981",
+        "type": "special",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Haikyu!! LAND VS. AIR",
+        "id": "22972",
+        "type": "OAV",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Shiohi Girls Vongole Bianco",
+        "id": "22971",
+        "type": "ONA",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Yo-kai Gakuen Y: N to no S\u014dg\u016b",
+        "id": "22940",
+        "type": "TV",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Go Astro Boy Go!",
+        "id": "22688",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Ano Hi no Kokoro wo Toraete",
+        "id": "22684",
+        "type": "ONA",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Dino Girl Gauko",
+        "id": "22603",
+        "type": "ONA",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Disastrous Life of Saiki K.: Reawakened",
+        "id": "22601",
+        "type": "ONA",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Pok\u00e9mon Journeys: The Series",
+        "id": "22559",
+        "type": "TV",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Shinkansen Henkei Robo Shinkalion: Mirai Kara Shinsoku no ALFA-X",
+        "id": "22557",
+        "type": "movie",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Levius",
+        "id": "22547",
+        "type": "ONA",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Ani Ni Tsukeru Kusuri wa Nai! 3",
+        "id": "22546",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Coluboccoro",
+        "id": "22543",
+        "type": "movie",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Santa Company: Christmas no Himitsu",
+        "id": "22542",
+        "type": "movie",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "OBSOLETE",
+        "id": "22540",
+        "type": "ONA",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Seven Days War",
+        "id": "22539",
+        "type": "movie",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "My Hero Academia the Movie -Heroes: Rising-",
+        "id": "22537",
+        "type": "movie",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Taeko no Nichij\u014d",
+        "id": "22532",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "XL Boss",
+        "id": "22512",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Granblue Fantasy the Animation",
+        "id": "22508",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Null & Peta",
+        "id": "22507",
+        "type": "ONA",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "High School Prodigies Have It Easy Even In Another World",
+        "id": "22498",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "True Cooking Master Boy",
+        "id": "22490",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Yuruyuri",
+        "id": "22486",
+        "type": "OAV",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Tenka Hyakken",
+        "id": "22480",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Kimi dake ni Motetainda",
+        "id": "22479",
+        "type": "movie",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Zoids Wild Zero",
+        "id": "22468",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Hi Score Girl II",
+        "id": "22466",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Blade of the Immortal",
+        "id": "22465",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Aikatsu on Parade!",
+        "id": "22441",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Food Wars! Shokugeki no Soma: The Fourth Plate",
+        "id": "22395",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Kono Oto Tomare!: Sounds of Life",
+        "id": "22389",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Z/X Code reunion",
+        "id": "22388",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Days of Urashimasakatasen",
+        "id": "22386",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Kandagawa Jet Girls",
+        "id": "22385",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Fragtime",
+        "id": "22384",
+        "type": "OAV",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Chidori RSC",
+        "id": "22361",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Kemono Michi: Rise Up",
+        "id": "22360",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Phantasy Star Online 2: Episode Oracle",
+        "id": "22344",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Strike Witches: 501st JOINT FIGHTER WING Take Off!",
+        "id": "22342",
+        "type": "movie",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Fairy gone",
+        "id": "22341",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Sumikkogurashi \u2013 Good to be in the corner",
+        "id": "22310",
+        "type": "movie",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Lupin III THE FIRST",
+        "id": "22309",
+        "type": "movie",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Super Shiro",
+        "id": "22308",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Gundam Reconguista in G",
+        "id": "22302",
+        "type": "movie",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Gundam Build Divers Re:RISE",
+        "id": "22300",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Didn't I Say to Make My Abilities Average in the Next Life?!",
+        "id": "22283",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "We Never Learn: BOKUBEN",
+        "id": "22278",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "My Hero Academia",
+        "id": "22265",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "In This Corner (and Other Corners) of the World",
+        "id": "22258",
+        "type": "movie",
+        "vintage": "2019-12"
+    },
+    {
+        "name": "Ascendance of a Bookworm",
+        "id": "22255",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Star Twinkle Precure: Hoshi no Uta ni Omoi wo Komete",
+        "id": "22254",
+        "type": "movie",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "After School Dice Club",
+        "id": "22246",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Assassins Pride",
+        "id": "22217",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Val x Love",
+        "id": "22214",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Cautious Hero: The Hero Is Overpowered but Overly Cautious",
+        "id": "22213",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Ahiru no Sora",
+        "id": "22207",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Seven Deadly Sins: Imperial Wrath of The Gods",
+        "id": "22138",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Sword Art Online: Alicization - War of Underworld",
+        "id": "22044",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Special 7: Special Crime Investigation Unit",
+        "id": "22016",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Her Blue Sky",
+        "id": "22015",
+        "type": "movie",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Africa Salaryman",
+        "id": "22001",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Re:ZERO - Starting Life in Another World - The Frozen Bond",
+        "id": "21998",
+        "type": "OAV",
+        "vintage": "2019-11"
+    },
+    {
+        "name": "Outburst Dreamer Boys",
+        "id": "21982",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "No Guns Life",
+        "id": "21978",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Psycho-Pass 3",
+        "id": "21952",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Welcome to Demon School, Iruma-kun",
+        "id": "21927",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "BEASTARS",
+        "id": "21880",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Radiant",
+        "id": "21877",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Chihayafuru 3",
+        "id": "21851",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "ACTORS: Songs Connection",
+        "id": "21769",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Azur Lane",
+        "id": "21760",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Case File n\u00ba221: Kabukicho",
+        "id": "21556",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "ORESUKI: Are you the only one who loves me?",
+        "id": "21483",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Stand My Heroes: Piece of Truth",
+        "id": "21405",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Stars Align",
+        "id": "21283",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Fate/Grand Order -Absolute Demonic Front: Babylonia-",
+        "id": "21240",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Black Fox",
+        "id": "20802",
+        "type": "movie",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Babylon",
+        "id": "20775",
+        "type": "TV",
+        "vintage": "2019-10"
+    },
+    {
+        "name": "Saekano the Movie finale",
+        "id": "20467",
+        "type": "movie",
+        "vintage": "2019-10"
+    }
+]

@@ -1,0 +1,644 @@
+[
+    {
+        "name": "Dochamon Junior",
+        "id": "23258",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Four Seasons: F\u016bka to Nanami",
+        "id": "23254",
+        "type": "ONA",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Mini Hama: Minimum Hamatora",
+        "id": "23017",
+        "type": "TV",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Senki Zessh\u014d Symphogear GX: Senki Zessh\u014d Shinai Symphogear",
+        "id": "22567",
+        "type": "OAV",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Mini Van 2",
+        "id": "22408",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Pigtails",
+        "id": "18714",
+        "type": "movie",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Eiga Chibi Maruko-chan: Italia kara Kita Sh\u014dnen",
+        "id": "18666",
+        "type": "movie",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "File of Young Kindaichi Returns: The File of Inspector Akechi",
+        "id": "18000",
+        "type": "special",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Bottom Biting Bug",
+        "id": "17990",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "One Punch Man: Road to Hero",
+        "id": "17989",
+        "type": "OAV",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "One Punch Man",
+        "id": "17988",
+        "type": "OAV",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Jaku-San-Sei Million Arthur",
+        "id": "17958",
+        "type": "ONA",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Kodomo Keiji Memetan",
+        "id": "17957",
+        "type": "TV",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "One Piece Special \u2013 Adventure of Nebulandia",
+        "id": "17827",
+        "type": "special",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Mobile Suit Gundam Thunderbolt",
+        "id": "17825",
+        "type": "ONA",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Macross Delta",
+        "id": "17762",
+        "type": "TV",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "K\u014dkaku no Pandora",
+        "id": "17754",
+        "type": "special",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Fw:Hamatora",
+        "id": "17753",
+        "type": "movie",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Kare Baka: Wagahai no Kare wa Baka de R",
+        "id": "17747",
+        "type": "ONA",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Nanairo Kakumei",
+        "id": "17724",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Shin ATASHIn'CHI",
+        "id": "17691",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "World Trigger",
+        "id": "17677",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Pok\u00e9mon: Mega Evolution Special IV",
+        "id": "17654",
+        "type": "special",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Pok\u00e9mon XY & Z",
+        "id": "17650",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "DD Fist of the North Star II",
+        "id": "17646",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Owarimonogatari",
+        "id": "17645",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "JK Meshi!",
+        "id": "17644",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Brave Beats",
+        "id": "17643",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Neko no Dayan: Nihon e Iku",
+        "id": "17640",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Ketsuekigata-kun! 3",
+        "id": "17632",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Durarara!!\u00d72 Ten Gaiden!?",
+        "id": "17631",
+        "type": "OAV",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Kyoufu! Zombie Neko",
+        "id": "17630",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Peeping Life TV Season 1??",
+        "id": "17629",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Miss Monochrome - The Animation- 3",
+        "id": "17628",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "D\u014dshitemo Eto ni Hairitai",
+        "id": "17627",
+        "type": "ONA",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Cardfight!! Vanguard G GIRS Crisis",
+        "id": "17600",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Anime De Training! Ex",
+        "id": "17599",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Haikyu!! VS Akaten",
+        "id": "17580",
+        "type": "special",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Hantsu x Trash",
+        "id": "17579",
+        "type": "OAV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Kami-sama Minarai: Himitsu no Cocotama",
+        "id": "17557",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Tobidasu PriPara ~Miina de Mezase! Idol Grand Prix",
+        "id": "17553",
+        "type": "movie",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Teeky\u016b",
+        "id": "17543",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Fist of the North Star: Strawberry Flavor",
+        "id": "17542",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Strike The Blood",
+        "id": "17540",
+        "type": "OAV",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "File of Young Kindaichi Returns",
+        "id": "17530",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Garo: Crimson Moon",
+        "id": "17526",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Komori-san Can't Decline",
+        "id": "17485",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Shokugeki no S\u014dma: Takumi no Shitamachi Gassen",
+        "id": "17483",
+        "type": "special",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Seraph of the End: Battle in Nagoya",
+        "id": "17482",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Owari no Seraph",
+        "id": "17481",
+        "type": "special",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Tantei Team KZ Jiken Note",
+        "id": "17480",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Attack on Titan: Junior High",
+        "id": "17449",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Comet Lucifer",
+        "id": "17386",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Tokyo Ghoul: Pinto",
+        "id": "17375",
+        "type": "OAV",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Laws of the Universe Part 0",
+        "id": "17373",
+        "type": "movie",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Monster Strike the Animation",
+        "id": "17368",
+        "type": "ONA",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Wake Up, Girls! Beyond the Bottom",
+        "id": "17367",
+        "type": "movie",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Futs\u016b no Joshik\u014dsei ga Locodol Yattemita",
+        "id": "17362",
+        "type": "OAV",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Go! Princess Pretty Cure the Movie Go! Go!! Gorgeous Triple Feature!!!",
+        "id": "17361",
+        "type": "movie",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Mobile Suit Gundam: Iron-Blooded Orphans",
+        "id": "17329",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Cyborg 009 Vs. Devilman",
+        "id": "17324",
+        "type": "OAV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Mr. Osomatsu",
+        "id": "17323",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Concrete Revolutio",
+        "id": "17260",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Onsen Y\u014dsei Hakone-chan",
+        "id": "17255",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Rainy Cocoa, Welcome to Rainy Color",
+        "id": "17241",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Yo-kai Watch: Enma Daioh to Itsutsu no Monogatari da Nyan!",
+        "id": "17214",
+        "type": "movie",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Kowabon",
+        "id": "17206",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Utawarerumono: The False Faces",
+        "id": "17186",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Ajin: Demi-Human - Compel",
+        "id": "17176",
+        "type": "movie",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Anti-Magic Academy: The 35th Test Platoon",
+        "id": "17157",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Fafner EXODUS",
+        "id": "17124",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Beautiful Bones: Sakurako\u2019s Investigation",
+        "id": "17083",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Chivalry of a Failed Knight",
+        "id": "17062",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Young Black Jack",
+        "id": "17057",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Lovely Muuuuuuuco!",
+        "id": "17043",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Hacka Doll the Animation",
+        "id": "17034",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Hero Company",
+        "id": "17026",
+        "type": "OAV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Magical Somera-chan",
+        "id": "16973",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Asterisk War: The Academy City on the Water",
+        "id": "16943",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Kagewani",
+        "id": "16919",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Noragami Aragoto",
+        "id": "16906",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "S\u014dsei no Aquarion Love",
+        "id": "16903",
+        "type": "OAV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "High Speed! -Free! Starting Days-",
+        "id": "16898",
+        "type": "movie",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Valkyrie Drive: Mermaid",
+        "id": "16893",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "STARMYU",
+        "id": "16892",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Testament of Sister New Devil BURST",
+        "id": "16888",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Girls und Panzer der Film",
+        "id": "16864",
+        "type": "movie",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Yuruyuri San Hai!",
+        "id": "16843",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "One Punch Man",
+        "id": "16840",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Lance N' Masques",
+        "id": "16827",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Aikatsu!",
+        "id": "16824",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Big Order",
+        "id": "16796",
+        "type": "OAV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Momokuri",
+        "id": "16788",
+        "type": "ONA",
+        "vintage": "2015-12"
+    },
+    {
+        "name": "Dance with Devils",
+        "id": "16781",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "K: Return of Kings",
+        "id": "16771",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Garakowa -Restore the World-",
+        "id": "16768",
+        "type": "movie",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Aoki Hagane no Arpeggio: Ars Nova Cadenza",
+        "id": "16741",
+        "type": "movie",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Is the order a rabbit??",
+        "id": "16737",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Shomin Sample",
+        "id": "16726",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Aria the Scarlet Ammo AA",
+        "id": "16692",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Haikyu!! Second Season",
+        "id": "16660",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Perfect Insider",
+        "id": "16594",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Empire of Corpses",
+        "id": "16585",
+        "type": "movie",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Harmony",
+        "id": "16580",
+        "type": "movie",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Heavy Object",
+        "id": "16322",
+        "type": "TV",
+        "vintage": "2015-10"
+    },
+    {
+        "name": "Digimon Adventure tri.: Reunion",
+        "id": "16310",
+        "type": "movie",
+        "vintage": "2015-11"
+    },
+    {
+        "name": "Magical Suite Prism Nana",
+        "id": "14918",
+        "type": "OAV",
+        "vintage": "2015-11"
+    }
+]

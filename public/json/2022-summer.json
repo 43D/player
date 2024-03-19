@@ -1,0 +1,572 @@
+[
+    {
+        "name": "Ple Ple Pleiades 4",
+        "id": "28393",
+        "type": "ONA",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Girl Meets a Boy and a Robot",
+        "id": "27065",
+        "type": "movie",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Mobile Suit Gundam: The Witch from Mercury - Prologue",
+        "id": "26854",
+        "type": "special",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Delicious Party Precure: Watashi dake no Oko-sama Lunch",
+        "id": "26338",
+        "type": "movie",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Blue Archive: 1.5th Anniversary Short Animation",
+        "id": "26311",
+        "type": "ONA",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Chibiham, Juicy & Me",
+        "id": "26298",
+        "type": "movie",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Ahare! Meisaku-kun Ry\u016bg\u016bch\u016b-hen",
+        "id": "26244",
+        "type": "ONA",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Tekken: Bloodline",
+        "id": "26231",
+        "type": "ONA",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Chickip Dancers",
+        "id": "26194",
+        "type": "TV",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Futsal Boys!!!!!",
+        "id": "26160",
+        "type": "OAV",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Ganbare! Choshu-kun",
+        "id": "26156",
+        "type": "TV",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Ohiru no Shocker-san",
+        "id": "26105",
+        "type": "TV",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Nanashi Kaidan",
+        "id": "26099",
+        "type": "TV",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Breaking The Wall",
+        "id": "26088",
+        "type": "ONA",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Duel Masters Win",
+        "id": "26081",
+        "type": "TV",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Entanime",
+        "id": "26075",
+        "type": "ONA",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Eiga Delicious Party\u2661Precure Yume Miru \u2661 Okosama Lunch",
+        "id": "26065",
+        "type": "movie",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Ani ni Tsukeru Kusuri wa Nai!",
+        "id": "26035",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Fudanshi Sh\u014dkan: Isekai de Shinj\u016b ni Hameraremashita",
+        "id": "26034",
+        "type": "ONA",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Sakuretsu! Amabie-Hime",
+        "id": "25952",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Turtle's Shell Is a Human's Ribs",
+        "id": "25949",
+        "type": "movie",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Saint Seiya: Knights of the Zodiac - Battle for Sanctuary -",
+        "id": "25948",
+        "type": "ONA",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Kawaii Tanuki mo Raku ja nai",
+        "id": "25910",
+        "type": "ONA",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "5-Oku-Nen Button",
+        "id": "25835",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Midori no Makibao",
+        "id": "25815",
+        "type": "OAV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Doomsday With My Dog",
+        "id": "25813",
+        "type": "ONA",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Obey Me!",
+        "id": "25787",
+        "type": "ONA",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Cyberpunk: Edgerunners",
+        "id": "25775",
+        "type": "ONA",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "BanG Dream! Morfonication",
+        "id": "25749",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Smile of the Arsnotoria the Animation",
+        "id": "25724",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Maid I Hired Recently Is Mysterious",
+        "id": "25701",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Legend of the Galactic Heroes: Die Neue These - Intrigue",
+        "id": "25693",
+        "type": "movie",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "iii icecrin 2",
+        "id": "25684",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "KJ File",
+        "id": "25662",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Nights with a Cat",
+        "id": "25574",
+        "type": "TV",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Aikatsu! 10th Story ~Mirai e no Starway~",
+        "id": "25561",
+        "type": "movie",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Arifureta - From Commonplace to World's Strongest",
+        "id": "25517",
+        "type": "OAV",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Engage Kiss",
+        "id": "25474",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Shine on! Bakumatsu Bad Boys",
+        "id": "25470",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Orient",
+        "id": "25467",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "D4DJ Double Mix",
+        "id": "25432",
+        "type": "special",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Osomatsu-san ~Hipipo-Zoku to Kagayaku Kajitsu~",
+        "id": "25420",
+        "type": "movie",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Vermeil in Gold",
+        "id": "25419",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Cardfight!! Vanguard will+Dress",
+        "id": "25416",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Classroom of the Elite II",
+        "id": "25370",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Yurei Deco",
+        "id": "25369",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Black Summoner",
+        "id": "25360",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Extreme Hearts",
+        "id": "25311",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Chimimo",
+        "id": "25264",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Prima Doll",
+        "id": "25242",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Lucifer and the Biscuit Hammer",
+        "id": "25217",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Harem in the Labyrinth of Another World",
+        "id": "25141",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Teppen\u2014!!!!!!!!!!!!!!! Laughing 'til you Cry",
+        "id": "25113",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Lycoris Recoil",
+        "id": "25104",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Sasaki and Miyano",
+        "id": "25083",
+        "type": "OAV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Dr. Stone: Ryusui",
+        "id": "25069",
+        "type": "special",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Tunnel to Summer, the Exit of Goodbyes",
+        "id": "25056",
+        "type": "movie",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Utano\u2606Princesama\u266a Maji Love ST\u2606RISH Tours: Tabi no Hajimari",
+        "id": "24998",
+        "type": "special",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Phantom of the Idol",
+        "id": "24996",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Utawarerumono: Mask of Truth",
+        "id": "24991",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "One Piece Film Red",
+        "id": "24981",
+        "type": "movie",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Shoot! Goal to the Future",
+        "id": "24974",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Call of the Night",
+        "id": "24963",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Kakegurui twin",
+        "id": "24957",
+        "type": "ONA",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Shine Post",
+        "id": "24908",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Love Live! Superstar!!",
+        "id": "24897",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Tatami Time Machine Blues",
+        "id": "24871",
+        "type": "ONA",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Prince of Tennis II: U-17 World Cup",
+        "id": "24846",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Gekij\u014d-ban Aikatsu Planet!",
+        "id": "24816",
+        "type": "movie",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Drifting Home",
+        "id": "24791",
+        "type": "movie",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Tsurune The Movie: The First Shot",
+        "id": "24722",
+        "type": "movie",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Shadows House",
+        "id": "24715",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Yakuza's Guide to Babysitting",
+        "id": "24708",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Luminous Witches",
+        "id": "24669",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Hanabichan The Girl Who Popped Out of the Game World",
+        "id": "24611",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "My Master Has No Tail",
+        "id": "24601",
+        "type": "TV",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "My Stepmom's Daughter Is My Ex",
+        "id": "24548",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Caressing My Hibernating Bear",
+        "id": "24540",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Parallel World Pharmacy",
+        "id": "24536",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "When Will Ayumu Make His Move?",
+        "id": "24504",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Backflip!!",
+        "id": "24478",
+        "type": "movie",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Uncle From Another World",
+        "id": "24466",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Overlord IV",
+        "id": "24364",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Made in Abyss: The Golden City of the Scorching Sun",
+        "id": "24357",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Zannen na Ikimono Jiten",
+        "id": "24304",
+        "type": "movie",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "FUUTO PI",
+        "id": "24218",
+        "type": "TV",
+        "vintage": "2022-08"
+    },
+    {
+        "name": "Laid-Back Camp The Movie",
+        "id": "24214",
+        "type": "movie",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Utano\u2606Princesama Maji LOVE ST\u2606RISH Tours",
+        "id": "24200",
+        "type": "movie",
+        "vintage": "2022-09"
+    },
+    {
+        "name": "Devil Is a Part-Timer!!",
+        "id": "24107",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Rent-A-Girlfriend",
+        "id": "24095",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Dropkick on My Devil! X",
+        "id": "24077",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Tokyo Mew Mew New",
+        "id": "24015",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? IV",
+        "id": "24004",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "My Isekai Life",
+        "id": "24003",
+        "type": "TV",
+        "vintage": "2022-07"
+    },
+    {
+        "name": "Musasino!",
+        "id": "19852",
+        "type": "TV",
+        "vintage": "2022-07"
+    }
+]

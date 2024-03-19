@@ -1,10 +1,39 @@
+import { useEffect, useState } from "react";
 import HomeNav from "../Home/HomeNav";
 
 function SeasonIndex() {
+    const [year, setYear] = useState('2024');
+    const [season, setSeason] = useState('all');
+    const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => setYear(event.target.value);
+    const handleSeasonChange = (event: React.ChangeEvent<HTMLSelectElement>) => setSeason(event.target.value);
+
     const yearOptions = [];
     // last id: 32502
-    for (let year = 2023; year >= 1953; year--)
-        yearOptions.push(<option value={year}>{year}</option>);
+    for (let y = 2023; y >= 1953; y--)
+        yearOptions.push(<option key={"year" + y} value={y}>{y}</option>);
+
+
+    useEffect(() => {
+        console.log(`/player/json/${year}`)
+        run();
+    }, [year, season]);
+
+    const run = async () => {
+        const data = await getFileData(`/player/json/${year}.json`);
+        console.log(data);
+    }
+    const getFileData = async (url: string) => {
+        return await fetch(url)
+            .then(response => {
+                if (!response.ok)
+                    throw new Error('Network response was not ok');
+                return response.json();
+            }).then(data => {
+                return data;
+            }).catch(error => {
+                return [];
+            });
+    }
 
     return (
         <div id="display-main" className="container-fluid displays">
@@ -17,11 +46,11 @@ function SeasonIndex() {
                 </div>
                 <div className="col-12">
                     <div className="input-group mb-3">
-                        <label className="input-group-text" htmlFor="inputGroupSelect01">Year</label>
-                        <select className="form-select" id="inputGroupSelect01">
+                        <label className="input-group-text" htmlFor="inputYear">Year</label>
+                        <select className="form-select" id="inputYear" value={year} onChange={handleYearChange}>
                             <option value="0">No date</option>
                             <option value="2025">2025</option>
-                            <option value="2024" selected>2024</option>
+                            <option value="2024">2024</option>
                             {yearOptions}
                             <option value="1950">1950</option>
                             <option value="1949">1949</option>
@@ -46,9 +75,9 @@ function SeasonIndex() {
                             <option value="1918">1918</option>
                             <option value="1917">1917</option>
                         </select>
-                        <label className="input-group-text" htmlFor="inputGroupSelect01">Season</label>
-                        <select className="form-select" id="inputGroupSelect01">
-                            <option value="all" selected>All</option>
+                        <label className="input-group-text" htmlFor="inputSeason">Season</label>
+                        <select className="form-select" id="inputSeason" value={season} onChange={handleSeasonChange}>
+                            <option value="all">All</option>
                             <option value="winter">Winter</option>
                             <option value="spring">Spring</option>
                             <option value="summer">Summer</option>

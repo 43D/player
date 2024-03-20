@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import AnimeInfo from '../../type/AnimeInfo';
+import { useNavigate } from 'react-router-dom';
 
 interface AnimeProps {
     animeMal: AnimeInfo | null;
@@ -9,6 +10,12 @@ interface AnimeProps {
 type link = {
     name: string;
     url: string;
+}
+
+type related = {
+    id: string;
+    type: string;
+    name: string;
 }
 
 function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
@@ -29,7 +36,9 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
     const [myAnimeList, setMyAnimeList] = useState<string>("");
     const [myAnimeListId, setMyAnimeListId] = useState<string>("");
     const [annId, setANNId] = useState<string>("");
-    const [relatedNextIds, setRelatedNextIds] = useState<string[]>([]);
+    const [relatedNextIds, setRelatedNextIds] = useState<related[]>([]);
+    const [relatedNextIdsObserver, setRelatedNextIdsObserver] = useState<number>(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setInfoAnn();
@@ -38,19 +47,34 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
 
     useEffect(() => {
         if (relatedNextIds.length > 0) {
-            const endpoint = "https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=" + relatedNextIds.join('&anime=');
+            const endpoint = "https://cdn.animenewsnetwork.com/encyclopedia/api.xml?" + relatedNextIds.map(item => `anime=${item.id}`).join('&');
 
             setTimeout(() => {
                 fetch(endpoint)
                     .then(response => response.text())
                     .then(data => {
-                        console.log(data);
+                        updateNamesFromXML(data);
                     })
                     .catch(error => console.error('Erro ao buscar dados:', error));
             }, 700);
         }
 
-    }, [relatedNextIds]);
+    }, [relatedNextIdsObserver]);
+
+    const updateNamesFromXML = (xmlString: string) => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+        const animeElements = xmlDoc.getElementsByTagName('anime');
+        const animeData = Array.from(animeElements).map(anime => ({
+            id: anime.getAttribute('id') || '',
+            name: anime.getAttribute('name') || ''
+        }));
+
+        setRelatedNextIds(prevState => prevState.map(item => {
+            const anime = animeData.find(a => a.id === item.id);
+            return anime ? { ...item, name: anime.name } : item;
+        }));
+    }
 
     const setInfoAnn = () => {
         setPictureAnime(getImage());
@@ -62,9 +86,11 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
         setSynopsis(getByString('anime > info[type="Plot Summary"]'));
         setLinks(getWebSites());
         setStudios(getStudios());
-        const list = getRelatedNextIds('related-next');
-        if (list != null)
-            setRelatedNextIds(list as string[]);
+        const list = getRelatedNextIds();
+        if (list != null) {
+            setRelatedNextIds(list);
+            setRelatedNextIdsObserver(prev => prev + 1)
+        }
     }
 
     const setInfoMal = () => {
@@ -113,11 +139,22 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
         }
         return res;
     }
-    const getRelatedNextIds = (parse: string) => {
+    const getRelatedNextIds = () => {
         if (animeAnn) {
-            const selectors = animeAnn.querySelectorAll(parse);
-            const ids = Array.from(selectors).map(selector => selector.getAttribute('id'));
-            return ids;
+            const selectors = animeAnn.querySelectorAll("related-next");
+            const relatedData = Array.from(selectors).map(selector => ({
+                id: selector.getAttribute('id') || '',
+                type: selector.getAttribute('rel') || '',
+                name: '' // Como solicitado, name será uma string vazia
+            }));
+            const selectorsPrev = animeAnn.querySelectorAll("related-prev");
+            const relatedDataPrev = Array.from(selectorsPrev).map(selector => ({
+                id: selector.getAttribute('id') || '',
+                type: selector.getAttribute('rel') || '',
+                name: '' // Como solicitado, name será uma string vazia
+            }));
+
+            return relatedDataPrev.concat(relatedData);
         }
         return [];
     }
@@ -156,6 +193,15 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
 
     return (
         <div className='row'>
+            <div className="col-12 my-3">
+                <h4>Related next</h4>
+                <div className="list-group">
+                    {relatedNextIds.map(anime => (
+                        anime.name && (
+                            <button key={"list-season" + anime.id} onClick={() => navigate("/anime/" + anime.id)} type="button" className="list-group-item list-group-item-action">{`${anime.name} (${anime.type})`}</button>
+                        )))}
+                </div>
+            </div>
             <div className='col-12 col-md-4 col-xl-3 d-flex mb-3'>
                 <img className='cover-anime mx-auto ' src={pictureAnime} alt="cover" />
             </div>

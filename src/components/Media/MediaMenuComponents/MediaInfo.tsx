@@ -62,8 +62,9 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
     }
 
     const secondToTimer = (seconds: string) => {
+        const validSeconds = isNaN(Number(seconds)) ? 0 : Number(seconds);
         const data = new Date(0);
-        data.setSeconds(Number(seconds));
+        data.setSeconds(validSeconds);
         return data.toISOString().substr(14, 5);
     }
 

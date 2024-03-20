@@ -17,7 +17,7 @@ function HomeNav() {
             <button onClick={() => navigate("/playlist")} className={getClassName("playlist")}>Playlist</button>
             <button onClick={() => navigate("/listened")} className={getClassName("listened")}>Most listened</button>
             <button onClick={() => navigate("/song")} className={getClassName("song")}>My songs</button>
-            <button onClick={() => navigate("/season")} className={getClassName("season")}>Season Seletor</button>
+            <button onClick={() => navigate("/season")} className={getClassName("season")}>Season selector</button>
             <button onClick={() => navigate("/anime")} className={getClassName("anime")}>Animes</button>
             <button onClick={() => navigate("/artist")} className={getClassName("artist")}>Artists</button>
             <button onClick={() => navigate("/creator")} className={getClassName("creator")}>Composers/Arrangers</button>

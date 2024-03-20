@@ -27,10 +27,7 @@ This application uses the **AniSong Database API** as a base to function. Read m
 * Add an option to disable "Discovery"
 * Implement keyboard shortcuts for player and navigation
 * Copy link get the current url and the current server
-* Some types of requests in the API block profile pages unnecessarily, better handle failures and API (ANN & MAL API)
 * Save thumbnail links locally (decrease ANN API usage rate)
-* Add a section with a personalized playlist of anime from the season (homepage).
-* Inconsistency between title information and information page (type of anime, number of episodes)
 * Add discrete loading screens (sometimes you can exit by clicking buttons before the information is ready to be displayed)
 
 <hr>

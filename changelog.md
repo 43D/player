@@ -46,6 +46,7 @@
 ## (03/03/2024)
 * Importing playlist json 
 
+
 ## (14/03/2024)
 * Navigation Improvements (UI/UX)
 * Route Improvements
@@ -60,9 +61,17 @@
 * Fixed Prev/Next Song by System Media
 * Add keyPress support (BETA)
 
+
 ## (15/03/2024)
 * Update timer && timeline
 * Loading pages...
+
+
+## (19/03/2024)
+* Add Season Selector
+* Add Related next in profile anime information
+* Fixing a bug when playing a song, the site crashed
+
 
 
 <hr>

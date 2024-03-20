@@ -1,38 +1,105 @@
 import { useEffect, useState } from "react";
 import HomeNav from "../Home/HomeNav";
+import AnimeCardListSeason, { animeListType } from "./components/AnimeCardListSeason";
+import MessageCom from "../MessageCom";
 
 function SeasonIndex() {
     const [year, setYear] = useState('2024');
     const [season, setSeason] = useState('all');
+    const [componentList, setComponentList] = useState<JSX.Element[]>([]);
+
     const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => setYear(event.target.value);
     const handleSeasonChange = (event: React.ChangeEvent<HTMLSelectElement>) => setSeason(event.target.value);
 
-    const yearOptions = [];
+    const yearsNaoOrdenados = [1950, 1949, 1948, 1947, 1946, 1944, 1943, 1942, 1939, 1936, 1935, 1933, 1932, 1931, 1930, 1929, 1928, 1926, 1925, 1924, 1918, 1917]
+    const yearsGenerate = [] as number[];
+    const yearOptions = [] as JSX.Element[];
     // last id: 32502
-    for (let y = 2023; y >= 1953; y--)
-        yearOptions.push(<option key={"year" + y} value={y}>{y}</option>);
-
-
+    for (let y = 2025; y >= 1953; y--) yearsGenerate.push(y);
+    const yearsOlds = yearsGenerate.concat(yearsNaoOrdenados);
+    yearsOlds.forEach((v) => yearOptions.push(<option key={"year" + v} value={v}>{v}</option>));
     useEffect(() => {
-        console.log(`/player/json/${year}`)
-        run();
+        setComponentList([<MessageCom key={"434545"} msg="loading..." />]);
+        searchSeason()
     }, [year, season]);
 
-    const run = async () => {
-        const data = await getFileData(`/player/json/${year}.json`);
-        console.log(data);
+    const searchSeason = async () => {
+        switch (year) {
+            case "all":
+                searchSeasonAllYear();
+                break;
+            case "0":
+                searchSeasonUnrelaese();
+                break;
+            default:
+                searchSeasonByYear();
+                break;
+        }
+        // const data = await getFileData(`/player/json/${year}.json`);
     }
-    const getFileData = async (url: string) => {
+
+    const getYearString = (yearS: string) => `/player/json/${yearS}.json`;
+
+    const getYearAndSeasonString = (yearS: string, seasonS: string) => `/player/json/${yearS}-${seasonS}.json`;
+
+    const searchSeasonAllYear = () => {
+        const links = [] as string[];
+        if (season === "all") {
+            yearsOlds.forEach((v) => {
+                links.push(getYearString(String(v)));
+                links.push(getYearAndSeasonString(String(v), "winter"));
+                links.push(getYearAndSeasonString(String(v), "spring"));
+                links.push(getYearAndSeasonString(String(v), "summer"));
+                links.push(getYearAndSeasonString(String(v), "fall"));
+            });
+        } else {
+            links.push(getYearString(season));
+        }
+        searchByListLinks(links);
+    }
+
+    const searchSeasonUnrelaese = () => {
+        const links = [getYearString("no_date")]
+        searchByListLinks(links);
+    }
+
+    const searchSeasonByYear = () => {
+        const links = [] as string[];
+        if (season === "all") {
+            links.push(getYearString(String(year)));
+            links.push(getYearAndSeasonString(String(year), "winter"));
+            links.push(getYearAndSeasonString(String(year), "spring"));
+            links.push(getYearAndSeasonString(String(year), "summer"));
+            links.push(getYearAndSeasonString(String(year), "fall"));
+        } else {
+            links.push(getYearAndSeasonString(String(year), season));
+        }
+        searchByListLinks(links);
+    }
+
+    const searchByListLinks = async (links: string[]) => {
+        const listEl = [] as JSX.Element[];
+        for (let index in links) {
+            const result = await getFileData(links[index]);
+            if (result.length > 0) {
+                const el = <AnimeCardListSeason key={"list-" + links[index]} title={links[index]} list={result} />;
+                listEl.push(el);
+            }
+        }
+        setComponentList(listEl);
+    }
+
+    const getFileData = async (url: string): Promise<animeListType[]> => {
         return await fetch(url)
             .then(response => {
                 if (!response.ok)
                     throw new Error('Network response was not ok');
-                return response.json();
+                return response.json() as Promise<animeListType[]>;
             }).then(data => {
                 return data;
             }).catch(error => {
-                console.log(error);
-                return [];
+                error;
+                return [] as animeListType[];
             });
     }
 
@@ -50,34 +117,11 @@ function SeasonIndex() {
                         <label className="input-group-text" htmlFor="inputYear">Year</label>
                         <select className="form-select" id="inputYear" value={year} onChange={handleYearChange}>
                             <option value="0">No date</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
+                            <option value="all">All</option>
                             {yearOptions}
-                            <option value="1950">1950</option>
-                            <option value="1949">1949</option>
-                            <option value="1948">1948</option>
-                            <option value="1947">1947</option>
-                            <option value="1946">1946</option>
-                            <option value="1944">1944</option>
-                            <option value="1943">1943</option>
-                            <option value="1942">1942</option>
-                            <option value="1939">1939</option>
-                            <option value="1936">1936</option>
-                            <option value="1935">1935</option>
-                            <option value="1933">1933</option>
-                            <option value="1932">1932</option>
-                            <option value="1931">1931</option>
-                            <option value="1930">1930</option>
-                            <option value="1929">1929</option>
-                            <option value="1928">1928</option>
-                            <option value="1926">1926</option>
-                            <option value="1925">1925</option>
-                            <option value="1924">1924</option>
-                            <option value="1918">1918</option>
-                            <option value="1917">1917</option>
                         </select>
                         <label className="input-group-text" htmlFor="inputSeason">Season</label>
-                        <select className="form-select" id="inputSeason" value={season} onChange={handleSeasonChange}>
+                        <select className="form-select" disabled={year === "0"} id="inputSeason" value={season} onChange={handleSeasonChange}>
                             <option value="all">All</option>
                             <option value="winter">Winter</option>
                             <option value="spring">Spring</option>
@@ -86,6 +130,7 @@ function SeasonIndex() {
                         </select>
                     </div>
                 </div>
+                {componentList}
             </div>
         </div>
     );

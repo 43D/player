@@ -193,15 +193,17 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
 
     return (
         <div className='row'>
-            <div className="col-12 my-3">
-                <h4>Related next</h4>
-                <div className="list-group">
-                    {relatedNextIds.map(anime => (
-                        anime.name && (
-                            <button key={"list-season" + anime.id} onClick={() => navigate("/anime/" + anime.id)} type="button" className="list-group-item list-group-item-action">{`${anime.name} (${anime.type})`}</button>
-                        )))}
+            {relatedNextIds.length > 0 && <>
+                <div className="col-12 my-3">
+                    <h4>Related</h4>
+                    <div className="list-group">
+                        {relatedNextIds.map(anime => (
+                            anime.name && (
+                                <button key={"list-season" + anime.id} onClick={() => navigate("/anime/" + anime.id)} type="button" className="list-group-item list-group-item-action">{`${anime.name} (${anime.type})`}</button>
+                            )))}
+                    </div>
                 </div>
-            </div>
+            </>}
             <div className='col-12 col-md-4 col-xl-3 d-flex mb-3'>
                 <img className='cover-anime mx-auto ' src={pictureAnime} alt="cover" />
             </div>
@@ -272,13 +274,6 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
                                         <span className='fw-bold'>Synopsis:</span>
                                         <br />
                                         {synopsis}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colSpan={6}>
-                                        <span className='fw-bold'>related-next:</span>
-                                        <br />
-                                        a
                                     </td>
                                 </tr>
                             </tbody>

@@ -266,8 +266,11 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
         json.playIndex += 1;
         if (queue.length == json.playIndex) {
             json.playIndex = 0;
-            if (!json.loop)
+            if (!json.loop) {
+                json.played = false;
+                store.setConfig(json);
                 return;
+            }
         }
 
         json.playNowId = queue[json.playIndex];

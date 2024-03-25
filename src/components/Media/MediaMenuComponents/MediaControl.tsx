@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useRef, useState } from "react";
 import InterfaceMediaControl from "../../../type/InterfaceMediaControl";
 import PagesType from "../../../type/PagesType";
 import ConfigType from "../../../type/ConfigType";
+import { KeyListenerPlayer } from "../../utils/KeyListenerPlayer";
 
 type menuType = {
     pagesProps: () => PagesType;
@@ -54,6 +55,29 @@ function MediaControl({ pagesProps, control, store }: menuType) {
         control().setVolume(Number(value));
     }
 
+    const changeVolumeByValue = (value: number) => {
+        setVolumeValue(prev => {
+            let volume = 0;
+            const number = Number(prev);
+            volume = number - value;
+            if (volume < 0)
+                volume = 0;
+            else if (volume > 100)
+                volume = 100;
+            if (mutedBtn.current)
+                mutedBtn.current.className = (String(volume) == "0")
+                    ? 'mx-2 btn btn-danger text-light border rounded-circle'
+                    : 'mx-2 btn btn-dark text-light border rounded-circle';
+
+            control().setVolume(volume);
+
+            return String(volume);
+        });
+    }
+
+    const moreVolume = () => changeVolumeByValue(5);
+    const lessVolume = () => changeVolumeByValue(-5);
+
     const changeMute = () => {
         if (volumeBar.current) {
             const value = volumeBar.current?.value;
@@ -72,17 +96,14 @@ function MediaControl({ pagesProps, control, store }: menuType) {
     }
 
     const loopQueue = () => {
-        let status = true;
-        if (loopStatus)
-            status = false;
-
-        if (loopBtn.current)
-            loopBtn.current.className = (status)
-                ? "w-100 btn btn-success text-light"
-                : "w-100 btn btn-dark text-light";
-
-        pagesProps().loopQueue(status);
-        setLoopStatus(status);
+        setLoopStatus(prev => {
+            if (loopBtn.current)
+                loopBtn.current.className = (!prev)
+                    ? "w-100 btn btn-success text-light"
+                    : "w-100 btn btn-dark text-light";
+            pagesProps().loopQueue(!prev);
+            return !prev;
+        });
     }
 
     const ShuffleQueue = () => {
@@ -108,6 +129,16 @@ function MediaControl({ pagesProps, control, store }: menuType) {
         if (playBtn.current)
             playBtn.current.className = config.played ? 'bi bi-pause' : 'bi bi-play';
     }
+
+    const keyConfig = {
+        "ArrowUp": lessVolume,
+        "ArrowDown": moreVolume,
+        "l": loopQueue,
+        "m": changeMute,
+    }
+
+    for (let [key, action] of Object.entries(keyConfig))
+        KeyListenerPlayer(key, action)
 
     return (
         <div className="col-12 col-md-5 my-1 col-lg-4 col-xl-3 d-flex justify-content-center align-items-center">

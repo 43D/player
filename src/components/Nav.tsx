@@ -22,7 +22,7 @@ function Nav() {
     };
 
     return (
-        <div className="fixed-top text-light" id="top-menu">
+        <div className="sticky-top text-light">
             <nav className="navbar navbar-expand-md">
                 <div className="container-fluid">
                     <Link className="navbar-brand btn" to={"/"} >

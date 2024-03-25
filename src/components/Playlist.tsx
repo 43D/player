@@ -159,7 +159,7 @@ function Playlist({ pageProps, dbProp }: idType) {
 
     return (
         <div id="display-main" className="container-fluid displays">
-            <div className="App pt-2 pb-4">
+            <div className="App pb-4">
                 <div className="row">
                     {<HomeNav />}
                     <div className="col-12 d-flex align-items-center">

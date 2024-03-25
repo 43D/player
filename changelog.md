@@ -73,6 +73,12 @@
 * Fixing a bug when playing a song, the site crashed
 
 
+## (25/03/2024)
+* Fixed bug that caused pagination buttons to redirect to home.
+* Layout update
+* Button Interaction 80% Ready
+
+
 
 <hr>
 

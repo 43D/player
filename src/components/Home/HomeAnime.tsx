@@ -81,7 +81,7 @@ function HomeAnime({ dbProp }: pageProps) {
                     <h4>All animes found...</h4>
                 </div>
                 {componentPages}
-                <div className="row p-0">
+                <div className="row">
                     {component}
                 </div>
             </div>

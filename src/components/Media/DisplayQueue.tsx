@@ -4,6 +4,7 @@ import ConfigType from "../../type/ConfigType";
 import DBType from "../../type/DBType";
 import PagesType from "../../type/PagesType";
 import AnimeSongQueueCard from "../Card/AnimeSongQueueCard";
+import { KeyListenerPlayer } from "../utils/KeyListenerPlayer";
 
 type displayType = {
     show: boolean;
@@ -52,6 +53,20 @@ function DisplayQueue({ queueControllProp, show, store, dbProp, pageProps }: dis
         setComponents(list);
     }
 
+    const skipFiveSecond = () => { }
+
+    const prevFiveSecond = () => { }
+
+    const fullScreenVideo = () => { }
+
+    const keyConfig = {
+        "ArrowRight": skipFiveSecond,
+        "ArrowLeft": prevFiveSecond,
+        "f": fullScreenVideo
+    }
+
+    for (let [key, action] of Object.entries(keyConfig))
+        KeyListenerPlayer(key, action)
 
     return (
         <div id="display-queue" style={componentStyle} className="container-fluid fixed-top displays p-0 m-0">

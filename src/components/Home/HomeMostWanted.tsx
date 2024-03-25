@@ -35,7 +35,7 @@ function HomeMostWanted({ pageProps, dbProp }: pageProps) {
 
     return (
         <div id="display-main" className="container-fluid displays">
-            <div className="row justify-content-center mt-3">
+            <div className="row justify-content-center">
                 {<HomeNav />}
                 <div className="col-12">
                     <h4>Most Listened songs</h4>

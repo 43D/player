@@ -3,6 +3,7 @@ import InterfaceMediaControl from "../../../type/InterfaceMediaControl";
 import InterfaceMediaTimeline from "../../../type/InterfaceMediaTimeline";
 import DBType from "../../../type/DBType";
 import { useNavigate } from "react-router-dom";
+import { KeyListenerPlayer } from "../../utils/KeyListenerPlayer";
 
 type menuType = {
     control: () => InterfaceMediaControl;
@@ -19,6 +20,8 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
     const [artistLink, setArtistLink] = useState<string>("#");
 
     const timeLineInput = useRef<HTMLInputElement | null>(null);
+    const animeName = useRef<HTMLParagraphElement | null>(null);
+    const artistName = useRef<HTMLParagraphElement | null>(null);
 
     useEffect(() => {
         if (timeLineInput.current) {
@@ -57,9 +60,9 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
         const idArt = (song.artists[0]) ? song.artists[0].id : 0;
         setAnimeLink("/anime/" + song.annId);
         setArtistLink("/artist/" + idArt);
-
         // 
     }
+
 
     const secondToTimer = (seconds: string) => {
         const validSeconds = isNaN(Number(seconds)) ? 0 : Number(seconds);
@@ -72,6 +75,23 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
         setCurrentTime(String(Number(timeLineValue) * Number(durationValue) / 120000));
     }, [timeLineValue]);
 
+    const openAnime = () => {
+        if (animeName.current)
+            animeName.current.click();
+    }
+
+    const openArtist = () => {
+        if (artistName.current)
+            artistName.current.click();
+    }
+
+    const keyConfig = {
+        "x": openAnime,
+        "c": openArtist
+    }
+
+    for (let [key, action] of Object.entries(keyConfig))
+        KeyListenerPlayer(key, action)
 
     return (
         <div className="col-12 col-sm my-1">
@@ -82,8 +102,8 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
                 </div>
                 <input type="range" id="timeline-now" ref={timeLineInput} onChange={onChangeTime} className="ui-slider w-100" min="0" max="120000" value={timeLineValue} />
                 <div className="d-flex titule-bar-name text-center">
-                    <p className="m-0 p-0" id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(animeLink)}>「{titleAnime}」</p>
-                    <p className="m-0 p-0" id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(artistLink)}>【{titleArtist}】</p>
+                    <p ref={animeName} className="m-0 p-0" id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(animeLink)}>「{titleAnime}」</p>
+                    <p ref={artistName} className="m-0 p-0" id="name-bar" style={{ cursor: 'pointer' }} onClick={() => navigate(artistLink)}>【{titleArtist}】</p>
                 </div>
             </div>
         </div>

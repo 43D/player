@@ -1,6 +1,7 @@
 import { ChangeEvent } from "react";
 import PagesType from "../../../type/PagesType";
 import ConfigType from "../../../type/ConfigType";
+import { KeyListenerPlayer } from "../../utils/KeyListenerPlayer";
 
 type queueType = {
     pagesProps: () => PagesType;
@@ -19,6 +20,16 @@ function MediaQueue({ pagesProps, store }: queueType) {
         json.streaming = value;
         store.setConfig(json);
     }
+
+    const setQualityStreaming = (value: string) => {
+        const json = store.getConfig();
+        json.streaming = value;
+        store.setConfig(json);
+    }
+
+    const setAudioQuality = () => setQualityStreaming("0");
+    const set480Quality = () => setQualityStreaming("480");
+    const set720Quality = () => setQualityStreaming("720");
 
     const checkQualityStreaming = (quality: string) => {
         const json = store.getConfig();
@@ -40,6 +51,19 @@ function MediaQueue({ pagesProps, store }: queueType) {
         pagesProps().showVideo();
     }
 
+    const openQueueDisplay = () => {
+        pagesProps().openQueue();
+    }
+    const keyConfig = {
+        "q": openQueueDisplay,
+        "e": setAudioQuality,
+        "r": set480Quality,
+        "t": set720Quality
+    }
+
+    for (let [key, action] of Object.entries(keyConfig)) 
+        KeyListenerPlayer(key, action)
+
     return (
         <div className="col-12 col-lg-3 col-xl-2 d-flex justify-content-center align-items-center">
             <button className="btn btn-outline-dark text-light dropdown-toggle border rounded-pill"
@@ -48,7 +72,7 @@ function MediaQueue({ pagesProps, store }: queueType) {
             </button>
             <ul className="dropdown-menu dropdown-menu-start" id="menu-more" style={{ minWidth: "200px" }}>
                 <li>
-                    <button type="button" id="btn-quality-media" className="w-100 btn btn-dark text-light dropdown-toggle"
+                    <button type="button" id="btn-quality-media-menu" className="w-100 btn btn-dark text-light dropdown-toggle"
                         data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#menu-quality-media" aria-controls="menu-quality-media">
                         <i className="bi bi-badge-hd" /> Streaming quality
                     </button>

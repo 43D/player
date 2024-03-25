@@ -13,8 +13,7 @@ nav {
 }
 
 #display-main {
-  position: relative;
-  /* background-color: red; */
+  margin-bottom: 180px;
 }
 
 #display-media,
@@ -110,7 +109,6 @@ video {
 
 @media screen and (max-width: 372px) {
 
-  #display-main,
   #display-queue {
     top: 110px;
     margin-bottom: 300px;
@@ -130,7 +128,6 @@ video {
 
 @media screen and (min-width: 373px) and (max-width: 490px) {
 
-  #display-main,
   #display-queue {
     top: 64px;
     margin-bottom: 300px;
@@ -150,7 +147,6 @@ video {
 
 @media screen and (min-width: 491px) and (max-width: 767px) {
 
-  #display-main,
   #display-queue {
     top: 64px;
     margin-bottom: 275px;
@@ -170,7 +166,6 @@ video {
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
-  #display-main,
   #display-queue {
     top: 64px;
     margin-bottom: 229px;
@@ -196,7 +191,6 @@ video {
 
 @media screen and (min-width: 992px) {
 
-  #display-main,
   #display-queue {
     top: 64px;
     margin-bottom: 190px;
@@ -286,5 +280,8 @@ video {
   .yt-frame {
     height: calc(100vw / 16 * 9);
     width: 100%;
+  }
+  #display-main {
+    margin-bottom: 250px;
   }
 }

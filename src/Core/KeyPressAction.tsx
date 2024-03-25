@@ -1,10 +1,48 @@
+import ConfigType from "../type/ConfigType";
+import InterfaceMediaControl from "../type/InterfaceMediaControl";
 import PagesType from "../type/PagesType";
 
 type dependencias = {
+    store: {
+        getConfig: () => ConfigType;
+        setConfig: (data: ConfigType) => void;
+    };
+    control: () => InterfaceMediaControl;
     pageProps: () => PagesType;
 }
 
-export const KeyPressAction = ({ pageProps }: dependencias) => {
+export type KeyPressActionType = {
+    play: () => void;
+    volumeMore: () => void;
+    volumeLess: () => void;
+    fullScreenVideo: () => void;
+    nextSong: () => void;
+    prevSong: () => void;
+    LoopQueue: () => void;
+    muted: () => void;
+    shuffle: () => void;
+    showQueue: () => void;
+    getLink: () => void;
+    showQualityBtn: () => void;
+    setQualityAudio: () => void;
+    setQualityVideo480: () => void;
+    setQualityVideo720: () => void;
+    showVideo: () => void;
+    openAnime: () => void;
+    openArtist: () => void;
+    skipFiveSecond: () => void;
+    prevFiveSecond: () => void;
+}
+
+export const KeyPressAction = ({ store, control, pageProps }: dependencias) => {
+    console.log("fullScreenVideo");
+    console.log("showQueue");
+    console.log("prevFiveSecond");
+    console.log("skipFiveSecond");
+    console.log("setQualityVideo720");
+    console.log("setQualityVideo480");
+    console.log("setQualityAudio");
+    console.log("showQualityBtn");
 
     const checkInputText = () => {
         return !(document.activeElement instanceof HTMLInputElement);
@@ -12,7 +50,12 @@ export const KeyPressAction = ({ pageProps }: dependencias) => {
 
     const play = () => {
         console.log("play");
-        if (checkInputText()) { }
+        if (checkInputText()) {
+            const config = store.getConfig();
+            control().play(!config.played);
+            config.played = !config.played;
+            store.setConfig(config);
+        }
     }
 
     const volumeMore = () => {
@@ -56,12 +99,6 @@ export const KeyPressAction = ({ pageProps }: dependencias) => {
         console.log("shuffle");
         if (checkInputText())
             pageProps().shuffleQueue();
-    }
-
-    const showQueue = () => {
-        console.log("showQueue");
-        if (checkInputText())
-            pageProps().openQueue();
     }
 
     const getLink = () => {
@@ -126,7 +163,7 @@ export const KeyPressAction = ({ pageProps }: dependencias) => {
         LoopQueue,
         muted,
         shuffle,
-        showQueue,
+        // showQueue,
         getLink,
         showQualityBtn,
         setQualityAudio,

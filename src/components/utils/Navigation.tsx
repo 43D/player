@@ -52,11 +52,11 @@ function Navigation({ count, page, switchPage }: navigationInterface) {
             <div aria-label="Page navigation">
                 <ul className="pagination justify-content-center">
                     <li className="page-item">
-                        <a className="page-link" id="page-preview-click" onClick={previewPage} href="#">Previous</a>
+                        <button className="page-link" id="page-preview-click" onClick={previewPage}>Previous</button>
                     </li>
                     {component}
                     <li className="page-item">
-                        <a className="page-link" id="page-next-click" onClick={nextPage} href="#">Next</a>
+                        <button className="page-link" id="page-next-click" onClick={nextPage}>Next</button>
                     </li>
                 </ul>
             </div>

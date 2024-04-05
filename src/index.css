@@ -45,8 +45,8 @@ nav {
 }
 
 .cover-anime {
-  width: auto;
-  max-height: 240px;
+  width: 100%;
+  height: fit-content;
 }
 
 .feed-component {
@@ -184,7 +184,6 @@ video {
 
   .cover-anime {
     width: 100%;
-    max-height: none;
     height: fit-content;
   }
 }
@@ -209,7 +208,6 @@ video {
 
   .cover-anime {
     width: 100%;
-    max-height: none;
     height: fit-content;
   }
 }

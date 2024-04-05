@@ -87,6 +87,7 @@ function Anime({ pageProps, dbProp }: idType) {
         const animeInfomation = await feacthAnimeInfo().fetchAnimeInfoAnn(String(annId)) as Document;
         const releaseDateText = (animeInfomation.querySelector('anime > info[type="Vintage"]') as Element).textContent;
         const nameAnime = ((animeInfomation.querySelector('anime') as Element).getAttribute("name")) as string;
+        setNameJP(nameAnime);
         let titles = Array.from(animeInfomation.querySelectorAll('info[type="Main title"], info[type="Alternative title"]')).map(el => el.textContent) as string[];
         const year = (releaseDateText) ? releaseDateText.split("-")[0] : "1900";
         const animeEN = await feacthAnimeInfo().fetchAnimeInfoJikan(nameAnime, year) as AnimeInfo;

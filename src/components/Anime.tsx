@@ -36,6 +36,7 @@ function Anime({ pageProps, dbProp }: idType) {
     const [image, setImage] = useState<string>("https://43d.github.io/player/logo.png");
     const [showBTNs, setShowBTNs] = useState<boolean>(false);
     const [showBTNInformation, setShowBTNInformation] = useState<boolean>(false);
+    const [showInformationOnly, setShowInformationOnly] = useState<boolean>(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -50,10 +51,11 @@ function Anime({ pageProps, dbProp }: idType) {
     }, []);
 
     const searchAllSong = async () => {
+        setShowInformationOnly(false);
         try {
             const result = await feacthAniSong().fetchSongById(id);
             if (result.length > 0) {
-                searchAnimeInfo(result[0]);
+                searchAnimeInfo(result[0].annId);
                 setName(result[0].animeENName);
                 setNameJP(result[0].animeJPName);
                 setShowBTNs(true);
@@ -69,19 +71,26 @@ function Anime({ pageProps, dbProp }: idType) {
                 dbProp.saveSongList(result);
                 setResult(result);
             } else {
-                setComponent([<MessageCom key={"43"} msg="Songs not found..." />]);
+                setOnlyInformation();
             }
         } catch (error) {
             setComponent([<MessageCom key={"433"} msg="Api off-line" />]);
         }
     };
 
-    const searchAnimeInfo = async (song: JsonSong) => {
-        const animeInfomation = await feacthAnimeInfo().fetchAnimeInfoAnn(String(song.annId)) as Document;
+    const setOnlyInformation = async () => {
+        setComponent([<MessageCom key={"43"} msg="Songs not found..." />]);
+        await searchAnimeInfo(id);
+        setShowInformationOnly(true);
+    }
+    const searchAnimeInfo = async (annId: number) => {
+        const animeInfomation = await feacthAnimeInfo().fetchAnimeInfoAnn(String(annId)) as Document;
         const releaseDateText = (animeInfomation.querySelector('anime > info[type="Vintage"]') as Element).textContent;
-        const year = (releaseDateText) ? releaseDateText.split("-")[0] : "1900"
-        const animeEN = await feacthAnimeInfo().fetchAnimeInfoJikan(song.animeENName, year) as AnimeInfo;
-        const result = searchMatch(animeEN, year, song);
+        const nameAnime = ((animeInfomation.querySelector('anime') as Element).getAttribute("name")) as string;
+        let titles = Array.from(animeInfomation.querySelectorAll('info[type="Main title"], info[type="Alternative title"]')).map(el => el.textContent) as string[];
+        const year = (releaseDateText) ? releaseDateText.split("-")[0] : "1900";
+        const animeEN = await feacthAnimeInfo().fetchAnimeInfoJikan(nameAnime, year) as AnimeInfo;
+        const result = searchMatch(animeEN, year, titles);
 
         if (result) {
             const seasonMAl = (result.data[0].season) ? result.data[0].season : "";
@@ -90,11 +99,12 @@ function Anime({ pageProps, dbProp }: idType) {
             setNameSeason(`- ${seasonMAl.toUpperCase()} ${year} ${typeMAL}`);
         }
 
+        console.log(result);
         setComponentInfo([<AnimeInfomation key={"9787"} animeMal={result} animeAnn={animeInfomation} />]);
         setShowBTNInformation(true);
     }
 
-    const searchMatch = (anime: AnimeInfo, year: string, song: JsonSong): AnimeInfo | null => {
+    const searchMatch = (anime: AnimeInfo, year: string, titles: string[]): AnimeInfo | null => {
         if (anime)
             for (let key in anime.data) {
                 let yearMal = String(anime.data[key].year);
@@ -103,7 +113,7 @@ function Anime({ pageProps, dbProp }: idType) {
 
 
                 if (yearMal == year) {
-                    const res = filterByString(anime, key, song);
+                    const res = filterByString(anime, key, titles);
                     if (res)
                         return res;
                 }
@@ -111,27 +121,27 @@ function Anime({ pageProps, dbProp }: idType) {
         return null;
     }
 
-    const filterByString = (anime: AnimeInfo, key: any, song: JsonSong): AnimeInfo | null => {
+    const filterByString = (anime: AnimeInfo, key: any, titles: string[]): AnimeInfo | null => {
         const value = anime.data[key];
-        if (includeStringArray(value.title, song.animeENName, song.animeJPName))
+        if (includeStringArray(value.title, titles))
             return {
                 data: [value]
             };
         if (value.title_english)
-            if (includeStringArray(value.title_english, song.animeENName, song.animeJPName))
+            if (includeStringArray(value.title_english, titles))
                 return {
                     data: [value]
                 };
 
         for (let title in value.title_synonyms)
-            if (includeStringArray(title, song.animeENName, song.animeJPName))
+            if (includeStringArray(title, titles))
                 return {
                     data: [value]
                 };
 
         for (let title in value.titles) {
             const t = value.titles[title];
-            if (includeStringArray(t.title, song.animeENName, song.animeJPName))
+            if (includeStringArray(t.title, titles))
                 return {
                     data: [value]
                 };
@@ -139,10 +149,50 @@ function Anime({ pageProps, dbProp }: idType) {
         return null;
     }
 
-    const includeStringArray = (title: string, nameA: string, nameB: string) => {
-        if (title.includes(nameA) || title.includes(nameB))
-            return true;
+    const includeStringArray = (title: string, listTittle: string[]) => {
+        const uppercasedStrings = listTittle.map(s => s.toUpperCase());
+        uppercasedStrings
+        for (const text in uppercasedStrings)
+            if (isSimilar(text, title))
+                return true
         return false;
+    }
+
+    function levenshtein(a: string, b: string) {
+        const an = a ? a.length : 0;
+        const bn = b ? b.length : 0;
+        if (an === 0) {
+            return bn;
+        }
+        if (bn === 0) {
+            return an;
+        }
+        const matrix = new Array<number[]>(bn + 1);
+        for (let i = 0; i <= bn; ++i) {
+            let row = (matrix[i] = new Array<number>(an + 1));
+            row[0] = i;
+        }
+        const firstRow = matrix[0];
+        for (let j = 1; j <= an; ++j) {
+            firstRow[j] = j;
+        }
+        for (let i = 1; i <= bn; ++i) {
+            for (let j = 1; j <= an; ++j) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] =
+                        Math.min(matrix[i - 1][j - 1], matrix[i][j - 1], matrix[i - 1][j]) + 1;
+                }
+            }
+        }
+        return matrix[bn][an];
+    }
+
+    function isSimilar(s1: string, s2: string) {
+        const longerLength = Math.max(s1.length, s2.length);
+        const score = levenshtein(s1, s2);
+        return (longerLength - score) / longerLength >= 0.70;
     }
 
     const switchBtn = (id: string) => {
@@ -278,6 +328,9 @@ function Anime({ pageProps, dbProp }: idType) {
                     </>}
                     <div className="col-12 mt-3">
                         {component}
+                        {showInformationOnly && <>
+                            {componentInfo}
+                        </>}
                     </div>
                 </div>
             </div>

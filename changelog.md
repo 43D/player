@@ -78,6 +78,9 @@
 * Layout update
 * Button Interaction 80% Ready
 
+## (05/04/2024)
+* Added info page for anime without music
+*  Improved Jikan data query (MyAnimeList)
 
 
 <hr>

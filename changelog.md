@@ -9,7 +9,7 @@
 ## (25/03/2024)
 * Fixed bug that caused pagination buttons to redirect to home.
 * Layout update
-* Button Interaction 80% Ready
+* Key button Interaction 80% Ready
 
 
 ## (19/03/2024)

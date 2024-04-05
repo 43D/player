@@ -99,7 +99,6 @@ function Anime({ pageProps, dbProp }: idType) {
             setNameSeason(`- ${seasonMAl.toUpperCase()} ${year} ${typeMAL}`);
         }
 
-        console.log(result);
         setComponentInfo([<AnimeInfomation key={"9787"} animeMal={result} animeAnn={animeInfomation} />]);
         setShowBTNInformation(true);
     }
@@ -153,7 +152,7 @@ function Anime({ pageProps, dbProp }: idType) {
         const uppercasedStrings = listTittle.map(s => s.toUpperCase());
         uppercasedStrings
         for (const text in uppercasedStrings)
-            if (isSimilar(text, title))
+            if (isSimilar(uppercasedStrings[text], title))
                 return true
         return false;
     }
@@ -192,6 +191,7 @@ function Anime({ pageProps, dbProp }: idType) {
     function isSimilar(s1: string, s2: string) {
         const longerLength = Math.max(s1.length, s2.length);
         const score = levenshtein(s1, s2);
+        console.log(s1, "---", s2, "---", (longerLength - score) / longerLength)
         return (longerLength - score) / longerLength >= 0.70;
     }
 

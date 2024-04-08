@@ -205,7 +205,7 @@ function AnimeInfomation({ animeMal, animeAnn }: AnimeProps) {
                 </div>
             </>}
             <div className='col-12 col-md-4 col-xl-3 d-flex mb-3'>
-                <img className='cover-anime mx-auto ' src={pictureAnime} alt="cover" />
+                <img className='cover-anime mx-auto rounded' src={pictureAnime} alt="cover" />
             </div>
             <div className='col'>
                 <ul className="list-group">

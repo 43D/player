@@ -1,15 +1,26 @@
 import AnimeInfo from "../type/AnimeInfo";
 
 export const feacthAnimeInfo = () => {
-    const urlJikan = "https://api.jikan.moe/v4/anime?";
-    const urlAnn = "https://cdn.animenewsnetwork.com/encyclopedia/api.xml?"
 
+    const getHostJikan = () => {
+        if (window.location.hostname.includes("discordsays.com"))
+            return 'https://' + window.location.hostname + "/anime";
+        else
+            return 'https://api.jikan.moe/v4/anime';
+    }
+
+    const getHostAnn = () => {
+        if (window.location.hostname.includes("discordsays.com"))
+            return 'https://' + window.location.hostname + "/ann";
+        else
+            return 'https://cdn.animenewsnetwork.com/encyclopedia/api.xml';
+    }
     async function fetchApiJikan(url: string, requestOptions: RequestInit): Promise<AnimeInfo | null> {
         try {
-            const response = await fetch(urlJikan + url, requestOptions);
+            const response = await fetch(getHostJikan() + "?" + url, requestOptions);
             if (!response.ok)
                 throw new Error('Erro na solicitação');
-    
+
             const resultText = await response.text();
             const result = JSON.parse(resultText);
             return result;
@@ -20,15 +31,15 @@ export const feacthAnimeInfo = () => {
 
     async function fetchApiAnn(url: string, requestOptions: RequestInit): Promise<Document | null> {
         try {
-            const response = await fetch(urlAnn + url, requestOptions)
+            const response = await fetch(getHostAnn() + "?" + url, requestOptions)
             if (!response.ok)
                 throw new Error('Erro na solicitação');
-    
+
             const resultText = await response.text();
             const doc = new DOMParser().parseFromString(resultText, 'application/xml');
-    
+
             return doc;
-            
+
         } catch (error) {
             return null;
         }

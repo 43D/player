@@ -1,6 +1,14 @@
 import JsonSong from "../type/Songs";
 
 export const feacthAniSong = () => {
+
+    const getHost = () => {
+        if (window.location.hostname.includes("discordsays.com"))
+            return 'https://' + window.location.hostname;
+        else
+            return 'https://anisongdb.com';
+    }
+
     const searchAllBody = (parse: string) => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -132,27 +140,27 @@ export const feacthAniSong = () => {
     }
     function fetchAllSong(parse: string) {
         const requestOptions = searchAllBody(parse);
-        return fetchApi("https://anisongdb.com/api/search_request", requestOptions);
+        return fetchApi(getHost() + "/api/search_request", requestOptions);
     };
 
     function fetchSongById(parse: number) {
         const requestOptions = searchByIdBody(parse);
-        return fetchApi("https://anisongdb.com/api/annId_request", requestOptions);
+        return fetchApi(getHost() + "/api/annId_request", requestOptions);
     };
 
     function fetchArtistById(parse: number) {
         const requestOptions = artistByIdBody(parse);
-        return fetchApi("https://anisongdb.com/api/artist_ids_request", requestOptions);
+        return fetchApi(getHost() + "/api/artist_ids_request", requestOptions);
     };
 
     function fetchComposerById(parse: number) {
         const requestOptions = composerByIdBody(parse);
-        return fetchApi("https://anisongdb.com/api/composer_ids_request", requestOptions);
+        return fetchApi(getHost() + "/api/composer_ids_request", requestOptions);
     };
 
     function fetchRandomAnime() {
         const requestOptions = randomdBody();
-        return fetchApi("https://anisongdb.com/api/get_50_random_songs", requestOptions);
+        return fetchApi(getHost() + "/api/get_50_random_songs", requestOptions);
     };
 
     async function fetchArtistComposerById(parse: number) {

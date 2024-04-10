@@ -106,6 +106,7 @@ function MediaControl({ pagesProps, control, store }: menuType) {
         });
     }
 
+
     const ShuffleQueue = () => {
         pagesProps().shuffleQueue();
     }

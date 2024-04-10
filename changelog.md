@@ -1,6 +1,10 @@
 # [Anime Song Player](https://43d.github.io/player/)
 
 
+## (10/04/2024)
+* Preventing key shortcuts from being activated in text boxes
+
+
 ## (05/04/2024)
 * Added info page for anime without music
 *  Improved Jikan data query (MyAnimeList)

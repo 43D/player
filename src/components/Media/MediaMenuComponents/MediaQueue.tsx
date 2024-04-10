@@ -61,7 +61,7 @@ function MediaQueue({ pagesProps, store }: queueType) {
         "t": set720Quality
     }
 
-    for (let [key, action] of Object.entries(keyConfig)) 
+    for (let [key, action] of Object.entries(keyConfig))
         KeyListenerPlayer(key, action)
 
     return (

@@ -53,11 +53,11 @@ function DisplayQueue({ queueControllProp, show, store, dbProp, pageProps }: dis
         setComponents(list);
     }
 
-    const skipFiveSecond = () => { }
+    const skipFiveSecond = () => {  }
 
-    const prevFiveSecond = () => { }
+    const prevFiveSecond = () => {  }
 
-    const fullScreenVideo = () => { }
+    const fullScreenVideo = () => {  }
 
     const keyConfig = {
         "ArrowRight": skipFiveSecond,

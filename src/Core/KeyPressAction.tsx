@@ -44,113 +44,100 @@ export const KeyPressAction = ({ store, control, pageProps }: dependencias) => {
     console.log("setQualityAudio");
     console.log("showQualityBtn");
 
-    const checkInputText = () => {
-        return !(document.activeElement instanceof HTMLInputElement);
-    }
-
     const play = () => {
         console.log("play");
-        if (checkInputText()) {
-            const config = store.getConfig();
-            control().play(!config.played);
-            config.played = !config.played;
-            store.setConfig(config);
-        }
+        const config = store.getConfig();
+        control().play(!config.played);
+        config.played = !config.played;
+        store.setConfig(config);
     }
 
     const volumeMore = () => {
         console.log("volume+");
-        if (checkInputText()) { }
     }
 
     const volumeLess = () => {
         console.log("volume-");
-        if (checkInputText()) { }
     }
 
     const fullScreenVideo = () => {
         console.log("fullScreenVideo");
-        if (checkInputText()) { }
+
     }
 
     const nextSong = () => {
         console.log("nextSong");
-        if (checkInputText())
-            pageProps().nextQueue();
+        pageProps().nextQueue();
     }
 
     const prevSong = () => {
         console.log("prevSong");
-        if (checkInputText())
-            pageProps().previousQueue();
+        pageProps().previousQueue();
     }
 
     const LoopQueue = () => {
         console.log("LoopQueue");
-        if (checkInputText()) { }
+
     }
 
     const muted = () => {
         console.log("muted");
-        if (checkInputText()) { }
+
     }
 
     const shuffle = () => {
         console.log("shuffle");
-        if (checkInputText())
-            pageProps().shuffleQueue();
+        pageProps().shuffleQueue();
     }
 
     const getLink = () => {
         console.log("getLink");
-        if (checkInputText())
-            pageProps().getLink();
+        pageProps().getLink();
     }
 
     const showQualityBtn = () => {
         console.log("showQualityBtn");
-        if (checkInputText()) { }
+
     }
 
     const setQualityAudio = () => {
         console.log("setQualityAudio");
-        if (checkInputText()) { }
+
     }
 
     const setQualityVideo480 = () => {
         console.log("setQualityVideo480");
-        if (checkInputText()) { }
+
     }
 
     const setQualityVideo720 = () => {
         console.log("setQualityVideo720");
-        if (checkInputText()) { }
+
     }
 
     const showVideo = () => {
         console.log("showVideo");
-        if (checkInputText())
-            pageProps().showVideo();
+        pageProps().showVideo();
     }
 
     const openAnime = () => {
         console.log("openAnime");
-        if (checkInputText()) { }
+
     }
 
     const openArtist = () => {
         console.log("openArtist");
-        if (checkInputText()) { }
+
     }
 
     const skipFiveSecond = () => {
         console.log("skipFiveSecond");
-        if (checkInputText()) { }
+
     }
 
     const prevFiveSecond = () => {
         console.log("prevFiveSecond");
-        if (checkInputText()) { }
+
     }
 
     return {

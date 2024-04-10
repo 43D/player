@@ -75,6 +75,7 @@ const MediaInfo: React.FC<menuType & { timelineProp: (timelineProp: InterfaceMed
         setCurrentTime(String(Number(timeLineValue) * Number(durationValue) / 120000));
     }, [timeLineValue]);
 
+
     const openAnime = () => {
         if (animeName.current)
             animeName.current.click();

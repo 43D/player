@@ -79,7 +79,7 @@ export const KeyboardMenu = () => {
                         <div className="col-12 col-lg-6 mt-2">
                             <div className="d-flex my-2 align-items-center">
                                 <button className="btn border disabled">Z</button>
-                                <p className="mb-0 ms-2">Copy current media link [50%]</p>
+                                <p className="mb-0 ms-2">Copy current media link</p>
                             </div>
                             <div className="d-flex my-2 align-items-center">
                                 <button className="btn border disabled">X</button>

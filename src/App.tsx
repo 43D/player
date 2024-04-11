@@ -125,16 +125,7 @@ function App() {
     };
 
     const getLink = async () => {
-      const conf = StorageLocal().getConfig();
-      const song = await db.getSongById(Number(conf.playNowId));
-      let link = "";
-      if (conf.streaming == "0")
-        link = song.audio;
-      else if (conf.streaming == "480")
-        link = song.MQ;
-      else
-        link = song.HQ;
-
+      const link = store.getConfig().current_link;
       navigator.clipboard.writeText(link);
     };
 

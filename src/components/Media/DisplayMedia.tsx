@@ -134,7 +134,11 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
                 audioRef.current.src = "0";
                 audioRef.current.removeAttribute("src");
             } else {
-                audioRef.current.src = getCurrretServerUrl(url);
+                const link = getCurrretServerUrl(url);
+                audioRef.current.src = link;
+                const json = store.getConfig();
+                json.current_link = link;
+                store.setConfig(json);
             }
         }
     }
@@ -146,7 +150,11 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
                 videoRef.current.removeAttribute("src");
             }
             else {
-                videoRef.current.src = getCurrretServerUrl(url);
+                const link = getCurrretServerUrl(url);
+                videoRef.current.src = link;
+                const json = store.getConfig();
+                json.current_link = link;
+                store.setConfig(json);
             }
         }
     }
@@ -178,8 +186,13 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
         serverAtual = servers[0];
 
         if (servers.length > 0) {
-            if (videoRef.current)
-                videoRef.current.src = getCurrretServerUrl(videoRef.current.src, servers[0]);
+            if (videoRef.current) {
+                const link = getCurrretServerUrl(videoRef.current.src, servers[0]);
+                videoRef.current.src = link;
+                const json = store.getConfig();
+                json.current_link = link;
+                store.setConfig(json);
+            }
         } else {
             nextSong();
         }
@@ -190,8 +203,13 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
         serverAtual = servers[0];
 
         if (servers.length > 0) {
-            if (audioRef.current)
-                audioRef.current.src = getCurrretServerUrl(audioRef.current.src, servers[0]);
+            if (audioRef.current) {
+                const link = getCurrretServerUrl(audioRef.current.src, servers[0]);
+                audioRef.current.src = link;
+                const json = store.getConfig();
+                json.current_link = link;
+                store.setConfig(json);
+            }
         } else {
             nextSong();
         }

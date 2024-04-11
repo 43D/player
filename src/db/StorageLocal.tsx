@@ -30,7 +30,8 @@ function StorageLocal() {
             played: false,
             streaming: "0",
             volume: 1,
-            server: "NA1"
+            server: "NA1",
+            current_link: ""
         }
         setConfig(config);
     }
@@ -48,6 +49,10 @@ function StorageLocal() {
         }
         if(!json.server){
             json.server = "NA1"
+            setConfig(json);
+        }
+        if(!json.current_link){
+            json.current_link = ""
             setConfig(json);
         }
         return json;

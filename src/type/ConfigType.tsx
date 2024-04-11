@@ -8,6 +8,7 @@ type ConfigType = {
     streaming: string,
     volume: number,
     server: string,
+    current_link: string
 }
 
 export default ConfigType

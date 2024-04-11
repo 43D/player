@@ -3,6 +3,7 @@
 
 ## (10/04/2024)
 * Add modal with key shortcut list (visual only)
+* Fixed copy link button issue 
 
 
 ## (10/04/2024)

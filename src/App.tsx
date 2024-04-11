@@ -19,7 +19,7 @@ import InterfaceMediaTimeline from "./type/InterfaceMediaTimeline";
 import InterfaceMediaQueue from "./type/InterfaceMediaQueue";
 import { KeyListenerPlayer } from "./components/utils/KeyListenerPlayer";
 import { KeyPressAction } from "./Core/KeyPressAction";
-import { KeyboardMenu } from "./components/Nav/keyboardMenu";
+import { KeyboardMenu } from "./components/Nav/KeyboardMenu";
 
 function App() {
   const [queueControll, setQueueControll] = useState<boolean>(false);

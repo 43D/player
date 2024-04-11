@@ -17,22 +17,6 @@ interface SearchProps {
 }
 
 function Search({ pageProps, dbProp }: SearchProps) {
-    const rankedTimeIntervals = [
-        // thanks y xSardine
-        {
-            start: new Date().setUTCHours(2, 30, 0, 0),
-            end: new Date().setUTCHours(3, 23, 0, 0)
-        },
-        {
-            start: new Date().setUTCHours(12, 30, 0, 0),
-            end: new Date().setUTCHours(13, 23, 0, 0)
-        },
-        {
-            start: new Date().setUTCHours(19, 30, 0, 0),
-            end: new Date().setUTCHours(20, 23, 0, 0)
-        }
-    ];
-
     const { parse } = useParams<string>();
     const searchString = parse || "";
     const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
@@ -188,24 +172,36 @@ function Search({ pageProps, dbProp }: SearchProps) {
         switchBtn("search-filter-artist");
     };
 
-    const alertRankedTime = (n: number) => {
-        SetTimeLeft((Math.ceil((n - Date.now()) / 1000 / 60)));
+    const alertRankedTime = () => {
         const intervalId = setInterval(() => {
-            const timeLeft = (Math.ceil((n - Date.now()) / 1000 / 60));
+            const timeLeft = checkTimeRanked();
             SetTimeLeft(timeLeft);
             if (timeLeft <= 0)
                 clearInterval(intervalId);
         }, 5000);
     }
 
-    const checkRanked = () => {
-        const date = Date.now();
-        const rankedTimeInterval = rankedTimeIntervals.find(interval => {
-            return date >= interval.start && date < interval.end;
-        });
+    const checkTimeRanked = () => {
+        const now = new Date();
+        const start = 20 * 60 + 30; // 20:30 convertido em minutos
+        const end = 21 * 60 + 23; // 21:23 convertido em minutos
+        const fuso = ["Asia/Tokyo", "America/Chicago", "Europe/Paris"];
 
-        if (rankedTimeInterval)
-            alertRankedTime(rankedTimeInterval.end);
+        for (let i = 0; i < fuso.length; i++) {
+            const now_fuso = new Date(now.toLocaleString("en-US", { timeZone: fuso[i] }));
+            const hours = now_fuso.getHours();
+            const minutes = now_fuso.getMinutes();
+            const now_minutes = hours * 60 + minutes;
+
+            if (now_minutes >= start && now_minutes <= end)
+                return end - now_minutes;
+        }
+        return 0;
+    }
+
+    const checkRanked = () => {
+        if (checkTimeRanked() > 0)
+            alertRankedTime();
     }
 
     const shareThisPage = () => {

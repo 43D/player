@@ -2,6 +2,10 @@
 
 
 ## (10/04/2024)
+* Add modal with key shortcut list (visual only)
+
+
+## (10/04/2024)
 * Preventing key shortcuts from being activated in text boxes
 
 

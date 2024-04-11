@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -39,9 +39,14 @@ function Nav() {
                                 onChange={handleInputChange} />
                             <button className="btn btn-outline-success" type="submit" id="btn-search">Search</button>
                         </form>
-                        <button className="nav-link mx-4" type="button" data-bs-toggle="modal" data-bs-target="#configsModal">
-                            <i className="bi bi-gear"></i>
-                        </button>
+                        <div className="d-flex">
+                            <button className="nav-link mx-4"  type="button" data-bs-toggle="modal" data-bs-target="#keyboardModal">
+                                <i className="bi bi-keyboard"></i>
+                            </button>
+                            <button className="nav-link me-4" type="button" data-bs-toggle="modal" data-bs-target="#configsModal">
+                                <i className="bi bi-gear"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </nav>

@@ -7,7 +7,7 @@ import { useIndexedDB } from "react-indexed-db-hook";
 import AddPlaylistModal from "./components/Modal/AddPlaylistModal";
 import DeletePlaylistModal from "./components/Modal/DeletePlaylistModal";
 import Nav from "./components/Nav";
-import ConfigMenu from "./components/Config/ConfigMenu";
+import ConfigMenu from "./components/Nav/ConfigMenu";
 import StorageLocal from "./db/StorageLocal";
 import DisplayMedia from "./components/Media/DisplayMedia";
 import MediaMenu from "./components/Media/MediaMenu";
@@ -19,6 +19,7 @@ import InterfaceMediaTimeline from "./type/InterfaceMediaTimeline";
 import InterfaceMediaQueue from "./type/InterfaceMediaQueue";
 import { KeyListenerPlayer } from "./components/utils/KeyListenerPlayer";
 import { KeyPressAction } from "./Core/KeyPressAction";
+import { KeyboardMenu } from "./components/Nav/keyboardMenu";
 
 function App() {
   const [queueControll, setQueueControll] = useState<boolean>(false);
@@ -263,7 +264,7 @@ function App() {
     "v": keyPressAction.showVideo, // 100%
   }
 
-  for (let [key, action] of Object.entries(keyConfig)) 
+  for (let [key, action] of Object.entries(keyConfig))
     KeyListenerPlayer(key, action)
 
   return (
@@ -274,6 +275,7 @@ function App() {
       {componentQueue}
       <MediaMenu dbProp={db} pagesProps={pages} menuControlProp={menu} timelineProp={(timelineProp) => (mediaTimeline.current = timelineProp)} store={store} key={4658465} />
       <ConfigMenu store={store} />
+      <KeyboardMenu key="45646" />
       <div>
         <AddPlaylistModal key={idAddPlaylist + "add"} id={idAddPlaylist} observer={observerPlaylist} dbProp={db} />
         <DeletePlaylistModal key={idDeletePlaylist + "dele"} id={idDeletePlaylist} observer={observerDeletePlaylist} dbProp={db} />

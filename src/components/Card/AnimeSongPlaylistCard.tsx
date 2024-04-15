@@ -77,7 +77,7 @@ function AnimeSongPlaylistCard({ song, pageProps, idPlaylist, observer }: CardPr
                             <th>Artist</th>
                             <td colSpan={3}>
                                 {artists.map((item) => (
-                                    <span key={item.id}>
+                                    <span className='me-2' key={item.id}>
                                         <Link to={"/artist/" + item.id}>{item.names.toString()}</Link>
                                     </span>
                                 ))}
@@ -87,7 +87,7 @@ function AnimeSongPlaylistCard({ song, pageProps, idPlaylist, observer }: CardPr
                             <th>composers</th>
                             <td colSpan={3}>
                                 {composers.map((item) => (
-                                    <span key={item.id}>
+                                    <span className='me-2' key={item.id}>
                                         <Link to={"/artist/" + item.id}>{item.names.toString()}</Link>
                                     </span>
                                 ))}
@@ -97,7 +97,7 @@ function AnimeSongPlaylistCard({ song, pageProps, idPlaylist, observer }: CardPr
                             <th>arrangers</th>
                             <td colSpan={3}>
                                 {arrangers.map((item) => (
-                                    <span key={item.id}>
+                                    <span className='me-2' key={item.id}>
                                         <Link to={"/artist/" + item.id}>{item.names.toString()}</Link>
                                     </span>
                                 ))}

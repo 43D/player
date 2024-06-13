@@ -1,5 +1,8 @@
 # [Anime Song Player](https://43d.github.io/player/)
 
+## (13/06/2024)
+* Maaya Sakamoto Update
+
 
 ## (10/04/2024)
 * Add modal with key shortcut list (visual only)

@@ -51,6 +51,11 @@ function Home({ pageProps, dbProp }: pageProps) {
                 <div className="col-12 col-lg-6">
                     <FeedYouTube />
                 </div>
+                <div className="col-12">
+                    <div className="w-100 d-flex justify-content-end align-items-end">
+                        <button className="btn btn-success mt-3">Maaya Sakamoto Profile - 73 Songs</button>
+                    </div>
+                </div>
                 <div className="col-12 mb-5">
                     {componentListened}
                 </div>

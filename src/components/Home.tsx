@@ -6,6 +6,7 @@ import FeedPlaylist from "./Feed/FeedPlaylist";
 import FeedListened from "./Feed/FeedListened";
 import HomeNav from "./Home/HomeNav";
 import FeedYouTube from "./Feed/FeedYouTube";
+import { useNavigate } from "react-router-dom";
 
 interface pageProps {
     pageProps: () => PagesType;
@@ -16,6 +17,7 @@ function Home({ pageProps, dbProp }: pageProps) {
     const [componentDiscovery, setComponentDiscovery] = useState<JSX.Element[]>([]);
     const [componentPlaylist, setComponentPlaylist] = useState<JSX.Element[]>([]);
     const [componentListened, setComponentListened] = useState<JSX.Element[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         feedDiscovery();
@@ -53,7 +55,7 @@ function Home({ pageProps, dbProp }: pageProps) {
                 </div>
                 <div className="col-12">
                     <div className="w-100 d-flex justify-content-end align-items-end">
-                        <button className="btn btn-success mt-3">Maaya Sakamoto Profile - 73 Songs</button>
+                        <button className="btn btn-success mt-3" onClick={() => navigate("/artist/261")}>Maaya Sakamoto Profile - 73 Songs</button>
                     </div>
                 </div>
                 <div className="col-12 mb-5">

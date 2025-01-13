@@ -111,16 +111,16 @@ function MediaQueue({ pagesProps, store }: queueType) {
                         </label>
                         <input className="btn-check" type="radio" name="radio-server-option" id="radio-server-option2" value="NA1" onChange={serverOptions} defaultChecked={checkServerOptions("NA1")} />
                         <label className="btn btn-outline-success" htmlFor="radio-server-option2">
-                            American 1
+                            American West
                         </label>
                         <input className="btn-check" type="radio" name="radio-server-option" id="radio-server-option3" value="NA2" onChange={serverOptions} defaultChecked={checkServerOptions("NA2")} />
                         <label className="btn btn-outline-success" htmlFor="radio-server-option3">
-                            American 2
+                            American East
                         </label>
-                        <input className="btn-check" type="radio" name="radio-server-option" id="radio-server-option4" value="CAT" onChange={serverOptions} defaultChecked={checkServerOptions("CAT")} />
+                        {/* <input className="btn-check" type="radio" name="radio-server-option" id="radio-server-option4" value="CAT" onChange={serverOptions} defaultChecked={checkServerOptions("CAT")} />
                         <label className="btn btn-outline-success" htmlFor="radio-server-option4">
                             Catbox Moe
-                        </label>
+                        </label> */}
                     </div>
                     <div>
                         <p className="mb-0 mt-2 text-center"> <i className="bi bi-info"></i> Change effective <br />

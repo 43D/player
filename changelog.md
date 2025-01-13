@@ -1,5 +1,10 @@
 # [Anime Song Player](https://43d.github.io/player/)
 
+
+## (13/01/2025)
+* Update links AMQ
+
+
 ## (13/06/2024)
 * Maaya Sakamoto Update
 

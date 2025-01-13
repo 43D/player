@@ -166,10 +166,10 @@ const DisplayMedia: React.FC<MediaProps> = ({ store, queueControllProp, timeline
 
     const isDiscord = () => window.location.hostname.includes("discordsays.com");
 
-    const getNAServer = () => isDiscord() ? 'https://' + window.location.hostname + "/american/" : "https://ladist1.catbox.video/";
-    const getNA2Server = () => isDiscord() ? 'https://' + window.location.hostname + "/american2/" : "https://vhdist1.catbox.video/";
-    const getEUServer = () => isDiscord() ? 'https://' + window.location.hostname + "/europe/" : "https://nl.catbox.video/";
-    const getCatboxServer = () => isDiscord() ? 'https://' + window.location.hostname + "/catbox/" : "https://files.catbox.moe/";
+    const getNAServer = () => isDiscord() ? 'https://' + window.location.hostname + "/american/" : "https://nawdist.animemusicquiz.com/";
+    const getNA2Server = () => isDiscord() ? 'https://' + window.location.hostname + "/american2/" : "https://naedist.animemusicquiz.com/";
+    const getEUServer = () => isDiscord() ? 'https://' + window.location.hostname + "/europe/" : "https://eudist.animemusicquiz.com/";
+    const getCatboxServer = () => isDiscord() ? 'https://' + window.location.hostname + "/catbox/" : "https://naedist.animemusicquiz.com/";
 
     const getCurrretServerUrl = (url: string, server: string = getCurrretServer()) => {
         let base = "";

@@ -14,7 +14,7 @@ interface AnimeProps {
 }
 
 function SearchAnime({ songList, pageProps, playlist = false, idPlaylist = 0, observer }: AnimeProps){
-    const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
+    const [componentCard, setComponentCard] = useState<React.JSX.Element[]>([]);
     const navigate = useNavigate();
 
     

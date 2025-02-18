@@ -19,11 +19,11 @@ interface SearchProps {
 function Search({ pageProps, dbProp }: SearchProps) {
     const { parse } = useParams<string>();
     const searchString = parse || "";
-    const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
-    const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
-    const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
-    const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [componentAll, setComponentAll] = useState<React.JSX.Element[]>([]);
+    const [componentAnime, setComponentAnime] = useState<React.JSX.Element[]>([]);
+    const [componentSong, setComponentSong] = useState<React.JSX.Element[]>([]);
+    const [componentArtist, setComponentArtist] = useState<React.JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
     const [timeLeft, SetTimeLeft] = useState<number>(0);
     const [showBTNs, setShowBTNs] = useState<boolean>(false);
     const navigate = useNavigate();
@@ -68,7 +68,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
     };
 
     const createAll = (song: JsonSong[]) => {
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
                 components.push(<MessageCom key={"2"} msg="Not found..." />)
@@ -81,7 +81,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
     };
 
     const createAnime = (song: JsonSong[]) => {
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
                 components.push(<MessageCom msg="Not found (anime)..." />)
@@ -106,7 +106,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
     };
 
     const createSong = (song: JsonSong[]) => {
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
                 components.push(<MessageCom msg="Song not found..." />)
@@ -132,7 +132,7 @@ function Search({ pageProps, dbProp }: SearchProps) {
     };
 
     const createArtist = (song: JsonSong[]) => {
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
                 components.push(<MessageCom msg="Not found (artist)..." />)

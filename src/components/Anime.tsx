@@ -25,13 +25,13 @@ function Anime({ pageProps, dbProp }: idType) {
     if (id == 0)
         return <Navigate replace to="/404" />
 
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
     const [name, setName] = useState<String>("");
     const [nameJP, setNameJP] = useState<String>("");
     const [nameSeason, setNameSeason] = useState<String>("");
-    const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
-    const [componentType, setComponentType] = useState<JSX.Element[]>([]);
-    const [componentInfo, setComponentInfo] = useState<JSX.Element[]>([]);
+    const [componentSong, setComponentSong] = useState<React.JSX.Element[]>([]);
+    const [componentType, setComponentType] = useState<React.JSX.Element[]>([]);
+    const [componentInfo, setComponentInfo] = useState<React.JSX.Element[]>([]);
     const [result, setResult] = useState<JsonSong[] | null>(null);
     const [image, setImage] = useState<string>("https://43d.github.io/player/logo.png");
     const [showBTNs, setShowBTNs] = useState<boolean>(false);

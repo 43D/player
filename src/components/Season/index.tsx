@@ -6,14 +6,14 @@ import MessageCom from "../MessageCom";
 function SeasonIndex() {
     const [year, setYear] = useState('2024');
     const [season, setSeason] = useState('all');
-    const [componentList, setComponentList] = useState<JSX.Element[]>([]);
+    const [componentList, setComponentList] = useState<React.JSX.Element[]>([]);
 
     const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => setYear(event.target.value);
     const handleSeasonChange = (event: React.ChangeEvent<HTMLSelectElement>) => setSeason(event.target.value);
 
     const yearsNaoOrdenados = [1950, 1949, 1948, 1947, 1946, 1944, 1943, 1942, 1939, 1936, 1935, 1933, 1932, 1931, 1930, 1929, 1928, 1926, 1925, 1924, 1918, 1917]
     const yearsGenerate = [] as number[];
-    const yearOptions = [] as JSX.Element[];
+    const yearOptions = [] as React.JSX.Element[];
     // last id: 32502
     for (let y = 2025; y >= 1953; y--) yearsGenerate.push(y);
     const yearsOlds = yearsGenerate.concat(yearsNaoOrdenados);
@@ -78,7 +78,7 @@ function SeasonIndex() {
     }
 
     const searchByListLinks = async (links: string[]) => {
-        const listEl = [] as JSX.Element[];
+        const listEl = [] as React.JSX.Element[];
         for (let index in links) {
             const result = await getFileData(links[index]);
             if (result.length > 0) {

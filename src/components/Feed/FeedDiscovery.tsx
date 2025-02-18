@@ -12,7 +12,7 @@ interface pageProps {
 }
 
 function FeedDiscovery({ pageProps, dbProp }: pageProps) {
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
     const [nameBtn, setNameBtn] = useState<string>("Show more...");
     const feedDiscovery = useRef<HTMLDivElement>(null);
 
@@ -30,7 +30,7 @@ function FeedDiscovery({ pageProps, dbProp }: pageProps) {
     }
 
     const createAll = (song: JsonSong[]) => {
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
                 components.push(<MessageCom key={"2"} msg="Nada foi encontrado nada..." />)

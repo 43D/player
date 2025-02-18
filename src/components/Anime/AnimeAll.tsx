@@ -13,7 +13,7 @@ interface AnimeProps {
 }
 
 function AnimeAll({ songList, pageProps, playlist = false, idPlaylist = 0, observer }: AnimeProps) {
-    const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
+    const [componentCard, setComponentCard] = useState<React.JSX.Element[]>([]);
 
     useEffect(() => {
         const components = [];

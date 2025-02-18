@@ -12,8 +12,8 @@ interface pageProps {
 
 function HomeAnime({ dbProp }: pageProps) {
     const cursor = dbProp.getCursorAnime();
-    const [component, setComponent] = useState<JSX.Element[]>([]);
-    const [componentPages, setComponentPages] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
+    const [componentPages, setComponentPages] = useState<React.JSX.Element[]>([]);
 
     useEffect(() => {
         setComponent([<MessageCom key={"51"} msg="Pesquisando animes, aguarde...." />])
@@ -28,7 +28,7 @@ function HomeAnime({ dbProp }: pageProps) {
             setComponent([<MessageCom key={999} msg="Search for some anime music ani on top, this page only displays information that you have already searched for." />])
         else {
             setComponentPages([<Navigation key={97} count={pages} page={1} switchPage={switchPage} />]);
-            const comp = [] as JSX.Element[];
+            const comp = [] as React.JSX.Element[];
 
             cursor((evt: any) => {
                 var cursor = evt.target.result;
@@ -59,7 +59,7 @@ function HomeAnime({ dbProp }: pageProps) {
     const reloadComponent = (pageSelect: number) => {
         const start = (pageSelect - 1) * 100;
         const end = start + 99;
-        const comp = [] as JSX.Element[];
+        const comp = [] as React.JSX.Element[];
         cursor((evt: any) => {
             var cursor = evt.target.result;
             if (cursor) {

@@ -10,7 +10,7 @@ interface AnimeProps {
 }
 
 function ArtistAnime({ songList, pageProps }: AnimeProps){
-    const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
+    const [componentCard, setComponentCard] = useState<React.JSX.Element[]>([]);
     const navigate = useNavigate();
 
     useEffect(() => {

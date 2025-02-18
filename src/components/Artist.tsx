@@ -22,11 +22,11 @@ function Artist({ pageProps, dbProp }: idType) {
 
     const [name, setName] = useState<String>("");
     const [result, setResult] = useState<JsonSong[] | null>(null);
-    const [component, setComponent] = useState<JSX.Element[]>([]);
-    const [componentAll, setComponentAll] = useState<JSX.Element[]>([]);
-    const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
-    const [componentComposer, setComponentComposer] = useState<JSX.Element[]>([]);
-    const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
+    const [componentAll, setComponentAll] = useState<React.JSX.Element[]>([]);
+    const [componentArtist, setComponentArtist] = useState<React.JSX.Element[]>([]);
+    const [componentComposer, setComponentComposer] = useState<React.JSX.Element[]>([]);
+    const [componentAnime, setComponentAnime] = useState<React.JSX.Element[]>([]);
     const [showBTNs, setShowBTNs] = useState<boolean>(false);
     const navigate = useNavigate();
 
@@ -115,7 +115,7 @@ function Artist({ pageProps, dbProp }: idType) {
     };
 
     const createAnime = (song: JsonSong[]) => {
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
 
         const groupSong = song.reduce((acc: { [x: string]: any[]; }, obj: JsonSong) => {
             const key = obj.annId;

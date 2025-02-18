@@ -166,7 +166,7 @@ function App() {
     }
   }
 
-  const [componentQueue, setComponentQueue] = useState<JSX.Element>(<DisplayQueue key={564468} pageProps={pages} store={store} dbProp={db} queueControllProp={(control) => (mediaQueue.current = control)} show={queueControll} />);
+  const [componentQueue, setComponentQueue] = useState<React.JSX.Element>(<DisplayQueue key={564468} pageProps={pages} store={store} dbProp={db} queueControllProp={(control) => (mediaQueue.current = control)} show={queueControll} />);
 
 
   const timeline = (): InterfaceMediaTimeline => {

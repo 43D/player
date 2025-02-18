@@ -14,7 +14,7 @@ interface pageProps {
 function FeedListened({ pageProps, dbProp }: pageProps) {
     const navigate = useNavigate();
 
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
     const feedDiscovery = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function FeedListened({ pageProps, dbProp }: pageProps) {
         if (result.length === 0)
             setComponent([<MessageCom key={"978"} msg="No music listened to…" />])
         else {
-            const components: JSX.Element[] = [];
+            const components: React.JSX.Element[] = [];
             for (const list of result) {
                 const song = await dbProp.getSongById(list.annSongId);
                 components.push(<AnimeSongListenedCard key={list.annSongId} count={list.count} song={song} pageProps={pageProps} />);

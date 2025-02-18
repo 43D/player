@@ -14,9 +14,9 @@ interface pageProps {
 }
 
 function Home({ pageProps, dbProp }: pageProps) {
-    const [componentDiscovery, setComponentDiscovery] = useState<JSX.Element[]>([]);
-    const [componentPlaylist, setComponentPlaylist] = useState<JSX.Element[]>([]);
-    const [componentListened, setComponentListened] = useState<JSX.Element[]>([]);
+    const [componentDiscovery, setComponentDiscovery] = useState<React.JSX.Element[]>([]);
+    const [componentPlaylist, setComponentPlaylist] = useState<React.JSX.Element[]>([]);
+    const [componentListened, setComponentListened] = useState<React.JSX.Element[]>([]);
     const navigate = useNavigate();
 
     useEffect(() => {

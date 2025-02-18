@@ -9,7 +9,7 @@ interface navigationInterface {
 }
 
 function Navigation({ count, page, switchPage }: navigationInterface) {
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
 
     const nextPage = () => {
         const pagePredict = page + 1;
@@ -28,7 +28,7 @@ function Navigation({ count, page, switchPage }: navigationInterface) {
     }
 
     useEffect(() => {
-        const comp = [] as JSX.Element[];
+        const comp = [] as React.JSX.Element[];
 
         let start = page - 3;
         if(start <= 0)

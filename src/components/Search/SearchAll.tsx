@@ -9,7 +9,7 @@ interface AnimeProps {
 }
 
 function SearchAll({ songList, pageProps }: AnimeProps){
-    const [componentCard, setComponentCard] = useState<JSX.Element[]>([]);
+    const [componentCard, setComponentCard] = useState<React.JSX.Element[]>([]);
 
     useEffect(() => {
         const components = [];

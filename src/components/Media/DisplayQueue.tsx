@@ -21,7 +21,7 @@ type displayType = {
 }
 
 function DisplayQueue({ queueControllProp, show, store, dbProp, pageProps }: displayType) {
-    const [components, setComponents] = useState<JSX.Element[]>([]);
+    const [components, setComponents] = useState<React.JSX.Element[]>([]);
 
     let componentStyle: React.CSSProperties = {
         top: "64px",
@@ -46,7 +46,7 @@ function DisplayQueue({ queueControllProp, show, store, dbProp, pageProps }: dis
     const updateQueue = () => {
         const playIndex = store.getConfig().playIndex;
         const queueIndex = store.getQueue();
-        const list = [] as JSX.Element[];
+        const list = [] as React.JSX.Element[];
         queueIndex.forEach((value, index) => {
             list.push(<AnimeSongQueueCard key={value + "queue"} playIndex={playIndex} indexQueue={index} dbProp={dbProp} id={value} pageProps={pageProps} />)
         });

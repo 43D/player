@@ -20,12 +20,12 @@ function Playlist({ pageProps, dbProp }: idType) {
     if (id == 0)
         return <Navigate replace to="/404" />
 
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
     const [name, setName] = useState<String>("");
     const [qtd, setQtd] = useState<number>(0);
-    const [componentSong, setComponentSong] = useState<JSX.Element[]>([]);
-    const [componentAnime, setComponentAnime] = useState<JSX.Element[]>([]);
-    const [componentArtist, setComponentArtist] = useState<JSX.Element[]>([]);
+    const [componentSong, setComponentSong] = useState<React.JSX.Element[]>([]);
+    const [componentAnime, setComponentAnime] = useState<React.JSX.Element[]>([]);
+    const [componentArtist, setComponentArtist] = useState<React.JSX.Element[]>([]);
     const [observer, setObserver] = useState<number>(0);
     const navigate = useNavigate();
 
@@ -59,7 +59,7 @@ function Playlist({ pageProps, dbProp }: idType) {
     };
 
     const createAnime = (song: JsonSong[]) => {
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
                 components.push(<MessageCom key={"4333"} msg="Not found..." />)
@@ -84,7 +84,7 @@ function Playlist({ pageProps, dbProp }: idType) {
     };
 
     const createArtist = (song: JsonSong[]) => {
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
         if (song) {
             if (song.length === 0)
                 components.push(<MessageCom key={"43333"} msg="Not found (artists)..." />)

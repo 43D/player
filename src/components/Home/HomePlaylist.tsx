@@ -18,7 +18,7 @@ type jsonImport = {
 }
 
 function HomePlaylist({ pageProps, dbProp }: pageProps) {
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
     const inputRef = useRef<HTMLInputElement>(null);
     const [dataImport, setDataImport] = useState<jsonImport | null>(null);
     const [selectedOption, setSelectedOption] = useState<string>('create');
@@ -38,7 +38,7 @@ function HomePlaylist({ pageProps, dbProp }: pageProps) {
         const result = await dbProp.getAllPlaylist();
         setAllPlaylist(result);
 
-        const comp = [] as JSX.Element[];
+        const comp = [] as React.JSX.Element[];
         result.forEach((v) => {
             comp.push(<PlaylistCard key={v.id} pageProps={pageProps} playlist={v} />)
         });

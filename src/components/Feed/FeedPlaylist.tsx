@@ -12,7 +12,7 @@ interface pageProps {
 function FeedPlaylist({ dbProp }: pageProps) {
     const navigate = useNavigate();
 
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
 
     useEffect(() => {
         const comp = <MessageCom key={987} msg="Buscando algo...." />;
@@ -40,7 +40,7 @@ function FeedPlaylist({ dbProp }: pageProps) {
 
     const createPlaylist = (result: PlaylistCardType[]) => {
         const playlists = shuffleArray(result);
-        const components: JSX.Element[] = [];
+        const components: React.JSX.Element[] = [];
         for (let index = 0; index < playlists.length; index++) {
             const playlist = playlists[index];
             components.push(<PlaylistCompactCard key={index} playlist={playlist} />);

@@ -2,7 +2,7 @@
   "name": "player",
   "private": true,
   "homepage": "https://43d.github.io/player/",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,25 +13,25 @@
     "deploy": "node buildPath.cjs && gh-pages -d dist"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-helmet": "^6.1.0",
     "react-indexed-db-hook": "^1.0.14",
-    "react-router-dom": "^6.20.0"
+    "react-router-dom": "^7.1.5"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "@types/react-helmet": "^6.1.11",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
     "@vitejs/plugin-react-swc": "^3.3.2",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint": "^9.20.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "gh-pages": "^6.0.0",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^6.1.0"
   }
 }

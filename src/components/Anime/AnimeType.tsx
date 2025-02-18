@@ -9,9 +9,9 @@ interface AnimeProps {
 }
 
 function AnimeType({ songList, pageProps }: AnimeProps) {
-    const [componentCardOpening, setComponentCardOpening] = useState<JSX.Element[]>([]);
-    const [componentCardEnding, setComponentCardEnding] = useState<JSX.Element[]>([]);
-    const [componentCardInsert, setComponentCardInsert] = useState<JSX.Element[]>([]);
+    const [componentCardOpening, setComponentCardOpening] = useState<React.JSX.Element[]>([]);
+    const [componentCardEnding, setComponentCardEnding] = useState<React.JSX.Element[]>([]);
+    const [componentCardInsert, setComponentCardInsert] = useState<React.JSX.Element[]>([]);
 
     useEffect(() => {
         const componentsOpening = [];

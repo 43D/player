@@ -12,7 +12,7 @@ interface pageProps {
 }
 
 function HomeMostWanted({ pageProps, dbProp }: pageProps) {
-    const [component, setComponent] = useState<JSX.Element[]>([]);
+    const [component, setComponent] = useState<React.JSX.Element[]>([]);
 
     useEffect(() => {
         setComponent([<MessageCom key={"512"} msg="Pesquisando a mais escutadas, aguarde...." />])
@@ -21,7 +21,7 @@ function HomeMostWanted({ pageProps, dbProp }: pageProps) {
     }, []);
 
     const action = async (result: ListenedType[]) => {
-        const comps = [] as JSX.Element[];
+        const comps = [] as React.JSX.Element[];
         if (result.length === 0) {
             comps.push(<MessageCom key={999} msg="Play some music, this page only displays information about the songs you have already listened to." />);
         } else {
